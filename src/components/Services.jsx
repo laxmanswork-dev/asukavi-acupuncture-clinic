@@ -1,0 +1,258 @@
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { ArrowRightIcon } from "./icons";
+import traditionalImg from "../assets/services/acu.png";
+import earImg from "../assets/services/ear.png";
+import cuppingImg from "../assets/services/cup.png";
+import moxibustionImg from "../assets/services/moxi.png";
+import wellnessImg from "../assets/services/well.png";
+import servicesVideo from "../assets/ser.mp4";
+
+const EASE = [0.22, 1, 0.36, 1];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 10 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: EASE } },
+};
+
+const stagger = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.08, delayChildren: 0.08 },
+  },
+};
+
+const threeLineDesc = { maxHeight: "66px", overflow: "hidden", flexShrink: 0 };
+
+const GLASS_STYLE = {
+  backgroundColor: "rgba(18,28,24,0.72)",
+  border: "1.5px solid rgba(192,198,204,0.28)",
+  borderRadius: "28px",
+};
+
+const CARD_CLASS =
+  "relative flex h-full min-h-0 flex-col overflow-hidden backdrop-blur-[18px] transition-[box-shadow,backdrop-filter] duration-500 group-hover:shadow-[0_24px_48px_-18px_rgba(0,0,0,0.6)] group-hover:backdrop-blur-[22px]";
+
+const TOP_HIGHLIGHT = (
+  <div
+    aria-hidden="true"
+    className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/35 to-transparent"
+  />
+);
+
+const LIFT_STYLE = { transitionTimingFunction: "cubic-bezier(0.22,1,0.36,1)" };
+const LIFT_CLASS =
+  "group h-[264px] rounded-[28px] transition-[transform,border-color] duration-500 hover:-translate-y-2 border border-transparent hover:border-[#C0C6CC]/60";
+
+const LEARN_MORE_CLASS =
+  "group/btn mt-auto flex items-center justify-end gap-2 pt-3 font-display text-base font-medium tracking-wide text-[#A8D5BA] transition-colors duration-300 hover:text-[#CFF3DD]";
+
+function LearnMoreLink() {
+  return (
+    <Link to="/book-appointment" className={LEARN_MORE_CLASS}>
+      Learn More
+      <ArrowRightIcon className="h-4 w-4 transition-transform duration-300 ease-out group-hover/btn:translate-x-2" />
+    </Link>
+  );
+}
+
+const services = [
+  {
+    image: earImg,
+    title: "Auricular (Ear) Acupuncture",
+    description:
+      "Targeted ear-point therapy that supports stress relief, emotional balance, and overall wellbeing.",
+    shade: "radial-gradient(120% 100% at 0% 0%, rgba(85,152,159,0.16), transparent 60%)",
+  },
+  {
+    image: cuppingImg,
+    title: "Cupping Therapy",
+    description:
+      "Helps relieve muscle tension, improve circulation, and support natural recovery.",
+    shade: "radial-gradient(120% 100% at 0% 0%, rgba(47,93,80,0.18), transparent 60%)",
+  },
+  {
+    image: moxibustionImg,
+    title: "Moxibustion",
+    description:
+      "Gentle heat therapy that stimulates circulation and strengthens the body's natural defenses.",
+    shade: "radial-gradient(120% 100% at 0% 0%, rgba(232,177,58,0.14), transparent 60%)",
+  },
+  {
+    image: wellnessImg,
+    title: "Wellness Consultation",
+    description:
+      "Personalized lifestyle, nutrition, and wellness guidance tailored to your individual health goals.",
+    shade: "radial-gradient(120% 100% at 0% 0%, rgba(245,242,233,0.12), transparent 60%)",
+  },
+];
+
+function ServiceCard({ image, title, description, shade, className = "" }) {
+  return (
+    <motion.div variants={fadeUp} className={`min-h-0 ${className}`}>
+      <div className={LIFT_CLASS} style={LIFT_STYLE}>
+        <div className={CARD_CLASS} style={GLASS_STYLE}>
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0"
+            style={{ background: shade }}
+          />
+          {TOP_HIGHLIGHT}
+          <div className="flex h-full min-h-0 flex-col gap-3 p-8">
+            <div className="flex items-center gap-4">
+              <span className="relative h-20 w-20 flex-none overflow-hidden rounded-2xl border border-[#C0C6CC]/30 shadow-lg shadow-black/40">
+                <img
+                  src={image}
+                  alt=""
+                  aria-hidden="true"
+                  className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                />
+              </span>
+              <h3 className="min-w-0 flex-1 font-display text-[21px] font-bold leading-snug text-cream-50 transition-colors duration-500 group-hover:text-[#CFF3DD]">
+                {title}
+              </h3>
+            </div>
+            <p
+              style={threeLineDesc}
+              className="font-body text-[16px] leading-snug text-[#E8ECEF]/70"
+            >
+              {description}
+            </p>
+            <LearnMoreLink />
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+export default function Services() {
+  return (
+    <section
+      id="services"
+      className="relative overflow-hidden border-t border-cream-50/12 lg:h-[calc(100svh-5.5rem+90px)]"
+    >
+      <video
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover blur-[3px]"
+        autoPlay
+        muted
+        loop
+        playsInline
+        src={servicesVideo}
+      />
+      <div aria-hidden="true" className="absolute inset-0 bg-eucalyptus-950/60" />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(120% 90% at 50% 15%, transparent 30%, rgba(10,22,20,0.7) 100%)",
+        }}
+      />
+
+      <div className="relative mx-auto flex max-w-7xl flex-col justify-center px-8 py-8 lg:h-full lg:px-8">
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.4 }}
+          variants={fadeUp}
+          className="mx-auto max-w-[760px] flex-none text-center"
+        >
+          <p
+            className="font-display font-semibold text-[#A8D5BA]"
+            style={{ fontSize: "15px", letterSpacing: "0.3em" }}
+          >
+            OUR SERVICES
+          </p>
+          <h2
+            className="mt-2 text-cream-50 lg:whitespace-nowrap"
+            style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontWeight: 700,
+              fontSize: "clamp(1.6rem, 2.5vw, 2.25rem)",
+              lineHeight: 1.15,
+              letterSpacing: "-0.02em",
+            }}
+          >
+            Traditional Healing. Thoughtfully Personalized.
+          </h2>
+        </motion.div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={stagger}
+          className="mx-auto mt-6 grid w-full max-w-[1320px] grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          <motion.div variants={fadeUp} className="relative min-h-0 lg:col-span-2">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -inset-2 -z-10 rounded-[32px] bg-[#C0C6CC]/8 blur-xl"
+            />
+            <div className={LIFT_CLASS} style={LIFT_STYLE}>
+              <div
+                className={CARD_CLASS}
+                style={{
+                  ...GLASS_STYLE,
+                  backgroundColor: "rgba(32,48,41,0.66)",
+                  border: "2px solid rgba(192,198,204,0.55)",
+                }}
+              >
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0"
+                  style={{
+                    background:
+                      "radial-gradient(120% 100% at 0% 0%, rgba(126,217,168,0.08), transparent 60%)",
+                  }}
+                />
+                {TOP_HIGHLIGHT}
+                <div className="flex h-full min-h-0 items-center gap-6 p-8">
+                  <span className="relative h-28 w-28 flex-none overflow-hidden rounded-2xl border border-[#C0C6CC]/40 shadow-xl shadow-black/50">
+                    <img
+                      src={traditionalImg}
+                      alt=""
+                      aria-hidden="true"
+                      className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                    />
+                  </span>
+                  <div className="flex min-w-0 flex-1 flex-col gap-3">
+                    <h3
+                      className="text-cream-50 transition-colors duration-500 group-hover:text-[#CFF3DD]"
+                      style={{
+                        fontFamily: "'Cormorant Garamond', serif",
+                        fontWeight: 700,
+                        fontSize: "30px",
+                        lineHeight: 1.15,
+                      }}
+                    >
+                      Traditional Acupuncture
+                    </h3>
+                    <p className="max-w-md font-body text-[16px] leading-snug text-[#E8ECEF]/75">
+                      Fine-needle therapy designed to restore energy flow,
+                      relieve pain, and support your body&rsquo;s natural
+                      healing.
+                    </p>
+                    <Link
+                      to="/book-appointment"
+                      className="group/btn mt-auto inline-flex h-11 w-fit items-center gap-2 rounded-full bg-[#A3B899] px-6 font-display text-[15px] font-semibold text-eucalyptus-950 shadow-md shadow-[#A3B899]/25 transition-all duration-300 hover:scale-[1.02] hover:bg-[#8FA588]"
+                    >
+                      Explore Treatment
+                      <ArrowRightIcon className="h-4 w-4 transition-transform duration-300 ease-out group-hover/btn:translate-x-2" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {services.map((service) => (
+            <ServiceCard key={service.title} {...service} />
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+}
