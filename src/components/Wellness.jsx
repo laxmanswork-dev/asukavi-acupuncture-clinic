@@ -102,7 +102,10 @@ export default function Wellness() {
               <p className="font-display text-sm font-semibold tracking-[0.3em] text-[#A8D5BA]">
                 WHOLE-PERSON WELLNESS
               </p>
-              <h2 className="mt-5 font-display text-4xl font-bold leading-tight tracking-tight text-cream-50 sm:text-5xl">
+              <h2
+                className="mt-5 text-4xl font-bold leading-tight tracking-tight text-cream-50 sm:text-5xl"
+                style={{ fontFamily: "'Cormorant Garamond', serif" }}
+              >
                 Feel Better.
                 <br />
                 Live Better.
