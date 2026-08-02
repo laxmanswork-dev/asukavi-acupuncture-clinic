@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import BookAppointment from "./pages/BookAppointment";
+import TraditionalAcupuncture from "./pages/TraditionalAcupuncture";
 
 export default function App() {
   return (
@@ -13,6 +14,10 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/book-appointment" element={<BookAppointment />} />
+          <Route
+            path="/treatments/traditional-acupuncture"
+            element={<TraditionalAcupuncture />}
+          />
         </Routes>
       </main>
       <Footer />

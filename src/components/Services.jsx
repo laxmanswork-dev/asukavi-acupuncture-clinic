@@ -209,7 +209,7 @@ export default function Services() {
                     healing.
                   </p>
                   <Link
-                    to="/book-appointment"
+                    to="/treatments/traditional-acupuncture"
                     className="group/btn mt-1 inline-flex h-11 w-fit items-center gap-2 rounded-full bg-[#A3B899] px-6 font-display text-[15px] font-semibold text-eucalyptus-950 shadow-md shadow-[#A3B899]/25 transition-all duration-300 hover:scale-[1.02] hover:bg-[#8FA588]"
                   >
                     Explore Treatment
