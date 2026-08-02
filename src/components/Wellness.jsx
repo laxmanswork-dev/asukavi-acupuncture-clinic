@@ -21,10 +21,10 @@ const GLASS_CARD_STYLE = {
 const CARD_TRANSITION = { transitionTimingFunction: "cubic-bezier(0.22,1,0.36,1)" };
 
 const CARD_CLASS =
-  "group hidden lg:absolute lg:flex w-[212px] items-start gap-3 rounded-[20px] p-4 shadow-[0_12px_24px_-10px_rgba(0,0,0,0.5)] transition-[transform,border-color,backdrop-filter] duration-500 hover:-translate-y-1.5 hover:scale-[1.02] hover:border-[#7ED9A8]/60 hover:backdrop-blur-[20px]";
+  "group hidden lg:absolute lg:flex w-[212px] h-[128px] flex-col justify-end overflow-hidden rounded-[20px] shadow-[0_12px_24px_-10px_rgba(0,0,0,0.5)] transition-[transform,border-color,backdrop-filter] duration-500 hover:-translate-y-1.5 hover:scale-[1.02] hover:border-[#7ED9A8]/60 hover:backdrop-blur-[20px]";
 
 const MOBILE_CARD_CLASS =
-  "flex items-start gap-3 rounded-[18px] p-4 lg:hidden";
+  "relative flex h-[140px] flex-col justify-end overflow-hidden rounded-[18px] lg:hidden";
 
 const wellnessItems = [
   {
@@ -157,21 +157,23 @@ export default function Wellness() {
                 <div
                   key={label}
                   className={`${CARD_CLASS} ${position}`}
-                  style={{ ...GLASS_CARD_STYLE, ...CARD_TRANSITION }}
+                  style={{ border: GLASS_CARD_STYLE.border, ...CARD_TRANSITION }}
                 >
-                  <span className="relative h-10 w-10 flex-none overflow-hidden rounded-full border border-[#7ED9A8]/40">
-                    <img
-                      src={image}
-                      alt=""
-                      aria-hidden="true"
-                      className="h-full w-full object-cover"
-                    />
-                  </span>
-                  <HealReveal delay={index * 120} className="min-w-0">
+                  <img
+                    src={image}
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/92 via-black/45 to-black/5"
+                  />
+                  <HealReveal delay={index * 120} className="relative z-10 min-w-0 p-3.5">
                     <p className="font-display text-[15px] font-semibold leading-snug text-cream-50">
                       {label}
                     </p>
-                    <p className="mt-1 font-body text-[12.5px] leading-snug text-[#E8ECEF]/75">
+                    <p className="mt-1 font-body text-[12.5px] leading-snug text-[#E8ECEF]/85">
                       {description}
                     </p>
                   </HealReveal>
@@ -184,21 +186,23 @@ export default function Wellness() {
                 <div
                   key={label}
                   className={MOBILE_CARD_CLASS}
-                  style={{ ...GLASS_CARD_STYLE, ...CARD_TRANSITION }}
+                  style={{ border: GLASS_CARD_STYLE.border, ...CARD_TRANSITION }}
                 >
-                  <span className="relative h-9 w-9 flex-none overflow-hidden rounded-full border border-[#7ED9A8]/40">
-                    <img
-                      src={image}
-                      alt=""
-                      aria-hidden="true"
-                      className="h-full w-full object-cover"
-                    />
-                  </span>
-                  <HealReveal delay={index * 120} className="min-w-0">
+                  <img
+                    src={image}
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/92 via-black/45 to-black/5"
+                  />
+                  <HealReveal delay={index * 120} className="relative z-10 min-w-0 p-4">
                     <p className="font-display text-sm font-semibold leading-snug text-cream-50">
                       {label}
                     </p>
-                    <p className="mt-0.5 font-body text-xs leading-snug text-[#E8ECEF]/75">
+                    <p className="mt-0.5 font-body text-xs leading-snug text-[#E8ECEF]/85">
                       {description}
                     </p>
                   </HealReveal>
