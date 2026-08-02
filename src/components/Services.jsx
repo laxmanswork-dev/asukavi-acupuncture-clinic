@@ -113,7 +113,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative overflow-hidden border-t border-cream-50/12 lg:h-[calc(100svh-5.5rem+90px)]"
+      className="relative overflow-hidden border-t border-cream-50/12 lg:h-[calc(100svh-5.5rem+170px)]"
     >
       <video
         aria-hidden="true"
