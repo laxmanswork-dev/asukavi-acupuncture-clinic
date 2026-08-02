@@ -1,4 +1,3 @@
-import { ArrowRight } from "lucide-react";
 import FadeUp from "./FadeUp";
 import aboutVideo from "../assets/tiru.mp4";
 
@@ -75,17 +74,6 @@ export default function About() {
             thoughtfully personalized to restore balance and support your
             body&rsquo;s natural healing process.
           </p>
-
-          <a
-            href="#services"
-            className="group mt-6 inline-flex items-center gap-2 rounded-tl-2xl rounded-bl-2xl rounded-br-2xl rounded-tr-sm border border-[#A8D5BA]/30 bg-white/5 px-5 py-2.5 font-display text-sm font-semibold text-[#A8D5BA] transition-all duration-300 ease-in-out hover:border-[#A8D5BA]/60 hover:bg-white/10 hover:text-cream-50"
-          >
-            Explore Our Diagnostic Method
-            <ArrowRight
-              size={16}
-              className="flex-none transition-transform duration-300 ease-in-out group-hover:translate-x-1"
-            />
-          </a>
         </FadeUp>
 
         <div
