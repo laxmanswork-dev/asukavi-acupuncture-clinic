@@ -1,5 +1,6 @@
 import { CheckIcon } from "./icons";
 import FadeUp from "./FadeUp";
+import { NeedleUnderline } from "./motifs";
 import doctorPhoto from "../assets/doctor.png";
 import aboutVideo from "../assets/about.mp4";
 
@@ -24,7 +25,7 @@ export default function Spotlight() {
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-eucalyptus-950/80"
+        className="absolute inset-0 bg-eucalyptus-950/75"
       />
 
       <div className="relative mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
@@ -42,6 +43,10 @@ export default function Spotlight() {
             </span>{" "}
             Years of Clinical Mastery
           </h2>
+          <NeedleUnderline
+            aria-hidden="true"
+            className="mb-6 h-4 w-32 text-gold-400/80"
+          />
           <p className="mb-6 max-w-lg font-body text-base leading-relaxed text-[#E8ECEF]">
             Founded in 1998, Asukavi Acupuncture Clinic is led by Dr. Asukavi
             Navaneethakrishnan. Over the last 25+ years, he has helped

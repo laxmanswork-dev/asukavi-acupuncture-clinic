@@ -9,6 +9,7 @@ import {
 } from "./icons";
 import FadeUp from "./FadeUp";
 import HealReveal from "./HealReveal";
+import { NeedleUnderline } from "./motifs";
 import relaxImg from "../assets/add.png";
 import wellnessVideo from "../assets/well.mp4";
 
@@ -76,7 +77,7 @@ export default function Wellness() {
         playsInline
         src={wellnessVideo}
       />
-      <div aria-hidden="true" className="absolute inset-0 bg-eucalyptus-950/70" />
+      <div aria-hidden="true" className="absolute inset-0 bg-eucalyptus-950/75" />
       <div
         aria-hidden="true"
         className="absolute inset-0"
@@ -106,6 +107,10 @@ export default function Wellness() {
                 <br />
                 Live Better.
               </h2>
+              <NeedleUnderline
+                aria-hidden="true"
+                className="mt-4 h-4 w-32 text-gold-400/80"
+              />
               <p className="mt-6 max-w-sm font-body text-base leading-relaxed text-[#E8ECEF] lg:text-lg">
                 Acupuncture supports your body&rsquo;s natural balance,
                 helping improve physical comfort, emotional wellbeing, and

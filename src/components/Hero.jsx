@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Clock, Target } from "lucide-react";
 import { useGooglePlaces } from "../hooks/useGooglePlaces";
 import { useClinicStatus } from "../hooks/useClinicStatus";
+import { NeedleUnderline } from "./motifs";
 import warmVideo from "../assets/warm.mp4";
 
 function GoogleGIcon({ size = 20, className }) {
@@ -92,6 +93,12 @@ export default function Hero() {
                 <span style={{ fontStyle: "italic" }}>True Relief.</span>
               </span>
             </h1>
+
+            <NeedleUnderline
+              aria-hidden="true"
+              className="hero-reveal mt-4 h-4 w-32 text-gold-400/80 sm:mt-5"
+              style={{ animationDelay: "0.18s" }}
+            />
 
             <div className="mt-6 flex flex-col items-start sm:mt-7 lg:mt-8">
               <p

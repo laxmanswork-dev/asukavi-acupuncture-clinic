@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRightIcon } from "./icons";
+import { NeedleUnderline } from "./motifs";
 import traditionalImg from "../assets/services/acu.png";
 import earImg from "../assets/services/ear.png";
 import cuppingImg from "../assets/services/cup.png";
@@ -123,7 +124,7 @@ export default function Services() {
         playsInline
         src={servicesVideo}
       />
-      <div aria-hidden="true" className="absolute inset-0 bg-eucalyptus-950/60" />
+      <div aria-hidden="true" className="absolute inset-0 bg-eucalyptus-950/75" />
       <div
         aria-hidden="true"
         className="absolute inset-0"
@@ -159,6 +160,10 @@ export default function Services() {
           >
             Traditional Healing. Thoughtfully Personalized.
           </h2>
+          <NeedleUnderline
+            aria-hidden="true"
+            className="mx-auto mt-2 h-3.5 w-28 text-gold-400/80"
+          />
         </motion.div>
 
         <motion.div

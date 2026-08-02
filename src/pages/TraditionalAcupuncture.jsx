@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRightIcon } from "../components/icons";
 import FadeUp from "../components/FadeUp";
+import { NeedleUnderline } from "../components/motifs";
 import servicesVideo from "../assets/ser.mp4";
 
 const modalities = [
@@ -95,11 +96,15 @@ export default function TraditionalAcupuncture() {
               OUR SIGNATURE TREATMENT
             </p>
             <h1
-              className="mb-6 text-5xl font-bold leading-tight tracking-tight text-cream-50 lg:text-6xl"
+              className="text-5xl font-bold leading-tight tracking-tight text-cream-50 lg:text-6xl"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               Traditional Acupuncture
             </h1>
+            <NeedleUnderline
+              aria-hidden="true"
+              className="mx-auto mt-6 mb-6 h-4 w-32 text-gold-400/80"
+            />
             <p className="mx-auto max-w-2xl font-body text-base leading-relaxed text-[#E8ECEF] lg:text-lg">
               Fine-needle therapy designed to restore energy flow, relieve
               pain, and support your body&rsquo;s natural healing.
@@ -119,7 +124,7 @@ export default function TraditionalAcupuncture() {
           playsInline
           src={servicesVideo}
         />
-        <div aria-hidden="true" className="absolute inset-0 bg-eucalyptus-950/85" />
+        <div aria-hidden="true" className="absolute inset-0 bg-eucalyptus-950/75" />
 
         <div className="relative mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
           <FadeUp>
@@ -132,6 +137,10 @@ export default function TraditionalAcupuncture() {
             >
               Techniques &amp; Modalities We Draw On
             </h2>
+            <NeedleUnderline
+              aria-hidden="true"
+              className="mx-auto mt-4 h-4 w-32 text-gold-400/80"
+            />
             <p className="mx-auto mt-4 max-w-2xl text-center font-body text-base leading-relaxed text-[#E8ECEF]">
               Traditional Acupuncture at Asukavi is informed by a wide range
               of complementary techniques, applied selectively based on your
@@ -168,16 +177,20 @@ export default function TraditionalAcupuncture() {
           playsInline
           src={servicesVideo}
         />
-        <div aria-hidden="true" className="absolute inset-0 bg-eucalyptus-950/80" />
+        <div aria-hidden="true" className="absolute inset-0 bg-eucalyptus-950/75" />
 
         <div className="relative mx-auto max-w-2xl px-6 py-20 text-center lg:py-24">
           <FadeUp>
             <h2
-              className="mb-5 text-3xl font-bold leading-tight tracking-tight text-cream-50 sm:text-4xl"
+              className="text-3xl font-bold leading-tight tracking-tight text-cream-50 sm:text-4xl"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               Ready to Begin Your Healing Journey?
             </h2>
+            <NeedleUnderline
+              aria-hidden="true"
+              className="mx-auto mt-5 mb-8 h-4 w-32 text-gold-400/80"
+            />
             <p className="mb-8 font-body text-base leading-relaxed text-[#E8ECEF]">
               Book a personalized consultation and let us design a treatment
               plan around your specific needs.

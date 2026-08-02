@@ -19,7 +19,7 @@ export default function About() {
         src={aboutVideo}
         style={{
           opacity: 1,
-          filter: "brightness(0.2)",
+          filter: "brightness(0.185)",
           WebkitMaskImage:
             "radial-gradient(78% 78% at 50% 50%, black 55%, transparent 92%)",
           maskImage:
@@ -31,7 +31,7 @@ export default function About() {
       <div className="relative grid gap-16 lg:grid-cols-[0.52fr_auto_0.48fr] lg:items-center lg:gap-12">
         <FadeUp className="max-w-[600px]">
           <p
-            className="uppercase"
+            className="mt-1.5 uppercase"
             style={{
               fontFamily: "'Inter', sans-serif",
               fontSize: "14px",
@@ -66,7 +66,7 @@ export default function About() {
 
           <NeedleUnderline
             aria-hidden="true"
-            className="mt-3 mb-5 h-4 w-32 text-gold-400/80 sm:mt-4 sm:mb-6"
+            className="mt-3 mb-8 h-4 w-32 text-gold-400/80 sm:mt-4 sm:mb-9"
           />
 
           <p
@@ -89,7 +89,7 @@ export default function About() {
 
         <div
           aria-hidden="true"
-          className="hidden h-full w-px bg-gradient-to-b from-transparent via-cream-50/12 to-transparent lg:block lg:translate-x-8 xl:translate-x-24"
+          className="hidden h-full w-px bg-gradient-to-b from-transparent via-cream-50/24 to-transparent lg:block lg:translate-x-8 xl:translate-x-24"
         />
 
         <FadeUp delay={150} className="relative lg:translate-x-8 xl:translate-x-24">
@@ -112,10 +112,10 @@ export default function About() {
 
           <NeedleUnderline
             aria-hidden="true"
-            className="mt-6 h-4 w-28 text-gold-400/80"
+            className="mt-8 h-4 w-28 text-gold-400/80"
           />
 
-          <p className="mt-6 font-tamil text-sm font-semibold tracking-[0.15em] text-[#A8D5BA]/70">
+          <p className="mt-7 font-tamil text-sm font-semibold tracking-[0.15em] text-[#A8D5BA]/70">
             எங்களின் சிகிச்சை அணுகுமுறை
           </p>
 
