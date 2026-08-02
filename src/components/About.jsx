@@ -45,7 +45,7 @@ export default function About() {
 
           <NeedleUnderline
             aria-hidden="true"
-            className="mt-3 mb-6 h-3.5 w-20 text-gold-400/80 sm:mb-8"
+            className="mt-3 mb-6 h-2 w-20 text-gold-400/80 sm:mb-8"
           />
 
           <h2

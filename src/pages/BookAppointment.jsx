@@ -238,9 +238,13 @@ export default function BookAppointment() {
       <section className="relative overflow-hidden border-t border-cream-50/12">
         <div className="relative mx-auto max-w-4xl px-6 py-20 text-center lg:py-28">
           <FadeUp>
-            <p className="mb-5 font-display text-xs font-semibold tracking-[0.35em] text-[#A8D5BA]">
+            <p className="font-display text-xs font-semibold tracking-[0.35em] text-[#A8D5BA]">
               SCHEDULE YOUR VISIT
             </p>
+            <NeedleUnderline
+              aria-hidden="true"
+              className="mx-auto mt-3 mb-5 h-2 w-20 text-gold-400/80"
+            />
             <h1
               className="text-5xl font-bold leading-tight tracking-tight text-cream-50 lg:text-6xl"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
@@ -301,9 +305,13 @@ export default function BookAppointment() {
               {/* Left: consultation info */}
               <div className="lg:col-span-5">
                 <FadeUp>
-                  <p className="mb-4 font-display text-xs font-semibold tracking-[0.3em] text-[#A8D5BA]">
+                  <p className="font-display text-xs font-semibold tracking-[0.3em] text-[#A8D5BA]">
                     YOUR FIRST VISIT
                   </p>
+                  <NeedleUnderline
+                    aria-hidden="true"
+                    className="mt-3 mb-4 h-2 w-20 text-gold-400/80"
+                  />
                   <h2
                     className="mb-6 text-3xl font-bold leading-tight tracking-tight text-cream-50 sm:text-4xl"
                     style={{ fontFamily: "'Cormorant Garamond', serif" }}
@@ -668,9 +676,13 @@ export default function BookAppointment() {
       <section className="relative border-t border-cream-50/12">
         <div className="mx-auto max-w-3xl px-6 py-16 lg:px-10 lg:py-20">
           <FadeUp>
-            <p className="mb-4 text-center font-display text-xs font-semibold tracking-[0.3em] text-[#A8D5BA]">
+            <p className="text-center font-display text-xs font-semibold tracking-[0.3em] text-[#A8D5BA]">
               FREQUENTLY ASKED
             </p>
+            <NeedleUnderline
+              aria-hidden="true"
+              className="mx-auto mt-3 mb-4 h-2 w-20 text-gold-400/80"
+            />
             <h2
               className="text-center text-3xl font-bold text-cream-50 sm:text-4xl"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}

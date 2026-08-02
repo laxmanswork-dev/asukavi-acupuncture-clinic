@@ -148,6 +148,10 @@ export default function Services() {
           >
             OUR SERVICES
           </p>
+          <NeedleUnderline
+            aria-hidden="true"
+            className="mx-auto mt-2 h-2 w-16 text-gold-400/80"
+          />
           <h2
             className="mt-2 text-cream-50 lg:whitespace-nowrap"
             style={{

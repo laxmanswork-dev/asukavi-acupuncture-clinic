@@ -31,14 +31,18 @@ export default function Spotlight() {
       <div className="relative mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
       <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
         <FadeUp className="lg:col-span-7">
-          <p className="mb-4 font-display text-sm font-semibold tracking-[0.3em] text-[#A8D5BA]">
+          <p className="font-display text-base font-semibold tracking-[0.3em] text-[#A8D5BA]">
             MEET YOUR SPECIALIST &middot; TIRUNELVELI
           </p>
+          <NeedleUnderline
+            aria-hidden="true"
+            className="mt-3 mb-5 h-2 w-20 text-gold-400/80"
+          />
           <h2
             className="mb-6 text-4xl font-bold leading-tight tracking-tight text-cream-50 lg:text-5xl"
             style={{ fontFamily: "'Cormorant Garamond', serif" }}
           >
-            <span style={{ fontFamily: "'League Spartan', sans-serif" }}>
+            <span style={{ fontFamily: "'Sora', sans-serif" }}>
               25+
             </span>{" "}
             Years of Clinical Mastery

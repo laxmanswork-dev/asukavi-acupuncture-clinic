@@ -92,9 +92,13 @@ export default function TraditionalAcupuncture() {
         />
         <div className="relative mx-auto max-w-4xl px-6 py-20 text-center lg:py-28">
           <FadeUp>
-            <p className="mb-5 font-display text-xs font-semibold tracking-[0.35em] text-[#A8D5BA]">
+            <p className="font-display text-xs font-semibold tracking-[0.35em] text-[#A8D5BA]">
               OUR SIGNATURE TREATMENT
             </p>
+            <NeedleUnderline
+              aria-hidden="true"
+              className="mx-auto mt-3 mb-5 h-2 w-20 text-gold-400/80"
+            />
             <h1
               className="text-5xl font-bold leading-tight tracking-tight text-cream-50 lg:text-6xl"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
@@ -131,6 +135,10 @@ export default function TraditionalAcupuncture() {
             <p className="text-center font-display text-xs font-semibold tracking-[0.3em] text-[#A8D5BA]">
               THE FULL DISCIPLINE
             </p>
+            <NeedleUnderline
+              aria-hidden="true"
+              className="mx-auto mt-3 h-2 w-20 text-gold-400/80"
+            />
             <h2
               className="mx-auto mt-4 max-w-2xl text-center text-3xl font-bold leading-tight tracking-tight text-cream-50 sm:text-4xl"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
