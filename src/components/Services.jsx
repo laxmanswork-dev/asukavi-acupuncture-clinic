@@ -56,18 +56,6 @@ const LIFT_CLASS =
 const FEATURED_LIFT_CLASS =
   "group h-[340px] sm:h-[264px] rounded-[28px] transition-[transform,border-color] duration-500 hover:-translate-y-2 border border-transparent hover:border-[#C0C6CC]/60";
 
-const LEARN_MORE_CLASS =
-  "group/btn mt-2 flex w-fit items-center gap-2 font-display text-base font-medium tracking-wide text-[#CFF3DD] transition-colors duration-300 hover:text-cream-50";
-
-function LearnMoreLink() {
-  return (
-    <Link to="/book-appointment" className={LEARN_MORE_CLASS}>
-      Learn More
-      <ArrowRightIcon className="h-4 w-4 transition-transform duration-300 ease-out group-hover/btn:translate-x-2" />
-    </Link>
-  );
-}
-
 const services = [
   {
     image: earImg,
@@ -113,7 +101,6 @@ function ServiceCard({ image, title, description, className = "" }) {
             >
               {description}
             </p>
-            <LearnMoreLink />
           </div>
         </div>
       </div>
