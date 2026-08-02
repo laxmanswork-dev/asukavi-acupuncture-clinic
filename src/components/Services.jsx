@@ -150,7 +150,7 @@ export default function Services() {
           </p>
           <NeedleUnderline
             aria-hidden="true"
-            className="mx-auto mt-2 h-2 w-16 text-gold-400/80"
+            className="mx-auto mt-3 h-2 w-20 text-gold-400/80"
           />
           <h2
             className="mt-2 text-cream-50 lg:whitespace-nowrap"
@@ -166,7 +166,7 @@ export default function Services() {
           </h2>
           <NeedleUnderline
             aria-hidden="true"
-            className="mx-auto mt-2 h-3.5 w-28 text-gold-400/80"
+            className="mx-auto mt-2 h-4 w-32 text-gold-400/80"
           />
         </motion.div>
 

@@ -112,7 +112,7 @@ export default function About() {
 
           <NeedleUnderline
             aria-hidden="true"
-            className="mt-8 h-4 w-28 text-gold-400/80"
+            className="mt-8 h-4 w-32 text-gold-400/80"
           />
 
           <p className="mt-7 font-tamil text-sm font-semibold tracking-[0.15em] text-[#A8D5BA]/70">
