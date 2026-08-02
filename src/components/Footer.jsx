@@ -33,7 +33,7 @@ export default function Footer() {
                   Asukavi
                 </span>
                 <span className="mt-0.5 whitespace-nowrap font-display text-[8px] font-semibold tracking-[0.1em] text-[#A8D5BA] sm:text-[0.55rem] sm:tracking-[0.3em]">
-                  ACUPUNCTURE CLINIC
+                  ACUPUNCTURE CENTRE
                 </span>
               </span>
             </div>

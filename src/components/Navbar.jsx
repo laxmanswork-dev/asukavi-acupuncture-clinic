@@ -89,7 +89,7 @@ export default function Navbar() {
               Asukavi
             </span>
             <span className="mt-1 whitespace-nowrap font-display text-[8px] font-semibold tracking-[0.1em] text-[#A8D5BA] sm:text-xs sm:tracking-[0.3em]">
-              ACUPUNCTURE CLINIC
+              ACUPUNCTURE CENTRE
             </span>
           </span>
         </a>
