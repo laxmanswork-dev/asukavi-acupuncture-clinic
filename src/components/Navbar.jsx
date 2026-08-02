@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowRight, Target } from "lucide-react";
 import { ChevronDownIcon, CloseIcon, MenuIcon } from "./icons";
-import { LaurelMark } from "./motifs";
+import logo from "../assets/logo.png";
 
 const navLinks = [
   { label: "Home", href: "#home", current: true },
@@ -83,7 +83,11 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-cream-50/10 bg-eucalyptus-950/90 shadow-sm shadow-black/20 backdrop-blur-md">
       <nav className="flex items-center justify-between px-4 py-4 sm:px-6 sm:py-5 xl:px-16">
         <a href={isHome ? "#home" : "/"} className="flex min-w-0 items-center gap-2 sm:gap-3">
-          <LaurelMark className="h-9 w-9 flex-none text-[#CDEFEA] sm:h-11 sm:w-11" />
+          <img
+            src={logo}
+            alt="Asukavi Acupuncture Centre"
+            className="h-9 w-9 flex-none rounded-full object-cover sm:h-11 sm:w-11"
+          />
           <span className="flex min-w-0 flex-col items-center leading-none sm:items-start">
             <span className="font-script text-2xl font-semibold text-cream-50 sm:text-3xl">
               Asukavi

@@ -11,7 +11,8 @@ import {
   TwitterIcon,
   YoutubeIcon,
 } from "./icons";
-import { LaurelMark, LeafGlyph } from "./motifs";
+import { LeafGlyph } from "./motifs";
+import logo from "../assets/logo.png";
 
 const socialLinks = [
   { icon: InstagramIcon, label: "Instagram", href: "#" },
@@ -27,7 +28,11 @@ export default function Footer() {
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1fr_0.8fr]">
           <div>
             <div className="flex items-center gap-3">
-              <LaurelMark className="h-10 w-10 flex-none text-[#CDEFEA]" />
+              <img
+                src={logo}
+                alt="Asukavi Acupuncture Centre"
+                className="h-10 w-10 flex-none rounded-full object-cover"
+              />
               <span className="flex flex-col items-center leading-none sm:items-start">
                 <span className="font-script text-xl font-semibold text-cream-50">
                   Asukavi
