@@ -24,19 +24,29 @@ const stagger = {
 
 const threeLineDesc = { maxHeight: "66px", overflow: "hidden", flexShrink: 0 };
 
-const GLASS_STYLE = {
-  backgroundColor: "rgba(18,28,24,0.72)",
-  border: "1.5px solid rgba(192,198,204,0.28)",
+const CARD_STYLE = {
+  backgroundColor: "#0F1C18",
+  border: "1.5px solid rgba(192,198,204,0.35)",
   borderRadius: "28px",
 };
 
 const CARD_CLASS =
-  "relative flex h-full min-h-0 flex-col overflow-hidden backdrop-blur-[18px] transition-[box-shadow,backdrop-filter] duration-500 group-hover:shadow-[0_24px_48px_-18px_rgba(0,0,0,0.6)] group-hover:backdrop-blur-[22px]";
+  "relative flex h-full min-h-0 flex-col overflow-hidden transition-shadow duration-500 group-hover:shadow-[0_24px_48px_-18px_rgba(0,0,0,0.6)]";
+
+const IMG_CLASS =
+  "absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]";
+
+const SCRIM = (
+  <div
+    aria-hidden="true"
+    className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/92 via-black/45 to-black/5"
+  />
+);
 
 const TOP_HIGHLIGHT = (
   <div
     aria-hidden="true"
-    className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/35 to-transparent"
+    className="pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"
   />
 );
 
@@ -44,10 +54,10 @@ const LIFT_STYLE = { transitionTimingFunction: "cubic-bezier(0.22,1,0.36,1)" };
 const LIFT_CLASS =
   "group h-[264px] rounded-[28px] transition-[transform,border-color] duration-500 hover:-translate-y-2 border border-transparent hover:border-[#C0C6CC]/60";
 const FEATURED_LIFT_CLASS =
-  "group h-auto sm:h-[264px] rounded-[28px] transition-[transform,border-color] duration-500 hover:-translate-y-2 border border-transparent hover:border-[#C0C6CC]/60";
+  "group h-[340px] sm:h-[264px] rounded-[28px] transition-[transform,border-color] duration-500 hover:-translate-y-2 border border-transparent hover:border-[#C0C6CC]/60";
 
 const LEARN_MORE_CLASS =
-  "group/btn mt-auto flex items-center justify-end gap-2 pt-3 font-display text-base font-medium tracking-wide text-[#A8D5BA] transition-colors duration-300 hover:text-[#CFF3DD]";
+  "group/btn mt-2 flex w-fit items-center gap-2 font-display text-base font-medium tracking-wide text-[#CFF3DD] transition-colors duration-300 hover:text-cream-50";
 
 function LearnMoreLink() {
   return (
@@ -64,59 +74,42 @@ const services = [
     title: "Auricular (Ear) Acupuncture",
     description:
       "Targeted ear-point therapy that supports stress relief, emotional balance, and overall wellbeing.",
-    shade: "radial-gradient(120% 100% at 0% 0%, rgba(85,152,159,0.16), transparent 60%)",
   },
   {
     image: cuppingImg,
     title: "Cupping Therapy",
     description:
       "Helps relieve muscle tension, improve circulation, and support natural recovery.",
-    shade: "radial-gradient(120% 100% at 0% 0%, rgba(47,93,80,0.18), transparent 60%)",
   },
   {
     image: moxibustionImg,
     title: "Moxibustion",
     description:
       "Gentle heat therapy that stimulates circulation and strengthens the body's natural defenses.",
-    shade: "radial-gradient(120% 100% at 0% 0%, rgba(232,177,58,0.14), transparent 60%)",
   },
   {
     image: wellnessImg,
     title: "Wellness Consultation",
     description:
       "Personalized lifestyle, nutrition, and wellness guidance tailored to your individual health goals.",
-    shade: "radial-gradient(120% 100% at 0% 0%, rgba(245,242,233,0.12), transparent 60%)",
   },
 ];
 
-function ServiceCard({ image, title, description, shade, className = "" }) {
+function ServiceCard({ image, title, description, className = "" }) {
   return (
     <motion.div variants={fadeUp} className={`min-h-0 ${className}`}>
       <div className={LIFT_CLASS} style={LIFT_STYLE}>
-        <div className={CARD_CLASS} style={GLASS_STYLE}>
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0"
-            style={{ background: shade }}
-          />
+        <div className={CARD_CLASS} style={CARD_STYLE}>
+          <img src={image} alt="" aria-hidden="true" className={IMG_CLASS} />
+          {SCRIM}
           {TOP_HIGHLIGHT}
-          <div className="flex h-full min-h-0 flex-col gap-3 p-8">
-            <div className="flex items-center gap-4">
-              <span className="relative h-20 w-20 flex-none overflow-hidden rounded-2xl border border-[#C0C6CC]/30 shadow-lg shadow-black/40">
-                <img
-                  src={image}
-                  alt=""
-                  aria-hidden="true"
-                  className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
-                />
-              </span>
-              <h3 className="min-w-0 flex-1 font-display text-[21px] font-bold leading-snug text-cream-50 transition-colors duration-500 group-hover:text-[#CFF3DD]">
-                {title}
-              </h3>
-            </div>
+          <div className="relative z-10 flex h-full min-h-0 flex-col justify-end gap-1.5 p-6">
+            <h3 className="font-display text-[21px] font-bold leading-snug text-cream-50 transition-colors duration-500 group-hover:text-[#CFF3DD]">
+              {title}
+            </h3>
             <p
               style={threeLineDesc}
-              className="font-body text-[16px] leading-snug text-[#E8ECEF]/70"
+              className="font-body text-[15px] leading-snug text-[#E8ECEF]/90"
             >
               {description}
             </p>
@@ -197,53 +190,44 @@ export default function Services() {
               <div
                 className={CARD_CLASS}
                 style={{
-                  ...GLASS_STYLE,
-                  backgroundColor: "rgba(32,48,41,0.66)",
-                  border: "2px solid rgba(192,198,204,0.55)",
+                  ...CARD_STYLE,
+                  border: "2px solid rgba(192,198,204,0.6)",
                 }}
               >
+                <img
+                  src={traditionalImg}
+                  alt=""
+                  aria-hidden="true"
+                  className={IMG_CLASS}
+                />
                 <div
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-0"
-                  style={{
-                    background:
-                      "radial-gradient(120% 100% at 0% 0%, rgba(126,217,168,0.08), transparent 60%)",
-                  }}
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/5 sm:bg-gradient-to-r sm:from-black/92 sm:via-black/55 sm:to-black/10"
                 />
                 {TOP_HIGHLIGHT}
-                <div className="flex h-full min-h-0 flex-col items-start gap-4 p-6 sm:flex-row sm:items-center sm:gap-6 sm:p-8">
-                  <span className="relative h-20 w-20 flex-none overflow-hidden rounded-2xl border border-[#C0C6CC]/40 shadow-xl shadow-black/50 sm:h-28 sm:w-28">
-                    <img
-                      src={traditionalImg}
-                      alt=""
-                      aria-hidden="true"
-                      className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
-                    />
-                  </span>
-                  <div className="flex min-w-0 flex-1 flex-col gap-3">
-                    <h3
-                      className="text-[22px] text-cream-50 transition-colors duration-500 group-hover:text-[#CFF3DD] sm:text-[30px]"
-                      style={{
-                        fontFamily: "'Cormorant Garamond', serif",
-                        fontWeight: 700,
-                        lineHeight: 1.15,
-                      }}
-                    >
-                      Traditional Acupuncture
-                    </h3>
-                    <p className="max-w-md font-body text-[16px] leading-snug text-[#E8ECEF]/75">
-                      Fine-needle therapy designed to restore energy flow,
-                      relieve pain, and support your body&rsquo;s natural
-                      healing.
-                    </p>
-                    <Link
-                      to="/book-appointment"
-                      className="group/btn mt-auto inline-flex h-11 w-fit items-center gap-2 rounded-full bg-[#A3B899] px-6 font-display text-[15px] font-semibold text-eucalyptus-950 shadow-md shadow-[#A3B899]/25 transition-all duration-300 hover:scale-[1.02] hover:bg-[#8FA588]"
-                    >
-                      Explore Treatment
-                      <ArrowRightIcon className="h-4 w-4 transition-transform duration-300 ease-out group-hover/btn:translate-x-2" />
-                    </Link>
-                  </div>
+                <div className="relative z-10 flex h-full min-h-0 flex-col justify-end gap-3 p-6 sm:max-w-md sm:justify-center sm:p-8">
+                  <h3
+                    className="text-[22px] text-cream-50 transition-colors duration-500 group-hover:text-[#CFF3DD] sm:text-[30px]"
+                    style={{
+                      fontFamily: "'Cormorant Garamond', serif",
+                      fontWeight: 700,
+                      lineHeight: 1.15,
+                    }}
+                  >
+                    Traditional Acupuncture
+                  </h3>
+                  <p className="font-body text-[16px] leading-snug text-[#E8ECEF]/90">
+                    Fine-needle therapy designed to restore energy flow,
+                    relieve pain, and support your body&rsquo;s natural
+                    healing.
+                  </p>
+                  <Link
+                    to="/book-appointment"
+                    className="group/btn mt-1 inline-flex h-11 w-fit items-center gap-2 rounded-full bg-[#A3B899] px-6 font-display text-[15px] font-semibold text-eucalyptus-950 shadow-md shadow-[#A3B899]/25 transition-all duration-300 hover:scale-[1.02] hover:bg-[#8FA588]"
+                  >
+                    Explore Treatment
+                    <ArrowRightIcon className="h-4 w-4 transition-transform duration-300 ease-out group-hover/btn:translate-x-2" />
+                  </Link>
                 </div>
               </div>
             </div>
