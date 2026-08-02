@@ -110,9 +110,9 @@ export default function Wellness() {
                 className="mt-4 text-4xl font-bold leading-tight tracking-tight text-cream-50 sm:text-5xl"
                 style={{ fontFamily: "'Cormorant Garamond', serif" }}
               >
-                Feel Better.
+                Natural Healing.
                 <br />
-                Live Better.
+                Balanced Living.
               </h2>
               <NeedleUnderline
                 aria-hidden="true"
