@@ -70,16 +70,25 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, [isHome]);
 
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const original = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = original;
+    };
+  }, [isMenuOpen]);
+
   return (
     <header className="sticky top-0 z-50 border-b border-cream-50/10 bg-eucalyptus-950/90 shadow-sm shadow-black/20 backdrop-blur-md">
-      <nav className="flex items-center justify-between px-8 py-5 xl:px-16">
-        <a href={isHome ? "#home" : "/"} className="flex items-center gap-3">
-          <LaurelMark className="h-11 w-11 flex-none text-[#CDEFEA]" />
-          <span className="flex flex-col leading-none">
-            <span className="font-script text-3xl font-semibold text-cream-50">
+      <nav className="flex items-center justify-between px-4 py-4 sm:px-6 sm:py-5 xl:px-16">
+        <a href={isHome ? "#home" : "/"} className="flex min-w-0 items-center gap-2 sm:gap-3">
+          <LaurelMark className="h-9 w-9 flex-none text-[#CDEFEA] sm:h-11 sm:w-11" />
+          <span className="flex min-w-0 flex-col leading-none">
+            <span className="font-script text-2xl font-semibold text-cream-50 sm:text-3xl">
               Asukavi
             </span>
-            <span className="mt-1 font-display text-xs font-semibold tracking-[0.3em] text-[#A8D5BA]">
+            <span className="mt-1 whitespace-nowrap font-display text-[9px] font-semibold tracking-[0.12em] text-[#A8D5BA] sm:text-xs sm:tracking-[0.3em]">
               ACUPUNCTURE CLINIC
             </span>
           </span>
@@ -147,7 +156,7 @@ export default function Navbar() {
           onClick={() => setIsMenuOpen((open) => !open)}
           aria-expanded={isMenuOpen}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-cream-50/15 text-cream-50 transition-colors duration-300 ease-in-out hover:border-[#7ED9A8] xl:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-cream-50/15 text-cream-50 transition-colors duration-300 ease-in-out hover:border-[#7ED9A8] xl:hidden"
         >
           {isMenuOpen ? (
             <CloseIcon className="h-5 w-5" />

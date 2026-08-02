@@ -213,20 +213,20 @@ export default function BookAppointment() {
 
   return (
     <div className="relative">
-      {/* Whole-page background video */}
+      {/* Background video spanning the full booking section */}
       <video
         aria-hidden="true"
-        className="fixed inset-0 -z-10 h-full w-full object-cover"
+        className="absolute inset-0 -z-10 h-full w-full object-cover"
         autoPlay
         muted
         loop
         playsInline
         src={appointmentVideo}
       />
-      <div aria-hidden="true" className="fixed inset-0 -z-10 bg-eucalyptus-950/80" />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-eucalyptus-950/80" />
       <div
         aria-hidden="true"
-        className="fixed inset-0 -z-10"
+        className="absolute inset-0 -z-10"
         style={{
           background:
             "radial-gradient(120% 90% at 50% 0%, transparent 30%, rgba(10,22,20,0.75) 100%)",

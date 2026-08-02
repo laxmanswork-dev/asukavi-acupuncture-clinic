@@ -43,6 +43,8 @@ const TOP_HIGHLIGHT = (
 const LIFT_STYLE = { transitionTimingFunction: "cubic-bezier(0.22,1,0.36,1)" };
 const LIFT_CLASS =
   "group h-[264px] rounded-[28px] transition-[transform,border-color] duration-500 hover:-translate-y-2 border border-transparent hover:border-[#C0C6CC]/60";
+const FEATURED_LIFT_CLASS =
+  "group h-auto sm:h-[264px] rounded-[28px] transition-[transform,border-color] duration-500 hover:-translate-y-2 border border-transparent hover:border-[#C0C6CC]/60";
 
 const LEARN_MORE_CLASS =
   "group/btn mt-auto flex items-center justify-end gap-2 pt-3 font-display text-base font-medium tracking-wide text-[#A8D5BA] transition-colors duration-300 hover:text-[#CFF3DD]";
@@ -191,7 +193,7 @@ export default function Services() {
               aria-hidden="true"
               className="pointer-events-none absolute -inset-2 -z-10 rounded-[32px] bg-[#C0C6CC]/8 blur-xl"
             />
-            <div className={LIFT_CLASS} style={LIFT_STYLE}>
+            <div className={FEATURED_LIFT_CLASS} style={LIFT_STYLE}>
               <div
                 className={CARD_CLASS}
                 style={{
@@ -209,8 +211,8 @@ export default function Services() {
                   }}
                 />
                 {TOP_HIGHLIGHT}
-                <div className="flex h-full min-h-0 items-center gap-6 p-8">
-                  <span className="relative h-28 w-28 flex-none overflow-hidden rounded-2xl border border-[#C0C6CC]/40 shadow-xl shadow-black/50">
+                <div className="flex h-full min-h-0 flex-col items-start gap-4 p-6 sm:flex-row sm:items-center sm:gap-6 sm:p-8">
+                  <span className="relative h-20 w-20 flex-none overflow-hidden rounded-2xl border border-[#C0C6CC]/40 shadow-xl shadow-black/50 sm:h-28 sm:w-28">
                     <img
                       src={traditionalImg}
                       alt=""
@@ -220,11 +222,10 @@ export default function Services() {
                   </span>
                   <div className="flex min-w-0 flex-1 flex-col gap-3">
                     <h3
-                      className="text-cream-50 transition-colors duration-500 group-hover:text-[#CFF3DD]"
+                      className="text-[22px] text-cream-50 transition-colors duration-500 group-hover:text-[#CFF3DD] sm:text-[30px]"
                       style={{
                         fontFamily: "'Cormorant Garamond', serif",
                         fontWeight: 700,
-                        fontSize: "30px",
                         lineHeight: 1.15,
                       }}
                     >

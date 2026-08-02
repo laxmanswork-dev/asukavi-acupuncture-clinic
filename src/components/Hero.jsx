@@ -40,7 +40,7 @@ export default function Hero() {
     <section id="home" className="relative overflow-hidden">
       <video
         aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover object-[78%_center] lg:object-center"
         autoPlay
         muted
         loop

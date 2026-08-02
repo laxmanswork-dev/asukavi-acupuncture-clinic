@@ -44,7 +44,7 @@ export default function About() {
           </p>
 
           <h2
-            className="mb-10 text-6xl sm:text-7xl lg:text-[72px]"
+            className="mb-6 text-4xl sm:mb-10 sm:text-7xl lg:text-[72px]"
             style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontWeight: 700,
@@ -55,7 +55,7 @@ export default function About() {
             }}
           >
             Traditional Wisdom,
-            <br />
+            <br className="hidden sm:block" />{" "}
             Personalized Care.
           </h2>
 
