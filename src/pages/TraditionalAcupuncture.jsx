@@ -108,7 +108,7 @@ export default function TraditionalAcupuncture() {
         </div>
       </section>
 
-      {/* Body copy */}
+      {/* Modalities grid */}
       <section className="relative overflow-hidden border-t border-cream-50/12">
         <video
           aria-hidden="true"
@@ -121,32 +121,6 @@ export default function TraditionalAcupuncture() {
         />
         <div aria-hidden="true" className="absolute inset-0 bg-eucalyptus-950/85" />
 
-        <div className="relative mx-auto max-w-4xl px-6 py-16 lg:px-10 lg:py-20">
-          <FadeUp>
-            <p className="font-display text-xs font-semibold tracking-[0.3em] text-[#A8D5BA]">
-              HOW IT WORKS
-            </p>
-            <h2
-              className="mt-4 text-3xl font-bold leading-tight tracking-tight text-cream-50 sm:text-4xl"
-              style={{ fontFamily: "'Cormorant Garamond', serif" }}
-            >
-              A Root-Cause Approach to Healing
-            </h2>
-            <p className="mt-5 max-w-2xl font-body text-base leading-relaxed text-[#E8ECEF]">
-              Traditional Acupuncture uses ultra-fine, sterile needles placed
-              at precise points along the body&rsquo;s meridians to release
-              blocked energy, ease pain, and encourage the body&rsquo;s own
-              healing response. Every session at Asukavi begins with a
-              careful pulse and lifestyle assessment, so your treatment plan
-              is shaped around your specific concerns &mdash; not a generic
-              protocol.
-            </p>
-          </FadeUp>
-        </div>
-      </section>
-
-      {/* Modalities grid */}
-      <section className="relative overflow-hidden border-t border-cream-50/12 bg-eucalyptus-950">
         <div className="relative mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
           <FadeUp>
             <p className="text-center font-display text-xs font-semibold tracking-[0.3em] text-[#A8D5BA]">
