@@ -1,17 +1,15 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Target } from "lucide-react";
-import {
-  AcuPointIcon,
-  BalanceScaleIcon,
-  BreathRipplesIcon,
-  ShieldCheckIcon,
-  SleepCrescentIcon,
-} from "./icons";
 import FadeUp from "./FadeUp";
 import HealReveal from "./HealReveal";
 import { NeedleUnderline } from "./motifs";
 import relaxImg from "../assets/add.png";
 import wellnessVideo from "../assets/well.mp4";
+import stressImg from "../assets/services/stress.png";
+import sleepImg from "../assets/services/sleep.png";
+import painImg from "../assets/services/pain.png";
+import balanceImg from "../assets/services/balance.png";
+import immuneImg from "../assets/services/immune.png";
 
 const GLASS_CARD_STYLE = {
   backgroundColor: "rgba(16,26,22,0.6)",
@@ -30,31 +28,31 @@ const MOBILE_CARD_CLASS =
 
 const wellnessItems = [
   {
-    icon: BreathRipplesIcon,
+    image: stressImg,
     label: "Stress Relief",
     description: "Reduces everyday stress and promotes relaxation.",
     position: "left-0 top-2 -translate-x-1/4",
   },
   {
-    icon: SleepCrescentIcon,
+    image: sleepImg,
     label: "Better Sleep",
     description: "Supports deeper, more restorative sleep.",
     position: "right-0 top-10 translate-x-1/4",
   },
   {
-    icon: AcuPointIcon,
+    image: painImg,
     label: "Pain Relief",
     description: "Helps relieve discomfort and improve mobility.",
     position: "left-0 top-1/2 -translate-x-[30%] -translate-y-1/2",
   },
   {
-    icon: BalanceScaleIcon,
+    image: balanceImg,
     label: "Emotional Balance",
     description: "Encourages calmness and emotional wellbeing.",
     position: "right-0 bottom-16 translate-x-[30%]",
   },
   {
-    icon: ShieldCheckIcon,
+    image: immuneImg,
     label: "Immune Support",
     description: "Supports the body's natural healing response.",
     position: "left-1/2 bottom-0 -translate-x-1/2 translate-y-1/3",
@@ -155,19 +153,19 @@ export default function Wellness() {
                 <div className="absolute inset-0 bg-gradient-to-t from-eucalyptus-950/50 via-transparent to-transparent" />
               </div>
 
-              {wellnessItems.map(({ icon: Icon, label, description, position }, index) => (
+              {wellnessItems.map(({ image, label, description, position }, index) => (
                 <div
                   key={label}
                   className={`${CARD_CLASS} ${position}`}
                   style={{ ...GLASS_CARD_STYLE, ...CARD_TRANSITION }}
                 >
-                  <span className="relative flex h-10 w-10 flex-none items-center justify-center rounded-full border border-[#7ED9A8]/40 bg-white/5">
-                    <span
+                  <span className="relative h-10 w-10 flex-none overflow-hidden rounded-full border border-[#7ED9A8]/40">
+                    <img
+                      src={image}
+                      alt=""
                       aria-hidden="true"
-                      className="heal-pulse-ring absolute inset-0 rounded-full border border-[#7ED9A8]/50"
-                      style={{ animationDelay: `${index * 300}ms` }}
+                      className="h-full w-full object-cover"
                     />
-                    <Icon className="relative h-5 w-5 text-[#CDEFEA]" />
                   </span>
                   <HealReveal delay={index * 120} className="min-w-0">
                     <p className="font-display text-[15px] font-semibold leading-snug text-cream-50">
@@ -182,19 +180,19 @@ export default function Wellness() {
             </div>
 
             <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:hidden">
-              {wellnessItems.map(({ icon: Icon, label, description }, index) => (
+              {wellnessItems.map(({ image, label, description }, index) => (
                 <div
                   key={label}
                   className={MOBILE_CARD_CLASS}
                   style={{ ...GLASS_CARD_STYLE, ...CARD_TRANSITION }}
                 >
-                  <span className="relative flex h-9 w-9 flex-none items-center justify-center rounded-full border border-[#7ED9A8]/40 bg-white/5">
-                    <span
+                  <span className="relative h-9 w-9 flex-none overflow-hidden rounded-full border border-[#7ED9A8]/40">
+                    <img
+                      src={image}
+                      alt=""
                       aria-hidden="true"
-                      className="heal-pulse-ring absolute inset-0 rounded-full border border-[#7ED9A8]/50"
-                      style={{ animationDelay: `${index * 300}ms` }}
+                      className="h-full w-full object-cover"
                     />
-                    <Icon className="relative h-4 w-4 text-[#CDEFEA]" />
                   </span>
                   <HealReveal delay={index * 120} className="min-w-0">
                     <p className="font-display text-sm font-semibold leading-snug text-cream-50">
