@@ -28,7 +28,7 @@ export function LaurelMark({ className = "" }) {
   );
 }
 
-export function NeedleUnderline({ className = "" }) {
+export function NeedleUnderline({ className = "", ...props }) {
   const heights = [4, 8, 5.5, 10, 3.5, 7, 5, 9, 4.5, 6.5];
   const barcodeTicks = Array.from({ length: 92 }, (_, i) => ({
     x: 13 + i * 2.28,
@@ -41,6 +41,7 @@ export function NeedleUnderline({ className = "" }) {
       className={className}
       fill="none"
       preserveAspectRatio="none"
+      {...props}
     >
       {/* eyelet at the very tip of the handle */}
       <circle

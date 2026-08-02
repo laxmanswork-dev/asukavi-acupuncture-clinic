@@ -1,4 +1,5 @@
 import FadeUp from "./FadeUp";
+import { NeedleUnderline } from "./motifs";
 import aboutVideo from "../assets/tiru.mp4";
 
 export default function About() {
@@ -30,7 +31,7 @@ export default function About() {
       <div className="relative grid gap-16 lg:grid-cols-[0.52fr_auto_0.48fr] lg:items-center lg:gap-12">
         <FadeUp className="max-w-[600px]">
           <p
-            className="mb-8 uppercase"
+            className="uppercase"
             style={{
               fontFamily: "'Inter', sans-serif",
               fontSize: "14px",
@@ -42,8 +43,13 @@ export default function About() {
             OUR APPROACH
           </p>
 
+          <NeedleUnderline
+            aria-hidden="true"
+            className="mt-3 mb-6 h-3.5 w-20 text-gold-400/80 sm:mb-8"
+          />
+
           <h2
-            className="mb-6 text-4xl sm:mb-10 sm:text-7xl lg:text-[72px]"
+            className="text-4xl sm:text-7xl lg:text-[72px]"
             style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontWeight: 700,
@@ -57,6 +63,11 @@ export default function About() {
             <br className="hidden sm:block" />{" "}
             Personalized Care.
           </h2>
+
+          <NeedleUnderline
+            aria-hidden="true"
+            className="mt-3 mb-5 h-4 w-32 text-gold-400/80 sm:mt-4 sm:mb-6"
+          />
 
           <p
             style={{
@@ -99,7 +110,10 @@ export default function About() {
             வாய்நாடி வாய்ப்பச் செயல்.
           </p>
 
-          <div className="mt-6 h-px w-14 bg-gradient-to-r from-[#7ED9A8]/50 to-transparent" />
+          <NeedleUnderline
+            aria-hidden="true"
+            className="mt-6 h-4 w-28 text-gold-400/80"
+          />
 
           <p className="mt-6 font-tamil text-sm font-semibold tracking-[0.15em] text-[#A8D5BA]/70">
             எங்களின் சிகிச்சை அணுகுமுறை
