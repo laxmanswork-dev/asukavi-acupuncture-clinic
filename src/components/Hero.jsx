@@ -40,7 +40,7 @@ export default function Hero() {
     <section id="home" className="relative overflow-hidden">
       <video
         aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover object-[78%_center] lg:object-center"
+        className="absolute inset-0 h-full w-full object-cover object-[74%_center] lg:object-center"
         autoPlay
         muted
         loop
@@ -68,7 +68,7 @@ export default function Hero() {
               style={{ color: "#f5f2eb", animationDelay: "0.05s" }}
             >
               <span
-                className="block text-4xl sm:text-7xl lg:text-[88px]"
+                className="block text-[2.5rem] sm:text-7xl lg:text-[88px]"
                 style={{
                   fontFamily: "'Cormorant Garamond', serif",
                   fontWeight: 600,
@@ -79,7 +79,7 @@ export default function Hero() {
                 Heal the Root.
               </span>
               <span
-                className="mt-1 block text-4xl sm:text-8xl lg:text-[104px]"
+                className="mt-1 block text-[2.5rem] sm:text-8xl lg:text-[104px]"
                 style={{
                   fontFamily: "'Cormorant Garamond', serif",
                   fontWeight: 600,

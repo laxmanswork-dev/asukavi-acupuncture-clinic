@@ -84,11 +84,11 @@ export default function Navbar() {
       <nav className="flex items-center justify-between px-4 py-4 sm:px-6 sm:py-5 xl:px-16">
         <a href={isHome ? "#home" : "/"} className="flex min-w-0 items-center gap-2 sm:gap-3">
           <LaurelMark className="h-9 w-9 flex-none text-[#CDEFEA] sm:h-11 sm:w-11" />
-          <span className="flex min-w-0 flex-col leading-none">
+          <span className="flex min-w-0 flex-col items-center leading-none sm:items-start">
             <span className="font-script text-2xl font-semibold text-cream-50 sm:text-3xl">
               Asukavi
             </span>
-            <span className="mt-1 whitespace-nowrap font-display text-[9px] font-semibold tracking-[0.12em] text-[#A8D5BA] sm:text-xs sm:tracking-[0.3em]">
+            <span className="mt-1 whitespace-nowrap font-display text-[8px] font-semibold tracking-[0.1em] text-[#A8D5BA] sm:text-xs sm:tracking-[0.3em]">
               ACUPUNCTURE CLINIC
             </span>
           </span>

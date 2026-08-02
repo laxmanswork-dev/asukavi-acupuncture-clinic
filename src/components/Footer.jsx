@@ -28,11 +28,11 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3">
               <LaurelMark className="h-10 w-10 flex-none text-[#CDEFEA]" />
-              <span className="flex flex-col leading-none">
+              <span className="flex flex-col items-center leading-none sm:items-start">
                 <span className="font-script text-xl font-semibold text-cream-50">
                   Asukavi
                 </span>
-                <span className="mt-0.5 font-display text-[0.55rem] font-semibold tracking-[0.3em] text-[#A8D5BA]">
+                <span className="mt-0.5 whitespace-nowrap font-display text-[8px] font-semibold tracking-[0.1em] text-[#A8D5BA] sm:text-[0.55rem] sm:tracking-[0.3em]">
                   ACUPUNCTURE CLINIC
                 </span>
               </span>
