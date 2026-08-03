@@ -11,38 +11,49 @@ import {
 import FadeUp from "./FadeUp";
 import relaxImg from "../assets/add.png";
 import wellnessVideo from "../assets/well.mp4";
+import stressImg from "../assets/services/stress.png";
+import sleepImg from "../assets/services/sleep.png";
+import painImg from "../assets/services/pain.png";
+import balanceImg from "../assets/services/balance.png";
+import immuneImg from "../assets/services/immune.png";
 
 const wellnessItems = [
   {
     icon: BreathRipplesIcon,
     label: "Stress Relief",
     description: "Reduces everyday stress and promotes relaxation.",
+    image: stressImg,
   },
   {
     icon: SleepCrescentIcon,
     label: "Better Sleep",
     description: "Supports deeper, more restorative sleep.",
+    image: sleepImg,
   },
   {
     icon: AcuPointIcon,
     label: "Pain Relief",
     description: "Helps relieve discomfort and improve mobility.",
+    image: painImg,
   },
   {
     icon: BalanceScaleIcon,
     label: "Emotional Balance",
     description: "Encourages calmness and emotional wellbeing.",
+    image: balanceImg,
   },
   {
     icon: ShieldCheckIcon,
     label: "Immune Support",
     description: "Supports the body's natural healing response.",
+    image: immuneImg,
   },
 ];
 
 export default function Wellness() {
   const [activeIndex, setActiveIndex] = useState(null);
   const active = activeIndex === null ? null : wellnessItems[activeIndex];
+  const displayImage = active?.image || relaxImg;
   const displayCaption = active
     ? { label: active.label, description: active.description }
     : null;
@@ -128,17 +139,35 @@ export default function Wellness() {
                 }}
               />
               <div className="relative h-full w-full overflow-hidden rounded-[28px] border border-[#C0C6CC]/25 shadow-2xl shadow-black/50 transition-[border-color] duration-300 hover:border-[#7ED9A8]/40">
-                <img
-                  src={relaxImg}
-                  alt="Relaxed patient after an acupuncture treatment at Asukavi Acupuncture Clinic"
-                  className="absolute inset-0 h-full w-full object-cover motion-reduce:transition-none"
-                  style={{
-                    transform: active ? "scale(1.03)" : "scale(1)",
-                    filter: active ? "brightness(1.03)" : "brightness(1)",
-                    transition:
-                      "transform 400ms cubic-bezier(0.22,1,0.36,1), filter 300ms ease-out",
-                  }}
-                />
+                {[{ image: relaxImg, key: "base" }, ...wellnessItems.map((item) => ({ image: item.image, key: item.label }))].map(
+                  (entry, i) => {
+                    const isBase = i === 0;
+                    const isVisible = isBase
+                      ? activeIndex === null
+                      : activeIndex === i - 1;
+                    return (
+                      <img
+                        key={entry.key}
+                        src={entry.image}
+                        alt={
+                          isBase
+                            ? "Relaxed patient after an acupuncture treatment at Asukavi Acupuncture Clinic"
+                            : ""
+                        }
+                        aria-hidden={isBase ? undefined : true}
+                        className="absolute inset-0 h-full w-full object-cover motion-reduce:transition-none"
+                        style={{
+                          objectPosition: "50% 30%",
+                          opacity: isVisible ? 1 : 0,
+                          transform: isVisible ? "scale(1)" : "scale(1.03)",
+                          transition:
+                            "opacity 400ms cubic-bezier(0.22,1,0.36,1), transform 400ms cubic-bezier(0.22,1,0.36,1), filter 300ms ease-out",
+                          filter: isVisible ? "brightness(1.03)" : "brightness(1)",
+                        }}
+                      />
+                    );
+                  }
+                )}
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-eucalyptus-950/55 via-transparent to-transparent" />
 
                 {displayCaption && (
