@@ -9,7 +9,6 @@ import {
   SleepCrescentIcon,
 } from "./icons";
 import FadeUp from "./FadeUp";
-import relaxImg from "../assets/add.png";
 import wellnessVideo from "../assets/well.mp4";
 import stressImg from "../assets/services/stress.png";
 import sleepImg from "../assets/services/sleep.png";
@@ -51,12 +50,9 @@ const wellnessItems = [
 ];
 
 export default function Wellness() {
-  const [activeIndex, setActiveIndex] = useState(null);
-  const active = activeIndex === null ? null : wellnessItems[activeIndex];
-  const displayImage = active?.image || relaxImg;
-  const displayCaption = active
-    ? { label: active.label, description: active.description }
-    : null;
+  const [activeIndex, setActiveIndex] = useState(0);
+  const active = wellnessItems[activeIndex];
+  const displayCaption = { label: active.label, description: active.description };
 
   return (
     <section
@@ -135,39 +131,30 @@ export default function Wellness() {
                 className="pointer-events-none absolute -inset-8 -z-10 rounded-full bg-[#7ED9A8]/16 blur-3xl motion-reduce:transition-none"
                 style={{
                   transition: "opacity 400ms ease-out",
-                  opacity: active ? 0.9 : 0.6,
+                  opacity: 0.75,
                 }}
               />
               <div className="relative h-full w-full overflow-hidden rounded-[28px] border border-[#C0C6CC]/25 shadow-2xl shadow-black/50 transition-[border-color] duration-300 hover:border-[#7ED9A8]/40">
-                {[{ image: relaxImg, key: "base" }, ...wellnessItems.map((item) => ({ image: item.image, key: item.label }))].map(
-                  (entry, i) => {
-                    const isBase = i === 0;
-                    const isVisible = isBase
-                      ? activeIndex === null
-                      : activeIndex === i - 1;
-                    return (
-                      <img
-                        key={entry.key}
-                        src={entry.image}
-                        alt={
-                          isBase
-                            ? "Relaxed patient after an acupuncture treatment at Asukavi Acupuncture Clinic"
-                            : ""
-                        }
-                        aria-hidden={isBase ? undefined : true}
-                        className="absolute inset-0 h-full w-full object-cover motion-reduce:transition-none"
-                        style={{
-                          objectPosition: "50% 30%",
-                          opacity: isVisible ? 1 : 0,
-                          transform: isVisible ? "scale(1)" : "scale(1.03)",
-                          transition:
-                            "opacity 400ms cubic-bezier(0.22,1,0.36,1), transform 400ms cubic-bezier(0.22,1,0.36,1), filter 300ms ease-out",
-                          filter: isVisible ? "brightness(1.03)" : "brightness(1)",
-                        }}
-                      />
-                    );
-                  }
-                )}
+                {wellnessItems.map((item, i) => {
+                  const isVisible = activeIndex === i;
+                  return (
+                    <img
+                      key={item.label}
+                      src={item.image}
+                      alt={isVisible ? item.label : ""}
+                      aria-hidden={isVisible ? undefined : true}
+                      className="absolute inset-0 h-full w-full object-cover motion-reduce:transition-none"
+                      style={{
+                        objectPosition: "50% 30%",
+                        opacity: isVisible ? 1 : 0,
+                        transform: isVisible ? "scale(1)" : "scale(1.03)",
+                        transition:
+                          "opacity 400ms cubic-bezier(0.22,1,0.36,1), transform 400ms cubic-bezier(0.22,1,0.36,1), filter 300ms ease-out",
+                        filter: isVisible ? "brightness(1.03)" : "brightness(1)",
+                      }}
+                    />
+                  );
+                })}
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-eucalyptus-950/55 via-transparent to-transparent" />
 
                 {displayCaption && (
@@ -204,13 +191,9 @@ export default function Wellness() {
                 type="button"
                 role="tab"
                 aria-selected={isActive}
-                onClick={() =>
-                  setActiveIndex((current) => (current === index ? null : index))
-                }
+                onClick={() => setActiveIndex(index)}
                 onMouseEnter={() => setActiveIndex(index)}
-                onMouseLeave={() => setActiveIndex(null)}
                 onFocus={() => setActiveIndex(index)}
-                onBlur={() => setActiveIndex(null)}
                 className="group flex min-h-[48px] flex-col items-center gap-2.5 rounded-2xl p-1.5 text-center transition-transform duration-300 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7ED9A8]/70"
               >
                 <span
