@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Target } from "lucide-react";
 import {
@@ -8,19 +9,55 @@ import {
   SleepCrescentIcon,
 } from "./icons";
 import FadeUp from "./FadeUp";
-import RiseIn from "./RiseIn";
 import relaxImg from "../assets/add.png";
 import wellnessVideo from "../assets/well.mp4";
+import stressImg from "../assets/services/stress.png";
+import sleepImg from "../assets/services/sleep.png";
+import painImg from "../assets/services/pain.png";
+import balanceImg from "../assets/services/balance.png";
+import immuneImg from "../assets/services/immune.png";
 
 const wellnessItems = [
-  { icon: BreathRipplesIcon, label: "Stress Relief" },
-  { icon: SleepCrescentIcon, label: "Better Sleep" },
-  { icon: AcuPointIcon, label: "Pain Relief" },
-  { icon: BalanceScaleIcon, label: "Emotional Balance" },
-  { icon: ShieldCheckIcon, label: "Immune Support" },
+  {
+    icon: BreathRipplesIcon,
+    label: "Stress Relief",
+    description: "Reduces everyday stress and promotes relaxation.",
+    image: stressImg,
+  },
+  {
+    icon: SleepCrescentIcon,
+    label: "Better Sleep",
+    description: "Supports deeper, more restorative sleep.",
+    image: sleepImg,
+  },
+  {
+    icon: AcuPointIcon,
+    label: "Pain Relief",
+    description: "Helps relieve discomfort and improve mobility.",
+    image: painImg,
+  },
+  {
+    icon: BalanceScaleIcon,
+    label: "Emotional Balance",
+    description: "Encourages calmness and emotional wellbeing.",
+    image: balanceImg,
+  },
+  {
+    icon: ShieldCheckIcon,
+    label: "Immune Support",
+    description: "Supports the body's natural healing response.",
+    image: immuneImg,
+  },
 ];
 
 export default function Wellness() {
+  const [activeIndex, setActiveIndex] = useState(null);
+  const active = activeIndex === null ? null : wellnessItems[activeIndex];
+  const displayImage = active?.image || relaxImg;
+  const displayCaption = active
+    ? { label: active.label, description: active.description }
+    : null;
+
   return (
     <section
       id="wellness"
@@ -62,14 +99,14 @@ export default function Wellness() {
                 WHOLE-PERSON WELLNESS
               </p>
               <h2
-                className="mt-3 text-4xl font-bold leading-tight tracking-tight text-cream-50 sm:text-5xl"
+                className="mt-3 text-4xl font-bold leading-tight tracking-tight text-cream-50 transition-all duration-300 ease-out sm:text-5xl"
                 style={{ fontFamily: "'Cormorant Garamond', serif" }}
               >
                 Natural Healing.
                 <br />
                 Balanced Living.
               </h2>
-              <p className="mt-5 max-w-sm font-body text-base leading-relaxed text-[#E8ECEF] lg:text-lg">
+              <p className="mt-5 max-w-sm font-body text-base leading-relaxed text-[#E8ECEF] transition-all duration-300 ease-out lg:text-lg">
                 Acupuncture supports your body&rsquo;s natural balance,
                 helping improve physical comfort, emotional wellbeing, and
                 everyday quality of life.
@@ -92,36 +129,130 @@ export default function Wellness() {
           </FadeUp>
 
           <FadeUp delay={150}>
-            <div className="relative mx-auto aspect-[16/10] w-full max-w-[460px]">
+            <div className="relative mx-auto aspect-[16/10] w-full max-w-[485px] min-[1920px]:max-w-[620px]">
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute -inset-8 -z-10 rounded-full bg-[#7ED9A8]/16 blur-3xl"
+                className="pointer-events-none absolute -inset-8 -z-10 rounded-full bg-[#7ED9A8]/16 blur-3xl motion-reduce:transition-none"
+                style={{
+                  transition: "opacity 400ms ease-out",
+                  opacity: active ? 0.9 : 0.6,
+                }}
               />
-              <div className="relative h-full w-full overflow-hidden rounded-[28px] border border-[#C0C6CC]/25 shadow-2xl shadow-black/50">
-                <img
-                  src={relaxImg}
-                  alt="Relaxed patient after an acupuncture treatment at Asukavi Acupuncture Clinic"
-                  className="h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-eucalyptus-950/45 via-transparent to-transparent" />
+              <div className="relative h-full w-full overflow-hidden rounded-[28px] border border-[#C0C6CC]/25 shadow-2xl shadow-black/50 transition-[border-color] duration-300 hover:border-[#7ED9A8]/40">
+                {[{ image: relaxImg, key: "base" }, ...wellnessItems.map((item) => ({ image: item.image, key: item.label }))].map(
+                  (entry, i) => {
+                    const isBase = i === 0;
+                    const isVisible = isBase
+                      ? activeIndex === null
+                      : activeIndex === i - 1;
+                    return (
+                      <img
+                        key={entry.key}
+                        src={entry.image}
+                        alt={
+                          isBase
+                            ? "Relaxed patient after an acupuncture treatment at Asukavi Acupuncture Clinic"
+                            : ""
+                        }
+                        aria-hidden={isBase ? undefined : true}
+                        className="absolute inset-0 h-full w-full object-cover motion-reduce:transition-none"
+                        style={{
+                          objectPosition: "50% 30%",
+                          opacity: isVisible ? 1 : 0,
+                          transform: isVisible ? "scale(1)" : "scale(1.03)",
+                          transition:
+                            "opacity 400ms cubic-bezier(0.22,1,0.36,1), transform 400ms cubic-bezier(0.22,1,0.36,1), filter 300ms ease-out",
+                          filter: isVisible ? "brightness(1.03)" : "brightness(1)",
+                        }}
+                      />
+                    );
+                  }
+                )}
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-eucalyptus-950/55 via-transparent to-transparent" />
+
+                {displayCaption && (
+                  <div
+                    className="absolute inset-x-0 bottom-0 p-5 motion-reduce:transition-none"
+                    style={{
+                      transition: "opacity 300ms ease-out, transform 300ms ease-out",
+                    }}
+                    key={displayCaption.label}
+                  >
+                    <p className="font-display text-base font-semibold text-cream-50">
+                      {displayCaption.label}
+                    </p>
+                    <p className="mt-1 font-body text-[13px] leading-snug text-[#E8ECEF]/90">
+                      {displayCaption.description}
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           </FadeUp>
         </div>
 
-        <div className="grid grid-cols-2 gap-x-6 gap-y-6 border-t border-cream-50/10 pt-7 sm:grid-cols-5 lg:gap-x-4">
-          {wellnessItems.map(({ icon: Icon, label }, index) => (
-            <RiseIn key={label} delay={index * 100}>
-              <div className="flex flex-col items-center gap-2.5 text-center">
-                <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[#7ED9A8]/35 bg-white/[0.03]">
-                  <Icon className="h-5 w-5 text-[#CDEFEA]" strokeWidth={1.25} />
+        <div
+          className="grid grid-cols-2 gap-x-4 gap-y-5 border-t border-cream-50/10 pt-7 sm:grid-cols-5 sm:gap-x-4"
+          role="tablist"
+          aria-label="Wellness benefits"
+        >
+          {wellnessItems.map(({ icon: Icon, label }, index) => {
+            const isActive = activeIndex === index;
+            return (
+              <button
+                key={label}
+                type="button"
+                role="tab"
+                aria-selected={isActive}
+                onClick={() =>
+                  setActiveIndex((current) => (current === index ? null : index))
+                }
+                onMouseEnter={() => setActiveIndex(index)}
+                onMouseLeave={() => setActiveIndex(null)}
+                onFocus={() => setActiveIndex(index)}
+                onBlur={() => setActiveIndex(null)}
+                className="group flex min-h-[48px] flex-col items-center gap-2.5 rounded-2xl p-1.5 text-center transition-transform duration-300 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7ED9A8]/70"
+              >
+                <span
+                  className="flex h-12 w-12 items-center justify-center rounded-full border transition-all duration-300 ease-out"
+                  style={{
+                    borderColor: isActive
+                      ? "rgba(126,217,168,0.85)"
+                      : "rgba(126,217,168,0.3)",
+                    backgroundColor: isActive
+                      ? "rgba(126,217,168,0.12)"
+                      : "rgba(255,255,255,0.03)",
+                    boxShadow: isActive
+                      ? "0 0 18px rgba(126,217,168,0.45)"
+                      : "none",
+                    transform: isActive ? "scale(1.1)" : "scale(1)",
+                  }}
+                >
+                  <Icon
+                    className="h-5 w-5 transition-colors duration-300 ease-out"
+                    style={{ color: isActive ? "#CDEFEA" : "rgba(205,239,234,0.65)" }}
+                    strokeWidth={1.25}
+                  />
                 </span>
-                <p className="font-display text-xs font-medium leading-snug tracking-wide text-cream-100">
-                  {label}
-                </p>
-              </div>
-            </RiseIn>
-          ))}
+                <span className="flex flex-col items-center gap-1">
+                  <p
+                    className="font-display text-xs leading-snug tracking-wide transition-all duration-300 ease-out"
+                    style={{
+                      color: isActive ? "#F5F2E9" : "rgba(245,242,233,0.65)",
+                      fontWeight: isActive ? 700 : 500,
+                    }}
+                  >
+                    {label}
+                  </p>
+                  <span
+                    aria-hidden="true"
+                    className="h-[2px] rounded-full bg-[#7ED9A8] transition-all duration-300 ease-out"
+                    style={{ width: isActive ? "20px" : "0px", opacity: isActive ? 1 : 0 }}
+                  />
+                </span>
+              </button>
+            );
+          })}
         </div>
       </div>
     </section>
