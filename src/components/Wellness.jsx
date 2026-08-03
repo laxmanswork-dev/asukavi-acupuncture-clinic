@@ -18,6 +18,12 @@ import immuneImg from "../assets/services/immune.png";
 
 const wellnessItems = [
   {
+    icon: BalanceScaleIcon,
+    label: "Emotional Balance",
+    description: "Encourages calmness and emotional wellbeing.",
+    image: balanceImg,
+  },
+  {
     icon: BreathRipplesIcon,
     label: "Stress Relief",
     description: "Reduces everyday stress and promotes relaxation.",
@@ -34,12 +40,6 @@ const wellnessItems = [
     label: "Pain Relief",
     description: "Helps relieve discomfort and improve mobility.",
     image: painImg,
-  },
-  {
-    icon: BalanceScaleIcon,
-    label: "Emotional Balance",
-    description: "Encourages calmness and emotional wellbeing.",
-    image: balanceImg,
   },
   {
     icon: ShieldCheckIcon,
