@@ -169,7 +169,7 @@ export default function Wellness() {
                   className="pointer-events-none absolute inset-0"
                   style={{
                     background:
-                      "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.32) 32%, transparent 60%)",
+                      "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 100%)",
                   }}
                 />
 
@@ -245,7 +245,7 @@ export default function Wellness() {
                   <p
                     className="font-display text-xs leading-snug tracking-wide transition-all duration-300 ease-out"
                     style={{
-                      color: isActive ? "#F5F2E9" : "rgba(245,242,233,0.65)",
+                      color: isActive ? "#F5F2E9" : "rgba(245,242,233,0.78)",
                       fontWeight: isActive ? 700 : 500,
                     }}
                   >
