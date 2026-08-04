@@ -8,6 +8,7 @@ import cuppingImg from "../assets/services/cup.png";
 import moxibustionImg from "../assets/services/moxi.png";
 import wellnessImg from "../assets/services/well.png";
 import servicesVideo from "../assets/ser.mp4";
+import servicesPoster from "../assets/ser-poster.jpg";
 
 const EASE = [0.22, 1, 0.36, 1];
 
@@ -47,8 +48,8 @@ const SCRIM = (
 const BOTTOM_SCRIM = (
   <div
     aria-hidden="true"
-    className="pointer-events-none absolute inset-x-0 bottom-0 h-[40%]"
-    style={{ background: "linear-gradient(to top, rgba(0,0,0,0.85), transparent)" }}
+    className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2"
+    style={{ background: "linear-gradient(to top, rgba(0,0,0,0.9), transparent)" }}
   />
 );
 
@@ -131,6 +132,7 @@ export default function Services() {
         muted
         loop
         playsInline
+        poster={servicesPoster}
         src={servicesVideo}
       />
       <div aria-hidden="true" className="absolute inset-0 bg-eucalyptus-950/75" />

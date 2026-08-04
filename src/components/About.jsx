@@ -1,6 +1,7 @@
 import FadeUp from "./FadeUp";
 import { NeedleUnderline } from "./motifs";
 import aboutVideo from "../assets/tiru.mp4";
+import aboutPoster from "../assets/tiru-poster.jpg";
 
 export default function About() {
   return (
@@ -16,6 +17,7 @@ export default function About() {
         muted
         loop
         playsInline
+        poster={aboutPoster}
         src={aboutVideo}
         style={{
           opacity: 1,
@@ -45,7 +47,7 @@ export default function About() {
 
           <NeedleUnderline
             aria-hidden="true"
-            className="mt-3 mb-6 h-2 w-20 text-gold-400/80 sm:mb-8"
+            className="mt-3 mb-6 h-2 w-16 text-gold-400/80 sm:mb-8 sm:w-20"
           />
 
           <h2

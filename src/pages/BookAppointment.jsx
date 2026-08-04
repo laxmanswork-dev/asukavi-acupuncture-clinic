@@ -4,6 +4,7 @@ import { CheckCircle2, Lock } from "lucide-react";
 import FadeUp from "../components/FadeUp";
 import { NeedleUnderline } from "../components/motifs";
 import appointmentVideo from "../assets/appointment.mp4";
+import appointmentPoster from "../assets/appointment-poster.jpg";
 import {
   ChatBubbleIcon,
   ChevronDownIcon,
@@ -119,12 +120,12 @@ function SelectField({ value, onChange, hasError, children, ...rest }) {
 
 function FaqItem({ faq, isOpen, onToggle }) {
   return (
-    <div className="border-b border-cream-50/12 py-5">
+    <div className="border-b border-cream-50/12">
       <button
         type="button"
         onClick={onToggle}
         aria-expanded={isOpen}
-        className="flex w-full items-center justify-between gap-4 text-left"
+        className="flex w-full items-center justify-between gap-4 p-4 text-left sm:p-6"
       >
         <span className="font-display text-base font-semibold text-cream-50 sm:text-lg">
           {faq.q}
@@ -136,8 +137,8 @@ function FaqItem({ faq, isOpen, onToggle }) {
         />
       </button>
       <div
-        className={`grid transition-all duration-300 ease-in-out ${
-          isOpen ? "grid-rows-[1fr] pt-3 opacity-100" : "grid-rows-[0fr] opacity-0"
+        className={`grid px-4 transition-all duration-300 ease-in-out sm:px-6 ${
+          isOpen ? "grid-rows-[1fr] pb-4 opacity-100 sm:pb-6" : "grid-rows-[0fr] opacity-0"
         }`}
       >
         <div className="overflow-hidden">
@@ -222,6 +223,7 @@ export default function BookAppointment() {
         muted
         loop
         playsInline
+        poster={appointmentPoster}
         src={appointmentVideo}
       />
       <div

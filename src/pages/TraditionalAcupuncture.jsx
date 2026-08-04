@@ -3,6 +3,7 @@ import { ArrowRightIcon } from "../components/icons";
 import FadeUp from "../components/FadeUp";
 import { NeedleUnderline } from "../components/motifs";
 import servicesVideo from "../assets/ser.mp4";
+import servicesPoster from "../assets/ser-poster.jpg";
 
 const modalities = [
   "Acupuncture",
@@ -79,6 +80,7 @@ export default function TraditionalAcupuncture() {
           muted
           loop
           playsInline
+          poster={servicesPoster}
           src={servicesVideo}
         />
         <div aria-hidden="true" className="absolute inset-0 bg-eucalyptus-950/75" />
@@ -126,6 +128,7 @@ export default function TraditionalAcupuncture() {
           muted
           loop
           playsInline
+          poster={servicesPoster}
           src={servicesVideo}
         />
         <div aria-hidden="true" className="absolute inset-0 bg-eucalyptus-950/75" />
@@ -183,6 +186,7 @@ export default function TraditionalAcupuncture() {
           muted
           loop
           playsInline
+          poster={servicesPoster}
           src={servicesVideo}
         />
         <div aria-hidden="true" className="absolute inset-0 bg-eucalyptus-950/75" />

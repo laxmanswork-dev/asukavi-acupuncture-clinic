@@ -11,6 +11,7 @@ import {
 import FadeUp from "./FadeUp";
 import { NeedleUnderline } from "./motifs";
 import wellnessVideo from "../assets/well.mp4";
+import wellnessPoster from "../assets/well-poster.jpg";
 import stressImg from "../assets/services/stress.png";
 import sleepImg from "../assets/services/sleep.png";
 import painImg from "../assets/services/pain.png";
@@ -73,6 +74,7 @@ export default function Wellness() {
         muted
         loop
         playsInline
+        poster={wellnessPoster}
         src={wellnessVideo}
       />
       <div aria-hidden="true" className="absolute inset-0 bg-eucalyptus-950/75" />
@@ -196,7 +198,7 @@ export default function Wellness() {
         </div>
 
         <div
-          className="grid grid-cols-2 gap-x-4 gap-y-5 border-t border-cream-50/10 pt-7 sm:grid-cols-5 sm:gap-x-4"
+          className="no-scrollbar flex items-stretch gap-3 overflow-x-auto border-t border-cream-50/10 px-1 py-4 lg:grid lg:grid-cols-5 lg:gap-x-4 lg:gap-y-5 lg:overflow-visible lg:px-0 lg:py-0 lg:pt-7"
           role="tablist"
           aria-label="Wellness benefits"
         >
@@ -211,7 +213,8 @@ export default function Wellness() {
                 onClick={() => setActiveIndex(index)}
                 onMouseEnter={() => setActiveIndex(index)}
                 onFocus={() => setActiveIndex(index)}
-                className="group flex min-h-[48px] flex-col items-center gap-2.5 rounded-2xl p-1.5 text-center transition-transform duration-300 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7ED9A8]/70"
+                className="group flex w-[78px] flex-none flex-col items-center gap-2.5 rounded-2xl border-b-2 border-transparent p-1.5 text-center transition-transform duration-300 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7ED9A8]/70 lg:w-auto lg:min-h-[48px] lg:border-b-0"
+                style={{ borderBottomColor: isActive ? "#4ade80" : "transparent" }}
               >
                 <span
                   className="flex h-14 w-14 items-center justify-center rounded-2xl border transition-all duration-300 ease-out"

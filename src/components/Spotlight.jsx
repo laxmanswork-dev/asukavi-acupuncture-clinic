@@ -3,6 +3,7 @@ import FadeUp from "./FadeUp";
 import { NeedleUnderline } from "./motifs";
 import doctorPhoto from "../assets/doctor.png";
 import aboutVideo from "../assets/about.mp4";
+import aboutPoster from "../assets/about-poster.jpg";
 
 const points = [
   "Practicing Acupuncture & Natural Care since 1998",
@@ -21,6 +22,7 @@ export default function Spotlight() {
         muted
         loop
         playsInline
+        poster={aboutPoster}
         src={aboutVideo}
       />
       <div
@@ -77,7 +79,7 @@ export default function Spotlight() {
             aria-hidden="true"
             className="pointer-events-none absolute inset-8 -z-10 rounded-[40px] bg-[#7ED9A8]/22 blur-3xl"
           />
-          <div className="relative aspect-square w-full max-w-[460px]">
+          <div className="relative aspect-square w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[460px]">
             <div
               aria-hidden="true"
               className="absolute -inset-3 rounded-[40px] border border-[#C0C6CC]/25"
