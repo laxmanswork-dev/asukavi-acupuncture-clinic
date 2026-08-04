@@ -159,7 +159,7 @@ export default function Navbar() {
           onClick={() => setIsMenuOpen((open) => !open)}
           aria-expanded={isMenuOpen}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-cream-50/15 text-cream-50 transition-colors duration-300 ease-in-out hover:border-[#7ED9A8] xl:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-tl-2xl rounded-bl-2xl rounded-br-2xl rounded-tr-sm border border-cream-50/15 text-cream-50 transition-colors duration-300 ease-in-out hover:border-[#7ED9A8] xl:hidden"
         >
           {isMenuOpen ? (
             <CloseIcon className="h-5 w-5" />
