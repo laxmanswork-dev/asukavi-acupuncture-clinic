@@ -104,7 +104,7 @@ export default function Navbar() {
           </span>
         </a>
 
-        <ul className="relative hidden items-center gap-3 rounded-full border border-white/10 bg-white/[0.04] px-2 py-1.5 backdrop-blur-md xl:flex">
+        <ul className="relative hidden items-center gap-3 xl:flex">
           {navLinks.map((link, index) => {
             const linkClassName = `flex items-center gap-1 rounded-full px-4 py-2.5 font-display text-base font-medium tracking-wide transition-colors duration-300 ease-in-out hover:bg-cream-50/5 ${
               isHome && index === activeIndex
