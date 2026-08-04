@@ -213,8 +213,7 @@ export default function Wellness() {
                 <span
                   className="flex h-14 w-14 items-center justify-center transition-all duration-300 ease-out"
                   style={{
-                    clipPath:
-                      "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)",
+                    clipPath: "polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)",
                     backgroundColor: isActive ? "#7ED9A8" : "rgba(126,217,168,0.16)",
                     filter: isActive
                       ? "drop-shadow(0 8px 14px rgba(126,217,168,0.55))"
