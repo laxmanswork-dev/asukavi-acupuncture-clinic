@@ -95,6 +95,24 @@ footer[id] {
   animation: heal-pulse 2.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
 }
 
+@keyframes blob-morph {
+  0%,
+  100% {
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+  }
+  33% {
+    border-radius: 46% 54% 37% 63% / 45% 52% 48% 55%;
+  }
+  66% {
+    border-radius: 54% 46% 63% 37% / 48% 55% 45% 52%;
+  }
+}
+
+.blob-shape {
+  border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+  animation: blob-morph 14s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-reveal {
     opacity: 1;
@@ -108,6 +126,9 @@ footer[id] {
   .heal-pulse-ring {
     animation: none;
     display: none;
+  }
+  .blob-shape {
+    animation: none;
   }
 }
 
