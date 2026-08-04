@@ -9,6 +9,7 @@ import {
   ShieldFilledIcon,
 } from "./icons";
 import FadeUp from "./FadeUp";
+import { NeedleUnderline } from "./motifs";
 import wellnessVideo from "../assets/well.mp4";
 import stressImg from "../assets/services/stress.png";
 import sleepImg from "../assets/services/sleep.png";
@@ -99,9 +100,9 @@ export default function Wellness() {
               <p className="font-display text-sm font-semibold tracking-[0.3em] text-[#A8D5BA]">
                 WHOLE-PERSON WELLNESS
               </p>
-              <span
+              <NeedleUnderline
                 aria-hidden="true"
-                className="mt-3 block h-[3px] w-12 rounded-full bg-gold-400/80"
+                className="mt-3 h-2 w-20 text-gold-400/80"
               />
               <h2
                 className="mt-4 text-4xl font-bold leading-tight tracking-tight text-cream-50 transition-all duration-300 ease-out sm:text-5xl"
