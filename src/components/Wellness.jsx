@@ -20,12 +20,14 @@ import immuneImg from "../assets/services/immune.png";
 const wellnessItems = [
   {
     icon: HeartFilledIcon,
+    iconColor: "#E0245E",
     label: "Emotional Balance",
     description: "Encourages calmness and emotional wellbeing.",
     image: balanceImg,
   },
   {
     icon: LeafFilledIcon,
+    iconColor: "#4CAF50",
     label: "Stress Relief",
     description: "Reduces everyday stress and promotes relaxation.",
     image: stressImg,
@@ -192,7 +194,7 @@ export default function Wellness() {
           role="tablist"
           aria-label="Wellness benefits"
         >
-          {wellnessItems.map(({ icon: Icon, label }, index) => {
+          {wellnessItems.map(({ icon: Icon, iconColor, label }, index) => {
             const isActive = activeIndex === index;
             return (
               <button
@@ -217,7 +219,15 @@ export default function Wellness() {
                 >
                   <Icon
                     className="h-6 w-6 transition-colors duration-300 ease-out"
-                    style={{ color: isActive ? "#0A1614" : "rgba(205,239,234,0.75)" }}
+                    style={{
+                      color: iconColor
+                        ? isActive
+                          ? iconColor
+                          : `${iconColor}B3`
+                        : isActive
+                          ? "#0A1614"
+                          : "rgba(205,239,234,0.75)",
+                    }}
                   />
                 </span>
                 <span className="flex flex-col items-center gap-1">
