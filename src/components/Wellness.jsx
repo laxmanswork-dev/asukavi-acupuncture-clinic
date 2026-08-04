@@ -34,18 +34,21 @@ const wellnessItems = [
   },
   {
     icon: MoonFilledIcon,
+    iconColor: "#FFFFFF",
     label: "Better Sleep",
     description: "Supports deeper, more restorative sleep.",
     image: sleepImg,
   },
   {
     icon: SparkFilledIcon,
+    iconColor: "#FFB100",
     label: "Pain Relief",
     description: "Helps relieve discomfort and improve mobility.",
     image: painImg,
   },
   {
     icon: ShieldFilledIcon,
+    iconColor: "#2563EB",
     label: "Immune Support",
     description: "Supports the body's natural healing response.",
     image: immuneImg,
