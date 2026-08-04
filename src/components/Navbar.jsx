@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowRight, Target } from "lucide-react";
-import { ChevronDownIcon, CloseIcon, MenuIcon } from "./icons";
+import { ChevronDownIcon, CloseIcon, MenuIcon, PhoneIcon } from "./icons";
 import logo from "../assets/logo.png";
 
 const navLinks = [
@@ -146,14 +146,13 @@ export default function Navbar() {
           />
         </ul>
 
-        <Link
-          to="/book-appointment"
+        <a
+          href="tel:+919787626398"
           className="group hidden h-11 items-center gap-2 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-white/25 bg-transparent pl-4 pr-6 font-display text-sm font-semibold tracking-wide text-white transition-all duration-300 ease-in-out hover:border-[#A3B899]/70 hover:text-[#A3B899] xl:inline-flex"
         >
-          <Target className="h-4 w-4 flex-none opacity-70" />
-          <span>Book an Appointment</span>
-          <ArrowRight className="h-4 w-4 flex-none transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
-        </Link>
+          <PhoneIcon className="h-4 w-4 flex-none opacity-70" />
+          <span>Call Now</span>
+        </a>
 
         <button
           type="button"

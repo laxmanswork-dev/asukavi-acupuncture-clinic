@@ -104,7 +104,7 @@ export default function Hero() {
               <p
                 className="hero-reveal max-w-lg font-body text-xs font-normal sm:text-sm lg:text-base"
                 style={{
-                  color: "#D1E0D7",
+                  color: "#E8ECEF",
                   lineHeight: 1.75,
                   animationDelay: "0.28s",
                 }}
