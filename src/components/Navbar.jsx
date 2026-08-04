@@ -103,7 +103,7 @@ export default function Navbar() {
 
         <ul className="relative hidden items-center gap-3 xl:flex">
           {navLinks.map((link, index) => {
-            const linkClassName = `flex items-center gap-1 rounded-full px-4 py-2.5 font-display text-base font-medium uppercase tracking-wide transition-colors duration-300 ease-in-out hover:bg-cream-50/5 ${
+            const linkClassName = `flex items-center gap-1 rounded-full px-4 py-2.5 font-display text-base font-medium tracking-wide transition-colors duration-300 ease-in-out hover:bg-cream-50/5 ${
               isHome && index === activeIndex
                 ? "text-cream-50"
                 : "text-[#F5F2EB]/95 hover:text-cream-50"
