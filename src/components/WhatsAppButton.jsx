@@ -1,6 +1,6 @@
 const PHONE_NUMBER = "919787626398";
 const MESSAGE =
-  "Hi! I'd like to book an appointment at Asukavi Acupuncture Clinic.";
+  "Hi! I'd like to book an appointment at Asukavi Acupuncture Centre.";
 
 export default function WhatsAppButton() {
   const href = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(MESSAGE)}`;
