@@ -101,7 +101,7 @@ export default function Navbar() {
         <ul className="relative hidden items-center gap-3 xl:flex">
           <span
             aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 rounded-full border border-white/25 bg-gradient-to-b from-white/15 via-white/5 to-transparent shadow-[0_0_18px_rgba(192,198,204,0.4)] transition-all duration-300 ease-in-out"
+            className="pointer-events-none absolute inset-y-0 rounded-full border border-white/25 bg-gradient-to-b from-white/15 via-white/5 to-transparent shadow-[0_0_12px_rgba(192,198,204,0.3)] transition-all duration-300 ease-in-out"
             style={{ left: indicator.left, width: indicator.width }}
           />
           {navLinks.map((link, index) => {
