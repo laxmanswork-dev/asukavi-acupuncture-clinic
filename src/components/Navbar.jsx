@@ -33,7 +33,7 @@ export default function Navbar() {
     const measure = () => {
       const el = linkRefs.current[activeIndex];
       if (el) {
-        const inset = 2;
+        const inset = 14;
         setIndicator({
           left: el.offsetLeft + inset,
           width: Math.max(el.offsetWidth - inset * 2, 0),
@@ -80,10 +80,7 @@ export default function Navbar() {
   }, [isMenuOpen]);
 
   return (
-    <header
-      className="sticky top-0 z-50 border-b border-cream-50/10 bg-eucalyptus-950/90 backdrop-blur-md"
-      style={{ boxShadow: "0 1px 2px 0 rgba(10,22,20,0.3)" }}
-    >
+    <header className="sticky top-0 z-50 border-b border-cream-50/10 bg-eucalyptus-950/90 shadow-sm shadow-black/20 backdrop-blur-md">
       <nav className="flex items-center justify-between px-4 py-4 sm:px-6 sm:py-5 xl:px-16">
         <a href={isHome ? "#home" : "/"} className="flex min-w-0 items-center gap-2 sm:gap-3">
           <img
@@ -101,14 +98,9 @@ export default function Navbar() {
           </span>
         </a>
 
-        <ul className="relative hidden items-center gap-3 rounded-full border border-white/10 bg-white/5 px-2 py-1.5 shadow-[0_4px_20px_rgba(10,22,20,0.25)] backdrop-blur-md xl:flex">
-          <span
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 rounded-full border border-white/25 bg-gradient-to-b from-white/15 via-white/5 to-transparent shadow-[0_0_8px_rgba(192,198,204,0.22)] transition-all duration-300 ease-in-out"
-            style={{ left: indicator.left, width: indicator.width }}
-          />
+        <ul className="relative hidden items-center gap-3 xl:flex">
           {navLinks.map((link, index) => {
-            const linkClassName = `flex items-center gap-1.5 rounded-full px-4 py-2.5 font-display text-base font-medium tracking-wide transition-colors duration-300 ease-in-out hover:bg-cream-50/5 ${
+            const linkClassName = `flex items-center gap-1 rounded-full px-4 py-2.5 font-display text-base font-medium tracking-wide transition-colors duration-300 ease-in-out hover:bg-cream-50/5 ${
               isHome && index === activeIndex
                 ? "text-cream-50"
                 : "text-[#F5F2EB]/95 hover:text-cream-50"
@@ -147,11 +139,16 @@ export default function Navbar() {
               </li>
             );
           })}
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute bottom-1 h-px rounded-full bg-gradient-to-r from-[#A8D5BA]/0 via-[#A8D5BA] to-[#A8D5BA]/0 shadow-[0_0_4px_rgba(168,213,186,0.4)] transition-all duration-300 ease-in-out"
+            style={{ left: indicator.left, width: indicator.width }}
+          />
         </ul>
 
         <a
           href="tel:+919787626398"
-          className="group hidden h-11 items-center gap-2 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-white/25 bg-white/10 pl-4 pr-6 font-display text-sm font-semibold tracking-wide text-white backdrop-blur-md transition-all duration-300 ease-in-out hover:border-[#A3B899]/70 hover:bg-white/15 hover:text-[#A3B899] xl:inline-flex"
+          className="group hidden h-11 items-center gap-2 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-white/25 bg-transparent pl-4 pr-6 font-display text-sm font-semibold tracking-wide text-white transition-all duration-300 ease-in-out hover:border-[#A3B899]/70 hover:text-[#A3B899] xl:inline-flex"
         >
           <PhoneIcon className="h-4 w-4 flex-none opacity-70" />
           <span>Call Now</span>
@@ -162,7 +159,7 @@ export default function Navbar() {
           onClick={() => setIsMenuOpen((open) => !open)}
           aria-expanded={isMenuOpen}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="flex h-11 w-11 items-center justify-center rounded-tl-2xl rounded-bl-2xl rounded-br-2xl rounded-tr-sm border border-cream-50/15 text-cream-50 transition-colors duration-300 ease-in-out hover:border-[#7ED9A8] xl:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-cream-50/15 text-cream-50 transition-colors duration-300 ease-in-out hover:border-[#7ED9A8] xl:hidden"
         >
           {isMenuOpen ? (
             <CloseIcon className="h-5 w-5" />
