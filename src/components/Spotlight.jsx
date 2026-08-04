@@ -77,7 +77,7 @@ export default function Spotlight() {
             aria-hidden="true"
             className="blob-shape pointer-events-none absolute inset-12 -z-10 bg-[#7ED9A8]/10 blur-2xl"
           />
-          <div className="relative aspect-square w-full max-w-[520px]">
+          <div className="relative aspect-square w-full max-w-[460px]">
             <div
               aria-hidden="true"
               className="blob-shape absolute -inset-3 border border-[#C0C6CC]/25"
