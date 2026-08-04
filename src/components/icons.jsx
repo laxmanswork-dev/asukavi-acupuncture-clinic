@@ -292,6 +292,17 @@ export function ShieldCheckIcon(props) {
   );
 }
 
+export function ShieldLeafIcon(props) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M12 3.5 19 6v5.5c0 5-3 8-7 9-4-1-7-4-7-9V6Z" />
+      <path d="M12 8.5v7" />
+      <path d="M12 9.5c1.6-1.6 3.6-1.8 5-1-1 2-2.4 3.6-5 3.6Z" />
+      <path d="M12 14.5c-1.6-1.6-3.6-1.8-5-1 1 2 2.4 3.6 5 3.6Z" />
+    </svg>
+  );
+}
+
 export function MigraineIcon(props) {
   return (
     <svg {...base} {...props}>

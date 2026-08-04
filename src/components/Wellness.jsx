@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Target } from "lucide-react";
 import {
-  AcuPointIcon,
-  BalanceScaleIcon,
-  BreathRipplesIcon,
-  ShieldCheckIcon,
-  SleepCrescentIcon,
+  CalmWaveIcon,
+  EmotionalBalanceIcon,
+  MoonIcon,
+  PainReliefIcon,
+  ShieldLeafIcon,
 } from "./icons";
 import FadeUp from "./FadeUp";
 import { NeedleUnderline } from "./motifs";
@@ -19,31 +19,31 @@ import immuneImg from "../assets/services/immune.png";
 
 const wellnessItems = [
   {
-    icon: BalanceScaleIcon,
+    icon: EmotionalBalanceIcon,
     label: "Emotional Balance",
     description: "Encourages calmness and emotional wellbeing.",
     image: balanceImg,
   },
   {
-    icon: BreathRipplesIcon,
+    icon: CalmWaveIcon,
     label: "Stress Relief",
     description: "Reduces everyday stress and promotes relaxation.",
     image: stressImg,
   },
   {
-    icon: SleepCrescentIcon,
+    icon: MoonIcon,
     label: "Better Sleep",
     description: "Supports deeper, more restorative sleep.",
     image: sleepImg,
   },
   {
-    icon: AcuPointIcon,
+    icon: PainReliefIcon,
     label: "Pain Relief",
     description: "Helps relieve discomfort and improve mobility.",
     image: painImg,
   },
   {
-    icon: ShieldCheckIcon,
+    icon: ShieldLeafIcon,
     label: "Immune Support",
     description: "Supports the body's natural healing response.",
     image: immuneImg,
