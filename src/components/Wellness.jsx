@@ -64,7 +64,7 @@ export default function Wellness() {
   return (
     <section
       id="wellness"
-      className="relative overflow-hidden border-t border-cream-50/12 md:h-[calc(100svh-5.5rem)]"
+      className="relative overflow-hidden border-t border-cream-50/12 lg:h-[calc(100svh-5.5rem)]"
     >
       <div aria-hidden="true" className="absolute inset-0 bg-eucalyptus-950" />
       <video
@@ -95,8 +95,8 @@ export default function Wellness() {
         }}
       />
 
-      <div className="relative mx-auto flex max-w-7xl flex-col justify-center gap-8 px-6 py-12 md:h-full md:py-0 lg:px-10">
-        <div className="grid items-center gap-10 md:grid-cols-[2fr_3fr] lg:gap-16">
+      <div className="relative mx-auto flex max-w-7xl flex-col justify-center gap-8 px-6 py-12 lg:h-full lg:px-10 lg:py-0">
+        <div className="grid items-center gap-10 lg:grid-cols-[2fr_3fr] lg:gap-16">
           <FadeUp>
             <div>
               <p className="font-display text-sm font-semibold tracking-[0.3em] text-[#A8D5BA]">
@@ -198,7 +198,7 @@ export default function Wellness() {
         </div>
 
         <div
-          className="no-scrollbar flex items-stretch gap-3 overflow-x-auto border-t border-cream-50/10 px-1 py-4 md:grid md:grid-cols-5 md:gap-x-4 md:gap-y-5 md:overflow-visible md:px-0 md:py-0 md:pt-7"
+          className="no-scrollbar flex items-stretch gap-3 overflow-x-auto border-t border-cream-50/10 px-1 py-4 lg:grid lg:grid-cols-5 lg:gap-x-4 lg:gap-y-5 lg:overflow-visible lg:px-0 lg:py-0 lg:pt-7"
           role="tablist"
           aria-label="Wellness benefits"
         >
@@ -213,7 +213,7 @@ export default function Wellness() {
                 onClick={() => setActiveIndex(index)}
                 onMouseEnter={() => setActiveIndex(index)}
                 onFocus={() => setActiveIndex(index)}
-                className="group flex w-[78px] flex-none flex-col items-center gap-2.5 rounded-2xl border-b-2 border-transparent p-1.5 text-center transition-transform duration-300 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7ED9A8]/70 md:w-auto md:min-h-[48px] md:border-b-0"
+                className="group flex w-[78px] flex-none flex-col items-center gap-2.5 rounded-2xl border-b-2 border-transparent p-1.5 text-center transition-transform duration-300 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7ED9A8]/70 lg:w-auto lg:min-h-[48px] lg:border-b-0"
                 style={{ borderBottomColor: isActive ? "#4ade80" : "transparent" }}
               >
                 <span
