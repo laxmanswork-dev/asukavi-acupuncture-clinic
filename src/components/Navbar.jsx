@@ -80,7 +80,10 @@ export default function Navbar() {
   }, [isMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-cream-50/10 bg-eucalyptus-950/90 shadow-sm shadow-black/20 backdrop-blur-md">
+    <header
+      className="sticky top-0 z-50 border-b border-cream-50/10 bg-eucalyptus-950/90 backdrop-blur-md"
+      style={{ boxShadow: "0 1px 2px 0 rgba(10,22,20,0.3)" }}
+    >
       <nav className="flex items-center justify-between px-4 py-4 sm:px-6 sm:py-5 xl:px-16">
         <a href={isHome ? "#home" : "/"} className="flex min-w-0 items-center gap-2 sm:gap-3">
           <img
