@@ -148,7 +148,7 @@ export default function Navbar() {
 
         <a
           href="tel:+919787626398"
-          className="group hidden h-11 items-center gap-2 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-white/25 bg-transparent pl-4 pr-6 font-display text-sm font-semibold tracking-wide text-white transition-all duration-300 ease-in-out hover:border-[#A3B899]/70 hover:text-[#A3B899] xl:inline-flex"
+          className="group hidden h-11 items-center gap-2 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-white/25 bg-white/10 pl-4 pr-6 font-display text-sm font-semibold tracking-wide text-white backdrop-blur-md transition-all duration-300 ease-in-out hover:border-[#A3B899]/70 hover:bg-white/15 hover:text-[#A3B899] xl:inline-flex"
         >
           <PhoneIcon className="h-4 w-4 flex-none opacity-70" />
           <span>Call Now</span>
