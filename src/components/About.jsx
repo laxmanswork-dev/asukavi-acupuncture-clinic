@@ -33,7 +33,7 @@ export default function About() {
           <p
             className="mt-1.5 uppercase"
             style={{
-              fontFamily: "'Inter', sans-serif",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontSize: "14px",
               fontWeight: 500,
               letterSpacing: "0.35em",
@@ -64,15 +64,19 @@ export default function About() {
             Personalized Care.
           </h2>
 
+          <span
+            aria-hidden="true"
+            className="mt-7 mb-7 block h-px w-24 bg-gold-400/70 sm:mt-8 sm:mb-8"
+          />
+
           <p
-            className="mt-8 sm:mt-9"
             style={{
-              fontFamily: "'Inter', sans-serif",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontWeight: 400,
               fontSize: "16px",
               lineHeight: 1.8,
               letterSpacing: "0",
-              color: "#F8F6F2",
+              color: "#FFFFFF",
               maxWidth: "500px",
             }}
           >

@@ -56,12 +56,15 @@ export default function Navbar() {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const idx = ids.indexOf(entry.target.id);
-            if (idx !== -1) setActiveIndex(idx);
-          }
-        });
+        const visible = entries.filter((entry) => entry.isIntersecting);
+        if (!visible.length) return;
+        // Pick the topmost intersecting section so a batch of simultaneous
+        // entries can't leave the wrong (e.g. earlier) link highlighted.
+        const topMost = visible.reduce((a, b) =>
+          a.boundingClientRect.top <= b.boundingClientRect.top ? a : b
+        );
+        const idx = ids.indexOf(topMost.target.id);
+        if (idx !== -1) setActiveIndex(idx);
       },
       { rootMargin: "0px 0px -60% 0px", threshold: 0 }
     );
