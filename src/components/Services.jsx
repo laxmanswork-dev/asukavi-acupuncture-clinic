@@ -44,6 +44,14 @@ const SCRIM = (
   />
 );
 
+const BOTTOM_SCRIM = (
+  <div
+    aria-hidden="true"
+    className="pointer-events-none absolute inset-x-0 bottom-0 h-[40%]"
+    style={{ background: "linear-gradient(to top, rgba(0,0,0,0.85), transparent)" }}
+  />
+);
+
 const TOP_HIGHLIGHT = (
   <div
     aria-hidden="true"
@@ -91,6 +99,7 @@ function ServiceCard({ image, title, description, className = "" }) {
         <div className={CARD_CLASS} style={CARD_STYLE}>
           <img src={image} alt="" aria-hidden="true" className={IMG_CLASS} />
           {SCRIM}
+          {BOTTOM_SCRIM}
           {TOP_HIGHLIGHT}
           <div className="relative z-10 flex h-full min-h-0 flex-col justify-end gap-1.5 p-6">
             <h3 className="font-display text-[21px] font-bold leading-snug text-cream-50 transition-colors duration-500 group-hover:text-[#CFF3DD]">
@@ -117,7 +126,7 @@ export default function Services() {
     >
       <video
         aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover blur-[3px]"
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover blur-[3px]"
         autoPlay
         muted
         loop
@@ -200,6 +209,7 @@ export default function Services() {
                   aria-hidden="true"
                   className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/5 sm:bg-gradient-to-r sm:from-black/92 sm:via-black/55 sm:to-black/10"
                 />
+                {BOTTOM_SCRIM}
                 {TOP_HIGHLIGHT}
                 <div className="relative z-10 flex h-full min-h-0 flex-col justify-end gap-3 p-6 sm:max-w-md sm:justify-center sm:p-8">
                   <h3

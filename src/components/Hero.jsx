@@ -4,6 +4,7 @@ import { useGooglePlaces } from "../hooks/useGooglePlaces";
 import { useClinicStatus } from "../hooks/useClinicStatus";
 import { NeedleUnderline } from "./motifs";
 import warmVideo from "../assets/warm.mp4";
+import heroPoster from "../assets/hero-poster.jpg";
 
 function GoogleGIcon({ size = 20, className }) {
   return (
@@ -41,11 +42,12 @@ export default function Hero() {
     <section id="home" className="relative overflow-hidden">
       <video
         aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover object-[74%_center] lg:object-center"
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover object-[74%_center] lg:object-center"
         autoPlay
         muted
         loop
         playsInline
+        poster={heroPoster}
         src={warmVideo}
       />
       <div
@@ -146,7 +148,7 @@ export default function Hero() {
               </div>
 
               <div
-                className="hero-reveal mt-6 inline-flex flex-wrap items-center gap-3 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-white/10 bg-white/10 px-5 py-3 backdrop-blur-md sm:mt-8"
+                className="hero-reveal mt-[40px] inline-flex flex-wrap items-center gap-3 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-white/10 bg-white/10 px-5 py-3 backdrop-blur-md sm:mt-[48px]"
                 style={{ animationDelay: "0.72s" }}
               >
                 <GoogleGIcon size={20} className="flex-none" />

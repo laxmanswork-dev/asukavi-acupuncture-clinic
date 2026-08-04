@@ -64,12 +64,8 @@ export default function About() {
             Personalized Care.
           </h2>
 
-          <NeedleUnderline
-            aria-hidden="true"
-            className="mt-3 mb-8 h-4 w-32 text-gold-400/80 sm:mt-4 sm:mb-9"
-          />
-
           <p
+            className="mt-8 sm:mt-9"
             style={{
               fontFamily: "'Inter', sans-serif",
               fontWeight: 400,
@@ -104,7 +100,7 @@ export default function About() {
             &ldquo;
           </span>
 
-          <p className="mt-2 font-tamil text-lg italic leading-relaxed text-cream-50/90 sm:text-xl lg:text-[1.35rem]">
+          <p className="mt-2 font-tamil text-lg font-semibold italic leading-relaxed text-cream-50/90 sm:text-xl lg:text-[1.35rem]">
             நோய்நாடி நோய்முதல் நாடி அதுதணிக்கும்
             <br />
             வாய்நாடி வாய்ப்பச் செயல்.

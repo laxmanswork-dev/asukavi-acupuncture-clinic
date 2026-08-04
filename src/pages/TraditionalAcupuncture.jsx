@@ -74,7 +74,7 @@ export default function TraditionalAcupuncture() {
       <section className="relative overflow-hidden border-t border-cream-50/12">
         <video
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover"
           autoPlay
           muted
           loop
@@ -121,7 +121,7 @@ export default function TraditionalAcupuncture() {
       <section className="relative overflow-hidden border-t border-cream-50/12">
         <video
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover"
           autoPlay
           muted
           loop
@@ -178,7 +178,7 @@ export default function TraditionalAcupuncture() {
       <section className="relative overflow-hidden border-t border-cream-50/12">
         <video
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover"
           autoPlay
           muted
           loop

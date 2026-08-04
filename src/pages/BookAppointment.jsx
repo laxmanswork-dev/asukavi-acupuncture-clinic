@@ -99,7 +99,7 @@ function Field({ label, htmlFor, error, children }) {
 const inputClasses = (hasError) =>
   `h-12 w-full rounded-lg border ${
     hasError ? "border-[#E38B7A]/60" : "border-white/15"
-  } bg-white/5 px-4 font-body text-sm text-cream-50 placeholder:text-cream-100/40 transition-colors duration-300 ease-in-out focus:border-[#A8D5BA]/60 focus:outline-none`;
+  } bg-white/5 px-4 font-body text-sm text-cream-50 placeholder:text-white/60 transition-colors duration-300 ease-in-out focus:border-[#A8D5BA]/60 focus:outline-none`;
 
 function SelectField({ value, onChange, hasError, children, ...rest }) {
   return (
@@ -217,14 +217,18 @@ export default function BookAppointment() {
       {/* Background video spanning the full booking section */}
       <video
         aria-hidden="true"
-        className="absolute inset-0 -z-10 h-full w-full object-cover"
+        className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover"
         autoPlay
         muted
         loop
         playsInline
         src={appointmentVideo}
       />
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-eucalyptus-950/75" />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10"
+        style={{ backgroundColor: "rgba(10,20,15,0.88)" }}
+      />
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10"

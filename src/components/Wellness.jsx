@@ -67,7 +67,7 @@ export default function Wellness() {
       <div aria-hidden="true" className="absolute inset-0 bg-eucalyptus-950" />
       <video
         aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
         autoPlay
         muted
         loop
@@ -253,8 +253,12 @@ export default function Wellness() {
                   </p>
                   <span
                     aria-hidden="true"
-                    className="h-[2px] rounded-full bg-[#7ED9A8] transition-all duration-300 ease-out"
-                    style={{ width: isActive ? "20px" : "0px", opacity: isActive ? 1 : 0 }}
+                    className="h-[3px] rounded-full bg-[#4ade80] transition-all duration-300 ease-out"
+                    style={{
+                      width: isActive ? "20px" : "0px",
+                      opacity: isActive ? 1 : 0,
+                      boxShadow: isActive ? "0 0 8px #4ade80" : "none",
+                    }}
                   />
                 </span>
               </button>
