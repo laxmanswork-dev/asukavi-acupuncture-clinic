@@ -153,7 +153,7 @@ export default function Hero() {
               >
                 <GoogleGIcon size={20} className="flex-none" />
                 <span
-                  className={`flex items-center gap-1.5 font-display text-xs font-bold transition-opacity duration-500 sm:text-sm ${
+                  className={`flex items-center gap-1.5 font-display text-sm font-bold transition-opacity duration-500 ${
                     isLoading ? "opacity-70" : "opacity-100"
                   }`}
                   style={{ color: "#FBBF24" }}
@@ -163,7 +163,7 @@ export default function Hero() {
                     ★★★★★
                   </span>
                 </span>
-                <span className="font-body text-xs text-white/85 sm:text-sm">
+                <span className="font-body text-[13px] text-white/85">
                   ({reviewCount} Google Reviews) &nbsp;&bull;&nbsp; Tirunelveli, TN
                 </span>
 
@@ -179,7 +179,7 @@ export default function Hero() {
                     }`}
                   />
                   <span
-                    className={`font-body text-xs font-medium sm:text-sm ${
+                    className={`font-body text-[13px] font-medium ${
                       clinicStatus.isOpen ? "text-emerald-200" : "text-amber-200"
                     }`}
                   >

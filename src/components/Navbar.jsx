@@ -146,44 +146,34 @@ export default function Navbar() {
           />
         </ul>
 
-        <div className="flex items-center gap-2 sm:gap-3">
-          <a
-            href="tel:+919787626398"
-            className="group hidden h-11 items-center gap-2 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-white/25 bg-transparent pl-4 pr-6 font-display text-sm font-semibold tracking-wide text-white transition-all duration-300 ease-in-out hover:border-[#A3B899]/70 hover:text-[#A3B899] xl:inline-flex"
-          >
-            <PhoneIcon className="h-4 w-4 flex-none opacity-70" />
-            <span>Call Now</span>
-          </a>
+        <a
+          href="tel:+919787626398"
+          className="group hidden h-11 items-center gap-2 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-white/25 bg-transparent pl-4 pr-6 font-display text-sm font-semibold tracking-wide text-white transition-all duration-300 ease-in-out hover:border-[#A3B899]/70 hover:text-[#A3B899] xl:inline-flex"
+        >
+          <PhoneIcon className="h-4 w-4 flex-none opacity-70" />
+          <span>Call Now</span>
+        </a>
 
-          <a
-            href="tel:+919787626398"
-            aria-label="Call Now"
-            className="flex h-11 w-11 flex-none items-center justify-center rounded-full border border-cream-50/15 text-cream-50 transition-colors duration-300 ease-in-out hover:border-[#7ED9A8] xl:hidden"
-          >
-            <PhoneIcon className="h-4 w-4" />
-          </a>
-
-          <button
-            type="button"
-            onClick={() => setIsMenuOpen((open) => !open)}
-            aria-expanded={isMenuOpen}
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            className="flex h-11 w-11 flex-none items-center justify-center rounded-full border border-cream-50/15 text-cream-50 transition-colors duration-300 ease-in-out hover:border-[#7ED9A8] xl:hidden"
-          >
-            {isMenuOpen ? (
-              <CloseIcon className="h-5 w-5" />
-            ) : (
-              <MenuIcon className="h-5 w-5" />
-            )}
-          </button>
-        </div>
+        <button
+          type="button"
+          onClick={() => setIsMenuOpen((open) => !open)}
+          aria-expanded={isMenuOpen}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-cream-50/15 text-cream-50 transition-colors duration-300 ease-in-out hover:border-[#7ED9A8] xl:hidden"
+        >
+          {isMenuOpen ? (
+            <CloseIcon className="h-5 w-5" />
+          ) : (
+            <MenuIcon className="h-5 w-5" />
+          )}
+        </button>
       </nav>
 
       {isMenuOpen && (
-        <div className="fixed inset-x-0 top-[73px] bottom-0 z-40 overflow-y-auto bg-black/90 px-6 pb-10 pt-6 backdrop-blur-xl xl:hidden sm:top-[89px]">
+        <div className="border-t border-cream-50/10 bg-eucalyptus-950/95 px-6 pb-6 pt-2 xl:hidden">
           <ul className="flex flex-col gap-1">
             {navLinks.map((link, index) => {
-              const mobileLinkClassName = `flex min-h-[44px] items-center gap-1.5 py-3 font-display text-base font-medium tracking-wide transition-colors duration-300 ease-in-out ${
+              const mobileLinkClassName = `flex items-center gap-1.5 py-2.5 font-display text-base font-medium tracking-wide transition-colors duration-300 ease-in-out ${
                 isHome && index === activeIndex
                   ? "text-cream-50"
                   : "text-[#F8F6F2] hover:text-cream-50"
