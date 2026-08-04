@@ -9,7 +9,6 @@ import {
   ShieldFilledIcon,
 } from "./icons";
 import FadeUp from "./FadeUp";
-import { NeedleUnderline } from "./motifs";
 import wellnessVideo from "../assets/well.mp4";
 import stressImg from "../assets/services/stress.png";
 import sleepImg from "../assets/services/sleep.png";
@@ -100,22 +99,18 @@ export default function Wellness() {
               <p className="font-display text-sm font-semibold tracking-[0.3em] text-[#A8D5BA]">
                 WHOLE-PERSON WELLNESS
               </p>
-              <NeedleUnderline
+              <span
                 aria-hidden="true"
-                className="mt-3 h-2 w-20 text-gold-400/80"
+                className="mt-3 block h-[3px] w-12 rounded-full bg-gold-400/80"
               />
               <h2
-                className="mt-3 text-4xl font-bold leading-tight tracking-tight text-cream-50 transition-all duration-300 ease-out sm:text-5xl"
+                className="mt-4 text-4xl font-bold leading-tight tracking-tight text-cream-50 transition-all duration-300 ease-out sm:text-5xl"
                 style={{ fontFamily: "'Cormorant Garamond', serif" }}
               >
                 Natural Healing.
                 <br />
                 Balanced Living.
               </h2>
-              <NeedleUnderline
-                aria-hidden="true"
-                className="mt-2 h-4 w-32 text-gold-400/80"
-              />
               <p className="mt-5 max-w-sm font-body text-base leading-relaxed text-[#E8ECEF] transition-all duration-300 ease-out lg:text-lg">
                 Acupuncture supports your body&rsquo;s natural balance,
                 helping improve physical comfort, emotional wellbeing, and
@@ -211,12 +206,11 @@ export default function Wellness() {
                 className="group flex min-h-[48px] flex-col items-center gap-2.5 rounded-2xl p-1.5 text-center transition-transform duration-300 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7ED9A8]/70"
               >
                 <span
-                  className="flex h-14 w-14 items-center justify-center transition-all duration-300 ease-out"
+                  className="flex h-14 w-14 items-center justify-center rounded-2xl transition-all duration-300 ease-out"
                   style={{
-                    clipPath: "polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)",
-                    backgroundColor: isActive ? "#7ED9A8" : "rgba(126,217,168,0.16)",
-                    filter: isActive
-                      ? "drop-shadow(0 8px 14px rgba(126,217,168,0.55))"
+                    backgroundColor: isActive ? "#7ED9A8" : "rgba(126,217,168,0.24)",
+                    boxShadow: isActive
+                      ? "0 8px 14px -2px rgba(126,217,168,0.55)"
                       : "none",
                     transform: isActive ? "scale(1.08)" : "scale(1)",
                   }}
@@ -227,10 +221,10 @@ export default function Wellness() {
                       color: iconColor
                         ? isActive
                           ? iconColor
-                          : `${iconColor}B3`
+                          : `${iconColor}E6`
                         : isActive
                           ? "#0A1614"
-                          : "rgba(205,239,234,0.75)",
+                          : "rgba(205,239,234,0.9)",
                     }}
                   />
                 </span>
