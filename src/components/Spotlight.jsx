@@ -75,15 +75,15 @@ export default function Spotlight() {
         <FadeUp delay={150} className="relative flex justify-center lg:col-span-5">
           <div
             aria-hidden="true"
-            className="blob-shape pointer-events-none absolute inset-12 -z-10 bg-[#7ED9A8]/10 blur-2xl"
+            className="pointer-events-none absolute inset-12 -z-10 rounded-[40px] bg-[#7ED9A8]/10 blur-2xl"
           />
           <div className="relative aspect-square w-full max-w-[460px]">
             <div
               aria-hidden="true"
-              className="blob-shape absolute -inset-3 border border-[#C0C6CC]/25"
+              className="absolute -inset-3 rounded-[40px] border border-[#C0C6CC]/25"
             />
-            <div className="blob-shape absolute inset-0 border-2 border-[#C0C6CC]/50 p-2 shadow-[0_0_24px_rgba(126,217,168,0.1)]">
-              <div className="blob-shape h-full w-full overflow-hidden">
+            <div className="absolute inset-0 rounded-[32px] border-2 border-[#C0C6CC]/50 p-2 shadow-[0_0_24px_rgba(126,217,168,0.1)]">
+              <div className="h-full w-full overflow-hidden rounded-[24px]">
                 <video
                   className="h-full w-full object-cover"
                   poster={doctorPhoto}
