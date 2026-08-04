@@ -101,7 +101,7 @@ export default function Navbar() {
           </span>
         </a>
 
-        <ul className="relative hidden items-center gap-3 xl:flex">
+        <ul className="relative hidden items-center gap-3 rounded-full border border-white/10 bg-white/5 px-2 py-1.5 shadow-[0_4px_20px_rgba(10,22,20,0.25)] backdrop-blur-md xl:flex">
           <span
             aria-hidden="true"
             className="pointer-events-none absolute inset-y-0 rounded-full border border-white/25 bg-gradient-to-b from-white/15 via-white/5 to-transparent shadow-[0_0_12px_rgba(192,198,204,0.3)] transition-all duration-300 ease-in-out"
