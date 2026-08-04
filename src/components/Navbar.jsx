@@ -33,7 +33,7 @@ export default function Navbar() {
     const measure = () => {
       const el = linkRefs.current[activeIndex];
       if (el) {
-        const inset = 14;
+        const inset = 2;
         setIndicator({
           left: el.offsetLeft + inset,
           width: Math.max(el.offsetWidth - inset * 2, 0),
@@ -99,6 +99,19 @@ export default function Navbar() {
         </a>
 
         <ul className="relative hidden items-center gap-3 xl:flex">
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-y-0 rounded-full border border-[#7ED9A8]/30 bg-gradient-to-b from-[#7ED9A8]/20 via-[#7ED9A8]/8 to-transparent shadow-[0_0_18px_rgba(126,217,168,0.3)] transition-all duration-300 ease-in-out"
+            style={{ left: indicator.left, width: indicator.width }}
+          />
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute bottom-0 h-1.5 w-1.5 rounded-full bg-gold-400 shadow-[0_0_8px_rgba(232,177,58,0.8)] transition-all duration-300 ease-in-out"
+            style={{
+              left: indicator.left + indicator.width / 2 - 3,
+              opacity: indicator.width ? 1 : 0,
+            }}
+          />
           {navLinks.map((link, index) => {
             const linkClassName = `flex items-center gap-1 rounded-full px-4 py-2.5 font-display text-base font-medium tracking-wide transition-colors duration-300 ease-in-out hover:bg-cream-50/5 ${
               isHome && index === activeIndex
@@ -139,11 +152,6 @@ export default function Navbar() {
               </li>
             );
           })}
-          <span
-            aria-hidden="true"
-            className="pointer-events-none absolute bottom-1 h-px rounded-full bg-gradient-to-r from-[#A8D5BA]/0 via-[#A8D5BA] to-[#A8D5BA]/0 shadow-[0_0_4px_rgba(168,213,186,0.4)] transition-all duration-300 ease-in-out"
-            style={{ left: indicator.left, width: indicator.width }}
-          />
         </ul>
 
         <a
