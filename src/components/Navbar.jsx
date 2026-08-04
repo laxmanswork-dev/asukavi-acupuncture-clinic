@@ -93,7 +93,7 @@ export default function Navbar() {
           />
           <span className="flex min-w-0 flex-col items-center leading-none sm:items-start">
             <span
-              className="font-script text-2xl font-semibold uppercase tracking-wide text-cream-50 sm:text-3xl"
+              className="font-script text-2xl font-semibold tracking-wide text-cream-50 sm:text-3xl"
               style={{ textShadow: "0 0 14px rgba(126,217,168,0.4)" }}
             >
               Asukavi

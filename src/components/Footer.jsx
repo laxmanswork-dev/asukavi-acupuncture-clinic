@@ -35,7 +35,7 @@ export default function Footer() {
               />
               <span className="flex flex-col items-center leading-none sm:items-start">
                 <span
-                  className="font-script text-xl font-semibold uppercase tracking-wide text-cream-50"
+                  className="font-script text-xl font-semibold tracking-wide text-cream-50"
                   style={{ textShadow: "0 0 14px rgba(126,217,168,0.4)" }}
                 >
                   Asukavi
