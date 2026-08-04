@@ -89,7 +89,10 @@ export default function Navbar() {
             className="h-9 w-9 flex-none rounded-full object-cover sm:h-11 sm:w-11"
           />
           <span className="flex min-w-0 flex-col items-center leading-none sm:items-start">
-            <span className="font-script text-2xl font-semibold text-cream-50 sm:text-3xl">
+            <span
+              className="font-script text-2xl font-semibold uppercase tracking-wide text-cream-50 sm:text-3xl"
+              style={{ textShadow: "0 0 14px rgba(126,217,168,0.4)" }}
+            >
               Asukavi
             </span>
             <span className="mt-1 whitespace-nowrap font-display text-[8px] font-semibold tracking-[0.1em] text-[#A8D5BA] sm:text-xs sm:tracking-[0.3em]">
@@ -100,7 +103,7 @@ export default function Navbar() {
 
         <ul className="relative hidden items-center gap-3 xl:flex">
           {navLinks.map((link, index) => {
-            const linkClassName = `flex items-center gap-1 rounded-full px-4 py-2.5 font-display text-base font-medium tracking-wide transition-colors duration-300 ease-in-out hover:bg-cream-50/5 ${
+            const linkClassName = `flex items-center gap-1 rounded-full px-4 py-2.5 font-display text-base font-medium uppercase tracking-wide transition-colors duration-300 ease-in-out hover:bg-cream-50/5 ${
               isHome && index === activeIndex
                 ? "text-cream-50"
                 : "text-[#F5F2EB]/95 hover:text-cream-50"
@@ -148,7 +151,7 @@ export default function Navbar() {
 
         <a
           href="tel:+919787626398"
-          className="group hidden h-11 items-center gap-2 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-white/25 bg-transparent pl-4 pr-6 font-display text-sm font-semibold tracking-wide text-white transition-all duration-300 ease-in-out hover:border-[#A3B899]/70 hover:text-[#A3B899] xl:inline-flex"
+          className="group hidden h-11 items-center gap-2 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-white/25 bg-transparent pl-4 pr-6 font-display text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 ease-in-out hover:border-[#A3B899]/70 hover:text-[#A3B899] xl:inline-flex"
         >
           <PhoneIcon className="h-4 w-4 flex-none opacity-70" />
           <span>Call Now</span>
