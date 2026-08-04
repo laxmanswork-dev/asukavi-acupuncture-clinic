@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Target } from "lucide-react";
 import {
-  FlameFilledIcon,
+  AcupunctureFilledIcon,
   HeartFilledIcon,
   LeafFilledIcon,
   MoonFilledIcon,
@@ -39,7 +39,7 @@ const wellnessItems = [
     image: sleepImg,
   },
   {
-    icon: FlameFilledIcon,
+    icon: AcupunctureFilledIcon,
     iconColor: "#FFB100",
     label: "Pain Relief",
     description: "Helps relieve discomfort and improve mobility.",

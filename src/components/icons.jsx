@@ -350,6 +350,15 @@ export function FlameFilledIcon(props) {
   );
 }
 
+export function AcupunctureFilledIcon(props) {
+  return (
+    <svg {...baseFilled} {...props}>
+      <rect x="10.5" y="1" width="3" height="17" rx="1.5" transform="rotate(45 12 12)" />
+      <circle cx="6" cy="18" r="1.8" />
+    </svg>
+  );
+}
+
 export function ShieldFilledIcon(props) {
   return (
     <svg {...baseFilled} {...props}>
