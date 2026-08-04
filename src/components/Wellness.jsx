@@ -164,7 +164,14 @@ export default function Wellness() {
                     />
                   );
                 })}
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-eucalyptus-950/55 via-transparent to-transparent" />
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0"
+                  style={{
+                    background:
+                      "linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.32) 32%, transparent 60%)",
+                  }}
+                />
 
                 {displayCaption && (
                   <div
@@ -206,11 +213,17 @@ export default function Wellness() {
                 className="group flex min-h-[48px] flex-col items-center gap-2.5 rounded-2xl p-1.5 text-center transition-transform duration-300 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7ED9A8]/70"
               >
                 <span
-                  className="flex h-14 w-14 items-center justify-center rounded-2xl transition-all duration-300 ease-out"
+                  className="flex h-14 w-14 items-center justify-center rounded-2xl border transition-all duration-300 ease-out"
                   style={{
-                    backgroundColor: isActive ? "#7ED9A8" : "rgba(126,217,168,0.24)",
+                    backgroundColor: isActive
+                      ? "rgba(143,165,136,0.9)"
+                      : "rgba(255,255,255,0.08)",
+                    borderColor: isActive
+                      ? "rgba(143,165,136,0.9)"
+                      : "rgba(255,255,255,0.14)",
+                    backdropFilter: isActive ? "none" : "blur(6px)",
                     boxShadow: isActive
-                      ? "0 8px 14px -2px rgba(126,217,168,0.55)"
+                      ? "0 8px 14px -2px rgba(10,22,20,0.45)"
                       : "none",
                     transform: isActive ? "scale(1.08)" : "scale(1)",
                   }}
@@ -223,7 +236,7 @@ export default function Wellness() {
                           ? iconColor
                           : `${iconColor}E6`
                         : isActive
-                          ? "#0A1614"
+                          ? "#F5F2E9"
                           : "rgba(205,239,234,0.9)",
                     }}
                   />
