@@ -104,11 +104,11 @@ export default function Navbar() {
         <ul className="relative hidden items-center gap-3 rounded-full border border-white/10 bg-white/5 px-2 py-1.5 shadow-[0_4px_20px_rgba(10,22,20,0.25)] backdrop-blur-md xl:flex">
           <span
             aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 rounded-full border border-white/25 bg-gradient-to-b from-white/15 via-white/5 to-transparent shadow-[0_0_12px_rgba(192,198,204,0.3)] transition-all duration-300 ease-in-out"
+            className="pointer-events-none absolute inset-y-0 rounded-full border border-white/25 bg-gradient-to-b from-white/15 via-white/5 to-transparent shadow-[0_0_8px_rgba(192,198,204,0.22)] transition-all duration-300 ease-in-out"
             style={{ left: indicator.left, width: indicator.width }}
           />
           {navLinks.map((link, index) => {
-            const linkClassName = `flex items-center gap-1 rounded-full px-4 py-2.5 font-display text-base font-medium tracking-wide transition-colors duration-300 ease-in-out hover:bg-cream-50/5 ${
+            const linkClassName = `flex items-center gap-1.5 rounded-full px-4 py-2.5 font-display text-base font-medium tracking-wide transition-colors duration-300 ease-in-out hover:bg-cream-50/5 ${
               isHome && index === activeIndex
                 ? "text-cream-50"
                 : "text-[#F5F2EB]/95 hover:text-cream-50"

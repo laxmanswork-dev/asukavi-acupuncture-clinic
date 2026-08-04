@@ -98,7 +98,7 @@ export default function Hero() {
 
             <NeedleUnderline
               aria-hidden="true"
-              className="hero-reveal mt-4 h-4 w-32 text-gold-400/80 sm:mt-5"
+              className="hero-reveal mt-4 h-4 w-32 text-gold-400/95 sm:mt-5"
               style={{ animationDelay: "0.18s" }}
             />
 
