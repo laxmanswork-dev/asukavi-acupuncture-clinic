@@ -303,6 +303,53 @@ export function ShieldLeafIcon(props) {
   );
 }
 
+const baseFilled = {
+  fill: "currentColor",
+  stroke: "none",
+  viewBox: "0 0 24 24",
+};
+
+export function HeartFilledIcon(props) {
+  return (
+    <svg {...baseFilled} {...props}>
+      <path d="M12 21S4.5 16.65 2 12C.5 8.5 2 4 6 4c2 0 3.5 1 6 3.5C14.5 5 16 4 18 4c4 0 5.5 4.5 4 8-2.5 4.65-10 9-10 9Z" />
+    </svg>
+  );
+}
+
+export function LeafFilledIcon(props) {
+  return (
+    <svg {...baseFilled} {...props}>
+      <path d="M5 19c8.5 0 14-5.5 14-14 0 0-11-1-14 6-2 4.5 0 8 0 8Z" />
+    </svg>
+  );
+}
+
+export function MoonFilledIcon(props) {
+  return (
+    <svg {...baseFilled} {...props}>
+      <path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z" />
+      <circle cx="18.5" cy="4" r="1" />
+    </svg>
+  );
+}
+
+export function SparkFilledIcon(props) {
+  return (
+    <svg {...baseFilled} {...props}>
+      <path d="M12 2 9.5 9.5 2 12l7.5 2.5L12 22l2.5-7.5L22 12l-7.5-2.5Z" />
+    </svg>
+  );
+}
+
+export function ShieldFilledIcon(props) {
+  return (
+    <svg {...baseFilled} {...props}>
+      <path d="M12 3.5 19 6v5.5c0 5-3 8-7 9-4-1-7-4-7-9V6Z" />
+    </svg>
+  );
+}
+
 export function MigraineIcon(props) {
   return (
     <svg {...base} {...props}>

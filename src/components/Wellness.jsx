@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Target } from "lucide-react";
 import {
-  CalmWaveIcon,
-  EmotionalBalanceIcon,
-  MoonIcon,
-  PainReliefIcon,
-  ShieldLeafIcon,
+  HeartFilledIcon,
+  LeafFilledIcon,
+  MoonFilledIcon,
+  ShieldFilledIcon,
+  SparkFilledIcon,
 } from "./icons";
 import FadeUp from "./FadeUp";
 import { NeedleUnderline } from "./motifs";
@@ -19,31 +19,31 @@ import immuneImg from "../assets/services/immune.png";
 
 const wellnessItems = [
   {
-    icon: EmotionalBalanceIcon,
+    icon: HeartFilledIcon,
     label: "Emotional Balance",
     description: "Encourages calmness and emotional wellbeing.",
     image: balanceImg,
   },
   {
-    icon: CalmWaveIcon,
+    icon: LeafFilledIcon,
     label: "Stress Relief",
     description: "Reduces everyday stress and promotes relaxation.",
     image: stressImg,
   },
   {
-    icon: MoonIcon,
+    icon: MoonFilledIcon,
     label: "Better Sleep",
     description: "Supports deeper, more restorative sleep.",
     image: sleepImg,
   },
   {
-    icon: PainReliefIcon,
+    icon: SparkFilledIcon,
     label: "Pain Relief",
     description: "Helps relieve discomfort and improve mobility.",
     image: painImg,
   },
   {
-    icon: ShieldLeafIcon,
+    icon: ShieldFilledIcon,
     label: "Immune Support",
     description: "Supports the body's natural healing response.",
     image: immuneImg,
@@ -206,24 +206,18 @@ export default function Wellness() {
                 className="group flex min-h-[48px] flex-col items-center gap-2.5 rounded-2xl p-1.5 text-center transition-transform duration-300 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7ED9A8]/70"
               >
                 <span
-                  className="flex h-12 w-12 items-center justify-center rounded-full border transition-all duration-300 ease-out"
+                  className="flex h-14 w-14 items-center justify-center rounded-full transition-all duration-300 ease-out"
                   style={{
-                    borderColor: isActive
-                      ? "rgba(126,217,168,0.85)"
-                      : "rgba(126,217,168,0.3)",
-                    backgroundColor: isActive
-                      ? "rgba(126,217,168,0.12)"
-                      : "rgba(255,255,255,0.03)",
+                    backgroundColor: isActive ? "#7ED9A8" : "rgba(126,217,168,0.16)",
                     boxShadow: isActive
-                      ? "0 0 18px rgba(126,217,168,0.45)"
+                      ? "0 8px 20px -4px rgba(126,217,168,0.55)"
                       : "none",
-                    transform: isActive ? "scale(1.1)" : "scale(1)",
+                    transform: isActive ? "scale(1.08)" : "scale(1)",
                   }}
                 >
                   <Icon
-                    className="h-5 w-5 transition-colors duration-300 ease-out"
-                    style={{ color: isActive ? "#CDEFEA" : "rgba(205,239,234,0.65)" }}
-                    strokeWidth={1.25}
+                    className="h-6 w-6 transition-colors duration-300 ease-out"
+                    style={{ color: isActive ? "#0A1614" : "rgba(205,239,234,0.75)" }}
                   />
                 </span>
                 <span className="flex flex-col items-center gap-1">
