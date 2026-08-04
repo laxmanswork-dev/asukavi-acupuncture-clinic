@@ -40,7 +40,7 @@ const IMG_CLASS =
 const SCRIM = (
   <div
     aria-hidden="true"
-    className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/92 via-black/45 to-black/5"
+    className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0a1614]/92 via-[#0a1614]/45 to-[#0a1614]/5"
   />
 );
 
@@ -48,7 +48,7 @@ const BOTTOM_SCRIM = (
   <div
     aria-hidden="true"
     className="pointer-events-none absolute inset-x-0 bottom-0 h-[40%]"
-    style={{ background: "linear-gradient(to top, rgba(0,0,0,0.85), transparent)" }}
+    style={{ background: "linear-gradient(to top, rgba(10,22,20,0.88), transparent)" }}
   />
 );
 
@@ -207,7 +207,7 @@ export default function Services() {
                 />
                 <div
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/5 sm:bg-gradient-to-r sm:from-black/92 sm:via-black/55 sm:to-black/10"
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0a1614]/90 via-[#0a1614]/40 to-[#0a1614]/5 sm:bg-gradient-to-r sm:from-[#0a1614]/92 sm:via-[#0a1614]/55 sm:to-[#0a1614]/10"
                 />
                 {BOTTOM_SCRIM}
                 {TOP_HIGHLIGHT}
