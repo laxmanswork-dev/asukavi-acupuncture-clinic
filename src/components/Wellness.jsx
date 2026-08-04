@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Target } from "lucide-react";
 import {
+  FlameFilledIcon,
   HeartFilledIcon,
   LeafFilledIcon,
   MoonFilledIcon,
   ShieldFilledIcon,
-  SparkFilledIcon,
 } from "./icons";
 import FadeUp from "./FadeUp";
 import { NeedleUnderline } from "./motifs";
@@ -40,7 +40,7 @@ const wellnessItems = [
     image: sleepImg,
   },
   {
-    icon: SparkFilledIcon,
+    icon: FlameFilledIcon,
     iconColor: "#FFB100",
     label: "Pain Relief",
     description: "Helps relieve discomfort and improve mobility.",
