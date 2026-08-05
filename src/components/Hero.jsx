@@ -122,7 +122,7 @@ export default function Hero() {
               >
                 <Link
                   to="/book-appointment"
-                  className="cta-glow-pulse group inline-flex h-[52px] items-center gap-2 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-eucalyptus-950/10 bg-[#A3B899] px-7 font-display text-base font-semibold tracking-wide text-eucalyptus-950 transition-all duration-300 ease-in-out hover:bg-[#8FA588] hover:scale-[1.02] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A3B899] sm:text-lg"
+                  className="cta-glow-pulse group inline-flex h-[52px] items-center gap-2 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-eucalyptus-950/10 bg-[#A3B899] px-7 font-display text-base font-bold tracking-wide text-eucalyptus-950 transition-all duration-300 ease-in-out hover:bg-[#8FA588] hover:scale-[1.02] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A3B899] sm:text-lg"
                 >
                   <Target size={18} strokeWidth={2} className="flex-none opacity-80" />
                   <span>Book an Appointment</span>
