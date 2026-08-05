@@ -247,7 +247,7 @@ export default function BookAppointment() {
             </p>
             <NeedleUnderline
               aria-hidden="true"
-              className="mx-auto mt-3 mb-5 h-2 w-20 text-gold-400/80"
+              className="needle-glow mx-auto mt-3 mb-5 h-2 w-20 text-gold-400/80"
             />
             <h1
               className="text-5xl font-bold leading-tight tracking-tight text-cream-50 lg:text-6xl"
@@ -257,7 +257,7 @@ export default function BookAppointment() {
             </h1>
             <NeedleUnderline
               aria-hidden="true"
-              className="mx-auto mt-6 h-4 w-32 text-gold-400/80"
+              className="needle-glow mx-auto mt-6 h-4 w-32 text-gold-400/80"
             />
           </FadeUp>
         </div>
@@ -314,7 +314,7 @@ export default function BookAppointment() {
                   </p>
                   <NeedleUnderline
                     aria-hidden="true"
-                    className="mt-3 mb-4 h-2 w-20 text-gold-400/80"
+                    className="needle-glow mt-3 mb-4 h-2 w-20 text-gold-400/80"
                   />
                   <h2
                     className="mb-6 text-3xl font-bold leading-tight tracking-tight text-cream-50 sm:text-4xl"
@@ -324,7 +324,7 @@ export default function BookAppointment() {
                   </h2>
                   <NeedleUnderline
                     aria-hidden="true"
-                    className="mb-6 h-4 w-32 text-gold-400/80"
+                    className="needle-glow mb-6 h-4 w-32 text-gold-400/80"
                   />
                   <p className="mb-4 font-body text-base leading-relaxed text-[#E8ECEF]">
                     Your first consultation typically takes 30–45 minutes and
@@ -420,7 +420,7 @@ export default function BookAppointment() {
                     </h2>
                     <NeedleUnderline
                       aria-hidden="true"
-                      className="mt-3 mb-8 h-3.5 w-24 text-gold-400/80"
+                      className="needle-glow mt-3 mb-8 h-3.5 w-24 text-gold-400/80"
                     />
 
                     <form
@@ -685,7 +685,7 @@ export default function BookAppointment() {
             </p>
             <NeedleUnderline
               aria-hidden="true"
-              className="mx-auto mt-3 mb-4 h-2 w-20 text-gold-400/80"
+              className="needle-glow mx-auto mt-3 mb-4 h-2 w-20 text-gold-400/80"
             />
             <h2
               className="text-center text-3xl font-bold text-cream-50 sm:text-4xl"
@@ -695,7 +695,7 @@ export default function BookAppointment() {
             </h2>
             <NeedleUnderline
               aria-hidden="true"
-              className="mx-auto mt-4 mb-10 h-4 w-32 text-gold-400/80"
+              className="needle-glow mx-auto mt-4 mb-10 h-4 w-32 text-gold-400/80"
             />
 
             <div>

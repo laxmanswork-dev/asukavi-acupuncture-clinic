@@ -102,7 +102,7 @@ export default function Wellness() {
               </p>
               <NeedleUnderline
                 aria-hidden="true"
-                className="mt-3 h-2 w-20 text-gold-400/80"
+                className="needle-glow mt-3 h-2 w-20 text-gold-400/80"
               />
               <h2
                 className="mt-4 text-4xl font-bold leading-tight tracking-tight text-cream-50 transition-all duration-300 ease-out sm:text-5xl"
@@ -114,11 +114,7 @@ export default function Wellness() {
               </h2>
               <NeedleUnderline
                 aria-hidden="true"
-                className="underline-grow mt-3 mb-4 h-[18px] w-32 text-gold-400/95"
-                style={{
-                  filter:
-                    "drop-shadow(0 0 4px rgba(232,177,58,0.35)) drop-shadow(0 0 6px rgba(126,217,168,0.25))",
-                }}
+                className="underline-grow needle-glow mt-3 mb-4 h-[18px] w-32 text-gold-400/95"
               />
               <p className="max-w-sm font-body text-base leading-relaxed text-[#E8ECEF] transition-all duration-300 ease-out lg:text-lg">
                 Acupuncture supports your body&rsquo;s natural balance,

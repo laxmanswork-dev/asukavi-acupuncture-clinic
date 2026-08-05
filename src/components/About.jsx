@@ -45,7 +45,7 @@ export default function About() {
 
           <NeedleUnderline
             aria-hidden="true"
-            className="mt-3 mb-6 h-2 w-20 text-gold-400/80 sm:mb-8"
+            className="needle-glow mt-3 mb-6 h-2 w-20 text-gold-400/80 sm:mb-8"
           />
 
           <h2
@@ -66,11 +66,7 @@ export default function About() {
 
           <NeedleUnderline
             aria-hidden="true"
-            className="underline-grow mt-7 mb-7 h-[18px] w-32 text-gold-400/95 sm:mt-8 sm:mb-8"
-            style={{
-              filter:
-                "drop-shadow(0 0 4px rgba(232,177,58,0.35)) drop-shadow(0 0 6px rgba(126,217,168,0.25))",
-            }}
+            className="underline-grow needle-glow mt-7 mb-7 h-[18px] w-32 text-gold-400/95 sm:mt-8 sm:mb-8"
           />
 
           <p
@@ -116,7 +112,7 @@ export default function About() {
 
           <NeedleUnderline
             aria-hidden="true"
-            className="mt-8 h-4 w-32 text-gold-400/80"
+            className="needle-glow mt-8 h-4 w-32 text-gold-400/80"
           />
 
           <p className="mt-7 font-tamil text-sm font-semibold tracking-[0.15em] text-[#A8D5BA]/70">

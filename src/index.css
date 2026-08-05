@@ -112,6 +112,10 @@ footer[id] {
   animation: underline-grow 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
+.needle-glow {
+  filter: drop-shadow(0 0 3px rgba(232, 177, 58, 0.25));
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-reveal {
     opacity: 1;

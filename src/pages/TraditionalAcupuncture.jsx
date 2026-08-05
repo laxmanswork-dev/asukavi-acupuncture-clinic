@@ -97,7 +97,7 @@ export default function TraditionalAcupuncture() {
             </p>
             <NeedleUnderline
               aria-hidden="true"
-              className="mx-auto mt-3 mb-5 h-2 w-20 text-gold-400/80"
+              className="needle-glow mx-auto mt-3 mb-5 h-2 w-20 text-gold-400/80"
             />
             <h1
               className="text-5xl font-bold leading-tight tracking-tight text-cream-50 lg:text-6xl"
@@ -107,7 +107,7 @@ export default function TraditionalAcupuncture() {
             </h1>
             <NeedleUnderline
               aria-hidden="true"
-              className="mx-auto mt-6 mb-6 h-4 w-32 text-gold-400/80"
+              className="needle-glow mx-auto mt-6 mb-6 h-4 w-32 text-gold-400/80"
             />
             <p className="mx-auto max-w-2xl font-body text-base leading-relaxed text-[#E8ECEF] lg:text-lg">
               Fine-needle therapy designed to restore energy flow, relieve
@@ -137,7 +137,7 @@ export default function TraditionalAcupuncture() {
             </p>
             <NeedleUnderline
               aria-hidden="true"
-              className="mx-auto mt-3 h-2 w-20 text-gold-400/80"
+              className="needle-glow mx-auto mt-3 h-2 w-20 text-gold-400/80"
             />
             <h2
               className="mx-auto mt-4 max-w-2xl text-center text-3xl font-bold leading-tight tracking-tight text-cream-50 sm:text-4xl"
@@ -147,7 +147,7 @@ export default function TraditionalAcupuncture() {
             </h2>
             <NeedleUnderline
               aria-hidden="true"
-              className="mx-auto mt-4 h-4 w-32 text-gold-400/80"
+              className="needle-glow mx-auto mt-4 h-4 w-32 text-gold-400/80"
             />
             <p className="mx-auto mt-4 max-w-2xl text-center font-body text-base leading-relaxed text-[#E8ECEF]">
               Traditional Acupuncture at Asukavi is informed by a wide range
@@ -197,7 +197,7 @@ export default function TraditionalAcupuncture() {
             </h2>
             <NeedleUnderline
               aria-hidden="true"
-              className="mx-auto mt-5 mb-8 h-4 w-32 text-gold-400/80"
+              className="needle-glow mx-auto mt-5 mb-8 h-4 w-32 text-gold-400/80"
             />
             <p className="mb-8 font-body text-base leading-relaxed text-[#E8ECEF]">
               Book a personalized consultation and let us design a treatment
