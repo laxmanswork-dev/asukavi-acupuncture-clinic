@@ -98,8 +98,12 @@ export default function Hero() {
 
             <NeedleUnderline
               aria-hidden="true"
-              className="hero-reveal mt-4 h-4 w-32 text-gold-400/95 sm:mt-5"
-              style={{ animationDelay: "0.18s" }}
+              className="underline-grow mt-4 h-[18px] w-32 text-gold-400/95 sm:mt-5"
+              style={{
+                animationDelay: "0.18s",
+                filter:
+                  "drop-shadow(0 0 4px rgba(232,177,58,0.35)) drop-shadow(0 0 6px rgba(126,217,168,0.25))",
+              }}
             />
 
             <div className="mt-6 flex flex-col items-start sm:mt-7 lg:mt-8">

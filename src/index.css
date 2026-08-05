@@ -95,6 +95,23 @@ footer[id] {
   animation: heal-pulse 2.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
 }
 
+@keyframes underline-grow {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+.underline-grow {
+  transform-origin: left center;
+  opacity: 0;
+  animation: underline-grow 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-reveal {
     opacity: 1;
@@ -108,6 +125,11 @@ footer[id] {
   .heal-pulse-ring {
     animation: none;
     display: none;
+  }
+  .underline-grow {
+    opacity: 1;
+    animation: none;
+    transform: none;
   }
 }
 
