@@ -112,7 +112,15 @@ export default function Wellness() {
                 <br />
                 Balanced Living.
               </h2>
-              <p className="mt-5 max-w-sm font-body text-base leading-relaxed text-[#E8ECEF] transition-all duration-300 ease-out lg:text-lg">
+              <NeedleUnderline
+                aria-hidden="true"
+                className="underline-grow mt-3 mb-4 h-[18px] w-32 text-gold-400/95"
+                style={{
+                  filter:
+                    "drop-shadow(0 0 4px rgba(232,177,58,0.35)) drop-shadow(0 0 6px rgba(126,217,168,0.25))",
+                }}
+              />
+              <p className="max-w-sm font-body text-base leading-relaxed text-[#E8ECEF] transition-all duration-300 ease-out lg:text-lg">
                 Acupuncture supports your body&rsquo;s natural balance,
                 helping improve physical comfort, emotional wellbeing, and
                 everyday quality of life.

@@ -64,9 +64,13 @@ export default function About() {
             Personalized Care.
           </h2>
 
-          <span
+          <NeedleUnderline
             aria-hidden="true"
-            className="mt-7 mb-7 block h-px w-24 bg-gold-400/70 sm:mt-8 sm:mb-8"
+            className="underline-grow mt-7 mb-7 h-[18px] w-32 text-gold-400/95 sm:mt-8 sm:mb-8"
+            style={{
+              filter:
+                "drop-shadow(0 0 4px rgba(232,177,58,0.35)) drop-shadow(0 0 6px rgba(126,217,168,0.25))",
+            }}
           />
 
           <p
