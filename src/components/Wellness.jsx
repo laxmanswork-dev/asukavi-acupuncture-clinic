@@ -44,6 +44,61 @@ const wellnessItems = [
   },
 ];
 
+const REDUCE_MOTION =
+  typeof window !== "undefined" &&
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function TypewriterCaption({ label, description }) {
+  const [labelText, setLabelText] = useState(REDUCE_MOTION ? label : "");
+  const [descText, setDescText] = useState(REDUCE_MOTION ? description : "");
+  const [labelDone, setLabelDone] = useState(REDUCE_MOTION);
+
+  useEffect(() => {
+    if (REDUCE_MOTION) return;
+    setLabelText("");
+    setDescText("");
+    setLabelDone(false);
+  }, [label, description]);
+
+  useEffect(() => {
+    if (REDUCE_MOTION || labelDone) return;
+    if (labelText.length >= label.length) {
+      setLabelDone(true);
+      return;
+    }
+    const id = setTimeout(() => {
+      setLabelText(label.slice(0, labelText.length + 1));
+    }, 32);
+    return () => clearTimeout(id);
+  }, [label, labelText, labelDone]);
+
+  useEffect(() => {
+    if (REDUCE_MOTION || !labelDone) return;
+    if (descText.length >= description.length) return;
+    const id = setTimeout(() => {
+      setDescText(description.slice(0, descText.length + 1));
+    }, 12);
+    return () => clearTimeout(id);
+  }, [description, descText, labelDone]);
+
+  return (
+    <>
+      <p className="font-display text-base font-semibold text-cream-50">
+        {labelText}
+        {!REDUCE_MOTION && !labelDone && (
+          <span
+            aria-hidden="true"
+            className="ml-0.5 inline-block h-[1em] w-[2px] animate-pulse bg-cream-50 align-middle"
+          />
+        )}
+      </p>
+      <p className="mt-1 font-body text-[13px] leading-snug text-[#E8ECEF]/90">
+        {descText}
+      </p>
+    </>
+  );
+}
+
 export default function Wellness() {
   const [activeIndex, setActiveIndex] = useState(0);
   const active = wellnessItems[activeIndex];
@@ -187,12 +242,10 @@ export default function Wellness() {
                     }}
                     key={displayCaption.label}
                   >
-                    <p className="font-display text-base font-semibold text-cream-50">
-                      {displayCaption.label}
-                    </p>
-                    <p className="mt-1 font-body text-[13px] leading-snug text-[#E8ECEF]/90">
-                      {displayCaption.description}
-                    </p>
+                    <TypewriterCaption
+                      label={displayCaption.label}
+                      description={displayCaption.description}
+                    />
                   </div>
                 )}
               </div>
