@@ -1,13 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Target } from "lucide-react";
-import {
-  AcupunctureFilledIcon,
-  HeartFilledIcon,
-  LeafFilledIcon,
-  MoonFilledIcon,
-  ShieldFilledIcon,
-} from "./icons";
+import { ArrowRight, Heart, Leaf, Moon, ShieldCheck, Sparkles, Target } from "lucide-react";
 import FadeUp from "./FadeUp";
 import { NeedleUnderline } from "./motifs";
 import wellnessVideo from "../assets/well.mp4";
@@ -19,36 +12,31 @@ import immuneImg from "../assets/services/immune.png";
 
 const wellnessItems = [
   {
-    icon: HeartFilledIcon,
-    iconColor: "#E0245E",
+    icon: Heart,
     label: "Emotional Balance",
     description: "Encourages calmness and emotional wellbeing.",
     image: balanceImg,
   },
   {
-    icon: LeafFilledIcon,
-    iconColor: "#4CAF50",
+    icon: Leaf,
     label: "Stress Relief",
     description: "Reduces everyday stress and promotes relaxation.",
     image: stressImg,
   },
   {
-    icon: MoonFilledIcon,
-    iconColor: "#FFFFFF",
+    icon: Moon,
     label: "Better Sleep",
     description: "Supports deeper, more restorative sleep.",
     image: sleepImg,
   },
   {
-    icon: AcupunctureFilledIcon,
-    iconColor: "#FFB100",
+    icon: Sparkles,
     label: "Pain Relief",
     description: "Helps relieve discomfort and improve mobility.",
     image: painImg,
   },
   {
-    icon: ShieldFilledIcon,
-    iconColor: "#2563EB",
+    icon: ShieldCheck,
     label: "Immune Support",
     description: "Supports the body's natural healing response.",
     image: immuneImg,
@@ -204,7 +192,7 @@ export default function Wellness() {
           role="tablist"
           aria-label="Wellness benefits"
         >
-          {wellnessItems.map(({ icon: Icon, iconColor, label }, index) => {
+          {wellnessItems.map(({ icon: Icon, label }, index) => {
             const isActive = activeIndex === index;
             return (
               <button
@@ -221,28 +209,23 @@ export default function Wellness() {
                   className="flex h-14 w-14 items-center justify-center rounded-2xl border transition-all duration-300 ease-out"
                   style={{
                     backgroundColor: isActive
-                      ? "rgba(143,165,136,0.9)"
-                      : "rgba(255,255,255,0.08)",
+                      ? "rgba(126,217,168,0.16)"
+                      : "rgba(255,255,255,0.06)",
                     borderColor: isActive
-                      ? "rgba(143,165,136,0.9)"
+                      ? "rgba(126,217,168,0.55)"
                       : "rgba(255,255,255,0.14)",
                     backdropFilter: isActive ? "none" : "blur(6px)",
                     boxShadow: isActive
-                      ? "0 8px 14px -2px rgba(10,22,20,0.45)"
+                      ? "0 0 16px rgba(126,217,168,0.4), 0 0 8px rgba(232,177,58,0.2)"
                       : "none",
-                    transform: isActive ? "scale(1.08)" : "scale(1)",
+                    transform: isActive ? "scale(1.05)" : "scale(1)",
                   }}
                 >
                   <Icon
                     className="h-6 w-6 transition-colors duration-300 ease-out"
+                    strokeWidth={1.75}
                     style={{
-                      color: iconColor
-                        ? isActive
-                          ? iconColor
-                          : `${iconColor}E6`
-                        : isActive
-                          ? "#F5F2E9"
-                          : "rgba(205,239,234,0.9)",
+                      color: isActive ? "#7ED9A8" : "rgba(205,239,234,0.55)",
                     }}
                   />
                 </span>
