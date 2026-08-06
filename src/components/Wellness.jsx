@@ -68,7 +68,7 @@ function TypewriterCaption({ label, description }) {
     }
     const id = setTimeout(() => {
       setLabelText(label.slice(0, labelText.length + 1));
-    }, 32);
+    }, 55);
     return () => clearTimeout(id);
   }, [label, labelText, labelDone]);
 
@@ -77,7 +77,7 @@ function TypewriterCaption({ label, description }) {
     if (descText.length >= description.length) return;
     const id = setTimeout(() => {
       setDescText(description.slice(0, descText.length + 1));
-    }, 12);
+    }, 22);
     return () => clearTimeout(id);
   }, [description, descText, labelDone]);
 
@@ -112,7 +112,7 @@ export default function Wellness() {
 
     const id = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % wellnessItems.length);
-    }, 4000);
+    }, 5000);
     return () => clearInterval(id);
   }, [activeIndex]);
 
