@@ -499,6 +499,17 @@ export function AcupunctureNeedleIcon(props) {
   );
 }
 
+export function NeedleHealingSparkIcon(props) {
+  return (
+    <svg {...base} strokeWidth={2} {...props}>
+      <line x1="8" y1="16" x2="17" y2="7" />
+      <circle cx="18.3" cy="5.7" r="1.3" />
+      <path d="M4.5 19.5c.6-.6 1.4-.6 2 0" />
+      <path d="M2.5 21.5c1.2-1.2 2.8-1.2 4 0" />
+    </svg>
+  );
+}
+
 export function EarAcupunctureIcon(props) {
   return (
     <svg {...base} {...props}>
