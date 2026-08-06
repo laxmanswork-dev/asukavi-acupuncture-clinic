@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Heart, Leaf, Moon, ShieldCheck, Sparkles, Target } from "lucide-react";
+import { ArrowRight, Heart, Leaf, Moon, ShieldCheck, Target } from "lucide-react";
 import FadeUp from "./FadeUp";
+import { AcupunctureNeedleIcon } from "./icons";
 import { NeedleUnderline } from "./motifs";
 import wellnessVideo from "../assets/well.mp4";
 import stressImg from "../assets/services/stress.png";
@@ -30,7 +31,7 @@ const wellnessItems = [
     image: sleepImg,
   },
   {
-    icon: Sparkles,
+    icon: AcupunctureNeedleIcon,
     label: "Pain Relief",
     description: "Helps relieve discomfort and improve mobility.",
     image: painImg,
