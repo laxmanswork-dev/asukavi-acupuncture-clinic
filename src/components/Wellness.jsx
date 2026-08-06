@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Heart, Leaf, Moon, ShieldCheck, Target } from "lucide-react";
 import FadeUp from "./FadeUp";
@@ -48,6 +48,18 @@ export default function Wellness() {
   const [activeIndex, setActiveIndex] = useState(0);
   const active = wellnessItems[activeIndex];
   const displayCaption = { label: active.label, description: active.description };
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (prefersReducedMotion) return;
+
+    const id = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % wellnessItems.length);
+    }, 4000);
+    return () => clearInterval(id);
+  }, [activeIndex]);
 
   return (
     <section
