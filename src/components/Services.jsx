@@ -23,6 +23,33 @@ const stagger = {
   },
 };
 
+const wordFadeUp = {
+  hidden: { opacity: 0, y: 6 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: EASE } },
+};
+
+const wordStagger = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.035, delayChildren: 0.05 } },
+};
+
+function RevealWords({ text, as = "span", className, style }) {
+  const MotionTag = motion[as];
+  return (
+    <MotionTag variants={wordStagger} className={className} style={style}>
+      {text.split(" ").map((word, i) => (
+        <motion.span
+          key={i}
+          variants={wordFadeUp}
+          style={{ display: "inline-block", marginRight: "0.3em" }}
+        >
+          {word}
+        </motion.span>
+      ))}
+    </MotionTag>
+  );
+}
+
 const threeLineDesc = { maxHeight: "66px", overflow: "hidden", flexShrink: 0 };
 
 const CARD_STYLE = {
@@ -102,15 +129,17 @@ function ServiceCard({ image, title, description, className = "" }) {
           {BOTTOM_SCRIM}
           {TOP_HIGHLIGHT}
           <div className="relative z-10 flex h-full min-h-0 flex-col justify-end gap-1.5 p-6">
-            <h3 className="font-display text-[21px] font-bold leading-snug text-cream-50 transition-colors duration-500 group-hover:text-[#CFF3DD]">
-              {title}
-            </h3>
-            <p
+            <RevealWords
+              as="h3"
+              text={title}
+              className="font-display text-[21px] font-bold leading-snug text-cream-50 transition-colors duration-500 group-hover:text-[#CFF3DD]"
+            />
+            <RevealWords
+              as="p"
+              text={description}
               style={threeLineDesc}
               className="font-body text-[15px] leading-snug text-[#E8ECEF]/90"
-            >
-              {description}
-            </p>
+            />
           </div>
         </div>
       </div>
@@ -212,21 +241,21 @@ export default function Services() {
                 {BOTTOM_SCRIM}
                 {TOP_HIGHLIGHT}
                 <div className="relative z-10 flex h-full min-h-0 flex-col justify-end gap-3 p-6 sm:max-w-md sm:justify-center sm:p-8">
-                  <h3
+                  <RevealWords
+                    as="h3"
+                    text="Traditional Acupuncture"
                     className="text-[22px] text-cream-50 transition-colors duration-500 group-hover:text-[#CFF3DD] sm:text-[30px]"
                     style={{
                       fontFamily: "'Cormorant Garamond', serif",
                       fontWeight: 700,
                       lineHeight: 1.15,
                     }}
-                  >
-                    Traditional Acupuncture
-                  </h3>
-                  <p className="font-body text-[16px] leading-snug text-[#E8ECEF]/90">
-                    Fine-needle therapy designed to restore energy flow,
-                    relieve pain, and support your body&rsquo;s natural
-                    healing.
-                  </p>
+                  />
+                  <RevealWords
+                    as="p"
+                    text="Fine-needle therapy designed to restore energy flow, relieve pain, and support your body’s natural healing."
+                    className="font-body text-[16px] leading-snug text-[#E8ECEF]/90"
+                  />
                   <Link
                     to="/treatments/traditional-acupuncture"
                     className="group/btn mt-1 inline-flex h-11 w-fit items-center gap-2 rounded-full bg-[#A3B899] px-6 font-display text-[15px] font-semibold text-eucalyptus-950 shadow-md shadow-[#A3B899]/25 transition-all duration-300 hover:scale-[1.02] hover:bg-[#8FA588]"
