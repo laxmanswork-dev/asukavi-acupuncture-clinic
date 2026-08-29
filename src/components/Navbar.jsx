@@ -95,7 +95,7 @@ export default function Navbar() {
             <span className="font-script text-2xl font-semibold tracking-wide text-cream-50 sm:text-3xl">
               Asukavi
             </span>
-            <span className="mt-1 whitespace-nowrap font-display text-[8px] font-semibold tracking-[0.1em] text-[#A8D5BA] sm:text-xs sm:tracking-[0.3em]">
+            <span className="mt-0.5 whitespace-nowrap font-display text-[8px] font-medium tracking-[0.09em] text-[#A8D5BA] sm:text-[11px] sm:tracking-[0.2em]">
               ACUPUNCTURE CENTRE
             </span>
           </span>
