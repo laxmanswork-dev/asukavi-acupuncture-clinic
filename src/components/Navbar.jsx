@@ -144,7 +144,7 @@ export default function Navbar() {
           })}
           <span
             aria-hidden="true"
-            className="pointer-events-none absolute bottom-1 h-[2px] rounded-full border border-white/40 bg-white/50 shadow-[0_0_6px_rgba(255,255,255,0.5)] backdrop-blur-sm transition-all duration-300 ease-in-out"
+            className="pointer-events-none absolute bottom-1 h-px rounded-full bg-gradient-to-r from-[#A8D5BA]/0 via-[#A8D5BA] to-[#A8D5BA]/0 shadow-[0_0_4px_rgba(168,213,186,0.4)] transition-all duration-300 ease-in-out"
             style={{ left: indicator.left, width: indicator.width }}
           />
         </ul>
