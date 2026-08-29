@@ -19,7 +19,7 @@ export default function About() {
         src={aboutVideo}
         style={{
           opacity: 1,
-          filter: "brightness(0.14)",
+          filter: "brightness(0.22)",
           WebkitMaskImage:
             "radial-gradient(78% 78% at 50% 50%, black 55%, transparent 92%)",
           maskImage:
