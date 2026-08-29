@@ -34,7 +34,7 @@ export default function Footer() {
                 className="h-10 w-10 flex-none rounded-full object-cover"
               />
               <span className="flex flex-col items-center leading-none sm:items-start">
-                <span className="font-script text-xl font-semibold tracking-wide text-cream-50">
+                <span className="font-script text-2xl font-semibold tracking-wide text-cream-50">
                   Asukavi
                 </span>
                 <span className="mt-0.5 whitespace-nowrap font-display text-[8px] font-medium tracking-[0.09em] text-[#A8D5BA] sm:text-[10px] sm:tracking-[0.2em]">

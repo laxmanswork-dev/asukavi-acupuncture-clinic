@@ -92,7 +92,7 @@ export default function Navbar() {
             className="h-9 w-9 flex-none rounded-full object-cover sm:h-11 sm:w-11"
           />
           <span className="flex min-w-0 flex-col items-center leading-none sm:items-start">
-            <span className="font-script text-2xl font-semibold tracking-wide text-cream-50 sm:text-3xl">
+            <span className="font-script text-3xl font-semibold tracking-wide text-cream-50 sm:text-4xl">
               Asukavi
             </span>
             <span className="mt-0.5 whitespace-nowrap font-display text-[8px] font-medium tracking-[0.09em] text-[#A8D5BA] sm:text-[11px] sm:tracking-[0.2em]">
