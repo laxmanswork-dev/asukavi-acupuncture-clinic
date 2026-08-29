@@ -133,8 +133,8 @@ export default function Hero() {
                   />
                 </Link>
 
-                <a
-                  href="#services"
+                <Link
+                  to="/treatments/traditional-acupuncture"
                   className="group inline-flex h-[52px] items-center gap-2 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-white/45 bg-white/5 px-6 font-display text-base font-semibold tracking-wide text-white transition-all duration-300 ease-in-out hover:border-white/70 hover:bg-white/10 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/60 sm:text-lg"
                   style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}
                 >
@@ -144,7 +144,7 @@ export default function Hero() {
                     strokeWidth={2}
                     className="flex-none transition-transform duration-300 ease-in-out group-hover:translate-x-1.5"
                   />
-                </a>
+                </Link>
               </div>
 
               <div
