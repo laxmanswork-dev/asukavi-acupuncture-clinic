@@ -224,11 +224,7 @@ export default function BookAppointment() {
         playsInline
         src={appointmentVideo}
       />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 -z-10"
-        style={{ backgroundColor: "rgba(10,20,15,0.88)" }}
-      />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-eucalyptus-950/75" />
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10"
