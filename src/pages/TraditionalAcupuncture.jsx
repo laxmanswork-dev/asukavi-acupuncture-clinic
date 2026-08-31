@@ -131,7 +131,7 @@ export default function TraditionalAcupuncture() {
                 className="mx-auto mt-5 font-medium italic leading-snug text-cream-50"
                 style={{
                   fontFamily: "'Noto Serif Tamil', serif",
-                  fontSize: "clamp(0.8rem, 3.4vw, 1.5rem)",
+                  fontSize: "clamp(0.72rem, 2.9vw, 1.25rem)",
                 }}
               >
                 <span className="block whitespace-nowrap">
