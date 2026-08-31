@@ -64,7 +64,7 @@ export default function Spotlight() {
           <ul className="space-y-3">
             {points.map((point) => (
               <li key={point.text} className="flex items-center gap-3">
-                <span className="flex h-5 w-5 flex-none items-center justify-center font-display text-xs font-semibold text-gold-400/80">
+                <span className="flex h-5 w-5 flex-none items-center justify-center font-display text-xs font-semibold text-[#A8D5BA]">
                   {point.numeral}
                 </span>
                 <span className="font-body text-sm font-light leading-relaxed text-gray-300 lg:text-base">
