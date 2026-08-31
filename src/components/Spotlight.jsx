@@ -77,33 +77,29 @@ export default function Spotlight() {
         </FadeUp>
 
         <FadeUp delay={150} className="relative flex justify-center lg:col-span-5">
-          <div className="relative w-full max-w-[420px]">
-            {/* Offset architectural rule — a single mounting line, not a surrounding box */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-8 -z-10 rounded-[40px] bg-[#7ED9A8]/22 blur-3xl"
+          />
+          <div className="relative aspect-square w-full max-w-[460px]">
             <div
               aria-hidden="true"
-              className="absolute -bottom-6 -right-6 h-full w-full border border-[#C0C6CC]/30"
+              className="absolute -inset-3 rounded-[40px] border border-[#C0C6CC]/25"
             />
-            <div className="relative aspect-[4/5] w-full overflow-hidden bg-eucalyptus-800">
-              <video
-                className="h-full w-full object-cover"
-                poster={doctorPhoto}
-                autoPlay
-                muted
-                loop
-                playsInline
-                aria-label="Dr. Asukavi, acupuncturist at Asukavi Acupuncture Clinic"
-              >
-                <source src="/doctor.mp4" type="video/mp4" />
-              </video>
-              {/* Corner brackets — gallery-mount markers on two opposing corners only */}
-              <span
-                aria-hidden="true"
-                className="pointer-events-none absolute left-0 top-0 h-10 w-10 border-l border-t border-[#C0C6CC]/70"
-              />
-              <span
-                aria-hidden="true"
-                className="pointer-events-none absolute bottom-0 right-0 h-10 w-10 border-b border-r border-[#C0C6CC]/70"
-              />
+            <div className="absolute inset-0 rounded-[32px] border-2 border-[#C0C6CC]/50 p-2 shadow-[0_0_24px_rgba(126,217,168,0.1)] backdrop-blur-md">
+              <div className="h-full w-full overflow-hidden rounded-[24px]">
+                <video
+                  className="h-full w-full object-cover"
+                  poster={doctorPhoto}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  aria-label="Dr. Asukavi, acupuncturist at Asukavi Acupuncture Clinic"
+                >
+                  <source src="/doctor.mp4" type="video/mp4" />
+                </video>
+              </div>
             </div>
           </div>
         </FadeUp>
