@@ -92,7 +92,7 @@ export default function About() {
           className="hidden h-full w-px bg-gradient-to-b from-transparent via-cream-50/24 to-transparent lg:block lg:translate-x-8 xl:translate-x-24"
         />
 
-        <FadeUp delay={150} className="relative lg:translate-x-[32px] xl:translate-x-[96px]">
+        <FadeUp delay={150} className="relative lg:translate-x-[-28px] xl:translate-x-[36px]">
           <p className="font-tamil text-sm font-semibold tracking-[0.15em] text-[#A8D5BA]">
             திருக்குறள் 948
           </p>
