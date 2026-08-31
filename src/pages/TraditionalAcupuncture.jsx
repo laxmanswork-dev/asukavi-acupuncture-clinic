@@ -149,21 +149,13 @@ export default function TraditionalAcupuncture() {
           </FadeUp>
 
           {/* Bridge into the techniques grid */}
-          <FadeUp delay={80} className="mt-6 lg:mt-8">
-            <p className="text-center font-display text-xs font-medium tracking-[0.22em] text-[#B8C9BE]">
-              OUR TREATMENT APPROACHES
-            </p>
+          <FadeUp delay={80} className="mt-16 lg:mt-20">
             <h2
-              className="mx-auto mt-4 max-w-2xl text-center text-3xl font-bold leading-tight tracking-tight text-cream-50 sm:text-4xl"
+              className="mx-auto max-w-2xl text-center text-3xl font-bold leading-tight tracking-tight text-cream-50 sm:text-4xl"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               Explore Our Healing Methods
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-center font-body text-base leading-relaxed text-[#E8ECEF]">
-              A carefully selected range of traditional and complementary
-              therapies, tailored to individual needs and guided by a
-              holistic approach to healing.
-            </p>
           </FadeUp>
 
           {/* Category filters */}
