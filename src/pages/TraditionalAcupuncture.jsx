@@ -100,7 +100,7 @@ export default function TraditionalAcupuncture() {
         <div className="relative mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
           {/* Thirukkural philosophy — no card, generous breathing room */}
           <FadeUp>
-            <div className="mx-auto max-w-2xl text-center">
+            <div className="mx-auto max-w-3xl text-center">
               <NeedleUnderline
                 aria-hidden="true"
                 className="needle-glow mx-auto h-2 w-20 text-gold-400/80"
@@ -112,12 +112,18 @@ export default function TraditionalAcupuncture() {
                 திருக்குறள் &middot; குறள் 942
               </p>
               <p
-                className="mx-auto mt-5 text-xl font-medium italic leading-snug text-cream-50 sm:text-2xl"
-                style={{ fontFamily: "'Noto Serif Tamil', serif" }}
+                className="mx-auto mt-5 font-medium italic leading-snug text-cream-50"
+                style={{
+                  fontFamily: "'Noto Serif Tamil', serif",
+                  fontSize: "clamp(0.8rem, 3.4vw, 1.5rem)",
+                }}
               >
-                &ldquo;மருந்தென வேண்டாவாம் யாக்கைக்கு அருந்தியது
-                <br />
-                அற்றது போற்றி உணின்&rdquo;
+                <span className="block whitespace-nowrap">
+                  &ldquo;மருந்தென வேண்டாவாம் யாக்கைக்கு அருந்தியது
+                </span>
+                <span className="block whitespace-nowrap">
+                  அற்றது போற்றி உணின்&rdquo;
+                </span>
               </p>
               <p
                 className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-[#E8ECEF]/80"
