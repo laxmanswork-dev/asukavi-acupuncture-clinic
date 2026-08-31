@@ -191,7 +191,7 @@ export default function Wellness() {
           </FadeUp>
 
           <FadeUp delay={150}>
-            <div className="relative mx-auto aspect-[16/10] w-full max-w-[485px] min-[1920px]:max-w-[620px]">
+            <div className="relative mx-auto aspect-[16/10] w-full max-w-[620px]">
               <div
                 aria-hidden="true"
                 className="pointer-events-none absolute -inset-8 -z-10 rounded-full bg-[#7ED9A8]/16 blur-3xl motion-reduce:transition-none"
