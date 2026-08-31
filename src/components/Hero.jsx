@@ -35,7 +35,7 @@ function GoogleGIcon({ size = 20, className }) {
 }
 
 export default function Hero() {
-  const { rating, reviewCount, isLoading } = useGooglePlaces();
+  const { rating, isLoading } = useGooglePlaces();
   const clinicStatus = useClinicStatus();
 
   return (
@@ -165,7 +165,7 @@ export default function Hero() {
                   </span>
                 </span>
                 <span className="font-body text-[13px] text-white/85">
-                  ({reviewCount} Google Reviews) &nbsp;&bull;&nbsp; Tirunelveli, TN
+                  Tirunelveli, TN
                 </span>
 
                 <span
