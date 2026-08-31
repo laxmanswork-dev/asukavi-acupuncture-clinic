@@ -261,7 +261,7 @@ export default function Services() {
                   />
                   <Link
                     to="/treatments/traditional-acupuncture"
-                    className="group/btn mt-1 inline-flex h-11 w-fit items-center gap-2 rounded-full bg-[#A3B899] px-6 font-display text-[15px] font-semibold text-eucalyptus-950 shadow-md shadow-[#A3B899]/25 transition-all duration-300 hover:scale-[1.02] hover:bg-[#8FA588]"
+                    className="group/btn mt-1 inline-flex h-11 w-fit items-center gap-2 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm bg-[#A3B899] px-6 font-display text-[15px] font-semibold text-eucalyptus-950 shadow-md shadow-[#A3B899]/25 transition-all duration-300 hover:scale-[1.02] hover:bg-[#8FA588]"
                   >
                     Explore Treatment
                     <ArrowRightIcon className="h-4 w-4 transition-transform duration-300 ease-out group-hover/btn:translate-x-2" />
