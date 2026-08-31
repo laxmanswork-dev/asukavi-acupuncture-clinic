@@ -145,8 +145,8 @@ export default function Wellness() {
         }}
       />
 
-      <div className="relative mx-auto flex max-w-7xl flex-col justify-center gap-8 px-6 py-12 lg:h-full lg:px-10 lg:py-0">
-        <div className="grid items-center gap-10 lg:grid-cols-[2fr_3fr] lg:gap-16">
+      <div className="relative mx-auto flex max-w-7xl flex-col justify-center gap-7 px-6 py-12 lg:h-full lg:px-10 lg:py-0">
+        <div className="grid items-center gap-10 lg:grid-cols-[2fr_3fr] lg:items-start lg:gap-12">
           <FadeUp>
             <div>
               <p className="font-display text-sm font-semibold tracking-[0.3em] text-[#A8D5BA]">
@@ -265,13 +265,16 @@ export default function Wellness() {
                 onClick={() => setActiveIndex(index)}
                 onMouseEnter={() => setActiveIndex(index)}
                 onFocus={() => setActiveIndex(index)}
-                className="group flex min-h-[48px] flex-col items-center gap-2.5 rounded-2xl p-1.5 text-center transition-transform duration-300 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7ED9A8]/70"
+                className="group flex min-h-[48px] flex-col items-center gap-2.5 rounded-2xl p-1.5 text-center transition-transform duration-300 ease-out hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7ED9A8]/70"
               >
                 <span
-                  className="relative flex h-14 w-14 flex-none items-center justify-center transition-transform duration-300 ease-out"
+                  className="relative flex h-14 w-14 flex-none items-center justify-center transition-all duration-300 ease-out"
                   style={{
                     backdropFilter: isActive ? "none" : "blur(6px)",
                     transform: isActive ? "scale(1.05)" : "scale(1)",
+                    filter: isActive
+                      ? "drop-shadow(0 0 6px rgba(126,217,168,0.4))"
+                      : "none",
                   }}
                 >
                   <svg
