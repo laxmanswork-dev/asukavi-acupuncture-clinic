@@ -76,7 +76,7 @@ function toRoman(num) {
 export default function TraditionalAcupuncture() {
   return (
     <>
-      {/* Hero */}
+      {/* Philosophy (Thirukkural) -> Treatment methods -> Techniques grid */}
       <section className="relative overflow-hidden border-t border-cream-50/12">
         <video
           aria-hidden="true"
@@ -96,50 +96,47 @@ export default function TraditionalAcupuncture() {
               "radial-gradient(120% 90% at 50% 0%, transparent 30%, rgba(10,22,20,0.75) 100%)",
           }}
         />
-        <div className="relative mx-auto max-w-4xl px-6 py-20 text-center lg:py-28">
+
+        <div className="relative mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
+          {/* Thirukkural philosophy — no card, generous breathing room */}
           <FadeUp>
-            <p className="font-display text-xs font-medium tracking-[0.22em] text-[#B8C9BE]">
-              OUR SIGNATURE TREATMENT
-            </p>
-            <NeedleUnderline
-              aria-hidden="true"
-              className="needle-glow mx-auto mt-3 mb-5 h-2 w-20 text-gold-400/80"
-            />
-            <h1
-              className="text-5xl font-bold leading-tight tracking-tight text-cream-50 lg:text-6xl"
-              style={{ fontFamily: "'Cormorant Garamond', serif" }}
-            >
-              Traditional Acupuncture
-            </h1>
-            <NeedleUnderline
-              aria-hidden="true"
-              className="needle-glow mx-auto mt-6 mb-6 h-4 w-32 text-gold-400/80"
-            />
-            <p className="mx-auto max-w-2xl font-body text-base leading-relaxed text-[#E8ECEF] lg:text-lg">
-              Fine-needle therapy designed to restore energy flow, relieve
-              pain, and support your body&rsquo;s natural healing.
-            </p>
+            <div className="mx-auto max-w-2xl text-center">
+              <NeedleUnderline
+                aria-hidden="true"
+                className="needle-glow mx-auto h-2 w-20 text-gold-400/80"
+              />
+              <p
+                className="mt-6 text-sm font-semibold tracking-[0.1em] text-[#B8C9BE]"
+                style={{ fontFamily: "'Noto Serif Tamil', serif" }}
+              >
+                திருக்குறள் &middot; குறள் 942
+              </p>
+              <p
+                className="mx-auto mt-5 text-xl font-medium italic leading-snug text-cream-50 sm:text-2xl"
+                style={{ fontFamily: "'Noto Serif Tamil', serif" }}
+              >
+                &ldquo;மருந்தென வேண்டாவாம் யாக்கைக்கு அருந்தியது
+                <br />
+                அற்றது போற்றி உணின்&rdquo;
+              </p>
+              <p
+                className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-[#E8ECEF]/80"
+                style={{ fontFamily: "'Noto Serif Tamil', serif" }}
+              >
+                உண்ட உணவு செரித்த பின், பசியறிந்து அளவோடு உண்பவர்க்கு உடலைச்
+                சீராக வைத்திருக்க வேறு மருந்து தேவையில்லை.
+              </p>
+              <NeedleUnderline
+                aria-hidden="true"
+                className="needle-glow mx-auto mt-8 h-4 w-32 text-gold-400/80"
+              />
+            </div>
           </FadeUp>
-        </div>
-      </section>
 
-      {/* Modalities grid */}
-      <section className="relative overflow-hidden border-t border-cream-50/12">
-        <video
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          src={servicesVideo}
-        />
-        <div aria-hidden="true" className="absolute inset-0 bg-eucalyptus-950/75" />
-
-        <div className="relative mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
-          <FadeUp>
+          {/* Bridge into the techniques grid */}
+          <FadeUp delay={80} className="mt-16 lg:mt-20">
             <p className="text-center font-display text-xs font-medium tracking-[0.22em] text-[#B8C9BE]">
-              THE FULL DISCIPLINE
+              OUR TREATMENT METHODS
             </p>
             <NeedleUnderline
               aria-hidden="true"
@@ -156,10 +153,9 @@ export default function TraditionalAcupuncture() {
               className="needle-glow mx-auto mt-4 h-4 w-32 text-gold-400/80"
             />
             <p className="mx-auto mt-4 max-w-2xl text-center font-body text-base leading-relaxed text-[#E8ECEF]">
-              Traditional Acupuncture at Asukavi is informed by a wide range
-              of complementary techniques, applied selectively based on your
-              consultation &mdash; not every technique is used in every
-              session.
+              Traditional acupuncture at Asukavi draws on a range of
+              complementary techniques, carefully selected according to each
+              individual&rsquo;s needs.
             </p>
           </FadeUp>
 
