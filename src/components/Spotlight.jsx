@@ -85,9 +85,9 @@ export default function Spotlight() {
             {/* Subtle offset echo line for depth — a single thin accent, not a nested box */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -inset-2 rounded-tl-[44px] rounded-tr-[16px] rounded-br-[44px] rounded-bl-[44px] border border-[#7ED9A8]/18"
+              className="pointer-events-none absolute -inset-2 rounded-tl-[44px] rounded-tr-[16px] rounded-br-[44px] rounded-bl-[44px] border border-[#C0C6CC]/15"
             />
-            <div className="relative h-full w-full overflow-hidden rounded-tl-[36px] rounded-tr-[12px] rounded-br-[36px] rounded-bl-[36px] border border-[#7ED9A8]/40">
+            <div className="relative h-full w-full overflow-hidden rounded-tl-[36px] rounded-tr-[12px] rounded-br-[36px] rounded-bl-[36px] border border-[#C0C6CC]/45">
               <video
                 className="h-full w-full object-cover"
                 poster={doctorPhoto}
