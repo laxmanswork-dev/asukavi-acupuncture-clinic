@@ -22,8 +22,8 @@ const modalities = [
   "Magnet Therapy",
   "Color Therapy",
   "Aromatherapy",
-  "Stone Therapy (Hot Stone)",
-  "Kinesio Taping",
+  "Hot Stone Therapy",
+  "Kinesiology",
   "Chiropractic Therapy",
 ];
 
