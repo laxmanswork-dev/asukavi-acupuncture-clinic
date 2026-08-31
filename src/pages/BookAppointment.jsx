@@ -1,16 +1,24 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { CheckCircle2, Lock } from "lucide-react";
 import FadeUp from "../components/FadeUp";
 import { NeedleUnderline } from "../components/motifs";
 import appointmentVideo from "../assets/appointment.mp4";
 import {
+  ArrowRightIcon,
   ChevronDownIcon,
   ClockIcon,
   MailIcon,
   PhoneIcon,
   PinIcon,
 } from "../components/icons";
+
+const CLINIC_ADDRESS =
+  "1/108, N Bypass Rd, opposite to Hotel Apple Tree, near Milo Collection, Vannarpettai, Tirunelveli, Tamil Nadu 627003";
+const CLINIC_MAP_EMBED_SRC = `https://www.google.com/maps?q=${encodeURIComponent(
+  CLINIC_ADDRESS
+)}&output=embed`;
+const CLINIC_MAP_LINK = "https://maps.app.goo.gl/C9GXbYKW78Gt59Hi7";
 
 const features = [
   "Personalized Consultation",
@@ -31,25 +39,6 @@ const CONCERNS = [
   "Women's Health",
   "General Wellness",
   "Other",
-];
-
-const FAQS = [
-  {
-    q: "Is the first consultation necessary?",
-    a: "Yes. It allows us to understand your condition before recommending treatment.",
-  },
-  {
-    q: "How long does a session take?",
-    a: "Typically between 30–60 minutes depending on your treatment.",
-  },
-  {
-    q: "Is acupuncture painful?",
-    a: "Most patients experience minimal discomfort and often describe the treatment as relaxing.",
-  },
-  {
-    q: "Do I need to bring medical reports?",
-    a: "If available, bringing previous reports or scans can help us better understand your condition.",
-  },
 ];
 
 const initialForm = {
@@ -100,44 +89,22 @@ function SelectField({ value, onChange, hasError, children, ...rest }) {
   );
 }
 
-function FaqItem({ faq, isOpen, onToggle }) {
-  return (
-    <div className="border-b border-cream-50/12 py-5">
-      <button
-        type="button"
-        onClick={onToggle}
-        aria-expanded={isOpen}
-        className="flex w-full items-center justify-between gap-4 text-left"
-      >
-        <span className="font-display text-base font-semibold text-cream-50 sm:text-lg">
-          {faq.q}
-        </span>
-        <ChevronDownIcon
-          className={`h-5 w-5 flex-none text-[#CDEFEA]/70 transition-transform duration-300 ease-in-out ${
-            isOpen ? "rotate-180" : ""
-          }`}
-        />
-      </button>
-      <div
-        className={`grid transition-all duration-300 ease-in-out ${
-          isOpen ? "grid-rows-[1fr] pt-3 opacity-100" : "grid-rows-[0fr] opacity-0"
-        }`}
-      >
-        <div className="overflow-hidden">
-          <p className="max-w-2xl font-body text-sm leading-relaxed text-[#E8ECEF]">
-            {faq.a}
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function BookAppointment() {
+  const location = useLocation();
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
-  const [openFaq, setOpenFaq] = useState(0);
+
+  useEffect(() => {
+    if (!location.hash) return;
+    const id = location.hash.slice(1);
+    const el = document.getElementById(id);
+    if (el) {
+      requestAnimationFrame(() => {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+  }, [location.hash]);
 
   const update = (field) => (e) => {
     const value =
@@ -535,12 +502,12 @@ export default function BookAppointment() {
         </section>
       )}
 
-      {/* FAQ */}
-      <section className="relative border-t border-cream-50/12">
-        <div className="mx-auto max-w-3xl px-6 py-16 lg:px-10 lg:py-20">
+      {/* Visit Our Clinic — Google Maps location */}
+      <section id="visit-clinic" className="relative border-t border-cream-50/12">
+        <div className="mx-auto max-w-6xl px-6 py-16 lg:px-10 lg:py-20">
           <FadeUp>
             <p className="text-center font-display text-xs font-medium tracking-[0.22em] text-[#B8C9BE]">
-              FREQUENTLY ASKED
+              VISIT OUR CLINIC
             </p>
             <NeedleUnderline
               aria-hidden="true"
@@ -550,24 +517,40 @@ export default function BookAppointment() {
               className="text-center text-3xl font-bold text-cream-50 sm:text-4xl"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
-              Frequently Asked Questions
+              Find Your Way to Better Healing.
             </h2>
             <NeedleUnderline
               aria-hidden="true"
               className="needle-glow mx-auto mt-4 mb-10 h-4 w-32 text-gold-400/80"
             />
 
-            <div>
-              {FAQS.map((faq, index) => (
-                <FaqItem
-                  key={faq.q}
-                  faq={faq}
-                  isOpen={openFaq === index}
-                  onToggle={() =>
-                    setOpenFaq(openFaq === index ? -1 : index)
-                  }
-                />
-              ))}
+            <div className="overflow-hidden rounded-tl-[32px] rounded-tr-[12px] rounded-br-[32px] rounded-bl-[32px] border border-white/10 shadow-2xl shadow-black/30">
+              <iframe
+                title="Asukavi Acupuncture Centre location on Google Maps"
+                src={CLINIC_MAP_EMBED_SRC}
+                className="h-[420px] w-full lg:h-[520px]"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
+
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5 text-center font-body text-sm leading-relaxed text-[#E8ECEF]">
+              <PinIcon className="h-4 w-4 flex-none text-[#CDEFEA]/70" />
+              <span>{CLINIC_ADDRESS}</span>
+            </div>
+
+            <div className="mt-5 flex justify-center">
+              <a
+                href={CLINIC_MAP_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 font-display text-sm font-semibold tracking-wide text-[#A8D5BA] transition-colors duration-300 ease-in-out hover:text-cream-50"
+              >
+                Get Directions
+                <ArrowRightIcon className="h-4 w-4 flex-none transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
+              </a>
             </div>
           </FadeUp>
         </div>

@@ -10,7 +10,7 @@ const navLinks = [
   { label: "About Us", href: "#about" },
   { label: "Services", href: "#services", dropdown: true },
   { label: "Wellness", href: "#wellness", dropdown: true },
-  { label: "Contact", to: "/book-appointment" },
+  { label: "Contact", to: "/book-appointment#visit-clinic" },
 ];
 
 export default function Navbar() {
