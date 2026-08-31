@@ -1,14 +1,16 @@
-import { CheckIcon } from "./icons";
 import FadeUp from "./FadeUp";
 import { NeedleUnderline } from "./motifs";
 import doctorPhoto from "../assets/doctor.png";
 import aboutVideo from "../assets/about.mp4";
 
 const points = [
-  "Practicing Acupuncture & Natural Care since 1998",
-  "Personalized 1-on-1 Pulse Diagnosis & Health Assessment",
-  "Safe, Hygienic, and Sterile Treatment Standards",
-  "Trusted Local Community Practice in Tirunelveli",
+  { numeral: "I.", text: "Practicing Acupuncture & Natural Care since 1998" },
+  {
+    numeral: "II.",
+    text: "Personalized 1-on-1 Pulse Diagnosis & Health Assessment",
+  },
+  { numeral: "III.", text: "Safe, Hygienic, and Sterile Treatment Standards" },
+  { numeral: "IV.", text: "Trusted Local Community Practice in Tirunelveli" },
 ];
 
 export default function Spotlight() {
@@ -61,10 +63,12 @@ export default function Spotlight() {
 
           <ul className="space-y-3">
             {points.map((point) => (
-              <li key={point} className="flex items-center gap-3">
-                <CheckIcon className="h-5 w-5 flex-none text-[#C0C6CC]" />
+              <li key={point.text} className="flex items-center gap-3">
+                <span className="flex h-5 w-5 flex-none items-center justify-center font-display text-xs font-semibold text-gold-400/80">
+                  {point.numeral}
+                </span>
                 <span className="font-body text-sm font-light leading-relaxed text-gray-300 lg:text-base">
-                  {point}
+                  {point.text}
                 </span>
               </li>
             ))}
