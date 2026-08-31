@@ -306,7 +306,7 @@ export default function BookAppointment() {
                     {features.map((label) => (
                       <div
                         key={label}
-                        className="flex min-h-[64px] items-center justify-center rounded-xl border border-white/10 bg-white/5 p-4 text-center"
+                        className="flex min-h-[64px] items-center justify-center rounded-tl-[16px] rounded-tr-[6px] rounded-br-[16px] rounded-bl-[16px] border border-white/10 bg-white/5 p-4 text-center"
                       >
                         <span className="font-body text-sm leading-snug text-cream-100">
                           {label}
@@ -317,7 +317,7 @@ export default function BookAppointment() {
                 </FadeUp>
 
                 <FadeUp delay={100}>
-                  <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-6">
+                  <div className="mt-8 rounded-tl-[24px] rounded-tr-[8px] rounded-br-[24px] rounded-bl-[24px] border border-white/10 bg-white/5 p-6">
                     <h3 className="mb-4 flex items-center gap-2 font-display text-sm font-semibold tracking-[0.2em] text-[#A8D5BA]">
                       <ClockIcon className="h-4 w-4 flex-none" />
                       CLINIC HOURS
@@ -340,7 +340,7 @@ export default function BookAppointment() {
                 </FadeUp>
 
                 <FadeUp delay={150}>
-                  <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-6">
+                  <div className="mt-6 rounded-tl-[24px] rounded-tr-[8px] rounded-br-[24px] rounded-bl-[24px] border border-white/10 bg-white/5 p-6">
                     <h3 className="mb-4 font-display text-sm font-semibold tracking-[0.2em] text-[#A8D5BA]">
                       EMERGENCY CONTACT
                     </h3>
@@ -375,7 +375,7 @@ export default function BookAppointment() {
               {/* Right: appointment form */}
               <div className="lg:col-span-7">
                 <FadeUp delay={100}>
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-2xl shadow-black/30 backdrop-blur-md sm:p-8 lg:p-10">
+                  <div className="rounded-tl-[32px] rounded-tr-[12px] rounded-br-[32px] rounded-bl-[32px] border border-white/10 bg-white/5 p-6 shadow-2xl shadow-black/30 backdrop-blur-md sm:p-8 lg:p-10">
                     <h2
                       className="text-2xl font-bold text-cream-50 sm:text-3xl"
                       style={{ fontFamily: "'Cormorant Garamond', serif" }}
@@ -521,7 +521,7 @@ export default function BookAppointment() {
                 </FadeUp>
 
                 <FadeUp delay={150}>
-                  <div className="mt-6 flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-5 py-4">
+                  <div className="mt-6 flex items-center gap-3 rounded-tl-[16px] rounded-tr-[6px] rounded-br-[16px] rounded-bl-[16px] border border-white/10 bg-white/5 px-5 py-4">
                     <Lock className="h-4 w-4 flex-none text-[#A8D5BA]" />
                     <p className="font-body text-xs leading-relaxed text-cream-100/80">
                       Your information is kept private and used only for
