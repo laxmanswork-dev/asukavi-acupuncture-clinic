@@ -3,28 +3,48 @@ import { ArrowRightIcon } from "../components/icons";
 import FadeUp from "../components/FadeUp";
 import { NeedleUnderline } from "../components/motifs";
 import servicesVideo from "../assets/ser.mp4";
+import acupunctureImg from "../assets/services/modalities/acupuncture.png";
+import electroacupunctureImg from "../assets/services/modalities/electroacupuncture.png";
+import dryNeedlingImg from "../assets/services/modalities/dry-needling.png";
+import cuppingTherapyImg from "../assets/services/modalities/cupping-therapy.png";
+import acupressureImg from "../assets/services/modalities/acupressure.png";
+import auricularAcupunctureImg from "../assets/services/modalities/auricular-acupuncture.png";
+import earSeedTherapyImg from "../assets/services/modalities/ear-seed-therapy.png";
+import scalpAcupunctureImg from "../assets/services/modalities/scalp-acupuncture.png";
+import laserAcupunctureImg from "../assets/services/modalities/laser-acupuncture.png";
+import triggerPointTherapyImg from "../assets/services/modalities/trigger-point-therapy.png";
+import meridianTherapyImg from "../assets/services/modalities/meridian-therapy.png";
+import cosmeticFacialAcupunctureImg from "../assets/services/modalities/cosmetic-facial-acupuncture.png";
+import reflexologyImg from "../assets/services/modalities/reflexology.png";
+import suJokTherapyImg from "../assets/services/modalities/su-jok-therapy.png";
+import magnetTherapyImg from "../assets/services/modalities/magnet-therapy.png";
+import colorTherapyImg from "../assets/services/modalities/color-therapy.png";
+import aromatherapyImg from "../assets/services/modalities/aromatherapy.png";
+import hotStoneTherapyImg from "../assets/services/modalities/hot-stone-therapy.png";
+import kinesiologyImg from "../assets/services/modalities/kinesiology.png";
+import chiropracticTherapyImg from "../assets/services/modalities/chiropractic-therapy.png";
 
 const modalities = [
-  "Acupuncture",
-  "Electroacupuncture",
-  "Dry Needling",
-  "Cupping Therapy",
-  "Acupressure",
-  "Auricular (Ear) Acupuncture",
-  "Ear Seed Therapy",
-  "Scalp Acupuncture",
-  "Laser Acupuncture",
-  "Trigger Point Therapy",
-  "Meridian Therapy",
-  "Cosmetic Facial Acupuncture",
-  "Reflexology",
-  "Su Jok Therapy",
-  "Magnet Therapy",
-  "Color Therapy",
-  "Aromatherapy",
-  "Hot Stone Therapy",
-  "Kinesiology",
-  "Chiropractic Therapy",
+  { name: "Acupuncture", image: acupunctureImg },
+  { name: "Electroacupuncture", image: electroacupunctureImg },
+  { name: "Dry Needling", image: dryNeedlingImg },
+  { name: "Cupping Therapy", image: cuppingTherapyImg },
+  { name: "Acupressure", image: acupressureImg },
+  { name: "Auricular (Ear) Acupuncture", image: auricularAcupunctureImg },
+  { name: "Ear Seed Therapy", image: earSeedTherapyImg },
+  { name: "Scalp Acupuncture", image: scalpAcupunctureImg },
+  { name: "Laser Acupuncture", image: laserAcupunctureImg },
+  { name: "Trigger Point Therapy", image: triggerPointTherapyImg },
+  { name: "Meridian Therapy", image: meridianTherapyImg },
+  { name: "Cosmetic Facial Acupuncture", image: cosmeticFacialAcupunctureImg },
+  { name: "Reflexology", image: reflexologyImg },
+  { name: "Su Jok Therapy", image: suJokTherapyImg },
+  { name: "Magnet Therapy", image: magnetTherapyImg },
+  { name: "Color Therapy", image: colorTherapyImg },
+  { name: "Aromatherapy", image: aromatherapyImg },
+  { name: "Hot Stone Therapy", image: hotStoneTherapyImg },
+  { name: "Kinesiology", image: kinesiologyImg },
+  { name: "Chiropractic Therapy", image: chiropracticTherapyImg },
 ];
 
 export default function TraditionalAcupuncture() {
@@ -118,15 +138,27 @@ export default function TraditionalAcupuncture() {
           </FadeUp>
 
           <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 xl:grid-cols-5">
-            {modalities.map((name, index) => (
+            {modalities.map(({ name, image }, index) => (
               <FadeUp key={name} delay={(index % 10) * 40}>
-                <div className="flex h-full items-center gap-3 rounded-2xl border border-[#C0C6CC]/30 bg-white/5 px-4 py-3.5 shadow-lg shadow-black/30 transition-colors duration-300 ease-in-out hover:border-[#C0C6CC]/60">
-                  <span className="flex h-7 w-7 flex-none items-center justify-center rounded-full border border-[#C0C6CC]/40 font-display text-[11px] font-semibold text-[#C0C6CC]">
-                    {index + 1}
-                  </span>
-                  <span className="font-body text-[13px] font-medium leading-snug text-cream-100">
-                    {name}
-                  </span>
+                <div className="group relative h-[150px] overflow-hidden rounded-2xl border border-[#C0C6CC]/30 shadow-lg shadow-black/30 transition-colors duration-300 ease-in-out hover:border-[#C0C6CC]/60">
+                  <img
+                    src={image}
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0a1614]/92 via-[#0a1614]/45 to-[#0a1614]/5"
+                  />
+                  <div className="relative z-10 flex h-full flex-col justify-between p-3.5">
+                    <span className="flex h-7 w-7 flex-none items-center justify-center rounded-full border border-[#C0C6CC]/40 bg-eucalyptus-950/60 font-display text-[11px] font-semibold text-[#C0C6CC]">
+                      {index + 1}
+                    </span>
+                    <span className="font-body text-[13px] font-medium leading-snug text-cream-100">
+                      {name}
+                    </span>
+                  </div>
                 </div>
               </FadeUp>
             ))}
