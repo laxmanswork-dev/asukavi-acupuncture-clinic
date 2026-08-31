@@ -79,27 +79,26 @@ export default function Spotlight() {
         <FadeUp delay={150} className="relative flex justify-center lg:col-span-5">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-8 -z-10 rounded-[40px] bg-[#7ED9A8]/22 blur-3xl"
+            className="pointer-events-none absolute inset-8 -z-10 rounded-tl-[48px] rounded-tr-[16px] rounded-br-[48px] rounded-bl-[48px] bg-[#7ED9A8]/22 blur-3xl"
           />
           <div className="relative aspect-square w-full max-w-[460px]">
+            {/* Subtle offset echo line for depth — a single thin accent, not a nested box */}
             <div
               aria-hidden="true"
-              className="absolute -inset-3 rounded-[40px] border border-[#C0C6CC]/25"
+              className="pointer-events-none absolute -inset-2 rounded-tl-[44px] rounded-tr-[16px] rounded-br-[44px] rounded-bl-[44px] border border-[#7ED9A8]/18"
             />
-            <div className="absolute inset-0 rounded-[32px] border-2 border-[#C0C6CC]/50 p-2 shadow-[0_0_24px_rgba(126,217,168,0.1)] backdrop-blur-md">
-              <div className="h-full w-full overflow-hidden rounded-[24px]">
-                <video
-                  className="h-full w-full object-cover"
-                  poster={doctorPhoto}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  aria-label="Dr. Asukavi, acupuncturist at Asukavi Acupuncture Clinic"
-                >
-                  <source src="/doctor.mp4" type="video/mp4" />
-                </video>
-              </div>
+            <div className="relative h-full w-full overflow-hidden rounded-tl-[36px] rounded-tr-[12px] rounded-br-[36px] rounded-bl-[36px] border border-[#7ED9A8]/40">
+              <video
+                className="h-full w-full object-cover"
+                poster={doctorPhoto}
+                autoPlay
+                muted
+                loop
+                playsInline
+                aria-label="Dr. Asukavi, acupuncturist at Asukavi Acupuncture Clinic"
+              >
+                <source src="/doctor.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </FadeUp>
