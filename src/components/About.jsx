@@ -28,7 +28,7 @@ export default function About() {
       />
 
       <div className="relative mx-auto flex max-w-7xl flex-col justify-center px-6 py-16 lg:h-full lg:py-0 lg:pl-8 lg:pr-10">
-      <div className="relative grid gap-16 lg:grid-cols-[0.52fr_auto_0.48fr] lg:items-center lg:gap-12">
+      <div className="relative grid gap-16 lg:grid-cols-[0.52fr_0.48fr] lg:items-center lg:gap-12">
         <FadeUp className="max-w-[600px]">
           <p
             className="mt-1.5 uppercase"
@@ -87,12 +87,7 @@ export default function About() {
           </p>
         </FadeUp>
 
-        <div
-          aria-hidden="true"
-          className="hidden h-full w-px bg-gradient-to-b from-transparent via-cream-50/24 to-transparent lg:block lg:translate-x-8 xl:translate-x-24"
-        />
-
-        <FadeUp delay={150} className="relative lg:translate-x-[-28px] xl:translate-x-[36px]">
+        <FadeUp delay={150} className="relative">
           <p className="font-tamil text-sm font-semibold tracking-[0.15em] text-[#A8D5BA]">
             திருக்குறள் 948
           </p>
