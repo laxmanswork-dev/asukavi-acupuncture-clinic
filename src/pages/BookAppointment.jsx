@@ -5,22 +5,18 @@ import FadeUp from "../components/FadeUp";
 import { NeedleUnderline } from "../components/motifs";
 import appointmentVideo from "../assets/appointment.mp4";
 import {
-  ChatBubbleIcon,
   ChevronDownIcon,
   ClockIcon,
-  LotusIcon,
   MailIcon,
-  NeedleIcon,
   PhoneIcon,
   PinIcon,
-  RootsIcon,
 } from "../components/icons";
 
 const features = [
-  { icon: ChatBubbleIcon, label: "Personalized Consultation" },
-  { icon: RootsIcon, label: "Root Cause Assessment" },
-  { icon: NeedleIcon, label: "Traditional Acupuncture" },
-  { icon: LotusIcon, label: "Wellness Guidance" },
+  "Personalized Consultation",
+  "Root Cause Assessment",
+  "Traditional Acupuncture",
+  "Wellness Guidance",
 ];
 
 const CONCERNS = [
@@ -307,12 +303,11 @@ export default function BookAppointment() {
                   </p>
 
                   <div className="grid grid-cols-2 gap-4">
-                    {features.map(({ icon: Icon, label }) => (
+                    {features.map((label) => (
                       <div
                         key={label}
-                        className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-4"
+                        className="flex min-h-[64px] items-center justify-center rounded-xl border border-white/10 bg-white/5 p-4 text-center"
                       >
-                        <Icon className="h-5 w-5 flex-none text-[#C5A059]" />
                         <span className="font-body text-sm leading-snug text-cream-100">
                           {label}
                         </span>
