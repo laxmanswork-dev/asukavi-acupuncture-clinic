@@ -149,7 +149,7 @@ export default function TraditionalAcupuncture() {
           </FadeUp>
 
           {/* Bridge into the techniques grid */}
-          <FadeUp delay={80} className="mt-6 lg:mt-8">
+          <FadeUp delay={80} className="mt-4 lg:mt-6">
             <h2
               className="mx-auto max-w-2xl text-center text-3xl font-bold leading-tight tracking-tight text-cream-50 sm:text-4xl"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
@@ -159,7 +159,7 @@ export default function TraditionalAcupuncture() {
           </FadeUp>
 
           {/* Category filters */}
-          <FadeUp delay={120} className="mt-10 flex justify-center">
+          <FadeUp delay={120} className="mt-7 flex justify-center">
             <div className="no-scrollbar flex max-w-full gap-3 overflow-x-auto px-2 sm:flex-wrap sm:justify-center">
               {CATEGORIES.map((cat) => {
                 const isActive = activeCategory === cat;
