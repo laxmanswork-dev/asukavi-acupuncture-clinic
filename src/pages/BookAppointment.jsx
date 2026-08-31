@@ -37,14 +37,6 @@ const CONCERNS = [
   "Other",
 ];
 
-const DURATIONS = [
-  "Less than 1 Week",
-  "1–4 Weeks",
-  "1–3 Months",
-  "More than 3 Months",
-  "More than 1 Year",
-];
-
 const FAQS = [
   {
     q: "Is the first consultation necessary?",
@@ -67,14 +59,9 @@ const FAQS = [
 const initialForm = {
   fullName: "",
   phone: "",
-  email: "",
-  age: "",
-  gender: "",
   date: "",
   time: "",
   concern: "",
-  duration: "",
-  priorAcupuncture: "",
   notes: "",
   consent: false,
 };
@@ -170,23 +157,9 @@ export default function BookAppointment() {
     } else if (!/^[+\d][\d\s-]{6,}$/.test(form.phone.trim())) {
       next.phone = "Please enter a valid phone number.";
     }
-    if (!form.email.trim()) {
-      next.email = "Please enter your email address.";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
-      next.email = "Please enter a valid email address.";
-    }
-    if (!form.age) {
-      next.age = "Please enter your age.";
-    } else if (Number(form.age) < 1 || Number(form.age) > 120) {
-      next.age = "Please enter a valid age.";
-    }
-    if (!form.gender) next.gender = "Please select an option.";
     if (!form.date) next.date = "Please choose a preferred date.";
     if (!form.time) next.time = "Please choose a preferred time.";
     if (!form.concern) next.concern = "Please select your primary concern.";
-    if (!form.duration) next.duration = "Please let us know the duration.";
-    if (!form.priorAcupuncture)
-      next.priorAcupuncture = "Please select an option.";
     if (!form.consent) next.consent = "Please agree to be contacted.";
     return next;
   }
@@ -458,73 +431,25 @@ export default function BookAppointment() {
 
                       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                         <Field
-                          label="Email Address"
-                          htmlFor="email"
-                          error={errors.email}
-                        >
-                          <input
-                            id="email"
-                            type="email"
-                            placeholder="Enter your email"
-                            value={form.email}
-                            onChange={update("email")}
-                            className={inputClasses(errors.email)}
-                          />
-                        </Field>
-
-                        <Field label="Age" htmlFor="age" error={errors.age}>
-                          <input
-                            id="age"
-                            type="number"
-                            min="1"
-                            max="120"
-                            placeholder="Enter your age"
-                            value={form.age}
-                            onChange={update("age")}
-                            className={inputClasses(errors.age)}
-                          />
-                        </Field>
-                      </div>
-
-                      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                        <Field
-                          label="Gender"
-                          htmlFor="gender"
-                          error={errors.gender}
+                          label="Primary Concern"
+                          htmlFor="concern"
+                          error={errors.concern}
                         >
                           <SelectField
-                            id="gender"
-                            value={form.gender}
-                            onChange={update("gender")}
-                            hasError={errors.gender}
+                            id="concern"
+                            value={form.concern}
+                            onChange={update("concern")}
+                            hasError={errors.concern}
                           >
                             <option value="" disabled>
-                              Select an option
+                              Select your concern
                             </option>
-                            <option>Male</option>
-                            <option>Female</option>
-                            <option>Other</option>
-                            <option>Prefer not to say</option>
+                            {CONCERNS.map((c) => (
+                              <option key={c}>{c}</option>
+                            ))}
                           </SelectField>
                         </Field>
 
-                        <Field
-                          label="Preferred Consultation Date"
-                          htmlFor="date"
-                          error={errors.date}
-                        >
-                          <input
-                            id="date"
-                            type="date"
-                            value={form.date}
-                            onChange={update("date")}
-                            min={new Date().toISOString().split("T")[0]}
-                            className={inputClasses(errors.date)}
-                          />
-                        </Field>
-                      </div>
-
-                      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                         <Field
                           label="Preferred Time"
                           htmlFor="time"
@@ -544,79 +469,22 @@ export default function BookAppointment() {
                             <option>Evening</option>
                           </SelectField>
                         </Field>
-
-                        <Field
-                          label="Primary Concern"
-                          htmlFor="concern"
-                          error={errors.concern}
-                        >
-                          <SelectField
-                            id="concern"
-                            value={form.concern}
-                            onChange={update("concern")}
-                            hasError={errors.concern}
-                          >
-                            <option value="" disabled>
-                              Select your concern
-                            </option>
-                            {CONCERNS.map((c) => (
-                              <option key={c}>{c}</option>
-                            ))}
-                          </SelectField>
-                        </Field>
                       </div>
 
                       <Field
-                        label="How long have you experienced this condition?"
-                        htmlFor="duration"
-                        error={errors.duration}
+                        label="Preferred Consultation Date"
+                        htmlFor="date"
+                        error={errors.date}
                       >
-                        <SelectField
-                          id="duration"
-                          value={form.duration}
-                          onChange={update("duration")}
-                          hasError={errors.duration}
-                        >
-                          <option value="" disabled>
-                            Select duration
-                          </option>
-                          {DURATIONS.map((d) => (
-                            <option key={d}>{d}</option>
-                          ))}
-                        </SelectField>
+                        <input
+                          id="date"
+                          type="date"
+                          value={form.date}
+                          onChange={update("date")}
+                          min={new Date().toISOString().split("T")[0]}
+                          className={inputClasses(errors.date)}
+                        />
                       </Field>
-
-                      <div>
-                        <span className="mb-2 block font-display text-sm font-medium text-cream-100">
-                          Have you received acupuncture before?
-                        </span>
-                        <div
-                          id="priorAcupuncture"
-                          className="flex items-center gap-6"
-                        >
-                          {["Yes", "No"].map((opt) => (
-                            <label
-                              key={opt}
-                              className="flex items-center gap-2 font-body text-sm text-cream-100"
-                            >
-                              <input
-                                type="radio"
-                                name="priorAcupuncture"
-                                value={opt}
-                                checked={form.priorAcupuncture === opt}
-                                onChange={update("priorAcupuncture")}
-                                className="h-4 w-4 accent-[#A3B899]"
-                              />
-                              {opt}
-                            </label>
-                          ))}
-                        </div>
-                        {errors.priorAcupuncture && (
-                          <p className="mt-1.5 font-body text-xs text-[#E38B7A]">
-                            {errors.priorAcupuncture}
-                          </p>
-                        )}
-                      </div>
 
                       <Field label="Additional Notes" htmlFor="notes">
                         <textarea
