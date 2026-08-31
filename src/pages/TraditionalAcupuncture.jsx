@@ -45,6 +45,34 @@ const modalities = [
   { name: "Chiropractic Therapy", image: chiropracticTherapyImg },
 ];
 
+const ROMAN_NUMERAL_MAP = [
+  [1000, "M"],
+  [900, "CM"],
+  [500, "D"],
+  [400, "CD"],
+  [100, "C"],
+  [90, "XC"],
+  [50, "L"],
+  [40, "XL"],
+  [10, "X"],
+  [9, "IX"],
+  [5, "V"],
+  [4, "IV"],
+  [1, "I"],
+];
+
+function toRoman(num) {
+  let result = "";
+  let remaining = num;
+  for (const [value, symbol] of ROMAN_NUMERAL_MAP) {
+    while (remaining >= value) {
+      result += symbol;
+      remaining -= value;
+    }
+  }
+  return result;
+}
+
 export default function TraditionalAcupuncture() {
   return (
     <>
@@ -150,8 +178,8 @@ export default function TraditionalAcupuncture() {
                     className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0a1614]/92 via-[#0a1614]/45 to-[#0a1614]/5"
                   />
                   <div className="relative z-10 flex h-full flex-col justify-between p-3.5">
-                    <span className="flex h-7 w-7 flex-none items-center justify-center rounded-full border border-[#C0C6CC]/40 bg-eucalyptus-950/60 font-display text-[11px] font-semibold text-[#C0C6CC]">
-                      {index + 1}
+                    <span className="font-display text-xs font-medium tracking-wide text-[#C0C6CC]/80">
+                      {toRoman(index + 1)}
                     </span>
                     <span className="font-body text-[13px] font-medium leading-snug text-cream-100">
                       {name}
