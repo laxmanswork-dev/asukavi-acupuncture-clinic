@@ -125,13 +125,6 @@ export default function TraditionalAcupuncture() {
                   அற்றது போற்றி உணின்&rdquo;
                 </span>
               </p>
-              <p
-                className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-[#E8ECEF]/80"
-                style={{ fontFamily: "'Noto Serif Tamil', serif" }}
-              >
-                உண்ட உணவு செரித்த பின், பசியறிந்து அளவோடு உண்பவர்க்கு உடலைச்
-                சீராக வைத்திருக்க வேறு மருந்து தேவையில்லை.
-              </p>
               <NeedleUnderline
                 aria-hidden="true"
                 className="needle-glow mx-auto mt-8 h-4 w-32 text-gold-400/80"
