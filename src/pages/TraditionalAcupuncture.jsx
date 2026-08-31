@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRightIcon } from "../components/icons";
 import FadeUp from "../components/FadeUp";
@@ -23,27 +24,36 @@ import hotStoneTherapyImg from "../assets/services/modalities/hot-stone-therapy.
 import kinesiologyImg from "../assets/services/modalities/kinesiology.png";
 import chiropracticTherapyImg from "../assets/services/modalities/chiropractic-therapy.png";
 
-const modalities = [
-  { name: "Acupuncture", image: acupunctureImg },
-  { name: "Electroacupuncture", image: electroacupunctureImg },
-  { name: "Dry Needling", image: dryNeedlingImg },
-  { name: "Cupping Therapy", image: cuppingTherapyImg },
-  { name: "Acupressure", image: acupressureImg },
-  { name: "Auricular (Ear) Acupuncture", image: auricularAcupunctureImg },
-  { name: "Ear Seed Therapy", image: earSeedTherapyImg },
-  { name: "Scalp Acupuncture", image: scalpAcupunctureImg },
-  { name: "Laser Acupuncture", image: laserAcupunctureImg },
-  { name: "Trigger Point Therapy", image: triggerPointTherapyImg },
-  { name: "Meridian Therapy", image: meridianTherapyImg },
-  { name: "Reflexology", image: reflexologyImg },
-  { name: "Su Jok Therapy", image: suJokTherapyImg },
-  { name: "Magnet Therapy", image: magnetTherapyImg },
-  { name: "Color Therapy", image: colorTherapyImg },
-  { name: "Aromatherapy", image: aromatherapyImg },
-  { name: "Hot Stone Therapy", image: hotStoneTherapyImg },
-  { name: "Kinesiology", image: kinesiologyImg },
-  { name: "Chiropractic Therapy", image: chiropracticTherapyImg },
+const CATEGORIES = [
+  "All",
+  "Acupuncture Techniques",
+  "Therapeutic Methods",
+  "Reflex & Micro Therapies",
+  "Complementary Therapies",
+  "Body Assessment",
 ];
+
+const modalities = [
+  { name: "Acupuncture", image: acupunctureImg, category: "Acupuncture Techniques" },
+  { name: "Electroacupuncture", image: electroacupunctureImg, category: "Acupuncture Techniques" },
+  { name: "Dry Needling", image: dryNeedlingImg, category: "Acupuncture Techniques" },
+  { name: "Cupping Therapy", image: cuppingTherapyImg, category: "Therapeutic Methods" },
+  { name: "Acupressure", image: acupressureImg, category: "Therapeutic Methods" },
+  { name: "Auricular (Ear) Acupuncture", image: auricularAcupunctureImg, category: "Acupuncture Techniques" },
+  { name: "Ear Seed Therapy", image: earSeedTherapyImg, category: "Reflex & Micro Therapies" },
+  { name: "Scalp Acupuncture", image: scalpAcupunctureImg, category: "Acupuncture Techniques" },
+  { name: "Laser Acupuncture", image: laserAcupunctureImg, category: "Acupuncture Techniques" },
+  { name: "Trigger Point Therapy", image: triggerPointTherapyImg, category: "Therapeutic Methods" },
+  { name: "Meridian Therapy", image: meridianTherapyImg, category: "Therapeutic Methods" },
+  { name: "Reflexology", image: reflexologyImg, category: "Reflex & Micro Therapies" },
+  { name: "Su Jok Therapy", image: suJokTherapyImg, category: "Reflex & Micro Therapies" },
+  { name: "Magnet Therapy", image: magnetTherapyImg, category: "Complementary Therapies" },
+  { name: "Color Therapy", image: colorTherapyImg, category: "Complementary Therapies" },
+  { name: "Aromatherapy", image: aromatherapyImg, category: "Complementary Therapies" },
+  { name: "Hot Stone Therapy", image: hotStoneTherapyImg, category: "Complementary Therapies" },
+  { name: "Kinesiology", image: kinesiologyImg, category: "Body Assessment" },
+  { name: "Chiropractic Therapy", image: chiropracticTherapyImg, category: "Therapeutic Methods" },
+].map((item, i) => ({ ...item, number: i + 1 }));
 
 const ROMAN_NUMERAL_MAP = [
   [1000, "M"],
@@ -74,6 +84,12 @@ function toRoman(num) {
 }
 
 export default function TraditionalAcupuncture() {
+  const [activeCategory, setActiveCategory] = useState("All");
+  const filtered =
+    activeCategory === "All"
+      ? modalities
+      : modalities.filter((m) => m.category === activeCategory);
+
   return (
     <>
       {/* Philosophy (Thirukkural) -> Treatment methods -> Techniques grid */}
@@ -134,21 +150,52 @@ export default function TraditionalAcupuncture() {
 
           {/* Bridge into the techniques grid */}
           <FadeUp delay={80} className="mt-6 lg:mt-8">
+            <p className="text-center font-display text-xs font-medium tracking-[0.22em] text-[#B8C9BE]">
+              OUR TREATMENT APPROACHES
+            </p>
             <h2
-              className="mx-auto max-w-2xl text-center text-3xl font-bold leading-tight tracking-tight text-cream-50 sm:text-4xl"
+              className="mx-auto mt-4 max-w-2xl text-center text-3xl font-bold leading-tight tracking-tight text-cream-50 sm:text-4xl"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
-              Our Treatment Approaches
+              Explore Our Healing Methods
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-center font-body text-base leading-relaxed text-[#E8ECEF]">
-              A range of carefully selected techniques, tailored to each
-              individual&rsquo;s needs.
+              A carefully selected range of traditional and complementary
+              therapies, tailored to individual needs and guided by a
+              holistic approach to healing.
             </p>
           </FadeUp>
 
-          <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 xl:grid-cols-5">
-            {modalities.map(({ name, image }, index) => (
-              <FadeUp key={name} delay={(index % 10) * 40}>
+          {/* Category filters */}
+          <FadeUp delay={120} className="mt-10 flex justify-center">
+            <div className="no-scrollbar flex max-w-full gap-7 overflow-x-auto px-2 sm:justify-center">
+              {CATEGORIES.map((cat) => {
+                const isActive = activeCategory === cat;
+                return (
+                  <button
+                    key={cat}
+                    type="button"
+                    onClick={() => setActiveCategory(cat)}
+                    aria-pressed={isActive}
+                    className={`flex-none whitespace-nowrap border-b-2 pb-1.5 font-display text-xs font-medium uppercase tracking-[0.12em] transition-colors duration-300 ease-in-out ${
+                      isActive
+                        ? "border-[#C5A059] text-[#C5A059]"
+                        : "border-transparent text-cream-100/55 hover:text-cream-100/85"
+                    }`}
+                  >
+                    {cat}
+                  </button>
+                );
+              })}
+            </div>
+          </FadeUp>
+
+          <div
+            key={activeCategory}
+            className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 xl:grid-cols-5"
+          >
+            {filtered.map(({ name, image, number }, i) => (
+              <FadeUp key={name} delay={(i % 10) * 40}>
                 <div className="group relative h-[150px] overflow-hidden rounded-tl-[16px] rounded-tr-[6px] rounded-br-[16px] rounded-bl-[16px] border border-[#C0C6CC]/30 shadow-lg shadow-black/30 transition-colors duration-300 ease-in-out hover:border-[#C0C6CC]/60">
                   <img
                     src={image}
@@ -162,7 +209,7 @@ export default function TraditionalAcupuncture() {
                   />
                   <div className="relative z-10 flex h-full flex-col justify-between p-3.5">
                     <span className="font-display text-xs font-medium tracking-wide text-[#C0C6CC]/80">
-                      {toRoman(index + 1)}
+                      {toRoman(number)}
                     </span>
                     <span className="font-body text-[13px] font-medium leading-snug text-cream-100">
                       {name}
