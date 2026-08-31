@@ -200,7 +200,7 @@ export default function Wellness() {
                   opacity: 0.75,
                 }}
               />
-              <div className="relative h-full w-full overflow-hidden rounded-[28px] border border-[#C0C6CC]/25 shadow-2xl shadow-black/50 transition-[border-color] duration-300 hover:border-[#7ED9A8]/40">
+              <div className="relative h-full w-full overflow-hidden rounded-tl-none rounded-tr-none rounded-br-none rounded-bl-[28px] border border-[#C0C6CC]/25 shadow-2xl shadow-black/50 transition-[border-color] duration-300 hover:border-[#7ED9A8]/40">
                 {wellnessItems.map((item, i) => {
                   const isVisible = activeIndex === i;
                   return (
