@@ -205,7 +205,7 @@ export default function BookAppointment() {
 
       {/* Hero */}
       <section className="relative overflow-hidden border-t border-cream-50/12">
-        <div className="relative mx-auto max-w-4xl px-6 py-20 text-center lg:py-28">
+        <div className="relative mx-auto max-w-4xl px-6 pb-10 pt-20 text-center lg:pb-14 lg:pt-28">
           <FadeUp>
             <p className="font-display text-xs font-medium tracking-[0.22em] text-[#B8C9BE]">
               SCHEDULE YOUR VISIT
@@ -226,16 +226,17 @@ export default function BookAppointment() {
             />
           </FadeUp>
 
+          {/* Traditional wisdom -> appointment transition */}
           <FadeUp delay={100}>
-            <div className="mx-auto mt-9 max-w-lg border-t border-cream-50/10 pt-7">
+            <div className="mx-auto mt-10 max-w-xl border-t border-cream-50/10 pt-8">
               <p
-                className="text-xs font-medium tracking-[0.08em] text-[#B8C9BE]/80"
+                className="text-[13px] font-semibold tracking-[0.1em] text-[#B8C9BE]"
                 style={{ fontFamily: "'Noto Serif Tamil', serif" }}
               >
                 திருக்குறள் &middot; குறள் 942
               </p>
               <p
-                className="mx-auto mt-3 text-base italic leading-relaxed text-cream-50/80"
+                className="mx-auto mt-4 text-xl font-semibold italic leading-snug text-cream-50 sm:text-2xl"
                 style={{ fontFamily: "'Noto Serif Tamil', serif" }}
               >
                 &ldquo;மருந்தென வேண்டாவாம் யாக்கைக்கு அருந்தியது
@@ -243,12 +244,18 @@ export default function BookAppointment() {
                 அற்றது போற்றி உணின்&rdquo;
               </p>
               <p
-                className="mx-auto mt-3 text-sm leading-relaxed text-[#E8ECEF]/70"
+                className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-[#E8ECEF]/75"
                 style={{ fontFamily: "'Noto Serif Tamil', serif" }}
               >
                 உண்ட உணவு செரித்த பின், பசியறிந்து அளவோடு உண்பவர்க்கு உடலே
                 சிறந்த மருந்தாகும்.
               </p>
+
+              {/* Elegant transition cue leading into the appointment journey */}
+              <div
+                aria-hidden="true"
+                className="mx-auto mt-7 h-10 w-px bg-gradient-to-b from-gold-400/50 to-transparent"
+              />
             </div>
           </FadeUp>
         </div>
@@ -295,7 +302,7 @@ export default function BookAppointment() {
         </section>
       ) : (
         <section className="relative border-t border-cream-50/12">
-          <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
+          <div className="mx-auto max-w-7xl px-6 pb-16 pt-10 lg:px-10 lg:pb-20 lg:pt-14">
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-14">
               {/* Left: consultation info */}
               <div className="lg:col-span-5">
