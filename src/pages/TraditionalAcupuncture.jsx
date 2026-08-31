@@ -166,7 +166,7 @@ export default function TraditionalAcupuncture() {
           <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4 xl:grid-cols-5">
             {modalities.map(({ name, image }, index) => (
               <FadeUp key={name} delay={(index % 10) * 40}>
-                <div className="group relative h-[150px] overflow-hidden rounded-tl-none rounded-tr-none rounded-br-none rounded-bl-[22px] border border-[#C0C6CC]/30 shadow-lg shadow-black/30 transition-colors duration-300 ease-in-out hover:border-[#C0C6CC]/60">
+                <div className="group relative h-[150px] overflow-hidden rounded-tl-[16px] rounded-tr-[6px] rounded-br-[16px] rounded-bl-[16px] border border-[#C0C6CC]/30 shadow-lg shadow-black/30 transition-colors duration-300 ease-in-out hover:border-[#C0C6CC]/60">
                   <img
                     src={image}
                     alt=""
