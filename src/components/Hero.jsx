@@ -49,6 +49,7 @@ export default function Hero() {
         playsInline
         poster={heroPoster}
         src={warmVideo}
+        style={{ filter: "contrast(1.08) saturate(1.12) brightness(1.02)" }}
       />
       <div
         aria-hidden="true"
