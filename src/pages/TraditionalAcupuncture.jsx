@@ -118,7 +118,7 @@ export default function TraditionalAcupuncture() {
           <FadeUp>
             <NeedleUnderline
               aria-hidden="true"
-              className="needle-glow mx-auto mb-6 h-2 w-20 text-gold-400/80"
+              className="needle-glow mx-auto mb-6 h-4 w-32 text-gold-400/80"
             />
             <h2
               className="mx-auto max-w-2xl text-center text-3xl font-bold leading-tight tracking-tight text-cream-50 sm:text-4xl"
