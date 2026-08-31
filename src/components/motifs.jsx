@@ -92,7 +92,7 @@ export function SectionLabel({ children, className = "" }) {
   return (
     <div className={`flex items-center justify-center gap-3 ${className}`}>
       <span className="h-px w-8 bg-[#7ED9A8]/40" />
-      <span className="flex items-center gap-2 font-display text-xs font-semibold tracking-[0.3em] text-[#A8D5BA]">
+      <span className="flex items-center gap-2 font-display text-xs font-medium tracking-[0.22em] text-[#B8C9BE]">
         {children}
         <LeafGlyph className="h-3.5 w-3.5" />
       </span>

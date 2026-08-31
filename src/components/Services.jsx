@@ -184,8 +184,8 @@ export default function Services() {
           className="mx-auto max-w-[760px] flex-none text-center"
         >
           <p
-            className="font-display font-semibold text-[#A8D5BA]"
-            style={{ fontSize: "15px", letterSpacing: "0.3em" }}
+            className="font-display font-medium text-[#B8C9BE]"
+            style={{ fontSize: "15px", letterSpacing: "0.22em" }}
           >
             OUR SERVICES
           </p>

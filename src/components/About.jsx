@@ -36,8 +36,8 @@ export default function About() {
               fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontSize: "14px",
               fontWeight: 500,
-              letterSpacing: "0.35em",
-              color: "#A8D5BA",
+              letterSpacing: "0.22em",
+              color: "#B8C9BE",
             }}
           >
             OUR APPROACH

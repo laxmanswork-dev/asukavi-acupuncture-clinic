@@ -149,7 +149,7 @@ export default function Wellness() {
         <div className="grid items-center gap-10 lg:grid-cols-[2fr_3fr] lg:items-start lg:gap-12">
           <FadeUp>
             <div>
-              <p className="font-display text-sm font-semibold tracking-[0.3em] text-[#A8D5BA]">
+              <p className="font-display text-sm font-medium tracking-[0.22em] text-[#B8C9BE]">
                 WHOLE-PERSON WELLNESS
               </p>
               <NeedleUnderline

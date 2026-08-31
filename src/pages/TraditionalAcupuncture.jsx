@@ -98,7 +98,7 @@ export default function TraditionalAcupuncture() {
         />
         <div className="relative mx-auto max-w-4xl px-6 py-20 text-center lg:py-28">
           <FadeUp>
-            <p className="font-display text-xs font-semibold tracking-[0.35em] text-[#A8D5BA]">
+            <p className="font-display text-xs font-medium tracking-[0.22em] text-[#B8C9BE]">
               OUR SIGNATURE TREATMENT
             </p>
             <NeedleUnderline
@@ -138,7 +138,7 @@ export default function TraditionalAcupuncture() {
 
         <div className="relative mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
           <FadeUp>
-            <p className="text-center font-display text-xs font-semibold tracking-[0.3em] text-[#A8D5BA]">
+            <p className="text-center font-display text-xs font-medium tracking-[0.22em] text-[#B8C9BE]">
               THE FULL DISCIPLINE
             </p>
             <NeedleUnderline
