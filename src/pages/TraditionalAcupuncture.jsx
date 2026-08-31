@@ -113,7 +113,7 @@ export default function TraditionalAcupuncture() {
           }}
         />
 
-        <div className="relative mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
+        <div className="relative mx-auto max-w-7xl px-6 pb-20 pt-10 lg:px-10 lg:pb-28 lg:pt-14">
           {/* Thirukkural philosophy — no card, generous breathing room */}
           <FadeUp>
             <div className="mx-auto max-w-3xl text-center">
