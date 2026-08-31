@@ -33,7 +33,7 @@ export default function Spotlight() {
       <div className="relative mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">
       <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
         <FadeUp className="lg:col-span-7">
-          <p className="font-display text-base font-semibold tracking-[0.3em] text-[#A8D5BA]">
+          <p className="font-display text-base font-medium tracking-[0.22em] text-[#B8C9BE]">
             MEET YOUR SPECIALIST &middot; TIRUNELVELI
           </p>
           <NeedleUnderline
