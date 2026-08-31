@@ -160,7 +160,7 @@ export default function TraditionalAcupuncture() {
 
           {/* Category filters */}
           <FadeUp delay={120} className="mt-10 flex justify-center">
-            <div className="no-scrollbar flex max-w-full gap-7 overflow-x-auto px-2 sm:justify-center">
+            <div className="no-scrollbar flex max-w-full gap-3 overflow-x-auto px-2 sm:flex-wrap sm:justify-center">
               {CATEGORIES.map((cat) => {
                 const isActive = activeCategory === cat;
                 return (
@@ -169,10 +169,10 @@ export default function TraditionalAcupuncture() {
                     type="button"
                     onClick={() => setActiveCategory(cat)}
                     aria-pressed={isActive}
-                    className={`flex-none whitespace-nowrap border-b-2 pb-1.5 font-display text-xs font-medium uppercase tracking-[0.12em] transition-colors duration-300 ease-in-out ${
+                    className={`flex h-10 flex-none items-center whitespace-nowrap rounded-lg border px-4 font-display text-xs font-medium uppercase tracking-[0.12em] transition-colors duration-300 ease-in-out ${
                       isActive
-                        ? "border-[#C5A059] text-[#C5A059]"
-                        : "border-transparent text-cream-100/55 hover:text-cream-100/85"
+                        ? "border-[#C0C6CC]/55 bg-[#C0C6CC]/10 text-cream-50"
+                        : "border-[#C0C6CC]/20 bg-transparent text-cream-100/55 hover:border-[#C0C6CC]/35 hover:text-cream-100/85"
                     }`}
                   >
                     {cat}
