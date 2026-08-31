@@ -14,7 +14,6 @@ import scalpAcupunctureImg from "../assets/services/modalities/scalp-acupuncture
 import laserAcupunctureImg from "../assets/services/modalities/laser-acupuncture.png";
 import triggerPointTherapyImg from "../assets/services/modalities/trigger-point-therapy.png";
 import meridianTherapyImg from "../assets/services/modalities/meridian-therapy.png";
-import cosmeticFacialAcupunctureImg from "../assets/services/modalities/cosmetic-facial-acupuncture.png";
 import reflexologyImg from "../assets/services/modalities/reflexology.png";
 import suJokTherapyImg from "../assets/services/modalities/su-jok-therapy.png";
 import magnetTherapyImg from "../assets/services/modalities/magnet-therapy.png";
@@ -36,7 +35,6 @@ const modalities = [
   { name: "Laser Acupuncture", image: laserAcupunctureImg },
   { name: "Trigger Point Therapy", image: triggerPointTherapyImg },
   { name: "Meridian Therapy", image: meridianTherapyImg },
-  { name: "Cosmetic Facial Acupuncture", image: cosmeticFacialAcupunctureImg },
   { name: "Reflexology", image: reflexologyImg },
   { name: "Su Jok Therapy", image: suJokTherapyImg },
   { name: "Magnet Therapy", image: magnetTherapyImg },
