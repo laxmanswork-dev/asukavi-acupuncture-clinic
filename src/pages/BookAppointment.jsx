@@ -16,7 +16,7 @@ import {
 const CLINIC_ADDRESS =
   "1/108, N Bypass Rd, opposite to Hotel Apple Tree, near Milo Collection, Vannarpettai, Tirunelveli, Tamil Nadu 627003";
 const CLINIC_MAP_EMBED_SRC =
-  "https://www.google.com/maps/embed?pb=!3m2!1sen!2sin!4v1788207880844!5m2!1sen!2sin!6m8!1m7!1ssJB5nK-dE1fl45ecsGv4gA!2m2!1d8.731295549723043!2d77.72238196362515!3f118.38461397621192!4f-9.86677400328277!5f1.273290424668561";
+  "https://www.google.com/maps?q=8.731295549723043,77.72238196362515&z=17&output=embed";
 const CLINIC_MAP_LINK = "https://maps.app.goo.gl/T7kLUuqbnLV7ZHcT8";
 
 const features = [
@@ -530,7 +530,7 @@ export default function BookAppointment() {
                 className="h-[420px] w-full lg:h-[520px]"
                 style={{ border: 0 }}
                 loading="lazy"
-                referrerPolicy="strict-origin-when-cross-origin"
+                referrerPolicy="no-referrer-when-downgrade"
                 allowFullScreen
               />
             </div>
