@@ -52,10 +52,12 @@ function RevealWords({ text, as = "span", className, style }) {
 
 const threeLineDesc = { maxHeight: "66px", overflow: "hidden", flexShrink: 0 };
 
+// Signature Asukavi card silhouette: a clean rectangular card with a single
+// sculpted corner (bottom-left), rather than a generic uniformly-rounded box.
 const CARD_STYLE = {
   backgroundColor: "#0F1C18",
   border: "1.5px solid rgba(192,198,204,0.35)",
-  borderRadius: "28px",
+  borderRadius: "0 0 0 32px",
 };
 
 const CARD_CLASS =
@@ -87,10 +89,10 @@ const TOP_HIGHLIGHT = (
 );
 
 const LIFT_STYLE = { transitionTimingFunction: "cubic-bezier(0.22,1,0.36,1)" };
-const LIFT_CLASS =
-  "group h-[264px] rounded-[28px] transition-[transform,border-color] duration-500 hover:-translate-y-2 border border-transparent hover:border-[#C0C6CC]/60";
-const FEATURED_LIFT_CLASS =
-  "group h-[340px] sm:h-[264px] rounded-[28px] transition-[transform,border-color] duration-500 hover:-translate-y-2 border border-transparent hover:border-[#C0C6CC]/60";
+const SIGNATURE_SHAPE_CLASS =
+  "rounded-tl-none rounded-tr-none rounded-br-none rounded-bl-[32px]";
+const LIFT_CLASS = `group h-[264px] ${SIGNATURE_SHAPE_CLASS} transition-[transform,border-color] duration-500 hover:-translate-y-2 border border-transparent hover:border-[#C0C6CC]/60`;
+const FEATURED_LIFT_CLASS = `group h-[340px] sm:h-[264px] ${SIGNATURE_SHAPE_CLASS} transition-[transform,border-color] duration-500 hover:-translate-y-2 border border-transparent hover:border-[#C0C6CC]/60`;
 
 const services = [
   {
@@ -218,7 +220,7 @@ export default function Services() {
           <motion.div variants={fadeUp} className="relative min-h-0 lg:col-span-2">
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -inset-2 -z-10 rounded-[32px] bg-[#C0C6CC]/8 blur-xl"
+              className="pointer-events-none absolute -inset-2 -z-10 rounded-tl-none rounded-tr-none rounded-br-none rounded-bl-[36px] bg-[#C0C6CC]/8 blur-xl"
             />
             <div className={FEATURED_LIFT_CLASS} style={LIFT_STYLE}>
               <div
