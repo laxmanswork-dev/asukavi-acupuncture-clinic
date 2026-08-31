@@ -133,7 +133,7 @@ export default function TraditionalAcupuncture() {
           </FadeUp>
 
           {/* Bridge into the techniques grid */}
-          <FadeUp delay={80} className="mt-16 lg:mt-20">
+          <FadeUp delay={80} className="mt-10 lg:mt-12">
             <h2
               className="mx-auto max-w-2xl text-center text-3xl font-bold leading-tight tracking-tight text-cream-50 sm:text-4xl"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
