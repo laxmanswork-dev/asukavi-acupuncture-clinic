@@ -116,6 +116,10 @@ export default function TraditionalAcupuncture() {
         <div className="relative mx-auto max-w-7xl px-6 pb-20 pt-10 lg:px-10 lg:pb-28 lg:pt-14">
           {/* Section opens directly with the heading — treatment exploration is the focus */}
           <FadeUp>
+            <NeedleUnderline
+              aria-hidden="true"
+              className="needle-glow mx-auto mb-6 h-2 w-20 text-gold-400/80"
+            />
             <h2
               className="mx-auto max-w-2xl text-center text-3xl font-bold leading-tight tracking-tight text-cream-50 sm:text-4xl"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
