@@ -87,7 +87,7 @@ export default function About() {
           </p>
         </FadeUp>
 
-        <FadeUp delay={150} className="relative">
+        <FadeUp delay={150} className="relative lg:translate-x-8 xl:translate-x-12">
           <p className="font-tamil text-sm font-semibold tracking-[0.15em] text-[#A8D5BA]">
             திருக்குறள் 948
           </p>
