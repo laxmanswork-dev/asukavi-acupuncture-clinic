@@ -507,7 +507,7 @@ export default function BookAppointment() {
         <div className="mx-auto max-w-6xl px-6 py-16 lg:px-10 lg:py-20">
           <FadeUp>
             <p className="text-center font-display text-xs font-medium tracking-[0.22em] text-[#B8C9BE]">
-              VISIT OUR CLINIC
+              VISIT OUR CENTRE
             </p>
             <NeedleUnderline
               aria-hidden="true"
