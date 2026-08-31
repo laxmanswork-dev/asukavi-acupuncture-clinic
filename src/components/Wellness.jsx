@@ -268,23 +268,26 @@ export default function Wellness() {
                 className="group flex min-h-[48px] flex-col items-center gap-2.5 rounded-2xl p-1.5 text-center transition-transform duration-300 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#7ED9A8]/70"
               >
                 <span
-                  className="flex h-14 w-14 items-center justify-center rounded-2xl border transition-all duration-300 ease-out"
+                  className="relative flex h-14 w-14 flex-none items-center justify-center transition-transform duration-300 ease-out"
                   style={{
-                    backgroundColor: isActive
-                      ? "rgba(126,217,168,0.16)"
-                      : "rgba(255,255,255,0.06)",
-                    borderColor: isActive
-                      ? "rgba(126,217,168,0.55)"
-                      : "rgba(255,255,255,0.14)",
                     backdropFilter: isActive ? "none" : "blur(6px)",
-                    boxShadow: isActive
-                      ? "0 0 16px rgba(126,217,168,0.4), 0 0 8px rgba(232,177,58,0.2)"
-                      : "none",
                     transform: isActive ? "scale(1.05)" : "scale(1)",
                   }}
                 >
+                  <svg
+                    viewBox="0 0 56 56"
+                    className="absolute inset-0 h-full w-full overflow-visible transition-colors duration-300 ease-out"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M6,16 A10,10 0 0 1 16,6 L34,6 L52,1 L50,14 L50,40 A10,10 0 0 1 40,50 L16,50 A10,10 0 0 1 6,40 Z"
+                      fill={isActive ? "rgba(126,217,168,0.16)" : "rgba(255,255,255,0.06)"}
+                      stroke={isActive ? "rgba(126,217,168,0.55)" : "rgba(255,255,255,0.14)"}
+                      strokeWidth="1.5"
+                    />
+                  </svg>
                   <Icon
-                    className="h-6 w-6 transition-colors duration-300 ease-out"
+                    className="relative z-10 h-6 w-6 transition-colors duration-300 ease-out"
                     strokeWidth={1.75}
                     style={{
                       color: isActive ? "#7ED9A8" : "rgba(205,239,234,0.55)",
