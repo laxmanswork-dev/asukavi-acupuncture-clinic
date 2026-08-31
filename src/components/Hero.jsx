@@ -42,7 +42,7 @@ export default function Hero() {
     <section id="home" className="relative overflow-hidden">
       <video
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover object-[74%_center] lg:object-center"
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover object-[74%_center] lg:object-[64%_center] xl:object-center"
         autoPlay
         muted
         loop
@@ -149,7 +149,7 @@ export default function Hero() {
               </div>
 
               <div
-                className="hero-reveal mt-[40px] inline-flex flex-wrap items-center gap-3 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-white/10 bg-white/10 px-5 py-3 backdrop-blur-md sm:mt-[48px]"
+                className="hero-reveal mt-[40px] inline-flex w-fit flex-wrap items-center gap-2.5 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-white/10 bg-white/10 px-4 py-3 backdrop-blur-md sm:mt-[48px]"
                 style={{ animationDelay: "0.72s" }}
               >
                 <GoogleGIcon size={20} className="flex-none" />
