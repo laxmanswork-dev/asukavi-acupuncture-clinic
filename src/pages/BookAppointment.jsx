@@ -225,6 +225,32 @@ export default function BookAppointment() {
               className="needle-glow mx-auto mt-6 h-4 w-32 text-gold-400/80"
             />
           </FadeUp>
+
+          <FadeUp delay={100}>
+            <div className="mx-auto mt-9 max-w-lg border-t border-cream-50/10 pt-7">
+              <p
+                className="text-xs font-medium tracking-[0.08em] text-[#B8C9BE]/80"
+                style={{ fontFamily: "'Noto Serif Tamil', serif" }}
+              >
+                திருக்குறள் &middot; குறள் 942
+              </p>
+              <p
+                className="mx-auto mt-3 text-base italic leading-relaxed text-cream-50/80"
+                style={{ fontFamily: "'Noto Serif Tamil', serif" }}
+              >
+                &ldquo;மருந்தென வேண்டாவாம் யாக்கைக்கு அருந்தியது
+                <br />
+                அற்றது போற்றி உணின்&rdquo;
+              </p>
+              <p
+                className="mx-auto mt-3 text-sm leading-relaxed text-[#E8ECEF]/70"
+                style={{ fontFamily: "'Noto Serif Tamil', serif" }}
+              >
+                உண்ட உணவு செரித்த பின், பசியறிந்து அளவோடு உண்பவர்க்கு உடலே
+                சிறந்த மருந்தாகும்.
+              </p>
+            </div>
+          </FadeUp>
         </div>
       </section>
 
