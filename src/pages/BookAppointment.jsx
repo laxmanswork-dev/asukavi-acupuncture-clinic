@@ -186,7 +186,7 @@ export default function BookAppointment() {
       {/* Background video spanning the full booking section */}
       <video
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover"
+        className="pointer-events-none absolute inset-0 -z-10 object-cover"
         autoPlay
         muted
         loop
