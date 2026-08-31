@@ -114,42 +114,8 @@ export default function TraditionalAcupuncture() {
         />
 
         <div className="relative mx-auto max-w-7xl px-6 pb-20 pt-10 lg:px-10 lg:pb-28 lg:pt-14">
-          {/* Thirukkural philosophy — no card, generous breathing room */}
+          {/* Section opens directly with the heading — treatment exploration is the focus */}
           <FadeUp>
-            <div className="mx-auto max-w-3xl text-center">
-              <NeedleUnderline
-                aria-hidden="true"
-                className="needle-glow mx-auto h-2 w-20 text-gold-400/80"
-              />
-              <p
-                className="mt-6 text-sm font-semibold tracking-[0.1em] text-[#B8C9BE]"
-                style={{ fontFamily: "'Noto Serif Tamil', serif" }}
-              >
-                திருக்குறள் &middot; குறள் 942
-              </p>
-              <p
-                className="mx-auto mt-5 font-medium italic leading-snug text-cream-50"
-                style={{
-                  fontFamily: "'Noto Serif Tamil', serif",
-                  fontSize: "clamp(0.76rem, 3.1vw, 1.35rem)",
-                }}
-              >
-                <span className="block whitespace-nowrap">
-                  &ldquo;மருந்தென வேண்டாவாம் யாக்கைக்கு அருந்தியது
-                </span>
-                <span className="block whitespace-nowrap">
-                  அற்றது போற்றி உணின்&rdquo;
-                </span>
-              </p>
-              <NeedleUnderline
-                aria-hidden="true"
-                className="needle-glow mx-auto mt-8 h-4 w-32 text-gold-400/80"
-              />
-            </div>
-          </FadeUp>
-
-          {/* Bridge into the techniques grid */}
-          <FadeUp delay={80} className="mt-4 lg:mt-6">
             <h2
               className="mx-auto max-w-2xl text-center text-3xl font-bold leading-tight tracking-tight text-cream-50 sm:text-4xl"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
