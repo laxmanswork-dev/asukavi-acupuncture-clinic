@@ -88,7 +88,10 @@ export default function About() {
         </FadeUp>
 
         <FadeUp delay={150} className="relative lg:translate-x-8 xl:translate-x-12">
-          <p className="font-tamil text-sm font-semibold tracking-[0.15em] text-[#A8D5BA]">
+          <p
+            className="text-base font-semibold tracking-[0.04em] text-[#B8C9BE]"
+            style={{ fontFamily: "'Noto Serif Tamil', serif" }}
+          >
             திருக்குறள் 948
           </p>
 
@@ -110,7 +113,10 @@ export default function About() {
             className="needle-glow mt-8 h-4 w-32 text-gold-400/80"
           />
 
-          <p className="mt-7 font-tamil text-sm font-semibold tracking-[0.15em] text-[#A8D5BA]/70">
+          <p
+            className="mt-7 text-sm font-medium tracking-[0.03em] text-[#B8C9BE]/75"
+            style={{ fontFamily: "'Noto Serif Tamil', serif" }}
+          >
             எங்களின் சிகிச்சை அணுகுமுறை
           </p>
 
