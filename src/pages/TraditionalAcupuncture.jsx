@@ -134,26 +134,14 @@ export default function TraditionalAcupuncture() {
 
           {/* Bridge into the techniques grid */}
           <FadeUp delay={80} className="mt-16 lg:mt-20">
-            <p className="text-center font-display text-xs font-medium tracking-[0.22em] text-[#B8C9BE]">
-              OUR TREATMENT METHODS
-            </p>
-            <NeedleUnderline
-              aria-hidden="true"
-              className="needle-glow mx-auto mt-3 h-2 w-20 text-gold-400/80"
-            />
             <h2
-              className="mx-auto mt-4 max-w-2xl text-center text-3xl font-bold leading-tight tracking-tight text-cream-50 sm:text-4xl"
+              className="mx-auto max-w-2xl text-center text-3xl font-bold leading-tight tracking-tight text-cream-50 sm:text-4xl"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
-              Techniques &amp; Modalities We Draw On
+              Our Treatment Approaches
             </h2>
-            <NeedleUnderline
-              aria-hidden="true"
-              className="needle-glow mx-auto mt-4 h-4 w-32 text-gold-400/80"
-            />
             <p className="mx-auto mt-4 max-w-2xl text-center font-body text-base leading-relaxed text-[#E8ECEF]">
-              Traditional acupuncture at Asukavi draws on a range of
-              complementary techniques, carefully selected according to each
+              A range of carefully selected techniques, tailored to each
               individual&rsquo;s needs.
             </p>
           </FadeUp>
