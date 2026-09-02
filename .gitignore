@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Wrangler local dev/deploy cache
+.wrangler
+
 # Environment variables (contains API keys)
 .env
 .env.*

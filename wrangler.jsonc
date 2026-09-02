@@ -1,0 +1,16 @@
+{
+  // Cloudflare Workers static-assets deployment config for the Vite-built
+  // React SPA in ./dist. No custom Worker script ("main") is needed here —
+  // this is a static-assets-only Worker; Cloudflare serves the files
+  // directly and falls back to index.html for client-side routes.
+  "name": "asukavi-acupuncture-clinic",
+  "compatibility_date": "2025-01-01",
+  "assets": {
+    "directory": "./dist",
+    // Unmatched routes (e.g. a direct load of /book-appointment) serve
+    // index.html with a 200 instead of 404, so React Router can take over
+    // client-side. This is the native platform mechanism for SPA fallback,
+    // so a public/_redirects file is unnecessary here.
+    "not_found_handling": "single-page-application"
+  }
+}
