@@ -135,6 +135,155 @@ footer[id] {
   animation: word-reveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+/* ============== Intro Experience ==============
+   One continuous 4s choreography, everything keyed off mount time (t=0)
+   via animation-delay so it stays perfectly in sync without JS ticking. */
+
+@keyframes intro-overlay-fade {
+  0%,
+  84% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.intro-overlay {
+  animation: intro-overlay-fade 4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes intro-line-timeline {
+  0% {
+    opacity: 0;
+    background-position: -60% 0;
+    filter: blur(2px);
+  }
+  9% {
+    opacity: 1;
+    filter: blur(0.5px);
+  }
+  20% {
+    opacity: 1;
+    background-position: 160% 0;
+  }
+  40% {
+    opacity: 0.28;
+    background-position: 160% 0;
+    filter: blur(0);
+  }
+  82% {
+    opacity: 0.28;
+  }
+  100% {
+    opacity: 0;
+    background-position: 220% 0;
+    filter: blur(10px);
+  }
+}
+
+.intro-line {
+  background-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(245, 242, 233, 0) 28%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(245, 242, 233, 0) 72%,
+    transparent 100%
+  );
+  background-size: 300% 100%;
+  animation: intro-line-timeline 4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes intro-glow-bloom {
+  0%,
+  15% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  55% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+}
+
+.intro-logo-glow {
+  opacity: 0;
+  background: radial-gradient(
+    closest-side,
+    rgba(245, 242, 233, 0.4),
+    transparent 75%
+  );
+  animation: intro-glow-bloom 2s cubic-bezier(0.22, 1, 0.36, 1) 0.45s forwards;
+}
+
+@keyframes intro-logo-reveal {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+.intro-logo {
+  opacity: 0;
+  animation: intro-logo-reveal 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.65s forwards;
+}
+
+@keyframes intro-reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.intro-word-1 {
+  opacity: 0;
+  animation: intro-reveal-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.2s forwards;
+}
+
+.intro-word-2 {
+  opacity: 0;
+  animation: intro-reveal-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) 1.45s forwards;
+}
+
+.intro-word-3 {
+  opacity: 0;
+  animation: intro-reveal-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) 2.45s forwards;
+}
+
+@keyframes intro-rule-grow {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+.intro-rule {
+  display: block;
+  opacity: 0;
+  transform-origin: center;
+  animation: intro-rule-grow 0.8s cubic-bezier(0.22, 1, 0.36, 1) 2.2s forwards;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-reveal {
     opacity: 1;

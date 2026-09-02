@@ -116,9 +116,9 @@ const services = [
   },
   {
     image: wellnessImg,
-    title: "Wellness Consultation",
+    title: "Naturopathy",
     description:
-      "Personalized lifestyle, nutrition, and wellness guidance tailored to your individual health goals.",
+      "A natural approach to wellness that supports the body's ability to heal, restore balance, and promote lasting wellbeing.",
   },
 ];
 

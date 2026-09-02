@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { CheckCircle2, Lock } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { Lock } from "lucide-react";
 import FadeUp from "../components/FadeUp";
 import { NeedleUnderline } from "../components/motifs";
 import appointmentVideo from "../assets/appointment.mp4";
@@ -18,6 +18,14 @@ const CLINIC_ADDRESS =
 const CLINIC_MAP_EMBED_SRC =
   "https://www.google.com/maps?q=8.731295549723043,77.72238196362515&z=17&output=embed";
 const CLINIC_MAP_LINK = "https://maps.app.goo.gl/T7kLUuqbnLV7ZHcT8";
+const WHATSAPP_NUMBER = "919787626398";
+const INDIAN_MOBILE_PATTERN = /^(?:\+91|91|0)?[6-9]\d{9}$/;
+
+const NADI_INSTRUCTIONS = [
+  "காலை 7:30 மணி முதல் நாடி பரிசோதனை செய்யப்படும்.",
+  "பரிசோதனைக்கு முன் தேநீர் மற்றும் காபி அருந்துவதை தவிர்க்கவும்.",
+  "முன் அனுமதி பெற்று வரவும்.",
+];
 
 const features = [
   "Personalized Consultation",
@@ -39,6 +47,8 @@ const CONCERNS = [
   "General Wellness",
   "Other",
 ];
+
+const TIME_OPTIONS = ["Morning", "Afternoon", "Evening"];
 
 const initialForm = {
   fullName: "",
@@ -72,27 +82,174 @@ const inputClasses = (hasError) =>
     hasError ? "border-[#E38B7A]/60" : "border-white/15"
   } bg-white/5 px-4 font-body text-sm text-cream-50 placeholder:text-white/60 transition-colors duration-300 ease-in-out focus:border-[#A8D5BA]/60 focus:outline-none`;
 
-function SelectField({ value, onChange, hasError, children, ...rest }) {
+// Native <select> options render with the OS/browser's own dropdown chrome —
+// on most platforms that means a bright, unstylable white panel no matter
+// what CSS is applied to <option>. This custom listbox keeps the closed
+// trigger identical to the old input styling but renders its own open panel,
+// so the dark, premium theme carries through into the open state too.
+function CustomSelect({ id, value, onChange, options, placeholder, hasError }) {
+  const [open, setOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(-1);
+  const rootRef = useRef(null);
+  const optionRefs = useRef([]);
+
+  useEffect(() => {
+    function handlePointerDown(e) {
+      if (rootRef.current && !rootRef.current.contains(e.target)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handlePointerDown);
+    return () => document.removeEventListener("mousedown", handlePointerDown);
+  }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    const currentIndex = options.indexOf(value);
+    setActiveIndex(currentIndex >= 0 ? currentIndex : 0);
+  }, [open, options, value]);
+
+  useEffect(() => {
+    if (open && activeIndex >= 0) {
+      optionRefs.current[activeIndex]?.scrollIntoView({ block: "nearest" });
+    }
+  }, [open, activeIndex]);
+
+  function commit(option) {
+    onChange(option);
+    setOpen(false);
+  }
+
+  function handleTriggerKeyDown(e) {
+    if (!open) {
+      if (["ArrowDown", "ArrowUp", "Enter", " "].includes(e.key)) {
+        e.preventDefault();
+        setOpen(true);
+      }
+      return;
+    }
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      setActiveIndex((i) => Math.min(i + 1, options.length - 1));
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      setActiveIndex((i) => Math.max(i - 1, 0));
+    } else if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      if (activeIndex >= 0) commit(options[activeIndex]);
+    } else if (e.key === "Escape") {
+      e.preventDefault();
+      setOpen(false);
+    } else if (e.key === "Tab") {
+      setOpen(false);
+    }
+  }
+
   return (
-    <div className="relative">
-      <select
-        value={value}
-        onChange={onChange}
-        className={`${inputClasses(hasError)} appearance-none pr-10`}
-        {...rest}
+    <div ref={rootRef} className="relative">
+      <button
+        type="button"
+        id={id}
+        onClick={() => setOpen((o) => !o)}
+        onKeyDown={handleTriggerKeyDown}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        className={`${inputClasses(hasError)} flex items-center justify-between pr-10 text-left ${
+          value ? "" : "text-white/60"
+        }`}
       >
-        {children}
-      </select>
-      <ChevronDownIcon className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-cream-100/50" />
+        <span className="truncate">{value || placeholder}</span>
+      </button>
+      <ChevronDownIcon
+        aria-hidden="true"
+        className={`pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-cream-100/50 transition-transform duration-200 ease-in-out ${
+          open ? "rotate-180" : ""
+        }`}
+      />
+
+      {open && (
+        <ul
+          role="listbox"
+          tabIndex={-1}
+          aria-activedescendant={
+            activeIndex >= 0 ? `${id}-option-${activeIndex}` : undefined
+          }
+          className="absolute z-50 mt-2 max-h-60 w-full overflow-y-auto rounded-lg border border-white/15 bg-eucalyptus-800 py-1.5 shadow-2xl shadow-black/40"
+        >
+          {options.map((option, i) => {
+            const isSelected = option === value;
+            const isActive = i === activeIndex;
+            return (
+              <li
+                key={option}
+                id={`${id}-option-${i}`}
+                ref={(el) => (optionRefs.current[i] = el)}
+                role="option"
+                aria-selected={isSelected}
+                onMouseDown={(e) => e.preventDefault()}
+                onMouseEnter={() => setActiveIndex(i)}
+                onClick={() => commit(option)}
+                className={`cursor-pointer px-4 py-2.5 font-body text-sm transition-colors duration-150 ease-in-out ${
+                  isSelected
+                    ? "bg-gold-400/15 text-cream-50"
+                    : isActive
+                      ? "bg-white/10 text-cream-50"
+                      : "text-cream-100/85"
+                }`}
+              >
+                {option}
+              </li>
+            );
+          })}
+        </ul>
+      )}
     </div>
   );
+}
+
+function formatAppointmentDate(dateStr) {
+  if (!dateStr) return "";
+  const parsed = new Date(`${dateStr}T00:00:00`);
+  if (Number.isNaN(parsed.getTime())) return dateStr;
+  return parsed.toLocaleDateString("en-IN", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+}
+
+function buildWhatsAppMessage(form) {
+  const notes = form.notes.trim() || "None";
+  return [
+    "Hello Asukavi Acupuncture Centre,",
+    "",
+    "I would like to request an appointment.",
+    "",
+    "*APPOINTMENT DETAILS*",
+    "",
+    `Name: ${form.fullName.trim()}`,
+    `Mobile: ${form.phone.trim()}`,
+    `Primary Concern: ${form.concern}`,
+    `Preferred Date: ${formatAppointmentDate(form.date)}`,
+    `Preferred Time: ${form.time}`,
+    "",
+    "Additional Notes:",
+    notes,
+    "",
+    "Please let me know the appointment availability.",
+    "",
+    "Thank you.",
+  ].join("\n");
 }
 
 export default function BookAppointment() {
   const location = useLocation();
   const [form, setForm] = useState(initialForm);
   const [errors, setErrors] = useState({});
-  const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  // Mirrors isSubmitting synchronously so a second click fired before React
+  // re-renders (and disables the button) can't slip through and open two tabs.
+  const submittingRef = useRef(false);
 
   useEffect(() => {
     if (!location.hash) return;
@@ -114,12 +271,25 @@ export default function BookAppointment() {
   function validate() {
     const next = {};
     if (!form.fullName.trim()) next.fullName = "Please enter your full name.";
-    if (!form.phone.trim()) {
+
+    const phoneValue = form.phone.trim().replace(/[\s-]/g, "");
+    if (!phoneValue) {
       next.phone = "Please enter your mobile number.";
-    } else if (!/^[+\d][\d\s-]{6,}$/.test(form.phone.trim())) {
-      next.phone = "Please enter a valid phone number.";
+    } else if (!INDIAN_MOBILE_PATTERN.test(phoneValue)) {
+      next.phone = "Please enter a valid Indian mobile number.";
     }
-    if (!form.date) next.date = "Please choose a preferred date.";
+
+    if (!form.date) {
+      next.date = "Please choose a preferred date.";
+    } else {
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const selectedDate = new Date(`${form.date}T00:00:00`);
+      if (selectedDate < today) {
+        next.date = "Please choose a date from today onwards.";
+      }
+    }
+
     if (!form.time) next.time = "Please choose a preferred time.";
     if (!form.concern) next.concern = "Please select your primary concern.";
     if (!form.consent) next.consent = "Please agree to be contacted.";
@@ -128,23 +298,34 @@ export default function BookAppointment() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    if (submittingRef.current) return;
+
     const nextErrors = validate();
     setErrors(nextErrors);
-    if (Object.keys(nextErrors).length === 0) {
-      setSubmitted(true);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
+
+    if (Object.keys(nextErrors).length > 0) {
       const firstKey = Object.keys(nextErrors)[0];
       document
         .getElementById(firstKey)
         ?.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
     }
-  }
 
-  function handleReset() {
-    setForm(initialForm);
-    setErrors({});
-    setSubmitted(false);
+    submittingRef.current = true;
+    setIsSubmitting(true);
+
+    // Opened synchronously (within the click's call stack) so browser
+    // popup blockers don't treat it as an unrequested popup.
+    const message = buildWhatsAppMessage(form);
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+
+    // Brief loading state, then reset the button — the form itself is left
+    // untouched in case the user comes back without sending the message.
+    window.setTimeout(() => {
+      submittingRef.current = false;
+      setIsSubmitting(false);
+    }, 900);
   }
 
   return (
@@ -171,72 +352,32 @@ export default function BookAppointment() {
 
       {/* Hero */}
       <section className="relative overflow-hidden border-t border-cream-50/12">
-        <div className="relative mx-auto max-w-4xl px-6 py-20 text-center lg:py-28">
+        <div className="relative mx-auto max-w-3xl px-6 py-9 text-center lg:py-11">
           <FadeUp>
             <p className="font-display text-xs font-medium tracking-[0.22em] text-[#B8C9BE]">
               SCHEDULE YOUR VISIT
             </p>
             <NeedleUnderline
               aria-hidden="true"
-              className="needle-glow mx-auto mt-3 mb-5 h-2 w-20 text-gold-400/80"
+              className="needle-glow mx-auto mt-3 mb-4 h-2 w-20 text-gold-400/80"
             />
             <h1
-              className="text-5xl font-bold leading-tight tracking-tight text-cream-50 lg:text-6xl"
+              className="text-4xl font-bold leading-[1.15] tracking-tight text-cream-50 lg:text-5xl"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               Take the First Step Toward Better Wellbeing.
             </h1>
             <NeedleUnderline
               aria-hidden="true"
-              className="needle-glow mx-auto mt-6 h-4 w-32 text-gold-400/80"
+              className="needle-glow mx-auto mt-4 h-3.5 w-28 text-gold-400/80"
             />
           </FadeUp>
         </div>
       </section>
 
-      {submitted ? (
-        <section className="relative border-t border-cream-50/12">
-          <div className="mx-auto max-w-2xl px-6 py-24 text-center">
-            <FadeUp>
-              <CheckCircle2
-                className="mx-auto h-16 w-16 flex-none text-[#7ED9A8]"
-                strokeWidth={1.5}
-              />
-              <h2
-                className="mb-4 mt-6 text-3xl font-bold text-cream-50 sm:text-4xl"
-                style={{ fontFamily: "'Cormorant Garamond', serif" }}
-              >
-                Appointment Request Received
-              </h2>
-              <p className="font-body text-base leading-relaxed text-[#E8ECEF]">
-                Thank you for contacting Asukavi Acupuncture Clinic.
-                <br />
-                Our team will contact you shortly to confirm your preferred
-                appointment time.
-              </p>
-
-              <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
-                <Link
-                  to="/"
-                  className="inline-flex h-12 items-center justify-center rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm bg-[#A3B899] px-7 font-display text-sm font-semibold tracking-wide text-eucalyptus-950 transition-all duration-300 ease-in-out hover:scale-[1.02] hover:bg-[#8FA588] active:scale-[0.98]"
-                >
-                  Return Home
-                </Link>
-                <button
-                  type="button"
-                  onClick={handleReset}
-                  className="inline-flex h-12 items-center justify-center rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-white/25 px-7 font-display text-sm font-semibold tracking-wide text-white transition-all duration-300 ease-in-out hover:border-[#A3B899]/70 hover:text-[#A3B899]"
-                >
-                  Book Another Appointment
-                </button>
-              </div>
-            </FadeUp>
-          </div>
-        </section>
-      ) : (
-        <section className="relative border-t border-cream-50/12">
-          <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
-            <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-14">
+      <section className="relative border-t border-cream-50/12">
+        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-20">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-14">
               {/* Left: consultation info */}
               <div className="lg:col-span-5">
                 <FadeUp>
@@ -288,17 +429,23 @@ export default function BookAppointment() {
                       <ClockIcon className="h-4 w-4 flex-none" />
                       CLINIC HOURS
                     </h3>
-                    <dl className="space-y-2.5 font-body text-sm text-[#E8ECEF]">
-                      <div className="flex items-center justify-between gap-4">
-                        <dt className="text-cream-100/70">Monday – Friday</dt>
+                    <dl className="space-y-3 font-body text-sm text-[#E8ECEF] sm:space-y-2.5">
+                      <div className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                        <dt className="whitespace-nowrap text-cream-100/70">
+                          Monday – Friday
+                        </dt>
+                        <dd>10:00 AM – 1:00 PM &amp; 5:00 PM – 9:00 PM</dd>
+                      </div>
+                      <div className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                        <dt className="whitespace-nowrap text-cream-100/70">
+                          Saturday
+                        </dt>
                         <dd>10:00 AM – 1:00 PM &amp; 5:00 PM – 9:00 PM</dd>
                       </div>
                       <div className="flex items-center justify-between gap-4">
-                        <dt className="text-cream-100/70">Saturday</dt>
-                        <dd>10:00 AM – 1:00 PM &amp; 5:00 PM – 9:00 PM</dd>
-                      </div>
-                      <div className="flex items-center justify-between gap-4">
-                        <dt className="text-cream-100/70">Sunday</dt>
+                        <dt className="whitespace-nowrap text-cream-100/70">
+                          Sunday
+                        </dt>
                         <dd>Closed</dd>
                       </div>
                     </dl>
@@ -319,11 +466,11 @@ export default function BookAppointment() {
                         097876 26398
                       </a>
                       <a
-                        href="mailto:info@asukavi.com"
+                        href="mailto:asukavi23@gmail.com"
                         className="flex items-center gap-2.5 transition-colors duration-300 ease-in-out hover:text-cream-50"
                       >
                         <MailIcon className="h-4 w-4 flex-none text-[#CDEFEA]/70" />
-                        info@asukavi.com
+                        asukavi23@gmail.com
                       </a>
                       <div className="flex items-start gap-2.5">
                         <PinIcon className="mt-0.5 h-4 w-4 flex-none text-[#CDEFEA]/70" />
@@ -396,19 +543,16 @@ export default function BookAppointment() {
                           htmlFor="concern"
                           error={errors.concern}
                         >
-                          <SelectField
+                          <CustomSelect
                             id="concern"
                             value={form.concern}
-                            onChange={update("concern")}
+                            onChange={(v) =>
+                              setForm((prev) => ({ ...prev, concern: v }))
+                            }
+                            options={CONCERNS}
+                            placeholder="Select your concern"
                             hasError={errors.concern}
-                          >
-                            <option value="" disabled>
-                              Select your concern
-                            </option>
-                            {CONCERNS.map((c) => (
-                              <option key={c}>{c}</option>
-                            ))}
-                          </SelectField>
+                          />
                         </Field>
 
                         <Field
@@ -416,19 +560,16 @@ export default function BookAppointment() {
                           htmlFor="time"
                           error={errors.time}
                         >
-                          <SelectField
+                          <CustomSelect
                             id="time"
                             value={form.time}
-                            onChange={update("time")}
+                            onChange={(v) =>
+                              setForm((prev) => ({ ...prev, time: v }))
+                            }
+                            options={TIME_OPTIONS}
+                            placeholder="Select a time"
                             hasError={errors.time}
-                          >
-                            <option value="" disabled>
-                              Select a time
-                            </option>
-                            <option>Morning</option>
-                            <option>Afternoon</option>
-                            <option>Evening</option>
-                          </SelectField>
+                          />
                         </Field>
                       </div>
 
@@ -478,9 +619,11 @@ export default function BookAppointment() {
 
                       <button
                         type="submit"
-                        className="inline-flex h-14 w-full items-center justify-center rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm bg-[#A3B899] px-8 font-display text-base font-semibold tracking-wide text-eucalyptus-950 shadow-lg shadow-[#A3B899]/25 transition-all duration-300 ease-in-out hover:scale-[1.01] hover:bg-[#8FA588] active:scale-[0.99] sm:w-auto"
+                        disabled={isSubmitting}
+                        aria-busy={isSubmitting}
+                        className="inline-flex h-14 w-full items-center justify-center rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm bg-[#A3B899] px-8 font-display text-base font-semibold tracking-wide text-eucalyptus-950 shadow-lg shadow-[#A3B899]/25 transition-all duration-300 ease-in-out hover:scale-[1.01] hover:bg-[#8FA588] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:scale-100 sm:w-auto"
                       >
-                        Book Appointment
+                        {isSubmitting ? "Opening WhatsApp..." : "Book Appointment"}
                       </button>
                     </form>
                   </div>
@@ -499,7 +642,79 @@ export default function BookAppointment() {
             </div>
           </div>
         </section>
-      )}
+
+      {/* Nadi Parisothanai — editorial pulse-diagnosis interlude */}
+      <section className="relative border-t border-cream-50/12">
+        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
+          <FadeUp>
+            <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-0">
+              {/* Left — Tamil heading */}
+              <div className="border-b border-cream-50/10 pb-10 lg:col-span-4 lg:border-b-0 lg:border-r lg:border-cream-50/10 lg:pb-0 lg:pr-8">
+                <p className="font-display text-xs font-medium tracking-[0.22em] text-[#B8C9BE]">
+                  PULSE DIAGNOSIS
+                </p>
+                <NeedleUnderline
+                  aria-hidden="true"
+                  className="needle-glow mt-3 mb-5 h-2 w-20 text-gold-400/80"
+                />
+                <h2
+                  lang="ta"
+                  className="text-4xl font-bold leading-[1.2] tracking-wide text-cream-50 sm:text-5xl lg:text-[2.3rem] xl:text-[2.75rem]"
+                  style={{ fontFamily: "'Noto Serif Tamil', serif" }}
+                >
+                  நாடி பரிசோதனை
+                </h2>
+                <NeedleUnderline
+                  aria-hidden="true"
+                  className="needle-glow mt-6 h-4 w-28 text-gold-400/90"
+                />
+              </div>
+
+              {/* Center — instructions */}
+              <div className="border-b border-cream-50/10 pb-10 lg:col-span-3 lg:border-b-0 lg:border-r lg:border-cream-50/10 lg:px-8 lg:pb-0">
+                <div className="divide-y divide-cream-50/10">
+                  {NADI_INSTRUCTIONS.map((line) => (
+                    <p
+                      key={line}
+                      lang="ta"
+                      className="py-5 font-tamil text-[16.5px] leading-[1.9] text-cream-100/90 first:pt-0 last:pb-0"
+                    >
+                      {line}
+                    </p>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right — Thirukkural */}
+              <div className="lg:col-span-5 lg:pl-8">
+                <span
+                  className="block font-script text-5xl leading-none text-gold-400/60"
+                  aria-hidden="true"
+                >
+                  &ldquo;
+                </span>
+                <p
+                  lang="ta"
+                  className="mt-2 font-tamil text-xl font-semibold italic leading-relaxed text-cream-50/90 sm:text-2xl lg:text-[13px] xl:text-[16.5px]"
+                >
+                  <span className="block lg:whitespace-nowrap">
+                    மருந்தென வேண்டாவாம் யாக்கைக்கு அருந்தியது
+                  </span>
+                  <span className="block lg:whitespace-nowrap">
+                    அற்றது போற்றி உணின்.
+                  </span>
+                </p>
+                <p
+                  className="mt-5 text-[15px] font-medium tracking-[0.15em] text-[#B8C9BE]/75"
+                  style={{ fontFamily: "'Noto Serif Tamil', serif" }}
+                >
+                  — திருக்குறள்
+                </p>
+              </div>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
 
       {/* Visit Our Clinic — Google Maps location */}
       <section id="visit-clinic" className="relative border-t border-cream-50/12">
@@ -540,14 +755,14 @@ export default function BookAppointment() {
               <span>{CLINIC_ADDRESS}</span>
             </div>
 
-            <div className="mt-5 flex justify-center">
+            <div className="mt-6 flex justify-center">
               <a
                 href={CLINIC_MAP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 font-display text-sm font-semibold tracking-wide text-[#A8D5BA] transition-colors duration-300 ease-in-out hover:text-cream-50"
+                className="group inline-flex h-11 items-center gap-2 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-white/25 bg-white/10 pl-6 pr-5 font-display text-sm font-semibold uppercase tracking-wide text-white backdrop-blur-md transition-all duration-300 ease-in-out hover:border-[#A3B899]/70 hover:bg-white/15 hover:text-[#A3B899]"
               >
-                Get Directions
+                <span>Get Directions</span>
                 <ArrowRightIcon className="h-4 w-4 flex-none transition-transform duration-300 ease-in-out group-hover:translate-x-1" />
               </a>
             </div>

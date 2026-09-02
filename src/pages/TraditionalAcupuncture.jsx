@@ -23,6 +23,9 @@ import aromatherapyImg from "../assets/services/modalities/aromatherapy.png";
 import hotStoneTherapyImg from "../assets/services/modalities/hot-stone-therapy.png";
 import kinesiologyImg from "../assets/services/modalities/kinesiology.png";
 import chiropracticTherapyImg from "../assets/services/modalities/chiropractic-therapy.png";
+import panchakarmaTherapyImg from "../assets/services/modalities/panchakarma-therapy.png";
+import varmaTherapyImg from "../assets/services/modalities/varma-therapy.png";
+import yogaTherapyImg from "../assets/services/modalities/yoga-therapy.png";
 
 const CATEGORIES = [
   "All",
@@ -53,6 +56,9 @@ const modalities = [
   { name: "Hot Stone Therapy", image: hotStoneTherapyImg, category: "Complementary Therapies" },
   { name: "Kinesiology", image: kinesiologyImg, category: "Body Assessment" },
   { name: "Chiropractic Therapy", image: chiropracticTherapyImg, category: "Therapeutic Methods" },
+  { name: "Panchakarma Therapy", image: panchakarmaTherapyImg, category: "Therapeutic Methods" },
+  { name: "Varma Therapy", image: varmaTherapyImg, category: "Reflex & Micro Therapies" },
+  { name: "Yoga Therapy", image: yogaTherapyImg, category: "Complementary Therapies" },
 ].map((item, i) => ({ ...item, number: i + 1 }));
 
 const ROMAN_NUMERAL_MAP = [

@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
 import {
-  ArrowRightIcon,
   ClockIcon,
   FacebookIcon,
   GlobeIcon,
@@ -11,7 +9,6 @@ import {
   TwitterIcon,
   YoutubeIcon,
 } from "./icons";
-import { LeafGlyph } from "./motifs";
 import logo from "../assets/logo.png";
 
 const socialLinks = [
@@ -25,9 +22,9 @@ export default function Footer() {
   return (
     <footer id="contact" className="border-t border-cream-50/10 bg-eucalyptus-800">
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-10">
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1fr_0.8fr]">
-          <div>
-            <div className="flex items-center gap-3">
+        <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-[1.05fr_1.15fr_1fr_0.85fr_0.75fr] lg:gap-x-10">
+          <div className="-ml-2 lg:-ml-4">
+            <div className="flex items-start gap-3">
               <img
                 src={logo}
                 alt="Asukavi Acupuncture Centre"
@@ -43,16 +40,13 @@ export default function Footer() {
               </span>
             </div>
 
-            <div className="mt-5 flex items-start gap-2.5">
-              <LeafGlyph className="mt-0.5 h-4 w-4 flex-none text-[#CDEFEA]/70" />
-              <p className="font-body text-sm leading-relaxed text-[#E8ECEF]">
-                Healing from the root.
-                <br />
-                Restoring balance for life.
-              </p>
-            </div>
+            <p className="mt-4 font-body text-sm leading-relaxed text-[#E8ECEF]">
+              Healing from the root.
+              <br />
+              Restoring balance for life.
+            </p>
 
-            <p className="mt-6 font-body text-xs text-[#E8ECEF]/80">
+            <p className="mt-5 font-body text-xs text-[#E8ECEF]/80">
               &copy; 2026 Asukavi Acupuncture Clinic. All rights reserved.
             </p>
           </div>
@@ -62,13 +56,10 @@ export default function Footer() {
               LOCATION
             </h3>
             <div className="mt-4 flex items-start gap-2.5">
-              <PinIcon className="mt-0.5 h-4 w-4 flex-none text-[#CDEFEA]/70" />
+              <PinIcon className="mt-0.5 h-4 w-4 flex-none text-white" />
               <p className="font-body text-sm leading-relaxed text-[#E8ECEF]">
-                1/108, N Bypass Rd, opposite to Hotel Apple Tree,
-                <br />
-                near Milo Collection, Vannarpettai,
-                <br />
-                Tirunelveli, Tamil Nadu 627003
+                1/108, N Bypass Rd, opposite to Hotel Apple Tree, near Milo
+                Collection, Vannarpettai, Tirunelveli, Tamil Nadu 627003
               </p>
             </div>
           </div>
@@ -79,7 +70,7 @@ export default function Footer() {
             </h3>
             <ul className="mt-4 space-y-3">
               <li className="flex items-center gap-2.5">
-                <PhoneIcon className="h-4 w-4 flex-none text-[#CDEFEA]/70" />
+                <PhoneIcon className="h-4 w-4 flex-none text-white" />
                 <a
                   href="tel:+919787626398"
                   className="font-body text-sm text-[#E8ECEF] transition-colors duration-300 ease-in-out hover:text-cream-50"
@@ -88,28 +79,19 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
-                <MailIcon className="h-4 w-4 flex-none text-[#CDEFEA]/70" />
+                <MailIcon className="h-4 w-4 flex-none text-white" />
                 <a
-                  href="mailto:info@asukavi.com"
+                  href="mailto:asukavi23@gmail.com"
                   className="font-body text-sm text-[#E8ECEF] transition-colors duration-300 ease-in-out hover:text-cream-50"
                 >
-                  info@asukavi.com
+                  asukavi23@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
-                <GlobeIcon className="h-4 w-4 flex-none text-[#CDEFEA]/70" />
+                <GlobeIcon className="h-4 w-4 flex-none text-white" />
                 <span className="font-body text-sm text-[#E8ECEF]">
                   www.asukavi.com
                 </span>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <ArrowRightIcon className="h-4 w-4 flex-none text-[#A8D5BA]" />
-                <Link
-                  to="/book-appointment"
-                  className="font-body text-sm font-semibold text-[#A8D5BA] transition-colors duration-300 ease-in-out hover:text-cream-50"
-                >
-                  Book an Appointment
-                </Link>
               </li>
             </ul>
           </div>
@@ -119,7 +101,7 @@ export default function Footer() {
               HOURS
             </h3>
             <div className="mt-4 flex items-start gap-2.5">
-              <ClockIcon className="mt-0.5 h-4 w-4 flex-none text-[#CDEFEA]/70" />
+              <ClockIcon className="mt-0.5 h-4 w-4 flex-none text-white" />
               <p className="font-body text-sm leading-relaxed text-[#E8ECEF]">
                 Open Today
                 <br />
@@ -138,7 +120,7 @@ export default function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-cream-50/15 text-[#CDEFEA] transition-all duration-300 ease-in-out hover:border-[#7ED9A8] hover:text-cream-50"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-cream-50/15 text-white transition-all duration-300 ease-in-out hover:border-[#7ED9A8] hover:text-cream-50"
                 >
                   <Icon className="h-4 w-4" />
                 </a>

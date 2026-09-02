@@ -56,7 +56,7 @@ export default function Hero() {
         className="absolute inset-0 bg-gradient-to-r from-[#0B1310] via-[#0B1310]/65 to-transparent"
       />
 
-      <div className="relative flex h-[calc(100svh-5.5rem)] w-full items-center px-6 py-6 lg:px-12 lg:py-3 xl:px-20">
+      <div className="relative mx-auto flex h-[calc(100svh-5.5rem)] w-full max-w-[1800px] items-center px-6 py-6 lg:px-12 lg:py-3 xl:px-20">
         <div className="grid w-full items-center gap-10 lg:h-full lg:grid-cols-[1.35fr_0.65fr] lg:gap-12">
           <div className="relative min-w-0 lg:max-w-[45rem]">
             <div

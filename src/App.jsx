@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import IntroExperience from "./components/IntroExperience";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
@@ -10,6 +11,7 @@ import TraditionalAcupuncture from "./pages/TraditionalAcupuncture";
 export default function App() {
   return (
     <div className="min-h-screen text-cream-50">
+      <IntroExperience />
       <Navbar />
       <main>
         <Routes>
