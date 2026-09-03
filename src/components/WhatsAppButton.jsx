@@ -17,10 +17,6 @@ export default function WhatsAppButton() {
         right: "calc(1.5rem + env(safe-area-inset-right, 0px))",
       }}
     >
-      <span
-        aria-hidden="true"
-        className="heal-pulse-ring pointer-events-none absolute inset-0 rounded-full bg-[#25D366]/60"
-      />
       <svg
         viewBox="0 0 24 24"
         className="relative h-7 w-7 flex-none"

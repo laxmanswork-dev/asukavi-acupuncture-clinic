@@ -49,7 +49,7 @@ export default function Hero() {
         playsInline
         poster={heroPoster}
         src={warmVideo}
-        style={{ filter: "contrast(1.08) saturate(1.12) brightness(1.02)" }}
+        style={{ filter: "contrast(1.02) saturate(1.04)" }}
       />
       <div
         aria-hidden="true"
@@ -59,48 +59,33 @@ export default function Hero() {
       <div className="relative mx-auto flex min-h-[560px] w-full max-w-[1800px] items-center px-6 py-6 lg:h-[calc(100svh-5.5rem)] lg:min-h-0 lg:px-12 lg:py-3 xl:px-20">
         <div className="grid w-full items-center gap-10 lg:h-full lg:grid-cols-[1.35fr_0.65fr] lg:gap-12">
           <div className="relative min-w-0 lg:max-w-[45rem]">
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute -inset-x-6 -inset-y-10 -z-10 rounded-3xl backdrop-blur-md lg:-inset-x-10"
-              style={{
-                background:
-                  "linear-gradient(115deg, rgba(9,20,18,0.88) 0%, rgba(9,20,18,0.72) 45%, rgba(9,20,18,0.35) 80%, transparent 100%)",
-              }}
-            />
             <h1
               className="hero-reveal mt-3 lg:mt-5"
-              style={{ color: "#f5f2eb", animationDelay: "0.05s" }}
+              style={{
+                color: "#f5f2eb",
+                animationDelay: "0.05s",
+                fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 600,
+                lineHeight: 1,
+                letterSpacing: "-0.02em",
+              }}
             >
-              <span
-                className="block text-[2.5rem] sm:text-7xl lg:text-[88px]"
-                style={{
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontWeight: 600,
-                  lineHeight: 0.95,
-                  letterSpacing: "-0.02em",
-                }}
-              >
+              <span className="block text-[2.25rem] sm:text-6xl lg:text-[72px]">
                 Heal the Root.
-              </span>
-              <span
-                className="mt-1 block text-[2.5rem] sm:text-8xl lg:text-[104px]"
-                style={{
-                  fontFamily: "'Cormorant Garamond', serif",
-                  fontWeight: 600,
-                  lineHeight: 0.9,
-                  letterSpacing: "-0.03em",
-                  color: "#A8D5BA",
-                }}
-              >
-                Feel{" "}
-                <span style={{ fontStyle: "italic" }}>True Relief.</span>
               </span>
             </h1>
 
+            <p
+              className="hero-reveal mt-2 font-display text-lg font-medium sm:text-xl lg:mt-3 lg:text-2xl"
+              style={{ color: "#B8C9BE", animationDelay: "0.16s" }}
+            >
+              Feel true relief.
+            </p>
+
             <NeedleUnderline
               aria-hidden="true"
-              className="underline-grow needle-glow mt-4 h-[18px] w-32 text-gold-400/95 sm:mt-5"
-              style={{ animationDelay: "0.18s" }}
+              className="underline-grow mt-4 h-[14px] w-16 text-gold-400/70 sm:mt-5"
+              style={{ animationDelay: "0.24s" }}
             />
 
             <div className="mt-6 flex flex-col items-start sm:mt-7 lg:mt-8">
@@ -123,7 +108,7 @@ export default function Hero() {
               >
                 <Link
                   to="/book-appointment"
-                  className="cta-glow-pulse group inline-flex h-[52px] items-center gap-2 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-eucalyptus-950/10 bg-[#A3B899] px-7 font-display text-base font-bold tracking-wide text-eucalyptus-950 transition-all duration-300 ease-in-out hover:bg-[#8FA588] hover:scale-[1.02] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A3B899] sm:text-lg"
+                  className="group inline-flex h-[52px] items-center gap-2 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-eucalyptus-950/10 bg-[#A3B899] px-7 font-display text-base font-bold tracking-wide text-eucalyptus-950 transition-all duration-300 ease-in-out hover:bg-[#8FA588] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A3B899] sm:text-lg"
                 >
                   <Target size={18} strokeWidth={2} className="flex-none opacity-80" />
                   <span>Book an Appointment</span>
@@ -136,10 +121,12 @@ export default function Hero() {
 
                 <Link
                   to="/treatments/traditional-acupuncture"
-                  className="group inline-flex h-[52px] items-center gap-2 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border-[1.5px] border-white/45 bg-white/8 px-6 font-display text-base font-semibold tracking-wide text-white transition-all duration-300 ease-in-out hover:border-white/70 hover:bg-white/14 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/60 sm:text-lg"
+                  className="group inline-flex h-[52px] items-center gap-2 font-display text-base font-semibold tracking-wide text-white/90 transition-colors duration-300 ease-in-out hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/60 sm:text-lg"
                   style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}
                 >
-                  <span>Explore Treatments</span>
+                  <span className="border-b border-white/35 pb-0.5 transition-colors duration-300 ease-in-out group-hover:border-white/70">
+                    Explore Treatments
+                  </span>
                   <ArrowRight
                     size={18}
                     strokeWidth={2}
@@ -149,7 +136,7 @@ export default function Hero() {
               </div>
 
               <div
-                className="hero-reveal mt-6 inline-flex w-fit flex-wrap items-center gap-2 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-white/10 bg-white/10 px-4 py-2.5 backdrop-blur-md sm:mt-[48px] sm:gap-2.5 sm:py-3"
+                className="hero-reveal mt-6 inline-flex w-fit flex-wrap items-center gap-2 rounded-lg border border-white/10 bg-[#0B1310]/50 px-4 py-2.5 sm:mt-[48px] sm:gap-2.5 sm:py-3"
                 style={{ animationDelay: "0.72s" }}
               >
                 <GoogleGIcon size={20} className="flex-none" />
