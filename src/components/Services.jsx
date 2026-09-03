@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRightIcon } from "./icons";
-import { NeedleUnderline } from "./motifs";
 import traditionalImg from "../assets/services/acu.png";
 import earImg from "../assets/services/ear.png";
 import cuppingImg from "../assets/services/cup.png";
@@ -50,15 +49,14 @@ function RevealWords({ text, as = "span", className, style }) {
   );
 }
 
-const threeLineDesc = { maxHeight: "66px", overflow: "hidden", flexShrink: 0 };
-
-// Signature Asukavi card silhouette: three softly rounded corners with one
-// deliberate sharp "cut" at the top-right -- the same signature notch used
-// on the site's buttons, scaled up here so it reads clearly on a large card.
+// Signature Asukavi silhouette: three softly rounded corners with one
+// deliberate sharp "cut" -- the same family used on the site's buttons.
+// Each composition below rotates which corner is cut and how generously
+// the rest are rounded, so the shape reads as one design language without
+// any two blocks sharing an identical outline.
 const CARD_STYLE = {
   backgroundColor: "#0F1C18",
   border: "1.5px solid rgba(192,198,204,0.35)",
-  borderRadius: "28px 10px 28px 28px",
 };
 
 const CARD_CLASS =
@@ -67,18 +65,11 @@ const CARD_CLASS =
 const IMG_CLASS =
   "absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]";
 
-const SCRIM = (
-  <div
-    aria-hidden="true"
-    className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0a1614]/92 via-[#0a1614]/45 to-[#0a1614]/5"
-  />
-);
-
 const BOTTOM_SCRIM = (
   <div
     aria-hidden="true"
-    className="pointer-events-none absolute inset-x-0 bottom-0 h-[40%]"
-    style={{ background: "linear-gradient(to top, rgba(10,22,20,0.88), transparent)" }}
+    className="pointer-events-none absolute inset-x-0 bottom-0 h-[45%]"
+    style={{ background: "linear-gradient(to top, rgba(10,22,20,0.9), transparent)" }}
   />
 );
 
@@ -90,11 +81,8 @@ const TOP_HIGHLIGHT = (
 );
 
 const LIFT_STYLE = { transitionTimingFunction: "cubic-bezier(0.22,1,0.36,1)" };
-const SIGNATURE_SHAPE_CLASS =
-  "rounded-tl-[28px] rounded-tr-[10px] rounded-br-[28px] rounded-bl-[28px]";
-const LIFT_CLASS = `group h-[264px] ${SIGNATURE_SHAPE_CLASS} transition-[transform,border-color] duration-500 hover:-translate-y-2 border border-transparent hover:border-[#C0C6CC]/60`;
-const FEATURED_LIFT_CLASS = `group h-[340px] sm:h-[264px] ${SIGNATURE_SHAPE_CLASS} transition-[transform,border-color] duration-500 hover:-translate-y-2 border border-transparent hover:border-[#C0C6CC]/60`;
 
+// Existing content preserved verbatim -- only the layout structure changes.
 const services = [
   {
     image: earImg,
@@ -122,39 +110,13 @@ const services = [
   },
 ];
 
-function ServiceCard({ image, title, description, className = "" }) {
-  return (
-    <motion.div variants={fadeUp} className={`min-h-0 ${className}`}>
-      <div className={LIFT_CLASS} style={LIFT_STYLE}>
-        <div className={CARD_CLASS} style={CARD_STYLE}>
-          <img src={image} alt="" aria-hidden="true" className={IMG_CLASS} />
-          {SCRIM}
-          {BOTTOM_SCRIM}
-          {TOP_HIGHLIGHT}
-          <div className="relative z-10 flex h-full min-h-0 flex-col justify-end gap-1.5 p-6">
-            <RevealWords
-              as="h3"
-              text={title}
-              className="font-display text-[21px] font-bold leading-snug text-cream-50 transition-colors duration-500 group-hover:text-[#CFF3DD]"
-            />
-            <RevealWords
-              as="p"
-              text={description}
-              style={threeLineDesc}
-              className="font-body text-[15px] leading-snug text-[#E8ECEF]/90"
-            />
-          </div>
-        </div>
-      </div>
-    </motion.div>
-  );
-}
+const [earService, cuppingService, moxibustionService, naturopathyService] = services;
 
 export default function Services() {
   return (
     <section
       id="services"
-      className="relative overflow-hidden border-t border-cream-50/12 lg:h-[calc(100svh-5.5rem+170px)]"
+      className="relative overflow-hidden border-t border-cream-50/12"
     >
       <video
         aria-hidden="true"
@@ -175,7 +137,7 @@ export default function Services() {
         }}
       />
 
-      <div className="relative mx-auto flex max-w-7xl flex-col justify-center px-8 py-8 lg:h-full lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-6 py-16 lg:px-10 lg:py-24">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -189,48 +151,38 @@ export default function Services() {
           >
             OUR SERVICES
           </p>
-          <NeedleUnderline
-            aria-hidden="true"
-            className="needle-glow mx-auto mt-3 h-2 w-20 text-gold-400/80"
-          />
           <h2
-            className="mt-2 text-cream-50 lg:whitespace-nowrap"
+            className="mt-4 text-cream-50"
             style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontWeight: 700,
-              fontSize: "clamp(1.6rem, 2.5vw, 2.25rem)",
+              fontSize: "clamp(1.9rem, 3vw, 2.75rem)",
               lineHeight: 1.15,
               letterSpacing: "-0.02em",
             }}
           >
             Traditional Healing. Thoughtfully Personalized.
           </h2>
-          <NeedleUnderline
-            aria-hidden="true"
-            className="needle-glow mx-auto mt-2 h-4 w-32 text-gold-400/80"
-          />
         </motion.div>
 
         <motion.div
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.15 }}
+          viewport={{ once: true, amount: 0.1 }}
           variants={stagger}
-          className="mx-auto mt-6 grid w-full max-w-[1320px] grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          className="mx-auto mt-12 flex w-full max-w-[1320px] flex-col gap-6 lg:mt-16 lg:gap-8"
         >
-          <motion.div variants={fadeUp} className="relative min-h-0 lg:col-span-2">
+          {/* I. Traditional Acupuncture — the featured, full-width composition */}
+          <motion.div variants={fadeUp} className="relative min-h-0">
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute -inset-2 -z-10 rounded-tl-[32px] rounded-tr-[12px] rounded-br-[32px] rounded-bl-[32px] bg-[#C0C6CC]/8 blur-xl"
+              className="pointer-events-none absolute -inset-2 -z-10 rounded-tl-[40px] rounded-tr-[14px] rounded-br-[40px] rounded-bl-[40px] bg-[#C0C6CC]/8 blur-xl"
             />
-            <div className={FEATURED_LIFT_CLASS} style={LIFT_STYLE}>
-              <div
-                className={CARD_CLASS}
-                style={{
-                  ...CARD_STYLE,
-                  border: "2px solid rgba(192,198,204,0.6)",
-                }}
-              >
+            <div
+              className="group relative h-[380px] overflow-hidden rounded-tl-[40px] rounded-tr-[14px] rounded-br-[40px] rounded-bl-[40px] border border-[#C0C6CC]/60 transition-[transform,border-color] duration-500 hover:-translate-y-1.5 sm:h-[440px]"
+              style={LIFT_STYLE}
+            >
+              <div className={CARD_CLASS} style={{ ...CARD_STYLE, border: "none" }}>
                 <img
                   src={traditionalImg}
                   alt=""
@@ -239,25 +191,24 @@ export default function Services() {
                 />
                 <div
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0a1614]/90 via-[#0a1614]/40 to-[#0a1614]/5 sm:bg-gradient-to-r sm:from-[#0a1614]/92 sm:via-[#0a1614]/55 sm:to-[#0a1614]/10"
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0a1614]/92 via-[#0a1614]/40 to-[#0a1614]/5 sm:bg-gradient-to-r sm:from-[#0a1614]/92 sm:via-[#0a1614]/55 sm:to-transparent"
                 />
-                {BOTTOM_SCRIM}
                 {TOP_HIGHLIGHT}
-                <div className="relative z-10 flex h-full min-h-0 flex-col justify-end gap-3 p-6 sm:max-w-md sm:justify-center sm:p-8">
+                <div className="relative z-10 flex h-full min-h-0 flex-col justify-end gap-3 p-7 sm:max-w-lg sm:justify-center sm:p-10">
                   <RevealWords
                     as="h3"
                     text="Traditional Acupuncture"
-                    className="text-[22px] text-cream-50 transition-colors duration-500 group-hover:text-[#CFF3DD] sm:text-[30px]"
+                    className="text-[26px] text-cream-50 transition-colors duration-500 group-hover:text-[#CFF3DD] sm:text-[34px]"
                     style={{
                       fontFamily: "'Cormorant Garamond', serif",
                       fontWeight: 700,
-                      lineHeight: 1.15,
+                      lineHeight: 1.12,
                     }}
                   />
                   <RevealWords
                     as="p"
                     text="Fine-needle therapy designed to restore energy flow, relieve pain, and support your body’s natural healing."
-                    className="font-body text-[16px] leading-snug text-[#E8ECEF]/90"
+                    className="max-w-md font-body text-[16px] leading-relaxed text-[#E8ECEF]/90"
                   />
                   <Link
                     to="/treatments/traditional-acupuncture"
@@ -271,9 +222,126 @@ export default function Services() {
             </div>
           </motion.div>
 
-          {services.map((service) => (
-            <ServiceCard key={service.title} {...service} />
-          ))}
+          {/* II. Auricular (Ear) Acupuncture — an alternate relationship:
+              the image sits as its own object beside plain-set text on the
+              dark ground, rather than text overlaid on the photograph. */}
+          <motion.div
+            variants={fadeUp}
+            className="grid items-center gap-6 lg:grid-cols-[0.55fr_0.45fr] lg:gap-12"
+          >
+            <div className="relative order-2 h-[260px] overflow-hidden rounded-tl-[24px] rounded-tr-[24px] rounded-br-[24px] rounded-bl-[8px] border border-[#C0C6CC]/35 sm:h-[320px] lg:order-1 lg:h-[300px]">
+              <img src={earImg} alt="" aria-hidden="true" className={IMG_CLASS} />
+              {TOP_HIGHLIGHT}
+            </div>
+            <div className="order-1 lg:order-2">
+              <span className="font-display text-xs font-semibold uppercase tracking-[0.2em] text-[#A8D5BA]">
+                II
+              </span>
+              <h3
+                className="mt-3 text-[26px] text-cream-50 sm:text-[30px]"
+                style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontWeight: 700,
+                  lineHeight: 1.15,
+                }}
+              >
+                {earService.title}
+              </h3>
+              <p className="mt-3 max-w-md font-body text-[15px] leading-relaxed text-[#E8ECEF]/90">
+                {earService.description}
+              </p>
+            </div>
+          </motion.div>
+
+          {/* III. Cupping Therapy — a wide, cinematic strip */}
+          <motion.div variants={fadeUp} className="relative min-h-0">
+            <div className="group relative h-[220px] overflow-hidden rounded-tl-[10px] rounded-tr-[28px] rounded-br-[28px] rounded-bl-[28px] border border-[#C0C6CC]/35 transition-[transform,border-color] duration-500 hover:-translate-y-1 sm:h-[260px]">
+              <div className={CARD_CLASS} style={{ ...CARD_STYLE, border: "none" }}>
+                <img
+                  src={cuppingImg}
+                  alt=""
+                  aria-hidden="true"
+                  className={`${IMG_CLASS} object-[50%_35%]`}
+                />
+                {BOTTOM_SCRIM}
+                <div className="relative z-10 flex h-full min-h-0 flex-col justify-end gap-1.5 p-6 sm:p-8">
+                  <RevealWords
+                    as="h3"
+                    text={cuppingService.title}
+                    className="font-display text-[22px] font-bold leading-snug text-cream-50 transition-colors duration-500 group-hover:text-[#CFF3DD] sm:text-[26px]"
+                  />
+                  <RevealWords
+                    as="p"
+                    text={cuppingService.description}
+                    className="max-w-md font-body text-[15px] leading-snug text-[#E8ECEF]/90"
+                  />
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* IV. Moxibustion & Naturopathy — an asymmetric closing pair */}
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-5 sm:items-start sm:gap-6">
+            <motion.div variants={fadeUp} className="min-h-0 sm:col-span-3">
+              <div
+                className="group relative h-[240px] overflow-hidden rounded-tl-[20px] rounded-tr-[20px] rounded-br-[6px] rounded-bl-[20px] border border-transparent transition-[transform,border-color] duration-500 hover:-translate-y-1.5 hover:border-[#C0C6CC]/55 sm:h-[300px]"
+                style={LIFT_STYLE}
+              >
+                <div className={CARD_CLASS} style={CARD_STYLE}>
+                  <img
+                    src={moxibustionImg}
+                    alt=""
+                    aria-hidden="true"
+                    className={IMG_CLASS}
+                  />
+                  {BOTTOM_SCRIM}
+                  {TOP_HIGHLIGHT}
+                  <div className="relative z-10 flex h-full min-h-0 flex-col justify-end gap-1.5 p-6">
+                    <RevealWords
+                      as="h3"
+                      text={moxibustionService.title}
+                      className="font-display text-[21px] font-bold leading-snug text-cream-50 transition-colors duration-500 group-hover:text-[#CFF3DD]"
+                    />
+                    <RevealWords
+                      as="p"
+                      text={moxibustionService.description}
+                      className="line-clamp-2 font-body text-[15px] leading-snug text-[#E8ECEF]/90"
+                    />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div variants={fadeUp} className="min-h-0 sm:col-span-2 sm:mt-10">
+              <div
+                className="group relative h-[240px] overflow-hidden rounded-tl-[6px] rounded-tr-[20px] rounded-br-[20px] rounded-bl-[20px] border border-transparent transition-[transform,border-color] duration-500 hover:-translate-y-1.5 hover:border-[#C0C6CC]/55 sm:h-[300px]"
+                style={LIFT_STYLE}
+              >
+                <div className={CARD_CLASS} style={CARD_STYLE}>
+                  <img
+                    src={wellnessImg}
+                    alt=""
+                    aria-hidden="true"
+                    className={IMG_CLASS}
+                  />
+                  {BOTTOM_SCRIM}
+                  {TOP_HIGHLIGHT}
+                  <div className="relative z-10 flex h-full min-h-0 flex-col justify-end gap-1.5 p-6">
+                    <RevealWords
+                      as="h3"
+                      text={naturopathyService.title}
+                      className="font-display text-[21px] font-bold leading-snug text-cream-50 transition-colors duration-500 group-hover:text-[#CFF3DD]"
+                    />
+                    <RevealWords
+                      as="p"
+                      text={naturopathyService.description}
+                      className="line-clamp-3 font-body text-[15px] leading-snug text-[#E8ECEF]/90"
+                    />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>

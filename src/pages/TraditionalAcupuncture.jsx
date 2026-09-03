@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRightIcon } from "../components/icons";
 import FadeUp from "../components/FadeUp";
-import { NeedleUnderline } from "../components/motifs";
 import servicesVideo from "../assets/ser.mp4";
 import acupunctureImg from "../assets/services/modalities/acupuncture.png";
 import electroacupunctureImg from "../assets/services/modalities/electroacupuncture.png";
@@ -122,10 +121,6 @@ export default function TraditionalAcupuncture() {
         <div className="relative mx-auto max-w-7xl px-6 pb-20 pt-10 lg:px-10 lg:pb-28 lg:pt-14">
           {/* Section opens directly with the heading — treatment exploration is the focus */}
           <FadeUp>
-            <NeedleUnderline
-              aria-hidden="true"
-              className="needle-glow mx-auto mb-6 h-4 w-32 text-gold-400/80"
-            />
             <h2
               className="mx-auto max-w-2xl text-center text-3xl font-bold leading-tight tracking-tight text-cream-50 sm:text-4xl"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
@@ -206,15 +201,11 @@ export default function TraditionalAcupuncture() {
         <div className="relative mx-auto max-w-2xl px-6 py-20 text-center lg:py-24">
           <FadeUp>
             <h2
-              className="text-3xl font-bold leading-tight tracking-tight text-cream-50 sm:text-4xl"
+              className="mb-6 text-3xl font-bold leading-tight tracking-tight text-cream-50 sm:text-4xl"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               Ready to Begin Your Healing Journey?
             </h2>
-            <NeedleUnderline
-              aria-hidden="true"
-              className="needle-glow mx-auto mt-5 mb-8 h-4 w-32 text-gold-400/80"
-            />
             <p className="mb-8 font-body text-base leading-relaxed text-[#E8ECEF]">
               Book a personalized consultation and let us design a treatment
               plan around your specific needs.

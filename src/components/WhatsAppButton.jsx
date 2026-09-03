@@ -11,7 +11,7 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"
-      className="group fixed z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-lg shadow-black/30 transition-transform duration-300 ease-in-out hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366]"
+      className="group fixed z-50 flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] shadow-lg shadow-black/25 transition-transform duration-300 ease-in-out hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#25D366] lg:h-11 lg:w-11 lg:shadow-md"
       style={{
         bottom: "calc(1rem + env(safe-area-inset-bottom, 0px))",
         right: "calc(1.5rem + env(safe-area-inset-right, 0px))",
@@ -19,7 +19,7 @@ export default function WhatsAppButton() {
     >
       <svg
         viewBox="0 0 24 24"
-        className="relative h-7 w-7 flex-none"
+        className="relative h-6 w-6 flex-none lg:h-5 lg:w-5"
         fill="#FFFFFF"
         aria-hidden="true"
       >

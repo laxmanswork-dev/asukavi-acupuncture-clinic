@@ -1,5 +1,4 @@
 import FadeUp from "./FadeUp";
-import { NeedleUnderline } from "./motifs";
 import aboutVideo from "../assets/tiru.mp4";
 
 export default function About() {
@@ -43,13 +42,8 @@ export default function About() {
             OUR APPROACH
           </p>
 
-          <NeedleUnderline
-            aria-hidden="true"
-            className="needle-glow mt-3 mb-6 h-2 w-20 text-gold-400/80 sm:mb-8"
-          />
-
           <h2
-            className="text-4xl sm:text-7xl lg:text-[72px]"
+            className="mt-6 text-4xl sm:mt-8 sm:text-7xl lg:text-[72px]"
             style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontWeight: 700,
@@ -64,12 +58,8 @@ export default function About() {
             Personalized Care.
           </h2>
 
-          <NeedleUnderline
-            aria-hidden="true"
-            className="underline-grow needle-glow mt-7 mb-7 h-[18px] w-32 text-gold-400/95 sm:mt-8 sm:mb-8"
-          />
-
           <p
+            className="mt-8 sm:mt-9"
             style={{
               fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontWeight: 400,
@@ -108,13 +98,8 @@ export default function About() {
             வாய்நாடி வாய்ப்பச் செயல்.
           </p>
 
-          <NeedleUnderline
-            aria-hidden="true"
-            className="needle-glow mt-8 h-4 w-32 text-gold-400/80"
-          />
-
           <p
-            className="mt-7 text-sm font-medium tracking-[0.03em] text-[#B8C9BE]/75"
+            className="mt-10 text-sm font-medium tracking-[0.03em] text-[#B8C9BE]/75"
             style={{ fontFamily: "'Noto Serif Tamil', serif" }}
           >
             எங்களின் சிகிச்சை அணுகுமுறை

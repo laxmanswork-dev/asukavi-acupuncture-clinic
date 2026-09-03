@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Heart, Leaf, Moon, ShieldCheck, Target } from "lucide-react";
 import FadeUp from "./FadeUp";
 import { NeedleHealingSparkIcon } from "./icons";
-import { NeedleUnderline } from "./motifs";
 import wellnessVideo from "../assets/well.mp4";
 import stressImg from "../assets/services/stress.png";
 import sleepImg from "../assets/services/sleep.png";
@@ -152,10 +151,6 @@ export default function Wellness() {
               <p className="font-display text-sm font-medium tracking-[0.22em] text-[#B8C9BE]">
                 WHOLE-PERSON WELLNESS
               </p>
-              <NeedleUnderline
-                aria-hidden="true"
-                className="needle-glow mt-3 h-2 w-20 text-gold-400/80"
-              />
               <h2
                 className="mt-4 text-4xl font-bold leading-tight tracking-tight text-cream-50 transition-all duration-300 ease-out sm:text-5xl"
                 style={{ fontFamily: "'Cormorant Garamond', serif" }}
@@ -164,11 +159,7 @@ export default function Wellness() {
                 <br />
                 Balanced Living.
               </h2>
-              <NeedleUnderline
-                aria-hidden="true"
-                className="underline-grow needle-glow mt-3 mb-4 h-[18px] w-32 text-gold-400/95"
-              />
-              <p className="max-w-sm font-body text-base leading-relaxed text-[#E8ECEF] transition-all duration-300 ease-out lg:text-lg">
+              <p className="mt-6 max-w-sm font-body text-base leading-relaxed text-[#E8ECEF] transition-all duration-300 ease-out lg:text-lg">
                 Acupuncture supports your body&rsquo;s natural balance,
                 helping improve physical comfort, emotional wellbeing, and
                 everyday quality of life.

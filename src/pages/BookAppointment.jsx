@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Lock } from "lucide-react";
 import FadeUp from "../components/FadeUp";
-import { NeedleUnderline } from "../components/motifs";
 import appointmentVideo from "../assets/appointment.mp4";
 import {
   ArrowRightIcon,
@@ -357,20 +356,12 @@ export default function BookAppointment() {
             <p className="font-display text-xs font-medium tracking-[0.22em] text-[#B8C9BE]">
               SCHEDULE YOUR VISIT
             </p>
-            <NeedleUnderline
-              aria-hidden="true"
-              className="needle-glow mx-auto mt-3 mb-4 h-2 w-20 text-gold-400/80"
-            />
             <h1
-              className="text-4xl font-bold leading-[1.15] tracking-tight text-cream-50 lg:text-5xl"
+              className="mt-4 text-4xl font-bold leading-[1.15] tracking-tight text-cream-50 lg:text-5xl"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               Take the First Step Toward Better Wellbeing.
             </h1>
-            <NeedleUnderline
-              aria-hidden="true"
-              className="needle-glow mx-auto mt-4 h-3.5 w-28 text-gold-400/80"
-            />
           </FadeUp>
         </div>
       </section>
@@ -384,20 +375,12 @@ export default function BookAppointment() {
                   <p className="font-display text-xs font-medium tracking-[0.22em] text-[#B8C9BE]">
                     YOUR FIRST VISIT
                   </p>
-                  <NeedleUnderline
-                    aria-hidden="true"
-                    className="needle-glow mt-3 mb-4 h-2 w-20 text-gold-400/80"
-                  />
                   <h2
-                    className="mb-6 text-3xl font-bold leading-tight tracking-tight text-cream-50 sm:text-4xl"
+                    className="mb-6 mt-4 text-3xl font-bold leading-tight tracking-tight text-cream-50 sm:text-4xl"
                     style={{ fontFamily: "'Cormorant Garamond', serif" }}
                   >
                     What to Expect
                   </h2>
-                  <NeedleUnderline
-                    aria-hidden="true"
-                    className="needle-glow mb-6 h-4 w-32 text-gold-400/80"
-                  />
                   <p className="mb-4 font-body text-base leading-relaxed text-[#E8ECEF]">
                     Your first consultation typically takes 30–45 minutes and
                     includes a personalized assessment of your health history
@@ -490,15 +473,11 @@ export default function BookAppointment() {
                 <FadeUp delay={100}>
                   <div className="rounded-tl-[32px] rounded-tr-[12px] rounded-br-[32px] rounded-bl-[32px] border border-white/10 bg-white/5 p-6 shadow-2xl shadow-black/30 backdrop-blur-md sm:p-8 lg:p-10">
                     <h2
-                      className="text-2xl font-bold text-cream-50 sm:text-3xl"
+                      className="mb-6 text-2xl font-bold text-cream-50 sm:text-3xl"
                       style={{ fontFamily: "'Cormorant Garamond', serif" }}
                     >
                       Appointment Details
                     </h2>
-                    <NeedleUnderline
-                      aria-hidden="true"
-                      className="needle-glow mt-3 mb-8 h-3.5 w-24 text-gold-400/80"
-                    />
 
                     <form
                       onSubmit={handleSubmit}
@@ -653,21 +632,13 @@ export default function BookAppointment() {
                 <p className="font-display text-xs font-medium tracking-[0.22em] text-[#B8C9BE]">
                   PULSE DIAGNOSIS
                 </p>
-                <NeedleUnderline
-                  aria-hidden="true"
-                  className="needle-glow mt-3 mb-5 h-2 w-20 text-gold-400/80"
-                />
                 <h2
                   lang="ta"
-                  className="text-4xl font-bold leading-[1.2] tracking-wide text-cream-50 sm:text-5xl lg:text-[2.3rem] xl:text-[2.75rem]"
+                  className="mt-4 text-4xl font-bold leading-[1.2] tracking-wide text-cream-50 sm:text-5xl lg:text-[2.3rem] xl:text-[2.75rem]"
                   style={{ fontFamily: "'Noto Serif Tamil', serif" }}
                 >
                   நாடி பரிசோதனை
                 </h2>
-                <NeedleUnderline
-                  aria-hidden="true"
-                  className="needle-glow mt-6 h-4 w-28 text-gold-400/90"
-                />
               </div>
 
               {/* Center — instructions */}
@@ -723,22 +694,14 @@ export default function BookAppointment() {
             <p className="text-center font-display text-xs font-medium tracking-[0.22em] text-[#B8C9BE]">
               VISIT OUR CENTRE
             </p>
-            <NeedleUnderline
-              aria-hidden="true"
-              className="needle-glow mx-auto mt-3 mb-4 h-2 w-20 text-gold-400/80"
-            />
             <h2
-              className="text-center text-3xl font-bold text-cream-50 sm:text-4xl"
+              className="mt-4 text-center text-3xl font-bold text-cream-50 sm:text-4xl"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               Find Your Way to Better Healing.
             </h2>
-            <NeedleUnderline
-              aria-hidden="true"
-              className="needle-glow mx-auto mt-4 mb-10 h-4 w-32 text-gold-400/80"
-            />
 
-            <div className="overflow-hidden rounded-tl-[32px] rounded-tr-[12px] rounded-br-[32px] rounded-bl-[32px] border border-white/10 shadow-2xl shadow-black/30">
+            <div className="mt-8 overflow-hidden rounded-tl-[32px] rounded-tr-[12px] rounded-br-[32px] rounded-bl-[32px] border border-white/10 shadow-2xl shadow-black/30">
               <iframe
                 title="Asukavi Acupuncture Centre location on Google Maps"
                 src={CLINIC_MAP_EMBED_SRC}

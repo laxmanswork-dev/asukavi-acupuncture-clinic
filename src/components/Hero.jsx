@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Clock, Target } from "lucide-react";
 import { useGooglePlaces } from "../hooks/useGooglePlaces";
 import { useClinicStatus } from "../hooks/useClinicStatus";
-import { NeedleUnderline } from "./motifs";
 import warmVideo from "../assets/warm.mp4";
 import heroPoster from "../assets/hero-poster.jpg";
 
@@ -96,12 +95,6 @@ export default function Hero() {
                 Feel True Relief.
               </span>
             </h1>
-
-            <NeedleUnderline
-              aria-hidden="true"
-              className="underline-grow needle-glow mt-4 h-4 w-24 text-gold-400/80 sm:mt-5"
-              style={{ animationDelay: "0.2s" }}
-            />
 
             <div className="mt-6 flex flex-col items-start sm:mt-7 lg:mt-8">
               <p

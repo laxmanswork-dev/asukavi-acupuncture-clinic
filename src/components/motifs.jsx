@@ -28,52 +28,6 @@ export function LaurelMark({ className = "" }) {
   );
 }
 
-export function NeedleUnderline({ className = "", ...props }) {
-  const heights = [4, 8, 5.5, 10, 3.5, 7, 5, 9, 4.5, 6.5];
-  const barcodeTicks = Array.from({ length: 92 }, (_, i) => ({
-    x: 13 + i * 2.28,
-    h: heights[i % heights.length],
-  }));
-
-  return (
-    <svg
-      viewBox="0 0 240 20"
-      className={className}
-      fill="none"
-      preserveAspectRatio="none"
-      {...props}
-    >
-      {/* eyelet at the very tip of the handle */}
-      <circle
-        cx="7"
-        cy="10"
-        r="2.6"
-        stroke="currentColor"
-        strokeWidth="1.2"
-        vectorEffect="non-scaling-stroke"
-      />
-
-      {/* barcode-style run of wire wraps along the whole shaft */}
-      {barcodeTicks.map(({ x, h }) => (
-        <line
-          key={x}
-          x1={x}
-          y1={10 - h / 2}
-          x2={x}
-          y2={10 + h / 2}
-          stroke="currentColor"
-          strokeWidth="1.1"
-          strokeLinecap="round"
-          vectorEffect="non-scaling-stroke"
-        />
-      ))}
-
-      {/* fine tapered point */}
-      <path d="M223 9 238 10 223 11Z" fill="currentColor" />
-    </svg>
-  );
-}
-
 export function LeafGlyph({ className = "" }) {
   return (
     <svg viewBox="0 0 24 24" className={className} fill="none">

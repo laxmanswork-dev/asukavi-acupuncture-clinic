@@ -1,5 +1,4 @@
 import FadeUp from "./FadeUp";
-import { NeedleUnderline } from "./motifs";
 import doctorPhoto from "../assets/doctor.png";
 import aboutVideo from "../assets/about.mp4";
 
@@ -36,12 +35,8 @@ export default function Spotlight() {
           <p className="font-display text-base font-medium tracking-[0.22em] text-[#B8C9BE]">
             MEET YOUR SPECIALIST &middot; TIRUNELVELI
           </p>
-          <NeedleUnderline
-            aria-hidden="true"
-            className="needle-glow mt-3 mb-5 h-2 w-20 text-gold-400/80"
-          />
           <h2
-            className="mb-6 text-4xl font-bold leading-tight tracking-tight text-cream-50 lg:text-5xl"
+            className="mb-8 mt-4 text-4xl font-bold leading-tight tracking-tight text-cream-50 lg:text-5xl"
             style={{ fontFamily: "'Cormorant Garamond', serif" }}
           >
             <span style={{ fontFamily: "'Sora', sans-serif" }}>
@@ -49,10 +44,6 @@ export default function Spotlight() {
             </span>{" "}
             Years of Clinical Mastery
           </h2>
-          <NeedleUnderline
-            aria-hidden="true"
-            className="needle-glow mb-6 h-4 w-32 text-gold-400/80"
-          />
           <p className="mb-6 max-w-lg font-body text-base leading-relaxed text-[#E8ECEF]">
             Founded in 1998, Asukavi Acupuncture Clinic is led by Dr. Asukavi
             Navaneethakrishnan. Over the last 25+ years, he has helped
