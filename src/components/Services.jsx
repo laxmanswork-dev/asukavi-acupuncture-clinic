@@ -34,15 +34,13 @@ const wordStagger = {
 
 function RevealWords({ text, as = "span", className, style }) {
   const MotionTag = motion[as];
+  const words = text.split(" ");
   return (
     <MotionTag variants={wordStagger} className={className} style={style}>
-      {text.split(" ").map((word, i) => (
-        <motion.span
-          key={i}
-          variants={wordFadeUp}
-          style={{ display: "inline-block", marginRight: "0.3em" }}
-        >
+      {words.map((word, i) => (
+        <motion.span key={i} variants={wordFadeUp} style={{ display: "inline-block" }}>
           {word}
+          {i < words.length - 1 ? " " : ""}
         </motion.span>
       ))}
     </MotionTag>
