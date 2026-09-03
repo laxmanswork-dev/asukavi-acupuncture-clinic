@@ -41,7 +41,7 @@ export default function Hero() {
     <section id="home" className="relative overflow-hidden">
       <video
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover object-[74%_center] lg:object-[64%_center] xl:object-center"
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover object-[85%_32%] sm:object-[74%_center] lg:object-[64%_center] xl:object-center"
         autoPlay
         muted
         loop
@@ -50,9 +50,22 @@ export default function Hero() {
         src={warmVideo}
         style={{ filter: "contrast(1.02) saturate(1.04)" }}
       />
+      {/* Mobile text is centered, so it no longer sits over the same
+          (dark, mostly-empty) left third the desktop's left-to-right
+          tint was built for. A top-weighted radial tint keeps the
+          centered heading/CTA block legible instead; the desktop
+          tint (unchanged) resumes from sm: up. */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-r from-[#0B1310] via-[#0B1310]/65 to-transparent"
+        className="absolute inset-0 sm:hidden"
+        style={{
+          background:
+            "radial-gradient(80% 65% at 50% 34%, rgba(11,19,16,0.86) 0%, rgba(11,19,16,0.55) 55%, rgba(11,19,16,0.15) 85%, transparent 100%)",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 hidden bg-gradient-to-r from-[#0B1310] via-[#0B1310]/65 to-transparent sm:block"
       />
       {/* Faint edge vignette — frames the shot without darkening the
           practitioner/patient themselves, so the image reads as composed
@@ -75,9 +88,9 @@ export default function Hero() {
           block clear of that fixed zone. */}
       <div className="relative mx-auto flex min-h-[clamp(460px,80svh,560px)] w-full max-w-[1800px] items-center px-6 py-6 [@media(max-height:700px)]:items-start [@media(max-height:700px)]:pt-0 lg:h-[calc(100svh-5.5rem)] lg:min-h-[620px] lg:px-12 lg:py-3 xl:px-20">
         <div className="grid w-full items-center gap-10 lg:h-full lg:grid-cols-[1.35fr_0.65fr] lg:gap-12">
-          <div className="relative min-w-0 lg:max-w-[45rem] lg:-translate-y-6">
+          <div className="relative flex min-w-0 flex-col items-center text-center sm:items-start sm:text-left lg:max-w-[45rem] lg:-translate-y-6">
             <h1
-              className="hero-reveal mt-2 sm:mt-3 lg:mt-5 [@media(max-height:700px)]:mt-2"
+              className="hero-reveal mt-4 sm:mt-3 lg:mt-5 [@media(max-height:700px)]:mt-2"
               style={{
                 color: "#f5f2eb",
                 animationDelay: "0.05s",
@@ -110,7 +123,7 @@ export default function Hero() {
                 "comfortable" beat, and CTA->trust bar opens up the most
                 of all since the trust bar is the most secondary element
                 in the stack. */}
-            <div className="mt-5 flex flex-col items-start sm:mt-8 md:mt-8 lg:mt-9 [@media(max-height:700px)]:mt-3">
+            <div className="mt-6 flex flex-col items-center sm:mt-8 sm:items-start md:mt-8 lg:mt-9 [@media(max-height:700px)]:mt-3">
               <p
                 className="hero-reveal max-w-md font-body text-xs font-normal sm:text-sm lg:text-base"
                 style={{
@@ -125,7 +138,7 @@ export default function Hero() {
               </p>
 
               <div
-                className="hero-reveal mt-5 flex flex-wrap items-center gap-3 sm:mt-7 sm:gap-4 md:mt-8 lg:mt-8 [@media(max-height:700px)]:mt-4"
+                className="hero-reveal mt-5 flex flex-wrap items-center justify-center gap-3 sm:mt-7 sm:justify-start sm:gap-4 md:mt-8 lg:mt-8 [@media(max-height:700px)]:mt-4"
                 style={{ animationDelay: "0.5s" }}
               >
                 <Link
@@ -157,7 +170,7 @@ export default function Hero() {
               </div>
 
               <div
-                className="hero-reveal mt-5 inline-flex w-fit flex-wrap items-center gap-x-2 gap-y-1 rounded-lg border border-white/10 bg-[#0B1310]/50 px-3 py-1.5 sm:mt-10 sm:gap-x-2 sm:gap-y-1.5 sm:px-3.5 sm:py-2.5 md:mt-10 lg:mt-11 [@media(max-height:700px)]:mt-5"
+                className="hero-reveal mt-6 inline-flex w-fit flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-lg border border-white/10 bg-[#0B1310]/50 px-3 py-1.5 sm:mt-10 sm:justify-start sm:gap-x-2 sm:gap-y-1.5 sm:px-3.5 sm:py-2.5 md:mt-10 lg:mt-11 [@media(max-height:700px)]:mt-5"
                 style={{ animationDelay: "0.72s" }}
               >
                 {/* Rating clause travels as one unit so a narrow wrap can
