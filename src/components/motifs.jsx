@@ -2,6 +2,8 @@
 // monogram, the TCM seal, small leaf glyphs, and the hand-built hero scene
 // (a stand-in for real photography — sized to be swapped for a photo later).
 
+import { useId } from "react";
+
 export function LaurelMark({ className = "" }) {
   return (
     <svg viewBox="0 0 56 56" className={className} fill="none">
@@ -24,6 +26,56 @@ export function LaurelMark({ className = "" }) {
         <ellipse cx="39" cy="42" rx="2.4" ry="1.3" transform="rotate(28 39 42)" fill="currentColor" stroke="none" />
         <ellipse cx="43" cy="38" rx="2.2" ry="1.2" transform="rotate(40 43 38)" fill="currentColor" stroke="none" />
       </g>
+    </svg>
+  );
+}
+
+// A single, quiet acupuncture-needle line -- a signature detail, not a
+// UI divider. Deliberately used sparingly: a tiny eyelet and two fine
+// wraps mark the handle end, then the shaft fades to nothing rather
+// than ending in a hard point, so it reads as a handcrafted mark rather
+// than an icon. `flip` mirrors the handle to the trailing edge so no
+// two placements on the site read as the exact same asset.
+export function SilverNeedleAccent({ className = "", flip = false }) {
+  // A unique id per instance -- reusing one id across multiple placements
+  // on the same page is invalid SVG and risks one accent silently
+  // borrowing another's gradient.
+  const gradientId = `needleShaftFade-${useId()}`;
+  return (
+    <svg
+      viewBox="0 0 120 10"
+      className={className}
+      fill="none"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+      style={{
+        // A tight, dark contact shadow -- not a glow -- so the line
+        // keeps a legible edge against whatever tone of the photograph
+        // it happens to sit over, rather than washing out on lighter
+        // frames.
+        filter: "drop-shadow(0 0 0.5px rgba(0,0,0,0.7))",
+        ...(flip ? { transform: "scaleX(-1)" } : null),
+      }}
+    >
+      <defs>
+        <linearGradient id={gradientId} x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stopColor="#B8BDB8" stopOpacity="0.95" />
+          <stop offset="72%" stopColor="#B8BDB8" stopOpacity="0.9" />
+          <stop offset="100%" stopColor="#B8BDB8" stopOpacity="0.32" />
+        </linearGradient>
+      </defs>
+      <circle cx="5" cy="5" r="2" stroke="#B8BDB8" strokeOpacity="0.95" strokeWidth="2" />
+      <line x1="10.5" y1="2.5" x2="10.5" y2="7.5" stroke="#B8BDB8" strokeOpacity="0.8" strokeWidth="2" strokeLinecap="round" />
+      <line x1="13.5" y1="3" x2="13.5" y2="7" stroke="#B8BDB8" strokeOpacity="0.75" strokeWidth="2" strokeLinecap="round" />
+      <line
+        x1="17"
+        y1="5"
+        x2="118"
+        y2="5"
+        stroke={`url(#${gradientId})`}
+        strokeWidth="1.75"
+        strokeLinecap="round"
+      />
     </svg>
   );
 }

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRightIcon } from "./icons";
+import { SilverNeedleAccent } from "./motifs";
 import traditionalImg from "../assets/services/acu.png";
 import earImg from "../assets/services/ear.png";
 import cuppingImg from "../assets/services/cup.png";
@@ -193,6 +194,7 @@ export default function Services() {
           >
             Traditional Healing. Thoughtfully Personalized.
           </h2>
+          <SilverNeedleAccent flip className="mx-auto mt-5 h-2 w-11 sm:mt-6 sm:w-12" />
         </motion.div>
 
         <motion.div
@@ -200,7 +202,7 @@ export default function Services() {
           whileInView="show"
           viewport={{ once: true, amount: 0.15 }}
           variants={stagger}
-          className="mx-auto mt-6 grid w-full max-w-[1320px] grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          className="mx-auto mt-8 grid w-full max-w-[1320px] grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
           <motion.div variants={fadeUp} className="relative min-h-0 lg:col-span-2">
             <div

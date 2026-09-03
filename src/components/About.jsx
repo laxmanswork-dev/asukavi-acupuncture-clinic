@@ -1,4 +1,5 @@
 import FadeUp from "./FadeUp";
+import { SilverNeedleAccent } from "./motifs";
 import aboutVideo from "../assets/tiru.mp4";
 
 export default function About() {
@@ -58,8 +59,10 @@ export default function About() {
             Personalized Care.
           </h2>
 
+          <SilverNeedleAccent className="mt-8 h-2 w-14 sm:mt-9 sm:w-16 lg:w-[70px]" />
+
           <p
-            className="mt-8 sm:mt-9"
+            className="mt-7 sm:mt-8"
             style={{
               fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontWeight: 400,
