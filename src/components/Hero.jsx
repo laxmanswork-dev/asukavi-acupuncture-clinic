@@ -73,11 +73,11 @@ export default function Hero() {
           matter how tall the hero itself is. Below 700px of viewport
           height we top-align instead of centering, which keeps the whole
           block clear of that fixed zone. */}
-      <div className="relative mx-auto flex min-h-[clamp(520px,88svh,640px)] w-full max-w-[1800px] items-center px-6 py-6 [@media(max-height:700px)]:items-start [@media(max-height:700px)]:pt-4 lg:h-[calc(100svh-5.5rem)] lg:min-h-[620px] lg:px-12 lg:py-3 xl:px-20">
+      <div className="relative mx-auto flex min-h-[clamp(520px,88svh,640px)] w-full max-w-[1800px] items-center px-6 py-6 [@media(max-height:700px)]:items-start [@media(max-height:700px)]:pt-0 lg:h-[calc(100svh-5.5rem)] lg:min-h-[620px] lg:px-12 lg:py-3 xl:px-20">
         <div className="grid w-full items-center gap-10 lg:h-full lg:grid-cols-[1.35fr_0.65fr] lg:gap-12">
-          <div className="relative min-w-0 lg:max-w-[45rem]">
+          <div className="relative min-w-0 lg:max-w-[45rem] lg:-translate-y-6">
             <h1
-              className="hero-reveal mt-3 lg:mt-5"
+              className="hero-reveal mt-3 lg:mt-5 [@media(max-height:700px)]:mt-2"
               style={{
                 color: "#f5f2eb",
                 animationDelay: "0.05s",
@@ -103,12 +103,15 @@ export default function Hero() {
               </span>
             </h1>
 
-            {/* One repeating vertical-rhythm scale (24px -> 32px -> 40px)
-                applied at every gap in this block, instead of ad hoc
-                margins per element. */}
-            <div className="mt-6 flex flex-col items-start sm:mt-8 lg:mt-10">
+            {/* Vertical rhythm is optically tuned per relationship, not one
+                repeated gap: headline->tagline stays tight (mt-1 above, a
+                single editorial unit), tagline->description is a touch
+                looser, description->CTA is a clear beat, and CTA->trust
+                bar opens up the most since the trust bar is the most
+                secondary element in the stack. */}
+            <div className="mt-5 flex flex-col items-start sm:mt-6 lg:mt-7 [@media(max-height:700px)]:mt-3">
               <p
-                className="hero-reveal max-w-lg font-body text-xs font-normal sm:text-sm lg:text-base"
+                className="hero-reveal max-w-md font-body text-xs font-normal sm:text-sm lg:text-base"
                 style={{
                   color: "#E8ECEF",
                   lineHeight: 1.75,
@@ -121,7 +124,7 @@ export default function Hero() {
               </p>
 
               <div
-                className="hero-reveal mt-6 flex flex-wrap items-center gap-4 sm:mt-8 lg:mt-10"
+                className="hero-reveal mt-6 flex flex-wrap items-center gap-4 sm:mt-7 lg:mt-8 [@media(max-height:700px)]:mt-4"
                 style={{ animationDelay: "0.5s" }}
               >
                 <Link
@@ -153,7 +156,7 @@ export default function Hero() {
               </div>
 
               <div
-                className="hero-reveal mt-6 inline-flex w-fit flex-wrap items-center gap-x-3 gap-y-1.5 rounded-lg border border-white/10 bg-[#0B1310]/50 px-4 py-2.5 sm:mt-8 sm:gap-x-2.5 sm:py-3 lg:mt-10"
+                className="hero-reveal mt-7 inline-flex w-fit flex-wrap items-center gap-x-2.5 gap-y-1.5 rounded-lg border border-white/10 bg-[#0B1310]/50 px-3.5 py-2 sm:mt-9 sm:gap-x-2 sm:py-2.5 lg:mt-10 [@media(max-height:700px)]:mt-5"
                 style={{ animationDelay: "0.72s" }}
               >
                 {/* Rating clause travels as one unit so a narrow wrap can
