@@ -55,6 +55,17 @@ export default function Hero() {
         aria-hidden="true"
         className="absolute inset-0 bg-gradient-to-r from-[#0B1310] via-[#0B1310]/65 to-transparent"
       />
+      {/* Faint edge vignette — frames the shot without darkening the
+          practitioner/patient themselves, so the image reads as composed
+          rather than a raw full-bleed rectangle. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(130% 105% at 64% 42%, transparent 55%, rgba(5,12,10,0.32) 100%)",
+        }}
+      />
 
       <div className="relative mx-auto flex min-h-[560px] w-full max-w-[1800px] items-center px-6 py-6 lg:h-[calc(100svh-5.5rem)] lg:min-h-0 lg:px-12 lg:py-3 xl:px-20">
         <div className="grid w-full items-center gap-10 lg:h-full lg:grid-cols-[1.35fr_0.65fr] lg:gap-12">
@@ -73,19 +84,23 @@ export default function Hero() {
               <span className="block text-[2.25rem] sm:text-6xl lg:text-[72px]">
                 Heal the Root.
               </span>
+              <span
+                className="mt-1 block text-2xl sm:text-4xl lg:text-[44px]"
+                style={{
+                  fontStyle: "italic",
+                  fontWeight: 500,
+                  letterSpacing: "-0.01em",
+                  color: "#A8D5BA",
+                }}
+              >
+                Feel True Relief.
+              </span>
             </h1>
-
-            <p
-              className="hero-reveal mt-2 font-display text-lg font-medium sm:text-xl lg:mt-3 lg:text-2xl"
-              style={{ color: "#B8C9BE", animationDelay: "0.16s" }}
-            >
-              Feel true relief.
-            </p>
 
             <NeedleUnderline
               aria-hidden="true"
-              className="underline-grow mt-4 h-[14px] w-16 text-gold-400/70 sm:mt-5"
-              style={{ animationDelay: "0.24s" }}
+              className="underline-grow needle-glow mt-4 h-4 w-24 text-gold-400/80 sm:mt-5"
+              style={{ animationDelay: "0.2s" }}
             />
 
             <div className="mt-6 flex flex-col items-start sm:mt-7 lg:mt-8">
@@ -151,6 +166,12 @@ export default function Hero() {
                     ★★★★★
                   </span>
                 </span>
+
+                <span
+                  aria-hidden="true"
+                  className="h-4 w-px flex-none bg-white/15"
+                />
+
                 <span className="font-body text-[13px] text-white/85">
                   Tirunelveli, TN
                 </span>
