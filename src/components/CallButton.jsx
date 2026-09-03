@@ -9,7 +9,7 @@ export default function CallButton() {
       aria-label="Call Asukavi Acupuncture Centre"
       className="group fixed z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#A3B899] shadow-lg shadow-black/30 transition-transform duration-300 ease-in-out hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A3B899] xl:hidden"
       style={{
-        bottom: "calc(5.75rem + env(safe-area-inset-bottom, 0px))",
+        bottom: "calc(5.25rem + env(safe-area-inset-bottom, 0px))",
         right: "calc(1.5rem + env(safe-area-inset-right, 0px))",
       }}
     >
