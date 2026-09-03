@@ -137,7 +137,7 @@ export default function Hero() {
               </p>
 
               <div
-                className="hero-reveal mt-7 [@media(min-height:621px)_and_(max-height:680px)]:mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-5 [@media(min-height:621px)_and_(max-height:680px)]:gap-y-3 sm:mt-7 sm:justify-start sm:gap-4 md:mt-8 lg:mt-8 [@media(max-height:620px)]:mt-4"
+                className="hero-reveal mt-7 [@media(min-height:621px)_and_(max-height:680px)]:mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-5 [@media(min-height:621px)_and_(max-height:680px)]:gap-y-2 sm:mt-7 sm:justify-start sm:gap-4 md:mt-8 lg:mt-8 [@media(max-height:620px)]:mt-4"
                 style={{ animationDelay: "0.5s" }}
               >
                 <Link
@@ -152,24 +152,28 @@ export default function Hero() {
                   />
                 </Link>
 
+                {/* A quiet second action, not a second button: a near-
+                    transparent surface with a plain silver frame and one
+                    warmer sage edge along the bottom -- the asymmetry is
+                    deliberate, echoing the site's cut-corner signature at
+                    a much quieter scale so it reads as a considered detail
+                    rather than a stock outline-button component. */}
                 <Link
                   to="/treatments/traditional-acupuncture"
-                  className="group inline-flex items-center gap-2 font-display text-base font-medium tracking-wide text-white/90 transition-colors duration-300 ease-in-out hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/60 sm:h-[52px] sm:text-lg"
+                  className="group inline-flex min-h-11 items-center gap-2.5 rounded-tl-md rounded-tr-[3px] rounded-br-md rounded-bl-md border border-[#C0C6CC]/20 border-b-[#A8D5BA]/45 bg-white/[0.02] px-5 py-2.5 font-display text-sm font-medium tracking-wide text-white/85 transition-all duration-300 ease-in-out hover:border-[#C0C6CC]/35 hover:border-b-[#A8D5BA]/70 hover:bg-white/[0.05] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/50 sm:min-h-0 sm:px-6 sm:py-3 sm:text-base lg:px-7 lg:py-3.5"
                   style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}
                 >
-                  <span className="border-b border-white/35 pb-0.5 transition-colors duration-300 ease-in-out group-hover:border-white/70">
-                    Explore Treatments
-                  </span>
+                  <span>Explore Treatments</span>
                   <ArrowRight
-                    size={18}
-                    strokeWidth={2}
-                    className="flex-none transition-transform duration-300 ease-in-out group-hover:translate-x-1.5"
+                    size={16}
+                    strokeWidth={1.75}
+                    className="flex-none transition-transform duration-300 ease-in-out group-hover:translate-x-1"
                   />
                 </Link>
               </div>
 
               <div
-                className="hero-reveal mt-9 [@media(min-height:621px)_and_(max-height:680px)]:mt-6 inline-flex w-fit flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-lg border border-white/10 bg-[#0B1310]/50 px-3 py-1.5 sm:mt-10 sm:justify-start sm:gap-x-2 sm:gap-y-1.5 sm:px-3.5 sm:py-2.5 md:mt-10 lg:mt-11 [@media(max-height:620px)]:mt-6"
+                className="hero-reveal mt-9 [@media(min-height:621px)_and_(max-height:680px)]:mt-4 inline-flex w-fit flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-lg border border-white/10 bg-[#0B1310]/50 px-3 py-1.5 sm:mt-10 sm:justify-start sm:gap-x-2 sm:gap-y-1.5 sm:px-3.5 sm:py-2.5 md:mt-10 lg:mt-11 [@media(max-height:620px)]:mt-6"
                 style={{ animationDelay: "0.72s" }}
               >
                 {/* Rating clause travels as one unit so a narrow wrap can
