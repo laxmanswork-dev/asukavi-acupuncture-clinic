@@ -4,6 +4,7 @@ import IntroExperience from "./components/IntroExperience";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
+import CallButton from "./components/CallButton";
 import HomePage from "./pages/HomePage";
 import BookAppointment from "./pages/BookAppointment";
 import TraditionalAcupuncture from "./pages/TraditionalAcupuncture";
@@ -24,6 +25,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <CallButton />
       <WhatsAppButton />
     </div>
   );

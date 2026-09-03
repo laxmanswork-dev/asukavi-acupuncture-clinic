@@ -56,7 +56,7 @@ export default function Hero() {
         className="absolute inset-0 bg-gradient-to-r from-[#0B1310] via-[#0B1310]/65 to-transparent"
       />
 
-      <div className="relative mx-auto flex h-[calc(100svh-5.5rem)] w-full max-w-[1800px] items-center px-6 py-6 lg:px-12 lg:py-3 xl:px-20">
+      <div className="relative mx-auto flex min-h-[560px] w-full max-w-[1800px] items-center px-6 py-6 lg:h-[calc(100svh-5.5rem)] lg:min-h-0 lg:px-12 lg:py-3 xl:px-20">
         <div className="grid w-full items-center gap-10 lg:h-full lg:grid-cols-[1.35fr_0.65fr] lg:gap-12">
           <div className="relative min-w-0 lg:max-w-[45rem]">
             <div
@@ -118,7 +118,7 @@ export default function Hero() {
               </p>
 
               <div
-                className="hero-reveal mt-7 flex flex-wrap items-center gap-4 sm:mt-8"
+                className="hero-reveal mt-6 flex flex-wrap items-center gap-4 sm:mt-8"
                 style={{ animationDelay: "0.5s" }}
               >
                 <Link
@@ -149,7 +149,7 @@ export default function Hero() {
               </div>
 
               <div
-                className="hero-reveal mt-[40px] inline-flex w-fit flex-wrap items-center gap-2.5 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-white/10 bg-white/10 px-4 py-3 backdrop-blur-md sm:mt-[48px]"
+                className="hero-reveal mt-6 inline-flex w-fit flex-wrap items-center gap-2 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-white/10 bg-white/10 px-4 py-2.5 backdrop-blur-md sm:mt-[48px] sm:gap-2.5 sm:py-3"
                 style={{ animationDelay: "0.72s" }}
               >
                 <GoogleGIcon size={20} className="flex-none" />
