@@ -91,7 +91,7 @@ export default function Hero() {
                 Heal the Root.
               </span>
               <span
-                className="mt-1 block text-[clamp(2.5rem,1.3rem+2.8vw,4rem)]"
+                className="mt-2 block text-[clamp(2.5rem,1.3rem+2.8vw,4rem)] lg:mt-3"
                 style={{
                   fontStyle: "italic",
                   fontWeight: 500,
@@ -104,12 +104,13 @@ export default function Hero() {
             </h1>
 
             {/* Vertical rhythm is optically tuned per relationship, not one
-                repeated gap: headline->tagline stays tight (mt-1 above, a
-                single editorial unit), tagline->description is a touch
-                looser, description->CTA is a clear beat, and CTA->trust
-                bar opens up the most since the trust bar is the most
-                secondary element in the stack. */}
-            <div className="mt-5 flex flex-col items-start sm:mt-6 lg:mt-7 [@media(max-height:700px)]:mt-3">
+                repeated gap: headline->tagline stays tight (mt-2/mt-3
+                above, a single editorial unit), tagline->description
+                opens up noticeably, description->CTA is a clear
+                "comfortable" beat, and CTA->trust bar opens up the most
+                of all since the trust bar is the most secondary element
+                in the stack. */}
+            <div className="mt-7 flex flex-col items-start sm:mt-8 md:mt-8 lg:mt-9 [@media(max-height:700px)]:mt-3">
               <p
                 className="hero-reveal max-w-md font-body text-xs font-normal sm:text-sm lg:text-base"
                 style={{
@@ -124,7 +125,7 @@ export default function Hero() {
               </p>
 
               <div
-                className="hero-reveal mt-6 flex flex-wrap items-center gap-4 sm:mt-7 lg:mt-8 [@media(max-height:700px)]:mt-4"
+                className="hero-reveal mt-7 flex flex-wrap items-center gap-4 sm:mt-7 md:mt-8 lg:mt-8 [@media(max-height:700px)]:mt-4"
                 style={{ animationDelay: "0.5s" }}
               >
                 <Link
@@ -156,7 +157,7 @@ export default function Hero() {
               </div>
 
               <div
-                className="hero-reveal mt-7 inline-flex w-fit flex-wrap items-center gap-x-2.5 gap-y-1.5 rounded-lg border border-white/10 bg-[#0B1310]/50 px-3.5 py-2 sm:mt-9 sm:gap-x-2 sm:py-2.5 lg:mt-10 [@media(max-height:700px)]:mt-5"
+                className="hero-reveal mt-9 inline-flex w-fit flex-wrap items-center gap-x-2.5 gap-y-1.5 rounded-lg border border-white/10 bg-[#0B1310]/50 px-3.5 py-2 sm:mt-10 sm:gap-x-2 sm:py-2.5 md:mt-10 lg:mt-11 [@media(max-height:700px)]:mt-5"
                 style={{ animationDelay: "0.72s" }}
               >
                 {/* Rating clause travels as one unit so a narrow wrap can
