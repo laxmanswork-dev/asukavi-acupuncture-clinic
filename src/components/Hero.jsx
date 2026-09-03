@@ -87,11 +87,11 @@ export default function Hero() {
                 letterSpacing: "-0.02em",
               }}
             >
-              <span className="block text-[clamp(2.25rem,1.35rem+3.2vw,4.5rem)]">
+              <span className="block text-[clamp(2.5rem,1.4rem+3.4vw,4.75rem)]">
                 Heal the Root.
               </span>
               <span
-                className="mt-1 block text-[clamp(1.5rem,0.9rem+1.9vw,2.75rem)]"
+                className="mt-1 block text-[clamp(2.5rem,1.3rem+2.8vw,4rem)]"
                 style={{
                   fontStyle: "italic",
                   fontWeight: 500,
