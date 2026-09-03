@@ -152,8 +152,13 @@ export default function Wellness() {
                 WHOLE-PERSON WELLNESS
               </p>
               <h2
-                className="mt-4 text-4xl font-bold leading-tight tracking-tight text-cream-50 transition-all duration-300 ease-out sm:text-5xl"
-                style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                className="mt-4 text-4xl text-cream-50 transition-all duration-300 ease-out sm:text-5xl"
+                style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontWeight: 700,
+                  lineHeight: 1.05,
+                  letterSpacing: "-0.03em",
+                }}
               >
                 Natural Healing.
                 <br />

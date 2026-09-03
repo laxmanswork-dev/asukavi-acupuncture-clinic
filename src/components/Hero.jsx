@@ -94,9 +94,9 @@ export default function Hero() {
                 color: "#f5f2eb",
                 animationDelay: "0.05s",
                 fontFamily: "'Cormorant Garamond', serif",
-                fontWeight: 600,
-                lineHeight: 1,
-                letterSpacing: "-0.02em",
+                fontWeight: 700,
+                lineHeight: 1.05,
+                letterSpacing: "-0.03em",
               }}
             >
               <span className="block text-[2.375rem] sm:text-[clamp(2.5rem,1.4rem+3.4vw,4.75rem)]">

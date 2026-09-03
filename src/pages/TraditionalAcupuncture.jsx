@@ -122,8 +122,13 @@ export default function TraditionalAcupuncture() {
           {/* Section opens directly with the heading — treatment exploration is the focus */}
           <FadeUp>
             <h2
-              className="mx-auto max-w-2xl text-center text-3xl font-bold leading-tight tracking-tight text-cream-50 sm:text-4xl"
-              style={{ fontFamily: "'Cormorant Garamond', serif" }}
+              className="mx-auto max-w-2xl text-center text-3xl text-cream-50 sm:text-4xl"
+              style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 700,
+                lineHeight: 1.05,
+                letterSpacing: "-0.03em",
+              }}
             >
               Explore Our Healing Methods
             </h2>
@@ -201,8 +206,13 @@ export default function TraditionalAcupuncture() {
         <div className="relative mx-auto max-w-2xl px-6 py-20 text-center lg:py-24">
           <FadeUp>
             <h2
-              className="mb-6 text-3xl font-bold leading-tight tracking-tight text-cream-50 sm:text-4xl"
-              style={{ fontFamily: "'Cormorant Garamond', serif" }}
+              className="mb-6 text-3xl text-cream-50 sm:text-4xl"
+              style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 700,
+                lineHeight: 1.05,
+                letterSpacing: "-0.03em",
+              }}
             >
               Ready to Begin Your Healing Journey?
             </h2>

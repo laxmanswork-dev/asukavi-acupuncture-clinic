@@ -128,7 +128,13 @@ function ServiceCard({ image, title, description, shapeClass, className = "" }) 
             <RevealWords
               as="h3"
               text={title}
-              className="font-display text-[21px] font-bold leading-snug text-cream-50 transition-colors duration-500 group-hover:text-[#CFF3DD]"
+              className="text-[21px] text-cream-50 transition-colors duration-500 group-hover:text-[#CFF3DD]"
+              style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 700,
+                lineHeight: 1.05,
+                letterSpacing: "-0.03em",
+              }}
             />
             <RevealWords
               as="p"
@@ -188,8 +194,8 @@ export default function Services() {
               fontFamily: "'Cormorant Garamond', serif",
               fontWeight: 700,
               fontSize: "clamp(1.6rem, 2.5vw, 2.25rem)",
-              lineHeight: 1.15,
-              letterSpacing: "-0.02em",
+              lineHeight: 1.05,
+              letterSpacing: "-0.03em",
             }}
           >
             Traditional Healing. Thoughtfully Personalized.
@@ -236,7 +242,8 @@ export default function Services() {
                     style={{
                       fontFamily: "'Cormorant Garamond', serif",
                       fontWeight: 700,
-                      lineHeight: 1.15,
+                      lineHeight: 1.05,
+                      letterSpacing: "-0.03em",
                     }}
                   />
                   <RevealWords

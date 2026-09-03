@@ -357,8 +357,13 @@ export default function BookAppointment() {
               SCHEDULE YOUR VISIT
             </p>
             <h1
-              className="mt-4 text-4xl font-bold leading-[1.15] tracking-tight text-cream-50 lg:text-5xl"
-              style={{ fontFamily: "'Cormorant Garamond', serif" }}
+              className="mt-4 text-4xl text-cream-50 lg:text-5xl"
+              style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 700,
+                lineHeight: 1.05,
+                letterSpacing: "-0.03em",
+              }}
             >
               Take the First Step Toward Better Wellbeing.
             </h1>
@@ -376,8 +381,13 @@ export default function BookAppointment() {
                     YOUR FIRST VISIT
                   </p>
                   <h2
-                    className="mb-6 mt-4 text-3xl font-bold leading-tight tracking-tight text-cream-50 sm:text-4xl"
-                    style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                    className="mb-6 mt-4 text-3xl text-cream-50 sm:text-4xl"
+                    style={{
+                      fontFamily: "'Cormorant Garamond', serif",
+                      fontWeight: 700,
+                      lineHeight: 1.05,
+                      letterSpacing: "-0.03em",
+                    }}
                   >
                     What to Expect
                   </h2>
@@ -473,8 +483,13 @@ export default function BookAppointment() {
                 <FadeUp delay={100}>
                   <div className="rounded-tl-[32px] rounded-tr-[12px] rounded-br-[32px] rounded-bl-[32px] border border-white/10 bg-white/5 p-6 shadow-2xl shadow-black/30 backdrop-blur-md sm:p-8 lg:p-10">
                     <h2
-                      className="mb-6 text-2xl font-bold text-cream-50 sm:text-3xl"
-                      style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                      className="mb-6 text-2xl text-cream-50 sm:text-3xl"
+                      style={{
+                        fontFamily: "'Cormorant Garamond', serif",
+                        fontWeight: 700,
+                        lineHeight: 1.05,
+                        letterSpacing: "-0.03em",
+                      }}
                     >
                       Appointment Details
                     </h2>
@@ -695,8 +710,13 @@ export default function BookAppointment() {
               VISIT OUR CENTRE
             </p>
             <h2
-              className="mt-4 text-center text-3xl font-bold text-cream-50 sm:text-4xl"
-              style={{ fontFamily: "'Cormorant Garamond', serif" }}
+              className="mt-4 text-center text-3xl text-cream-50 sm:text-4xl"
+              style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontWeight: 700,
+                lineHeight: 1.05,
+                letterSpacing: "-0.03em",
+              }}
             >
               Find Your Way to Better Healing.
             </h2>

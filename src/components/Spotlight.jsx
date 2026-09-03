@@ -36,13 +36,15 @@ export default function Spotlight() {
             MEET YOUR SPECIALIST &middot; TIRUNELVELI
           </p>
           <h2
-            className="mb-8 mt-4 text-4xl font-bold leading-tight tracking-tight text-cream-50 lg:text-5xl"
-            style={{ fontFamily: "'Cormorant Garamond', serif" }}
+            className="mb-8 mt-4 text-4xl text-cream-50 lg:text-5xl"
+            style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontWeight: 700,
+              lineHeight: 1.05,
+              letterSpacing: "-0.03em",
+            }}
           >
-            <span style={{ fontFamily: "'Sora', sans-serif" }}>
-              25+
-            </span>{" "}
-            Years of Clinical Mastery
+            25+ Years of Clinical Mastery
           </h2>
           <p className="mb-6 max-w-lg font-body text-base leading-relaxed text-[#E8ECEF]">
             Founded in 1998, Asukavi Acupuncture Clinic is led by Dr. Asukavi
