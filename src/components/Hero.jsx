@@ -89,7 +89,7 @@ export default function Hero() {
         <div className="grid w-full items-center gap-10 lg:h-full lg:grid-cols-[1.35fr_0.65fr] lg:gap-12">
           <div className="relative flex min-w-0 flex-col items-center text-center sm:items-start sm:text-left lg:max-w-[45rem] lg:-translate-y-6">
             <h1
-              className="hero-reveal mt-4 sm:mt-3 lg:mt-5 [@media(max-height:620px)]:mt-2"
+              className="hero-reveal mt-7 [@media(min-height:621px)_and_(max-height:680px)]:mt-4 sm:mt-3 lg:mt-5 [@media(max-height:620px)]:mt-3"
               style={{
                 color: "#f5f2eb",
                 animationDelay: "0.05s",
@@ -99,11 +99,11 @@ export default function Hero() {
                 letterSpacing: "-0.02em",
               }}
             >
-              <span className="block text-[2.125rem] sm:text-[clamp(2.5rem,1.4rem+3.4vw,4.75rem)]">
+              <span className="block text-[2.375rem] sm:text-[clamp(2.5rem,1.4rem+3.4vw,4.75rem)]">
                 Heal the Root.
               </span>
               <span
-                className="mt-1.5 block text-[1.75rem] sm:mt-2 sm:text-[clamp(2.5rem,1.3rem+2.8vw,4rem)] lg:mt-3"
+                className="mt-2 block text-[2rem] sm:mt-2 sm:text-[clamp(2.5rem,1.3rem+2.8vw,4rem)] lg:mt-3"
                 style={{
                   fontStyle: "italic",
                   fontWeight: 500,
@@ -122,7 +122,7 @@ export default function Hero() {
                 "comfortable" beat, and CTA->trust bar opens up the most
                 of all since the trust bar is the most secondary element
                 in the stack. */}
-            <div className="mt-6 flex flex-col items-center sm:mt-8 sm:items-start md:mt-8 lg:mt-9 [@media(max-height:620px)]:mt-3">
+            <div className="mt-8 [@media(min-height:621px)_and_(max-height:680px)]:mt-6 flex flex-col items-center sm:mt-8 sm:items-start md:mt-8 lg:mt-9 [@media(max-height:620px)]:mt-4">
               <p
                 className="hero-reveal max-w-md font-body text-xs font-normal sm:text-sm lg:text-base"
                 style={{
@@ -137,7 +137,7 @@ export default function Hero() {
               </p>
 
               <div
-                className="hero-reveal mt-5 flex flex-wrap items-center justify-center gap-3 sm:mt-7 sm:justify-start sm:gap-4 md:mt-8 lg:mt-8 [@media(max-height:620px)]:mt-4"
+                className="hero-reveal mt-7 [@media(min-height:621px)_and_(max-height:680px)]:mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-5 [@media(min-height:621px)_and_(max-height:680px)]:gap-y-3 sm:mt-7 sm:justify-start sm:gap-4 md:mt-8 lg:mt-8 [@media(max-height:620px)]:mt-4"
                 style={{ animationDelay: "0.5s" }}
               >
                 <Link
@@ -169,7 +169,7 @@ export default function Hero() {
               </div>
 
               <div
-                className="hero-reveal mt-6 inline-flex w-fit flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-lg border border-white/10 bg-[#0B1310]/50 px-3 py-1.5 sm:mt-10 sm:justify-start sm:gap-x-2 sm:gap-y-1.5 sm:px-3.5 sm:py-2.5 md:mt-10 lg:mt-11 [@media(max-height:620px)]:mt-5"
+                className="hero-reveal mt-9 [@media(min-height:621px)_and_(max-height:680px)]:mt-6 inline-flex w-fit flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-lg border border-white/10 bg-[#0B1310]/50 px-3 py-1.5 sm:mt-10 sm:justify-start sm:gap-x-2 sm:gap-y-1.5 sm:px-3.5 sm:py-2.5 md:mt-10 lg:mt-11 [@media(max-height:620px)]:mt-6"
                 style={{ animationDelay: "0.72s" }}
               >
                 {/* Rating clause travels as one unit so a narrow wrap can
