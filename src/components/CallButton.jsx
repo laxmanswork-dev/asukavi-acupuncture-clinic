@@ -7,14 +7,14 @@ export default function CallButton() {
     <a
       href="tel:+919787626398"
       aria-label="Call Asukavi Acupuncture Centre"
-      className="group fixed z-50 flex h-12 w-12 items-center justify-center rounded-full bg-[#A3B899] shadow-lg shadow-black/25 transition-transform duration-300 ease-in-out hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A3B899] bottom-[calc(4.75rem+env(safe-area-inset-bottom,0px))] lg:h-11 lg:w-11 lg:shadow-md lg:bottom-[calc(4.5rem+env(safe-area-inset-bottom,0px))] xl:hidden"
+      className="group fixed z-50 flex h-11 w-11 items-center justify-center rounded-full bg-[#A3B899] shadow-lg shadow-black/25 transition-transform duration-300 ease-in-out hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A3B899] bottom-[calc(4.5rem+env(safe-area-inset-bottom,0px))] sm:h-12 sm:w-12 sm:bottom-[calc(4.75rem+env(safe-area-inset-bottom,0px))] lg:h-11 lg:w-11 lg:shadow-md lg:bottom-[calc(4.5rem+env(safe-area-inset-bottom,0px))] xl:hidden"
       style={{
         right: "calc(1.5rem + env(safe-area-inset-right, 0px))",
       }}
     >
       <svg
         viewBox="0 0 24 24"
-        className="relative h-5 w-5 flex-none text-eucalyptus-950 lg:h-[18px] lg:w-[18px]"
+        className="relative h-[18px] w-[18px] flex-none text-eucalyptus-950 sm:h-5 sm:w-5 lg:h-[18px] lg:w-[18px]"
         fill="currentColor"
         aria-hidden="true"
       >
