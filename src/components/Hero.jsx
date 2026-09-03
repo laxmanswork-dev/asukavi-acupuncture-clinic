@@ -66,7 +66,14 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative mx-auto flex min-h-[560px] w-full max-w-[1800px] items-center px-6 py-6 lg:h-[calc(100svh-5.5rem)] lg:min-h-0 lg:px-12 lg:py-3 xl:px-20">
+      {/* On a short viewport (a landscape phone/tablet, or a small phone
+          like an SE) centering the content block can push it low enough
+          to collide with the viewport-fixed Call/WhatsApp buttons, since
+          those sit a fixed distance from the browser's bottom edge no
+          matter how tall the hero itself is. Below 700px of viewport
+          height we top-align instead of centering, which keeps the whole
+          block clear of that fixed zone. */}
+      <div className="relative mx-auto flex min-h-[clamp(520px,88svh,640px)] w-full max-w-[1800px] items-center px-6 py-6 [@media(max-height:700px)]:items-start [@media(max-height:700px)]:pt-4 lg:h-[calc(100svh-5.5rem)] lg:min-h-[620px] lg:px-12 lg:py-3 xl:px-20">
         <div className="grid w-full items-center gap-10 lg:h-full lg:grid-cols-[1.35fr_0.65fr] lg:gap-12">
           <div className="relative min-w-0 lg:max-w-[45rem]">
             <h1
@@ -80,11 +87,11 @@ export default function Hero() {
                 letterSpacing: "-0.02em",
               }}
             >
-              <span className="block text-[2.25rem] sm:text-6xl lg:text-[72px]">
+              <span className="block text-[clamp(2.25rem,1.35rem+3.2vw,4.5rem)]">
                 Heal the Root.
               </span>
               <span
-                className="mt-1 block text-2xl sm:text-4xl lg:text-[44px]"
+                className="mt-1 block text-[clamp(1.5rem,0.9rem+1.9vw,2.75rem)]"
                 style={{
                   fontStyle: "italic",
                   fontWeight: 500,
@@ -96,7 +103,10 @@ export default function Hero() {
               </span>
             </h1>
 
-            <div className="mt-6 flex flex-col items-start sm:mt-7 lg:mt-8">
+            {/* One repeating vertical-rhythm scale (24px -> 32px -> 40px)
+                applied at every gap in this block, instead of ad hoc
+                margins per element. */}
+            <div className="mt-6 flex flex-col items-start sm:mt-8 lg:mt-10">
               <p
                 className="hero-reveal max-w-lg font-body text-xs font-normal sm:text-sm lg:text-base"
                 style={{
@@ -111,25 +121,24 @@ export default function Hero() {
               </p>
 
               <div
-                className="hero-reveal mt-6 flex flex-wrap items-center gap-4 sm:mt-8"
+                className="hero-reveal mt-6 flex flex-wrap items-center gap-4 sm:mt-8 lg:mt-10"
                 style={{ animationDelay: "0.5s" }}
               >
                 <Link
                   to="/book-appointment"
-                  className="group inline-flex h-[52px] items-center gap-2 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-eucalyptus-950/10 bg-[#A3B899] px-7 font-display text-base font-bold tracking-wide text-eucalyptus-950 transition-all duration-300 ease-in-out hover:bg-[#8FA588] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A3B899] sm:text-lg"
+                  className="group flex h-12 w-full items-center justify-center gap-1.5 whitespace-nowrap rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-eucalyptus-950/10 bg-[#A3B899] px-5 font-display text-base font-bold tracking-normal text-eucalyptus-950 transition-all duration-300 ease-in-out hover:bg-[#8FA588] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A3B899] min-[375px]:w-auto sm:h-[52px] sm:gap-2 sm:px-7 sm:text-lg sm:tracking-wide"
                 >
-                  <Target size={18} strokeWidth={2} className="flex-none opacity-80" />
+                  <Target strokeWidth={2} className="h-4 w-4 flex-none opacity-80 sm:h-[18px] sm:w-[18px]" />
                   <span>Book an Appointment</span>
                   <ArrowRight
-                    size={18}
                     strokeWidth={2}
-                    className="flex-none transition-transform duration-300 ease-in-out group-hover:translate-x-1.5"
+                    className="h-4 w-4 flex-none transition-transform duration-300 ease-in-out group-hover:translate-x-1.5 sm:h-[18px] sm:w-[18px]"
                   />
                 </Link>
 
                 <Link
                   to="/treatments/traditional-acupuncture"
-                  className="group inline-flex h-[52px] items-center gap-2 font-display text-base font-semibold tracking-wide text-white/90 transition-colors duration-300 ease-in-out hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/60 sm:text-lg"
+                  className="group inline-flex h-12 items-center gap-2 font-display text-base font-medium tracking-wide text-white/90 transition-colors duration-300 ease-in-out hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/60 sm:h-[52px] sm:text-lg"
                   style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}
                 >
                   <span className="border-b border-white/35 pb-0.5 transition-colors duration-300 ease-in-out group-hover:border-white/70">
@@ -144,25 +153,29 @@ export default function Hero() {
               </div>
 
               <div
-                className="hero-reveal mt-6 inline-flex w-fit flex-wrap items-center gap-2 rounded-lg border border-white/10 bg-[#0B1310]/50 px-4 py-2.5 sm:mt-[48px] sm:gap-2.5 sm:py-3"
+                className="hero-reveal mt-6 inline-flex w-fit flex-wrap items-center gap-x-3 gap-y-1.5 rounded-lg border border-white/10 bg-[#0B1310]/50 px-4 py-2.5 sm:mt-8 sm:gap-x-2.5 sm:py-3 lg:mt-10"
                 style={{ animationDelay: "0.72s" }}
               >
-                <GoogleGIcon size={20} className="flex-none" />
-                <span
-                  className={`flex items-center gap-1.5 font-display text-sm font-bold transition-opacity duration-500 ${
-                    isLoading ? "opacity-70" : "opacity-100"
-                  }`}
-                  style={{ color: "#FBBF24" }}
-                >
-                  {rating.toFixed(1)}
-                  <span aria-hidden="true" className="tracking-tight">
-                    ★★★★★
+                {/* Rating clause travels as one unit so a narrow wrap can
+                    never split the icon from its number mid-phrase. */}
+                <span className="inline-flex items-center gap-1.5">
+                  <GoogleGIcon size={20} className="flex-none" />
+                  <span
+                    className={`flex items-center gap-1.5 font-display text-sm font-bold transition-opacity duration-500 ${
+                      isLoading ? "opacity-70" : "opacity-100"
+                    }`}
+                    style={{ color: "#FBBF24" }}
+                  >
+                    {rating.toFixed(1)}
+                    <span aria-hidden="true" className="tracking-tight">
+                      ★★★★★
+                    </span>
                   </span>
                 </span>
 
                 <span
                   aria-hidden="true"
-                  className="h-4 w-px flex-none bg-white/15"
+                  className="hidden h-4 w-px flex-none bg-white/15 sm:block"
                 />
 
                 <span className="font-body text-[13px] text-white/85">
@@ -171,7 +184,7 @@ export default function Hero() {
 
                 <span
                   aria-hidden="true"
-                  className="h-4 w-px flex-none bg-white/15"
+                  className="hidden h-4 w-px flex-none bg-white/15 sm:block"
                 />
 
                 <span className="flex items-center gap-1.5">
