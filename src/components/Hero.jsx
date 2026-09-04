@@ -131,12 +131,12 @@ export default function Hero() {
               </p>
 
               <div
-                className="hero-reveal mt-7 [@media(min-height:621px)_and_(max-height:680px)]:mt-4 flex flex-wrap items-center justify-start gap-x-4 gap-y-5 [@media(min-height:621px)_and_(max-height:680px)]:gap-y-2 sm:mt-7 sm:gap-4 md:mt-8 lg:mt-8 [@media(max-height:620px)]:mt-4"
+                className="hero-reveal mt-7 [@media(min-height:621px)_and_(max-height:680px)]:mt-4 flex flex-wrap items-center justify-start gap-x-4 gap-y-5 [@media(min-height:621px)_and_(max-height:680px)]:gap-y-2 sm:mt-7 sm:gap-3 md:mt-8 lg:mt-8 [@media(max-height:620px)]:mt-4"
                 style={{ animationDelay: "0.5s" }}
               >
                 <Link
                   to="/book-appointment"
-                  className="group flex h-11 w-full items-center justify-center gap-1.5 whitespace-nowrap rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-eucalyptus-950/10 bg-[#A3B899] px-4 font-display text-base font-bold tracking-normal text-eucalyptus-950 transition-all duration-300 ease-in-out hover:bg-[#8FA588] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A3B899] min-[375px]:w-auto sm:h-[52px] sm:gap-2 sm:px-7 sm:text-lg sm:tracking-wide"
+                  className="group flex h-11 w-full items-center justify-center gap-1.5 whitespace-nowrap rounded-full border border-eucalyptus-950/10 bg-[#A3B899] px-5 font-display text-base font-bold tracking-normal text-eucalyptus-950 transition-all duration-300 ease-in-out hover:bg-[#8FA588] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A3B899] min-[375px]:w-auto sm:h-[52px] sm:gap-2 sm:px-7 sm:text-lg sm:tracking-wide"
                 >
                   <Target strokeWidth={2} className="h-3.5 w-3.5 flex-none opacity-80 sm:h-[18px] sm:w-[18px]" />
                   <span>Book an Appointment</span>
@@ -146,48 +146,20 @@ export default function Hero() {
                   />
                 </Link>
 
-                {/* A quiet second action, not a second button: the whole
-                    silhouette (fill and outline both) is one hand-cut
-                    shape, no border-radius anywhere -- both ends are
-                    chamfered cuts (a diagonal in, a short flat, a
-                    diagonal back out), so the left and right read as
-                    one considered shape. They're deliberately not
-                    mirror images: the left cut is narrower and steeper,
-                    the right wider and shallower, which is what keeps
-                    it feeling hand-cut rather than a stamped hexagon.
-                    Plain top and bottom edges. The SVG stretches to
-                    fill the actual rendered button, so the shape holds
-                    regardless of text length or padding at any
-                    breakpoint. */}
+                {/* Same family as "Book an Appointment" -- identical height,
+                    shape, and padding rhythm -- but transparent with a
+                    muted outline instead of a filled background, so it
+                    reads as a proper secondary button rather than
+                    competing with the primary one. */}
                 <Link
                   to="/treatments/traditional-acupuncture"
-                  className="group relative inline-flex h-11 items-center gap-2.5 px-7 py-2.5 font-display text-[15px] font-medium tracking-wide text-white/85 transition-colors duration-300 ease-in-out hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/50 sm:h-[52px] sm:px-8 sm:py-3 sm:text-[17px] lg:px-9 lg:py-3.5"
+                  className="group flex h-11 w-full items-center justify-center gap-1.5 whitespace-nowrap rounded-full border border-[#C0C6CC]/45 bg-transparent px-5 font-display text-base font-semibold tracking-normal text-white/90 transition-all duration-300 ease-in-out hover:border-[#C0C6CC]/70 hover:bg-white/5 hover:text-white active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/50 min-[375px]:w-auto sm:h-[52px] sm:gap-2 sm:px-7 sm:text-lg sm:tracking-wide"
                   style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}
                 >
-                  <svg
-                    aria-hidden="true"
-                    viewBox="0 0 180 44"
-                    preserveAspectRatio="none"
-                    className="pointer-events-none absolute inset-0 h-full w-full text-[#C0C6CC]/55 group-hover:text-[#C0C6CC]/85"
-                  >
-                    <path
-                      d="M18,2 L162,2
-                         L178,10 L178,34 L162,42
-                         L18,42
-                         L8,28 L8,16 Z"
-                      fill="#0B1310"
-                      fillOpacity="0.2"
-                      stroke="currentColor"
-                      strokeWidth="1.6"
-                      strokeLinejoin="miter"
-                      className="transition-colors duration-300 ease-in-out"
-                    />
-                  </svg>
-                  <span className="relative">Explore Treatments</span>
+                  <span>Explore Treatments</span>
                   <ArrowRight
-                    size={16}
-                    strokeWidth={1.75}
-                    className="relative flex-none transition-transform duration-300 ease-in-out group-hover:translate-x-1"
+                    strokeWidth={2}
+                    className="h-3.5 w-3.5 flex-none transition-transform duration-300 ease-in-out group-hover:translate-x-1.5 sm:h-[18px] sm:w-[18px]"
                   />
                 </Link>
               </div>
