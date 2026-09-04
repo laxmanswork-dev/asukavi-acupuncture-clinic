@@ -1,21 +1,20 @@
 import {
   ClockIcon,
-  FacebookIcon,
   GlobeIcon,
   InstagramIcon,
   MailIcon,
   PhoneIcon,
   PinIcon,
-  TwitterIcon,
   YoutubeIcon,
 } from "./icons";
 import logo from "../assets/logo.png";
 
+// Facebook and Twitter dropped per client request (2026-09-04) -- no
+// active profiles to link to. Instagram and YouTube stay as "#"
+// placeholders until the client sends their real profile URLs.
 const socialLinks = [
   { icon: InstagramIcon, label: "Instagram", href: "#" },
-  { icon: FacebookIcon, label: "Facebook", href: "#" },
   { icon: YoutubeIcon, label: "YouTube", href: "#" },
-  { icon: TwitterIcon, label: "Twitter", href: "#" },
 ];
 
 export default function Footer() {
