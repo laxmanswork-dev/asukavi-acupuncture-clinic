@@ -1,15 +1,16 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
 
-// A brief loading mask, not a brand-reveal animation -- it exists only to
-// bridge the moment between first paint and the homepage actually being
-// ready, then it's gone. No fixed multi-second timeline: it races the
-// page's "load" event against a small hard cap, so a slow connection is
-// bridged smoothly but never made to wait artificially, and a fast one
-// barely sees it at all. Shows once per browser tab session.
+// A quiet opening moment, not a designed animated sequence: the mark,
+// wordmark, and "SINCE 1998" fade in together, hold for a short beat, then
+// fade out into the homepage. Fixed and short on purpose (900ms hold + a
+// 300ms fade either side) rather than tied to page-load speed, so it never
+// grows on a slow connection -- real asset loading (hero video, images)
+// proceeds underneath in parallel the whole time. Shows once per browser
+// tab session.
 const SESSION_KEY = "asukavi-intro-seen";
-const MAX_WAIT_MS = 500;
-const FADE_MS = 200;
+const HOLD_MS = 900;
+const FADE_MS = 300;
 
 function decideShouldPlay() {
   if (typeof window === "undefined") return false;
@@ -26,7 +27,7 @@ function decideShouldPlay() {
     return true;
   } catch {
     // Storage unavailable (e.g. locked-down private browsing) — fail open
-    // rather than let a decorative mask block anyone from the site.
+    // rather than let a decorative intro block anyone from the site.
     return false;
   }
 }
@@ -34,32 +35,25 @@ function decideShouldPlay() {
 export default function IntroExperience() {
   const [shouldPlay] = useState(decideShouldPlay);
   const [visible, setVisible] = useState(shouldPlay);
+  const [contentIn, setContentIn] = useState(false);
   const [fadingOut, setFadingOut] = useState(false);
-  const doneRef = useRef(false);
 
   useEffect(() => {
     if (!shouldPlay) return undefined;
 
-    const finish = () => {
-      if (doneRef.current) return;
-      doneRef.current = true;
+    // One rAF tick so the initial opacity-0 state actually paints before
+    // switching to opacity-100 -- otherwise the browser can coalesce both
+    // and the fade-in never visibly happens.
+    const raf = requestAnimationFrame(() => setContentIn(true));
+
+    const holdTimer = window.setTimeout(() => {
       setFadingOut(true);
       window.setTimeout(() => setVisible(false), FADE_MS);
-    };
-
-    // If everything is already loaded by the time this effect runs (fast
-    // connection, warm cache), there's nothing to bridge — end instantly.
-    if (document.readyState === "complete") {
-      finish();
-      return undefined;
-    }
-
-    window.addEventListener("load", finish);
-    const capTimer = window.setTimeout(finish, MAX_WAIT_MS);
+    }, HOLD_MS);
 
     return () => {
-      window.removeEventListener("load", finish);
-      window.clearTimeout(capTimer);
+      cancelAnimationFrame(raf);
+      window.clearTimeout(holdTimer);
     };
   }, [shouldPlay]);
 
@@ -73,11 +67,26 @@ export default function IntroExperience() {
       }`}
       style={{ transitionDuration: `${FADE_MS}ms` }}
     >
-      <img
-        src={logo}
-        alt=""
-        className="h-12 w-12 rounded-full object-cover sm:h-14 sm:w-14"
-      />
+      <div
+        className={`flex flex-col items-center px-6 text-center transition-opacity duration-500 ease-out ${
+          contentIn ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <img
+          src={logo}
+          alt="Asukavi Acupuncture Centre"
+          className="h-16 w-16 rounded-full object-cover sm:h-20 sm:w-20"
+        />
+        <span className="mt-5 font-script text-4xl font-semibold tracking-wide text-cream-50 sm:mt-6 sm:text-5xl">
+          Asukavi
+        </span>
+        <span className="mt-1.5 font-display text-[11px] font-medium tracking-[0.32em] text-[#A8D5BA] sm:text-xs sm:tracking-[0.4em]">
+          ACUPUNCTURE CENTRE
+        </span>
+        <span className="mt-7 font-display text-[10px] font-medium tracking-[0.3em] text-cream-100/55 sm:mt-8 sm:text-[11px]">
+          SINCE 1998
+        </span>
+      </div>
     </div>
   );
 }
