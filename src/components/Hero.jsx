@@ -93,7 +93,7 @@ export default function Hero() {
         <div className="grid w-full items-center gap-10 lg:h-full lg:grid-cols-[1.35fr_0.65fr] lg:gap-12">
           <div className="relative flex min-w-0 flex-col items-center text-center sm:items-start sm:text-left lg:max-w-[45rem] lg:-translate-y-6">
             <h1
-              className="hero-reveal mt-7 [@media(min-height:621px)_and_(max-height:680px)]:mt-4 sm:mt-3 lg:mt-5 [@media(max-height:620px)]:mt-3"
+              className="hero-reveal mt-7 [@media(min-height:621px)_and_(max-height:680px)]:mt-3 sm:mt-3 lg:mt-5 [@media(max-height:620px)]:mt-3"
               style={{
                 color: "#f5f2eb",
                 animationDelay: "0.05s",
@@ -103,11 +103,11 @@ export default function Hero() {
                 letterSpacing: "-0.03em",
               }}
             >
-              <span className="block text-[2.375rem] sm:text-[clamp(2.5rem,1.4rem+3.4vw,4.75rem)]">
+              <span className="block text-[2.625rem] sm:text-[clamp(2.75rem,1.55rem+3.7vw,5.25rem)]">
                 Heal the Root.
               </span>
               <span
-                className="mt-2 block text-[2rem] sm:mt-2 sm:text-[clamp(2.5rem,1.3rem+2.8vw,4rem)] lg:mt-3"
+                className="mt-2 block text-[2.25rem] sm:mt-2 sm:text-[clamp(2.75rem,1.45rem+3.1vw,4.5rem)] lg:mt-3"
                 style={{
                   fontStyle: "italic",
                   fontWeight: 500,
@@ -126,7 +126,7 @@ export default function Hero() {
                 "comfortable" beat, and CTA->trust bar opens up the most
                 of all since the trust bar is the most secondary element
                 in the stack. */}
-            <div className="mt-8 [@media(min-height:621px)_and_(max-height:680px)]:mt-6 flex flex-col items-center sm:mt-8 sm:items-start md:mt-8 lg:mt-9 [@media(max-height:620px)]:mt-4">
+            <div className="mt-8 [@media(min-height:621px)_and_(max-height:680px)]:mt-5 flex flex-col items-center sm:mt-8 sm:items-start md:mt-8 lg:mt-9 [@media(max-height:620px)]:mt-4">
               <p
                 className="hero-reveal max-w-md font-body text-xs font-normal sm:text-sm lg:text-base"
                 style={{
