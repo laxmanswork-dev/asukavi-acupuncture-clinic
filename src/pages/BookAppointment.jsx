@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Lock } from "lucide-react";
 import FadeUp from "../components/FadeUp";
+import LazyVideo from "../components/LazyVideo";
 import appointmentVideo from "../assets/appointment.mp4";
 import {
   ArrowRightIcon,
@@ -330,7 +331,7 @@ export default function BookAppointment() {
   return (
     <div className="relative">
       {/* Background video spanning the full booking section */}
-      <video
+      <LazyVideo
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover"
         autoPlay

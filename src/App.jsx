@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import IntroExperience from "./components/IntroExperience";
@@ -8,7 +9,14 @@ import CallButton from "./components/CallButton";
 import ScrollToTop from "./components/ScrollToTop";
 import HomePage from "./pages/HomePage";
 import BookAppointment from "./pages/BookAppointment";
-import TraditionalAcupuncture from "./pages/TraditionalAcupuncture";
+
+// BookAppointment is already pulled into the homepage bundle (HomePage
+// embeds it directly as its final section), so lazy-loading it here would
+// save nothing. TraditionalAcupuncture isn't embedded anywhere else --
+// code-splitting it keeps its 20+ modality images and filtering logic out
+// of the initial homepage payload entirely, only fetched when someone
+// actually navigates there.
+const TraditionalAcupuncture = lazy(() => import("./pages/TraditionalAcupuncture"));
 
 export default function App() {
   return (
@@ -22,7 +30,11 @@ export default function App() {
           <Route path="/book-appointment" element={<BookAppointment />} />
           <Route
             path="/treatments/traditional-acupuncture"
-            element={<TraditionalAcupuncture />}
+            element={
+              <Suspense fallback={null}>
+                <TraditionalAcupuncture />
+              </Suspense>
+            }
           />
         </Routes>
       </main>

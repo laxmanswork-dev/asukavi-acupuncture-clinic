@@ -1,4 +1,5 @@
 import FadeUp from "./FadeUp";
+import LazyVideo from "./LazyVideo";
 import doctorPhoto from "../assets/doctor.png";
 import aboutVideo from "../assets/about.mp4";
 
@@ -15,7 +16,7 @@ const points = [
 export default function Spotlight() {
   return (
     <section id="about" className="relative overflow-hidden border-t border-cream-50/12">
-      <video
+      <LazyVideo
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 h-full w-full object-cover"
         autoPlay
@@ -81,17 +82,11 @@ export default function Spotlight() {
               className="pointer-events-none absolute -inset-2 rounded-tl-[44px] rounded-tr-[16px] rounded-br-[44px] rounded-bl-[44px] border border-[#C0C6CC]/15"
             />
             <div className="relative h-full w-full overflow-hidden rounded-tl-[36px] rounded-tr-[12px] rounded-br-[36px] rounded-bl-[36px] border border-[#C0C6CC]/45">
-              <video
+              <img
+                src={doctorPhoto}
+                alt="Dr. Asukavi, acupuncturist at Asukavi Acupuncture Clinic"
                 className="h-full w-full object-cover"
-                poster={doctorPhoto}
-                autoPlay
-                muted
-                loop
-                playsInline
-                aria-label="Dr. Asukavi, acupuncturist at Asukavi Acupuncture Clinic"
-              >
-                <source src="/doctor.mp4" type="video/mp4" />
-              </video>
+              />
             </div>
           </div>
         </FadeUp>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRightIcon } from "./icons";
 import { SilverNeedleAccent } from "./motifs";
+import LazyVideo from "./LazyVideo";
 import traditionalImg from "../assets/services/acu.png";
 import earImg from "../assets/services/ear.png";
 import cuppingImg from "../assets/services/cup.png";
@@ -121,7 +122,14 @@ function ServiceCard({ image, title, description, shapeClass, className = "" }) 
     <motion.div variants={fadeUp} className={`min-h-0 ${className}`}>
       <div className={`${LIFT_CLASS} ${shapeClass}`} style={LIFT_STYLE}>
         <div className={CARD_CLASS} style={CARD_STYLE}>
-          <img src={image} alt="" aria-hidden="true" className={IMG_CLASS} />
+          <img
+            src={image}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            className={IMG_CLASS}
+          />
           {SCRIM}
           {TOP_HIGHLIGHT}
           <div className="relative z-10 flex h-full min-h-0 flex-col justify-end gap-1.5 p-6">
@@ -155,7 +163,7 @@ export default function Services() {
       id="treatments"
       className="relative overflow-hidden border-t border-cream-50/12 lg:h-[calc(100svh-5.5rem+170px)]"
     >
-      <video
+      <LazyVideo
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 h-full w-full object-cover blur-[3px]"
         autoPlay
@@ -227,6 +235,8 @@ export default function Services() {
                   src={traditionalImg}
                   alt=""
                   aria-hidden="true"
+                  loading="lazy"
+                  decoding="async"
                   className={IMG_CLASS}
                 />
                 <div

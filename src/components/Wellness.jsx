@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Heart, Leaf, Moon, ShieldCheck, Target } from "lucide-react";
 import FadeUp from "./FadeUp";
+import LazyVideo from "./LazyVideo";
 import { NeedleHealingSparkIcon } from "./icons";
 import wellnessVideo from "../assets/well.mp4";
 import stressImg from "../assets/services/stress.png";
@@ -117,7 +118,7 @@ export default function Wellness() {
       className="relative overflow-hidden border-t border-cream-50/12 lg:h-[calc(100svh-5.5rem)]"
     >
       <div aria-hidden="true" className="absolute inset-0 bg-eucalyptus-950" />
-      <video
+      <LazyVideo
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 h-full w-full object-cover"
         autoPlay
@@ -205,6 +206,8 @@ export default function Wellness() {
                       src={item.image}
                       alt={isVisible ? item.label : ""}
                       aria-hidden={isVisible ? undefined : true}
+                      loading="lazy"
+                      decoding="async"
                       className="absolute inset-0 h-full w-full object-cover motion-reduce:transition-none"
                       style={{
                         objectPosition: "50% 30%",

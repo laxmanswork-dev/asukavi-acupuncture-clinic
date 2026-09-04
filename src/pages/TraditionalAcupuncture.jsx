@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRightIcon } from "../components/icons";
 import FadeUp from "../components/FadeUp";
+import LazyVideo from "../components/LazyVideo";
 import servicesVideo from "../assets/ser.mp4";
 import acupunctureImg from "../assets/services/modalities/acupuncture.png";
 import electroacupunctureImg from "../assets/services/modalities/electroacupuncture.png";
@@ -169,6 +170,8 @@ export default function TraditionalAcupuncture() {
                     src={image}
                     alt=""
                     aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"
                   />
                   <div
@@ -192,9 +195,9 @@ export default function TraditionalAcupuncture() {
 
       {/* CTA */}
       <section className="relative overflow-hidden border-t border-cream-50/12">
-        <video
+        <LazyVideo
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 object-cover"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover"
           autoPlay
           muted
           loop

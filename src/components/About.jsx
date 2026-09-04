@@ -1,4 +1,5 @@
 import FadeUp from "./FadeUp";
+import LazyVideo from "./LazyVideo";
 import { SilverNeedleAccent } from "./motifs";
 import aboutVideo from "../assets/tiru.mp4";
 
@@ -9,7 +10,7 @@ export default function About() {
       className="relative overflow-hidden border-t border-cream-50/12 lg:h-[calc(100svh-5.5rem)]"
     >
       {/* Thiruvalluvar watermark — perfectly centered behind the whole section */}
-      <video
+      <LazyVideo
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 h-full w-full object-cover"
         autoPlay
