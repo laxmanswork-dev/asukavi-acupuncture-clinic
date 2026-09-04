@@ -8,7 +8,7 @@ const navLinks = [
   { label: "Home", href: "#home", current: true },
   { label: "Our Approach", href: "#approach" },
   { label: "About Us", href: "#about" },
-  { label: "Services", href: "#services", dropdown: true },
+  { label: "Treatments", href: "#treatments", dropdown: true },
   { label: "Wellness", href: "#wellness", dropdown: true },
   { label: "Contact", to: "/book-appointment#visit-clinic" },
 ];

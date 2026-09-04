@@ -152,7 +152,7 @@ function ServiceCard({ image, title, description, shapeClass, className = "" }) 
 export default function Services() {
   return (
     <section
-      id="services"
+      id="treatments"
       className="relative overflow-hidden border-t border-cream-50/12 lg:h-[calc(100svh-5.5rem+170px)]"
     >
       <video
@@ -186,7 +186,7 @@ export default function Services() {
             className="font-display font-medium text-[#B8C9BE]"
             style={{ fontSize: "15px", letterSpacing: "0.22em" }}
           >
-            OUR SERVICES
+            OUR TREATMENTS
           </p>
           <h2
             className="mt-2 text-cream-50 lg:whitespace-nowrap"

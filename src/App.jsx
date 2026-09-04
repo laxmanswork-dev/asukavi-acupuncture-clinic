@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
 import CallButton from "./components/CallButton";
+import ScrollToTop from "./components/ScrollToTop";
 import HomePage from "./pages/HomePage";
 import BookAppointment from "./pages/BookAppointment";
 import TraditionalAcupuncture from "./pages/TraditionalAcupuncture";
@@ -12,6 +13,7 @@ import TraditionalAcupuncture from "./pages/TraditionalAcupuncture";
 export default function App() {
   return (
     <div className="min-h-screen text-cream-50">
+      <ScrollToTop />
       <IntroExperience />
       <Navbar />
       <main>
