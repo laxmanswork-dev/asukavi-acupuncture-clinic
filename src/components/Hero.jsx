@@ -152,22 +152,43 @@ export default function Hero() {
                   />
                 </Link>
 
-                {/* A quiet second action, not a second button: a near-
-                    transparent surface with a plain silver frame and one
-                    warmer sage edge along the bottom -- the asymmetry is
-                    deliberate, echoing the site's cut-corner signature at
-                    a much quieter scale so it reads as a considered detail
-                    rather than a stock outline-button component. */}
+                {/* A quiet second action, not a second button: the whole
+                    silhouette (fill and outline both) is one hand-cut
+                    shape, no border-radius anywhere -- a chiselled point
+                    on the left, a chamfered flat-cut end on the right,
+                    plain top and bottom edges. The SVG stretches to fill
+                    the actual rendered button, so the shape holds
+                    regardless of text length or padding at any
+                    breakpoint. */}
                 <Link
                   to="/treatments/traditional-acupuncture"
-                  className="group inline-flex min-h-11 items-center gap-2.5 rounded-tl-md rounded-tr-[3px] rounded-br-md rounded-bl-md border border-[#C0C6CC]/20 border-b-[#A8D5BA]/45 bg-white/[0.02] px-5 py-2.5 font-display text-sm font-medium tracking-wide text-white/85 transition-all duration-300 ease-in-out hover:border-[#C0C6CC]/35 hover:border-b-[#A8D5BA]/70 hover:bg-white/[0.05] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/50 sm:min-h-0 sm:px-6 sm:py-3 sm:text-base lg:px-7 lg:py-3.5"
+                  className="group relative inline-flex min-h-11 items-center gap-2.5 px-5 py-2.5 font-display text-sm font-medium tracking-wide text-white/85 transition-colors duration-300 ease-in-out hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/50 sm:min-h-0 sm:px-6 sm:py-3 sm:text-base lg:px-7 lg:py-3.5"
                   style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}
                 >
-                  <span>Explore Treatments</span>
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 180 44"
+                    preserveAspectRatio="none"
+                    className="pointer-events-none absolute inset-0 h-full w-full text-[#C0C6CC]/55 group-hover:text-[#C0C6CC]/85"
+                  >
+                    <path
+                      d="M18,2 L162,2
+                         L178,10 L178,34 L162,42
+                         L18,42
+                         L2,22 Z"
+                      fill="#0B1310"
+                      fillOpacity="0.2"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                      strokeLinejoin="miter"
+                      className="transition-colors duration-300 ease-in-out"
+                    />
+                  </svg>
+                  <span className="relative">Explore Treatments</span>
                   <ArrowRight
                     size={16}
                     strokeWidth={1.75}
-                    className="flex-none transition-transform duration-300 ease-in-out group-hover:translate-x-1"
+                    className="relative flex-none transition-transform duration-300 ease-in-out group-hover:translate-x-1"
                   />
                 </Link>
               </div>
