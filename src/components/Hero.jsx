@@ -173,9 +173,51 @@ export default function Hero() {
               </div>
 
               <div
-                className="hero-reveal mt-9 [@media(min-height:621px)_and_(max-height:680px)]:mt-4 inline-flex w-fit flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-lg border border-white/10 bg-[#0B1310]/50 px-3 py-1.5 sm:mt-10 sm:justify-start sm:gap-x-2 sm:gap-y-1.5 sm:px-3.5 sm:py-2.5 md:mt-10 lg:mt-11 [@media(max-height:620px)]:mt-6"
+                className="hero-reveal relative mt-9 [@media(min-height:621px)_and_(max-height:680px)]:mt-4 inline-flex w-fit flex-wrap items-center justify-center gap-x-2 gap-y-1 bg-[#0B1310]/25 px-4 py-2 sm:mt-10 sm:justify-start sm:gap-x-2 sm:gap-y-1.5 sm:px-5 sm:py-2.5 md:mt-10 lg:mt-11 [@media(max-height:620px)]:mt-6"
                 style={{ animationDelay: "0.72s" }}
               >
+                {/* An open ribbon frame, not a boxed card: two thin rules
+                    (silver above, sage below) run between a small hand-set
+                    bracket at each end. Both brackets share the exact same
+                    vertical rhythm and pinch at the same mid-height -- the
+                    only difference is which way they bulge (left opens
+                    outward, right closes inward) -- so they read as one
+                    considered, matched pair rather than two unrelated
+                    marks. Mitered corners and butt caps keep the line
+                    precise rather than sketchy. */}
+                <span aria-hidden="true" className="pointer-events-none absolute inset-x-3 top-0 h-px bg-[#C0C6CC]/35 sm:inset-x-3.5" />
+                <span aria-hidden="true" className="pointer-events-none absolute inset-x-3 bottom-0 h-px bg-[#A8D5BA]/35 sm:inset-x-3.5" />
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 14 40"
+                  preserveAspectRatio="none"
+                  className="pointer-events-none absolute left-0 top-0 h-full w-3 text-[#C0C6CC]/45"
+                >
+                  <path
+                    d="M2,1 L2,14 L8,20 L2,26 L2,39"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.1"
+                    strokeLinecap="butt"
+                    strokeLinejoin="miter"
+                  />
+                </svg>
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 14 40"
+                  preserveAspectRatio="none"
+                  className="pointer-events-none absolute right-0 top-0 h-full w-3 text-[#C0C6CC]/45"
+                >
+                  <path
+                    d="M12,1 L12,14 L6,20 L12,26 L12,39"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.1"
+                    strokeLinecap="butt"
+                    strokeLinejoin="miter"
+                  />
+                </svg>
+
                 {/* Rating clause travels as one unit so a narrow wrap can
                     never split the icon from its number mid-phrase. */}
                 <span className="inline-flex items-center gap-1.5">
