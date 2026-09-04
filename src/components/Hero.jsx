@@ -158,15 +158,20 @@ export default function Hero() {
 
                 {/* A quiet second action, not a second button: the whole
                     silhouette (fill and outline both) is one hand-cut
-                    shape, no border-radius anywhere -- a chiselled point
-                    on the left, a chamfered flat-cut end on the right,
-                    plain top and bottom edges. The SVG stretches to fill
-                    the actual rendered button, so the shape holds
+                    shape, no border-radius anywhere -- both ends are
+                    chamfered cuts (a diagonal in, a short flat, a
+                    diagonal back out), so the left and right read as
+                    one considered shape. They're deliberately not
+                    mirror images: the left cut is narrower and steeper,
+                    the right wider and shallower, which is what keeps
+                    it feeling hand-cut rather than a stamped hexagon.
+                    Plain top and bottom edges. The SVG stretches to
+                    fill the actual rendered button, so the shape holds
                     regardless of text length or padding at any
                     breakpoint. */}
                 <Link
                   to="/treatments/traditional-acupuncture"
-                  className="group relative inline-flex h-11 items-center gap-2.5 px-7 py-2.5 font-display text-sm font-medium tracking-wide text-white/85 transition-colors duration-300 ease-in-out hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/50 sm:h-[52px] sm:px-8 sm:py-3 sm:text-base lg:px-9 lg:py-3.5"
+                  className="group relative inline-flex h-11 items-center gap-2.5 px-7 py-2.5 font-display text-[15px] font-medium tracking-wide text-white/85 transition-colors duration-300 ease-in-out hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/50 sm:h-[52px] sm:px-8 sm:py-3 sm:text-[17px] lg:px-9 lg:py-3.5"
                   style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}
                 >
                   <svg
@@ -179,7 +184,7 @@ export default function Hero() {
                       d="M18,2 L162,2
                          L178,10 L178,34 L162,42
                          L18,42
-                         L2,22 Z"
+                         L8,28 L8,16 Z"
                       fill="#0B1310"
                       fillOpacity="0.2"
                       stroke="currentColor"
