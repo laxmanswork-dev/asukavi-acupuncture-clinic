@@ -164,52 +164,14 @@ export default function Hero() {
                 </Link>
               </div>
 
+              {/* Clean inline trust row -- no card, no border, no fill.
+                  Thin vertical hairlines are the only grouping cue between
+                  the rating, city, and hours; a text-shadow (matching the
+                  CTAs below) keeps it legible directly over the video. */}
               <div
-                className="hero-reveal relative mt-9 [@media(min-height:621px)_and_(max-height:680px)]:mt-4 inline-flex w-fit flex-wrap items-center justify-start gap-x-2 gap-y-1 bg-[#0B1310]/25 px-4 py-2 sm:mt-10 sm:gap-x-2 sm:gap-y-1.5 sm:px-5 sm:py-2.5 md:mt-10 lg:mt-11 [@media(max-height:620px)]:mt-6"
-                style={{ animationDelay: "0.72s" }}
+                className="hero-reveal mt-9 [@media(min-height:621px)_and_(max-height:680px)]:mt-4 flex w-fit flex-wrap items-center gap-x-2.5 gap-y-1.5 sm:mt-10 md:mt-10 lg:mt-11 [@media(max-height:620px)]:mt-6"
+                style={{ animationDelay: "0.72s", textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}
               >
-                {/* An open ribbon frame, not a boxed card: two thin rules
-                    (silver above, sage below) run between a small hand-set
-                    bracket at each end. Both brackets share the exact same
-                    vertical rhythm and pinch at the same mid-height -- the
-                    only difference is which way they bulge (left opens
-                    outward, right closes inward) -- so they read as one
-                    considered, matched pair rather than two unrelated
-                    marks. Mitered corners and butt caps keep the line
-                    precise rather than sketchy. */}
-                <span aria-hidden="true" className="pointer-events-none absolute inset-x-3 top-0 h-px bg-[#C0C6CC]/35 sm:inset-x-3.5" />
-                <span aria-hidden="true" className="pointer-events-none absolute inset-x-3 bottom-0 h-px bg-[#A8D5BA]/35 sm:inset-x-3.5" />
-                <svg
-                  aria-hidden="true"
-                  viewBox="0 0 14 40"
-                  preserveAspectRatio="none"
-                  className="pointer-events-none absolute left-0 top-0 h-full w-3 text-[#C0C6CC]/45"
-                >
-                  <path
-                    d="M2,1 L2,14 L8,20 L2,26 L2,39"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.1"
-                    strokeLinecap="butt"
-                    strokeLinejoin="miter"
-                  />
-                </svg>
-                <svg
-                  aria-hidden="true"
-                  viewBox="0 0 14 40"
-                  preserveAspectRatio="none"
-                  className="pointer-events-none absolute right-0 top-0 h-full w-3 text-[#C0C6CC]/45"
-                >
-                  <path
-                    d="M12,1 L12,14 L6,20 L12,26 L12,39"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.1"
-                    strokeLinecap="butt"
-                    strokeLinejoin="miter"
-                  />
-                </svg>
-
                 {/* Rating clause travels as one unit so a narrow wrap can
                     never split the icon from its number mid-phrase. The
                     rating + city are one clickable region through to the
@@ -220,37 +182,29 @@ export default function Hero() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Read Google reviews for Asukavi Acupuncture Centre — 5-star rating, Tirunelveli, TN (opens in a new tab)"
-                  className="group/rating inline-flex flex-wrap items-center gap-x-2 gap-y-1 border-b border-transparent pb-0.5 transition-colors duration-300 ease-in-out hover:border-white/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/40"
+                  className="group/rating inline-flex items-center gap-1.5 border-b border-transparent pb-0.5 transition-colors duration-300 ease-in-out hover:border-white/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/40"
                 >
-                  <span className="inline-flex items-center gap-1.5">
-                    <GoogleGIcon size={20} className="flex-none" />
-                    <span
-                      className={`flex items-center gap-1.5 font-display text-sm font-bold transition-opacity duration-500 ${
-                        isLoading ? "opacity-70" : "opacity-100"
-                      }`}
-                      style={{ color: "#FBBF24" }}
-                    >
-                      {rating.toFixed(1)}
-                      <span aria-hidden="true" className="tracking-tight">
-                        ★★★★★
-                      </span>
-                    </span>
-                  </span>
-
+                  <GoogleGIcon size={18} className="flex-none" />
                   <span
-                    aria-hidden="true"
-                    className="hidden h-4 w-px flex-none bg-white/15 sm:block"
-                  />
-
-                  <span className="font-body text-[13px] text-white/85 transition-colors duration-300 ease-in-out group-hover/rating:text-white">
-                    Tirunelveli, TN
+                    className={`flex items-center gap-1.5 font-display text-sm font-bold transition-opacity duration-500 ${
+                      isLoading ? "opacity-70" : "opacity-100"
+                    }`}
+                    style={{ color: "#FBBF24" }}
+                  >
+                    {rating.toFixed(1)}
+                    <span aria-hidden="true" className="tracking-tight">
+                      ★★★★★
+                    </span>
                   </span>
                 </a>
 
-                <span
-                  aria-hidden="true"
-                  className="hidden h-4 w-px flex-none bg-white/15 sm:block"
-                />
+                <span aria-hidden="true" className="hidden h-3.5 w-px flex-none bg-white/25 min-[480px]:block" />
+
+                <span className="font-body text-[13px] text-white/85">
+                  Tirunelveli, TN
+                </span>
+
+                <span aria-hidden="true" className="hidden h-3.5 w-px flex-none bg-white/25 min-[480px]:block" />
 
                 <span
                   className={`font-body text-[13px] font-medium ${
