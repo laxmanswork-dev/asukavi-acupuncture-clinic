@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Clock, Target } from "lucide-react";
+import { ArrowRight, Target } from "lucide-react";
 import { useGooglePlaces } from "../hooks/useGooglePlaces";
 import { useClinicStatus } from "../hooks/useClinicStatus";
 import warmVideo from "../assets/warm.mp4";
 import heroPoster from "../assets/hero-poster.jpg";
+
+// Same official Google Maps listing used for "Get Directions" on the
+// Book Appointment page -- the canonical place to read/leave reviews.
+const CLINIC_MAP_LINK = "https://maps.app.goo.gl/T7kLUuqbnLV7ZHcT8";
 
 function GoogleGIcon({ size = 20, className }) {
   return (
@@ -162,7 +166,7 @@ export default function Hero() {
                     breakpoint. */}
                 <Link
                   to="/treatments/traditional-acupuncture"
-                  className="group relative inline-flex min-h-11 items-center gap-2.5 px-5 py-2.5 font-display text-sm font-medium tracking-wide text-white/85 transition-colors duration-300 ease-in-out hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/50 sm:min-h-0 sm:px-6 sm:py-3 sm:text-base lg:px-7 lg:py-3.5"
+                  className="group relative inline-flex h-11 items-center gap-2.5 px-7 py-2.5 font-display text-sm font-medium tracking-wide text-white/85 transition-colors duration-300 ease-in-out hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/50 sm:h-[52px] sm:px-8 sm:py-3 sm:text-base lg:px-9 lg:py-3.5"
                   style={{ textShadow: "0 1px 4px rgba(0,0,0,0.7)" }}
                 >
                   <svg
@@ -240,49 +244,53 @@ export default function Hero() {
                 </svg>
 
                 {/* Rating clause travels as one unit so a narrow wrap can
-                    never split the icon from its number mid-phrase. */}
-                <span className="inline-flex items-center gap-1.5">
-                  <GoogleGIcon size={20} className="flex-none" />
-                  <span
-                    className={`flex items-center gap-1.5 font-display text-sm font-bold transition-opacity duration-500 ${
-                      isLoading ? "opacity-70" : "opacity-100"
-                    }`}
-                    style={{ color: "#FBBF24" }}
-                  >
-                    {rating.toFixed(1)}
-                    <span aria-hidden="true" className="tracking-tight">
-                      ★★★★★
+                    never split the icon from its number mid-phrase. The
+                    rating + city are one clickable region through to the
+                    clinic's Google listing; opening hours stay separate,
+                    plain information rather than part of the link. */}
+                <a
+                  href={CLINIC_MAP_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Read Google reviews for Asukavi Acupuncture Centre — 5-star rating, Tirunelveli, TN (opens in a new tab)"
+                  className="group/rating inline-flex flex-wrap items-center gap-x-2 gap-y-1 border-b border-transparent pb-0.5 transition-colors duration-300 ease-in-out hover:border-white/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/40"
+                >
+                  <span className="inline-flex items-center gap-1.5">
+                    <GoogleGIcon size={20} className="flex-none" />
+                    <span
+                      className={`flex items-center gap-1.5 font-display text-sm font-bold transition-opacity duration-500 ${
+                        isLoading ? "opacity-70" : "opacity-100"
+                      }`}
+                      style={{ color: "#FBBF24" }}
+                    >
+                      {rating.toFixed(1)}
+                      <span aria-hidden="true" className="tracking-tight">
+                        ★★★★★
+                      </span>
                     </span>
                   </span>
-                </span>
 
-                <span
-                  aria-hidden="true"
-                  className="hidden h-4 w-px flex-none bg-white/15 sm:block"
-                />
-
-                <span className="font-body text-[13px] text-white/85">
-                  Tirunelveli, TN
-                </span>
-
-                <span
-                  aria-hidden="true"
-                  className="hidden h-4 w-px flex-none bg-white/15 sm:block"
-                />
-
-                <span className="flex items-center gap-1.5">
-                  <Clock
-                    className={`h-3.5 w-3.5 flex-none animate-pulse ${
-                      clinicStatus.isOpen ? "text-emerald-400/90" : "text-amber-400/90"
-                    }`}
-                  />
                   <span
-                    className={`font-body text-[13px] font-medium ${
-                      clinicStatus.isOpen ? "text-emerald-200" : "text-amber-200"
-                    }`}
-                  >
-                    {clinicStatus.message}
+                    aria-hidden="true"
+                    className="hidden h-4 w-px flex-none bg-white/15 sm:block"
+                  />
+
+                  <span className="font-body text-[13px] text-white/85 transition-colors duration-300 ease-in-out group-hover/rating:text-white">
+                    Tirunelveli, TN
                   </span>
+                </a>
+
+                <span
+                  aria-hidden="true"
+                  className="hidden h-4 w-px flex-none bg-white/15 sm:block"
+                />
+
+                <span
+                  className={`font-body text-[13px] font-medium ${
+                    clinicStatus.isOpen ? "text-emerald-200" : "text-amber-200"
+                  }`}
+                >
+                  {clinicStatus.message}
                 </span>
               </div>
             </div>
