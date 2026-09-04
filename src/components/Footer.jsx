@@ -10,11 +10,10 @@ import {
 import logo from "../assets/logo.png";
 
 // Facebook and Twitter dropped per client request (2026-09-04) -- no
-// active profiles to link to. Instagram and YouTube stay as "#"
-// placeholders until the client sends their real profile URLs.
+// active profiles to link to.
 const socialLinks = [
-  { icon: InstagramIcon, label: "Instagram", href: "#" },
-  { icon: YoutubeIcon, label: "YouTube", href: "#" },
+  { icon: InstagramIcon, label: "Instagram", href: "https://www.instagram.com/dr.asukavi/" },
+  { icon: YoutubeIcon, label: "YouTube", href: "https://youtube.com/@asukavi6954" },
 ];
 
 export default function Footer() {
@@ -118,6 +117,8 @@ export default function Footer() {
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="flex h-9 w-9 items-center justify-center rounded-full border border-cream-50/15 text-white transition-all duration-300 ease-in-out hover:border-[#7ED9A8] hover:text-cream-50"
                 >
