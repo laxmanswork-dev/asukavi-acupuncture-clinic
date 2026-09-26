@@ -85,11 +85,11 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-cream-50/10 bg-eucalyptus-950/90 shadow-sm shadow-black/20 backdrop-blur-md">
       <nav className="flex items-center justify-between px-4 py-4 sm:px-6 sm:py-5 xl:px-16">
-        <a href={isHome ? "#home" : "/"} className="flex min-w-0 items-center gap-2 sm:gap-3">
+        <a href={isHome ? "#home" : "/"} className="flex min-w-0 items-start gap-2 sm:gap-3">
           <img
             src={logo}
             alt="Asukavi Acupuncture Centre"
-            className="h-9 w-9 flex-none rounded-full object-cover sm:h-11 sm:w-11"
+            className="mt-px h-11 w-11 flex-none rounded-full object-cover sm:mt-0.5 sm:h-[52px] sm:w-[52px]"
           />
           <span className="flex min-w-0 flex-col items-center leading-none sm:items-start">
             <span className="font-script text-3xl font-semibold tracking-wide text-cream-50 sm:text-4xl">
