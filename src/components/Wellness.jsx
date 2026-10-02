@@ -172,7 +172,7 @@ export default function Wellness() {
               </p>
               <div className="mt-7">
                 <Link
-                  to="/book-appointment"
+                  to="/book-appointment#appointment-details"
                   className="group inline-flex h-[52px] items-center gap-2 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-eucalyptus-950/10 bg-[#A3B899] px-7 font-display text-base font-semibold tracking-wide text-eucalyptus-950 transition-all duration-300 ease-in-out hover:scale-[1.02] hover:bg-[#8FA588] active:scale-[0.98]"
                 >
                   <Target size={18} strokeWidth={2} className="flex-none opacity-80" />

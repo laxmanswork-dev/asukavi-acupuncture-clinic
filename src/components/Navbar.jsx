@@ -216,7 +216,7 @@ export default function Navbar() {
             })}
           </ul>
           <Link
-            to="/book-appointment"
+            to="/book-appointment#appointment-details"
             onClick={() => setIsMenuOpen(false)}
             className="group mt-4 flex h-11 items-center justify-center gap-2.5 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm border border-eucalyptus-950/10 bg-[#A3B899] pl-3 pr-6 text-center font-display text-sm font-semibold tracking-wide text-eucalyptus-950 transition-all duration-300 ease-in-out hover:bg-[#8FA588]"
           >

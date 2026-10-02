@@ -135,7 +135,7 @@ export default function Hero() {
                 style={{ animationDelay: "0.5s" }}
               >
                 <Link
-                  to="/book-appointment"
+                  to="/book-appointment#appointment-details"
                   className="group flex h-11 w-full items-center justify-center gap-1.5 whitespace-nowrap rounded-full border border-eucalyptus-950/10 bg-[#A3B899] px-5 font-display text-base font-bold tracking-normal text-eucalyptus-950 transition-all duration-300 ease-in-out hover:bg-[#8FA588] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A3B899] min-[375px]:w-auto sm:h-[52px] sm:gap-2 sm:px-7 sm:text-lg sm:tracking-wide"
                 >
                   <Target strokeWidth={2} className="h-3.5 w-3.5 flex-none opacity-80 sm:h-[18px] sm:w-[18px]" />

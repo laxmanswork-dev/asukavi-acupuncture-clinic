@@ -474,7 +474,7 @@ export default function BookAppointment() {
               </div>
 
               {/* Right: appointment form */}
-              <div className="lg:col-span-7">
+              <div id="appointment-details" className="scroll-mt-[5.5rem] lg:col-span-7">
                 <FadeUp delay={100}>
                   <div className="rounded-tl-[32px] rounded-tr-[12px] rounded-br-[32px] rounded-bl-[32px] border border-white/10 bg-white/5 p-6 shadow-2xl shadow-black/30 backdrop-blur-md sm:p-8 lg:p-10">
                     <h2

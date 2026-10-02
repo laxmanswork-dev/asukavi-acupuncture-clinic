@@ -224,7 +224,7 @@ export default function TraditionalAcupuncture() {
               plan around your specific needs.
             </p>
             <Link
-              to="/book-appointment"
+              to="/book-appointment#appointment-details"
               className="group inline-flex h-12 items-center justify-center gap-2 rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-sm bg-[#A3B899] px-7 font-display text-sm font-semibold tracking-wide text-eucalyptus-950 shadow-lg shadow-[#A3B899]/25 transition-all duration-300 ease-in-out hover:scale-[1.02] hover:bg-[#8FA588] active:scale-[0.98]"
             >
               <span>Book an Appointment</span>
