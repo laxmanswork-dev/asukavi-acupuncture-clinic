@@ -426,13 +426,7 @@ export default function BookAppointment() {
                     <dl className="space-y-3 font-body text-sm text-[#E8ECEF] sm:space-y-2.5">
                       <div className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
                         <dt className="whitespace-nowrap text-cream-100/70">
-                          Monday – Friday
-                        </dt>
-                        <dd>10:00 AM – 1:00 PM &amp; 5:00 PM – 9:00 PM</dd>
-                      </div>
-                      <div className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
-                        <dt className="whitespace-nowrap text-cream-100/70">
-                          Saturday
+                          Monday – Saturday
                         </dt>
                         <dd>10:00 AM – 1:00 PM &amp; 5:00 PM – 9:00 PM</dd>
                       </div>
