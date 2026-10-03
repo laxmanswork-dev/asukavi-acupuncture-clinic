@@ -88,7 +88,7 @@ export default function Footer() {
               <li className="flex items-center gap-2.5">
                 <GlobeIcon className="h-4 w-4 flex-none text-white" />
                 <span className="font-body text-sm text-[#E8ECEF]">
-                  www.asukavi.com
+                  www.asukaviacupuncture.com
                 </span>
               </li>
             </ul>
@@ -103,7 +103,7 @@ export default function Footer() {
               <p className="font-body text-sm leading-relaxed text-[#E8ECEF]">
                 Open Today
                 <br />
-                Closes at 9:00 PM
+                Closes at 8:00 PM
               </p>
             </div>
           </div>

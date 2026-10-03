@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 // [startHour, startMinute, endHour, endMinute]
 const SCHEDULE = {
   0: [], // Sunday — closed
-  1: [[10, 0, 13, 0], [17, 0, 21, 0]], // Monday
-  2: [[10, 0, 13, 0], [17, 0, 21, 0]], // Tuesday
-  3: [[10, 0, 13, 0], [17, 0, 21, 0]], // Wednesday
-  4: [[10, 0, 13, 0], [17, 0, 21, 0]], // Thursday
-  5: [[10, 0, 13, 0], [17, 0, 21, 0]], // Friday
-  6: [[10, 0, 13, 0], [17, 0, 21, 0]], // Saturday
+  1: [[10, 0, 13, 0], [17, 0, 20, 0]], // Monday
+  2: [[10, 0, 13, 0], [17, 0, 20, 0]], // Tuesday
+  3: [[10, 0, 13, 0], [17, 0, 20, 0]], // Wednesday
+  4: [[10, 0, 13, 0], [17, 0, 20, 0]], // Thursday
+  5: [[10, 0, 13, 0], [17, 0, 20, 0]], // Friday
+  6: [[10, 0, 13, 0], [17, 0, 20, 0]], // Saturday
 };
 
 const DAY_NAMES = [

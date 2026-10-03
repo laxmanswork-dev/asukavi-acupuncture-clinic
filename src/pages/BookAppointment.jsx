@@ -428,7 +428,7 @@ export default function BookAppointment() {
                         <dt className="whitespace-nowrap text-cream-100/70">
                           Monday – Saturday
                         </dt>
-                        <dd>10:00 AM – 1:00 PM &amp; 5:00 PM – 9:00 PM</dd>
+                        <dd>10:00 AM – 1:00 PM &amp; 5:00 PM – 8:00 PM</dd>
                       </div>
                       <div className="flex items-center justify-between gap-4">
                         <dt className="whitespace-nowrap text-cream-100/70">
